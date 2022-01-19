@@ -1,0 +1,1040 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3035502DBD56F17E3B82B6CB /* Pods_OvaryIQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73421BA16DFCE26EDEFE2714 /* Pods_OvaryIQ.framework */; };
+		A7022677278FF7FA000E1C9F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7022676278FF7FA000E1C9F /* Logger.swift */; };
+		A702267927902E51000E1C9F /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A702267827902E51000E1C9F /* UIButton+Extensions.swift */; };
+		A7069E5A278EC3C90028AA68 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7069E59278EC3C90028AA68 /* UIView+Extensions.swift */; };
+		A720FF43278ED70A00893720 /* AuthLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A720FF42278ED70A00893720 /* AuthLoginVC.swift */; };
+		A720FF46278EEC0A00893720 /* AuthSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A720FF45278EEC0A00893720 /* AuthSignUpVC.swift */; };
+		A720FF49278EFDB500893720 /* AuthForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A720FF48278EFDB500893720 /* AuthForgotPasswordVC.swift */; };
+		A720FF4C278F063A00893720 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A720FF4B278F063A00893720 /* ResetPasswordVC.swift */; };
+		A73244DF278E8E2A008FDCF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73244DE278E8E2A008FDCF0 /* AppDelegate.swift */; };
+		A73244E1278E8E2A008FDCF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73244E0278E8E2A008FDCF0 /* SceneDelegate.swift */; };
+		A73244E3278E8E2A008FDCF0 /* AuthOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73244E2278E8E2A008FDCF0 /* AuthOptionVC.swift */; };
+		A73244E6278E8E2A008FDCF0 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A73244E4278E8E2A008FDCF0 /* Auth.storyboard */; };
+		A73244E8278E8E2C008FDCF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A73244E7278E8E2C008FDCF0 /* Assets.xcassets */; };
+		A73244EB278E8E2C008FDCF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A73244E9278E8E2C008FDCF0 /* LaunchScreen.storyboard */; };
+		A73244F6278E8E2C008FDCF0 /* OvaryIQTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73244F5278E8E2C008FDCF0 /* OvaryIQTests.swift */; };
+		A7324500278E8E2C008FDCF0 /* OvaryIQUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73244FF278E8E2C008FDCF0 /* OvaryIQUITests.swift */; };
+		A7324502278E8E2C008FDCF0 /* OvaryIQUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7324501278E8E2C008FDCF0 /* OvaryIQUITestsLaunchTests.swift */; };
+		A7324521278E8F82008FDCF0 /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7324514278E8F81008FDCF0 /* SourceSansPro-Light.ttf */; };
+		A7324523278E8F82008FDCF0 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7324516278E8F81008FDCF0 /* SourceSansPro-Bold.ttf */; };
+		A7324524278E8F82008FDCF0 /* SourceSansPro-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7324517278E8F81008FDCF0 /* SourceSansPro-BoldItalic.ttf */; };
+		A7324525278E8F82008FDCF0 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7324518278E8F81008FDCF0 /* SourceSansPro-SemiBold.ttf */; };
+		A7324526278E8F82008FDCF0 /* SourceSansPro-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7324519278E8F81008FDCF0 /* SourceSansPro-ExtraLightItalic.ttf */; };
+		A7324527278E8F82008FDCF0 /* SourceSansPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A732451A278E8F81008FDCF0 /* SourceSansPro-ExtraLight.ttf */; };
+		A7324528278E8F82008FDCF0 /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A732451B278E8F81008FDCF0 /* SourceSansPro-Black.ttf */; };
+		A7324529278E8F82008FDCF0 /* SourceSansPro-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A732451C278E8F81008FDCF0 /* SourceSansPro-BlackItalic.ttf */; };
+		A732452A278E8F82008FDCF0 /* SourceSansPro-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A732451D278E8F81008FDCF0 /* SourceSansPro-LightItalic.ttf */; };
+		A732452B278E8F82008FDCF0 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A732451E278E8F81008FDCF0 /* SourceSansPro-Regular.ttf */; };
+		A732452C278E8F82008FDCF0 /* SourceSansPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A732451F278E8F82008FDCF0 /* SourceSansPro-Italic.ttf */; };
+		A732452D278E8F82008FDCF0 /* SourceSansPro-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7324520278E8F82008FDCF0 /* SourceSansPro-SemiBoldItalic.ttf */; };
+		A74C322427915D1700763899 /* AuthVerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C322327915D1700763899 /* AuthVerificationCodeVC.swift */; };
+		A74C32282791650F00763899 /* AnswersFewQuestionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C32272791650F00763899 /* AnswersFewQuestionsVC.swift */; };
+		A74C322A2791652F00763899 /* Questions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A74C32292791652F00763899 /* Questions.storyboard */; };
+		A74C322F2791994600763899 /* YourGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C322E2791994600763899 /* YourGoalVC.swift */; };
+		A74C323227919F1200763899 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C323127919F1200763899 /* BaseTableViewCell.swift */; };
+		A77F96BF27954AA50083B5F7 /* GoalTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77F96BE27954AA50083B5F7 /* GoalTVC.swift */; };
+		A7CE543C27967A9300191A7B /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE543B27967A9300191A7B /* NSObject+Extension.swift */; };
+		A7CE543E27967B7B00191A7B /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE543D27967B7B00191A7B /* UITableView+Extension.swift */; };
+		A7CE544427968F7300191A7B /* LastPeriodLongVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE544327968F7300191A7B /* LastPeriodLongVC.swift */; };
+		A7CE54832796B9C200191A7B /* Constants+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE54822796B9C200191A7B /* Constants+String.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A73244F2278E8E2C008FDCF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A73244D3278E8E2A008FDCF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A73244DA278E8E2A008FDCF0;
+			remoteInfo = OvaryIQ;
+		};
+		A73244FC278E8E2C008FDCF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A73244D3278E8E2A008FDCF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A73244DA278E8E2A008FDCF0;
+			remoteInfo = OvaryIQ;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3E66D6041D13595645E3088A /* Pods-OvaryIQ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OvaryIQ.debug.xcconfig"; path = "Target Support Files/Pods-OvaryIQ/Pods-OvaryIQ.debug.xcconfig"; sourceTree = "<group>"; };
+		73421BA16DFCE26EDEFE2714 /* Pods_OvaryIQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OvaryIQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CD584F3C47F731F3EC64A7E /* Pods-OvaryIQ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OvaryIQ.release.xcconfig"; path = "Target Support Files/Pods-OvaryIQ/Pods-OvaryIQ.release.xcconfig"; sourceTree = "<group>"; };
+		A7022676278FF7FA000E1C9F /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		A702267827902E51000E1C9F /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		A7069E59278EC3C90028AA68 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		A7069E5C278ED2070028AA68 /* CreteRound-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CreteRound-Italic.ttf"; sourceTree = "<group>"; };
+		A7069E5D278ED2070028AA68 /* CreteRound-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CreteRound-Regular.ttf"; sourceTree = "<group>"; };
+		A720FF42278ED70A00893720 /* AuthLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLoginVC.swift; sourceTree = "<group>"; };
+		A720FF45278EEC0A00893720 /* AuthSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignUpVC.swift; sourceTree = "<group>"; };
+		A720FF48278EFDB500893720 /* AuthForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthForgotPasswordVC.swift; sourceTree = "<group>"; };
+		A720FF4B278F063A00893720 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordVC.swift; sourceTree = "<group>"; };
+		A73244DB278E8E2A008FDCF0 /* OvaryIQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OvaryIQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A73244DE278E8E2A008FDCF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A73244E0278E8E2A008FDCF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A73244E2278E8E2A008FDCF0 /* AuthOptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOptionVC.swift; sourceTree = "<group>"; };
+		A73244E5278E8E2A008FDCF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
+		A73244E7278E8E2C008FDCF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A73244EA278E8E2C008FDCF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A73244EC278E8E2C008FDCF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A73244F1278E8E2C008FDCF0 /* OvaryIQTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OvaryIQTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A73244F5278E8E2C008FDCF0 /* OvaryIQTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvaryIQTests.swift; sourceTree = "<group>"; };
+		A73244FB278E8E2C008FDCF0 /* OvaryIQUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OvaryIQUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A73244FF278E8E2C008FDCF0 /* OvaryIQUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvaryIQUITests.swift; sourceTree = "<group>"; };
+		A7324501278E8E2C008FDCF0 /* OvaryIQUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OvaryIQUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A7324514278E8F81008FDCF0 /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
+		A7324516278E8F81008FDCF0 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
+		A7324517278E8F81008FDCF0 /* SourceSansPro-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BoldItalic.ttf"; sourceTree = "<group>"; };
+		A7324518278E8F81008FDCF0 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
+		A7324519278E8F81008FDCF0 /* SourceSansPro-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		A732451A278E8F81008FDCF0 /* SourceSansPro-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLight.ttf"; sourceTree = "<group>"; };
+		A732451B278E8F81008FDCF0 /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
+		A732451C278E8F81008FDCF0 /* SourceSansPro-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BlackItalic.ttf"; sourceTree = "<group>"; };
+		A732451D278E8F81008FDCF0 /* SourceSansPro-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-LightItalic.ttf"; sourceTree = "<group>"; };
+		A732451E278E8F81008FDCF0 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		A732451F278E8F82008FDCF0 /* SourceSansPro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Italic.ttf"; sourceTree = "<group>"; };
+		A7324520278E8F82008FDCF0 /* SourceSansPro-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		A74C322327915D1700763899 /* AuthVerificationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVerificationCodeVC.swift; sourceTree = "<group>"; };
+		A74C32272791650F00763899 /* AnswersFewQuestionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersFewQuestionsVC.swift; sourceTree = "<group>"; };
+		A74C32292791652F00763899 /* Questions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Questions.storyboard; sourceTree = "<group>"; };
+		A74C322E2791994600763899 /* YourGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourGoalVC.swift; sourceTree = "<group>"; };
+		A74C323127919F1200763899 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		A77F96BE27954AA50083B5F7 /* GoalTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTVC.swift; sourceTree = "<group>"; };
+		A7CE543B27967A9300191A7B /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		A7CE543D27967B7B00191A7B /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		A7CE544327968F7300191A7B /* LastPeriodLongVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPeriodLongVC.swift; sourceTree = "<group>"; };
+		A7CE54822796B9C200191A7B /* Constants+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+String.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A73244D8278E8E2A008FDCF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3035502DBD56F17E3B82B6CB /* Pods_OvaryIQ.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A73244EE278E8E2C008FDCF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A73244F8278E8E2C008FDCF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0696F3B2FBD98FC305A47501 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73421BA16DFCE26EDEFE2714 /* Pods_OvaryIQ.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6461F73AC608FB0E91156328 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E66D6041D13595645E3088A /* Pods-OvaryIQ.debug.xcconfig */,
+				8CD584F3C47F731F3EC64A7E /* Pods-OvaryIQ.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A7022675278FF7DF000E1C9F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A7CE54812796B93800191A7B /* Constant */,
+				A7069E58278EC37F0028AA68 /* Extensions */,
+				A7022676278FF7FA000E1C9F /* Logger.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		A7069E58278EC37F0028AA68 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A7069E59278EC3C90028AA68 /* UIView+Extensions.swift */,
+				A702267827902E51000E1C9F /* UIButton+Extensions.swift */,
+				A7CE543B27967A9300191A7B /* NSObject+Extension.swift */,
+				A7CE543D27967B7B00191A7B /* UITableView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A7069E5B278ED1F70028AA68 /* Crete Round */ = {
+			isa = PBXGroup;
+			children = (
+				A7069E5C278ED2070028AA68 /* CreteRound-Italic.ttf */,
+				A7069E5D278ED2070028AA68 /* CreteRound-Regular.ttf */,
+			);
+			path = "Crete Round";
+			sourceTree = "<group>";
+		};
+		A720FF40278ED6BD00893720 /* AuthOptions */ = {
+			isa = PBXGroup;
+			children = (
+				A77F96BD27953A160083B5F7 /* Controller */,
+			);
+			path = AuthOptions;
+			sourceTree = "<group>";
+		};
+		A720FF41278ED6D000893720 /* AuthLogin */ = {
+			isa = PBXGroup;
+			children = (
+				A720FF42278ED70A00893720 /* AuthLoginVC.swift */,
+			);
+			path = AuthLogin;
+			sourceTree = "<group>";
+		};
+		A720FF44278EEBA600893720 /* AuthSignUp */ = {
+			isa = PBXGroup;
+			children = (
+				A720FF45278EEC0A00893720 /* AuthSignUpVC.swift */,
+			);
+			path = AuthSignUp;
+			sourceTree = "<group>";
+		};
+		A720FF47278EFD8200893720 /* AuthForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				A720FF48278EFDB500893720 /* AuthForgotPasswordVC.swift */,
+			);
+			path = AuthForgotPassword;
+			sourceTree = "<group>";
+		};
+		A720FF4A278F061800893720 /* AuthResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				A720FF4B278F063A00893720 /* ResetPasswordVC.swift */,
+			);
+			path = AuthResetPassword;
+			sourceTree = "<group>";
+		};
+		A73244D2278E8E2A008FDCF0 = {
+			isa = PBXGroup;
+			children = (
+				A73244DD278E8E2A008FDCF0 /* OvaryIQ */,
+				A73244F4278E8E2C008FDCF0 /* OvaryIQTests */,
+				A73244FE278E8E2C008FDCF0 /* OvaryIQUITests */,
+				A73244DC278E8E2A008FDCF0 /* Products */,
+				6461F73AC608FB0E91156328 /* Pods */,
+				0696F3B2FBD98FC305A47501 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A73244DC278E8E2A008FDCF0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A73244DB278E8E2A008FDCF0 /* OvaryIQ.app */,
+				A73244F1278E8E2C008FDCF0 /* OvaryIQTests.xctest */,
+				A73244FB278E8E2C008FDCF0 /* OvaryIQUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A73244DD278E8E2A008FDCF0 /* OvaryIQ */ = {
+			isa = PBXGroup;
+			children = (
+				A77C71BC2797D20C007AB67E /* Helpers */,
+				A732450E278E8E3E008FDCF0 /* AppDelegate */,
+				A7022675278FF7DF000E1C9F /* Utility */,
+				A732450F278E8E5B008FDCF0 /* Module */,
+				A7324512278E8EC3008FDCF0 /* Resources */,
+				A73244EC278E8E2C008FDCF0 /* Info.plist */,
+			);
+			path = OvaryIQ;
+			sourceTree = "<group>";
+		};
+		A73244F4278E8E2C008FDCF0 /* OvaryIQTests */ = {
+			isa = PBXGroup;
+			children = (
+				A73244F5278E8E2C008FDCF0 /* OvaryIQTests.swift */,
+			);
+			path = OvaryIQTests;
+			sourceTree = "<group>";
+		};
+		A73244FE278E8E2C008FDCF0 /* OvaryIQUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A73244FF278E8E2C008FDCF0 /* OvaryIQUITests.swift */,
+				A7324501278E8E2C008FDCF0 /* OvaryIQUITestsLaunchTests.swift */,
+			);
+			path = OvaryIQUITests;
+			sourceTree = "<group>";
+		};
+		A732450E278E8E3E008FDCF0 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				A73244DE278E8E2A008FDCF0 /* AppDelegate.swift */,
+				A73244E0278E8E2A008FDCF0 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A732450F278E8E5B008FDCF0 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				A74C3225279164CB00763899 /* Questions */,
+				A7324511278E8E96008FDCF0 /* Auth */,
+				A7324510278E8E85008FDCF0 /* Launch */,
+				A74C323027919E3900763899 /* BaseClasses */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		A7324510278E8E85008FDCF0 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				A73244E9278E8E2C008FDCF0 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		A7324511278E8E96008FDCF0 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				A73244E4278E8E2A008FDCF0 /* Auth.storyboard */,
+				A720FF40278ED6BD00893720 /* AuthOptions */,
+				A720FF41278ED6D000893720 /* AuthLogin */,
+				A720FF44278EEBA600893720 /* AuthSignUp */,
+				A74C322227915CF700763899 /* AuthVerificationCode */,
+				A720FF4A278F061800893720 /* AuthResetPassword */,
+				A720FF47278EFD8200893720 /* AuthForgotPassword */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		A7324512278E8EC3008FDCF0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A7324513278E8F0F008FDCF0 /* Fonts */,
+				A73244E7278E8E2C008FDCF0 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A7324513278E8F0F008FDCF0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A7069E5B278ED1F70028AA68 /* Crete Round */,
+				A732452F278E8FF3008FDCF0 /* SourceSansPro */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A732452F278E8FF3008FDCF0 /* SourceSansPro */ = {
+			isa = PBXGroup;
+			children = (
+				A732451B278E8F81008FDCF0 /* SourceSansPro-Black.ttf */,
+				A732451C278E8F81008FDCF0 /* SourceSansPro-BlackItalic.ttf */,
+				A7324516278E8F81008FDCF0 /* SourceSansPro-Bold.ttf */,
+				A7324517278E8F81008FDCF0 /* SourceSansPro-BoldItalic.ttf */,
+				A732451A278E8F81008FDCF0 /* SourceSansPro-ExtraLight.ttf */,
+				A7324519278E8F81008FDCF0 /* SourceSansPro-ExtraLightItalic.ttf */,
+				A732451F278E8F82008FDCF0 /* SourceSansPro-Italic.ttf */,
+				A7324514278E8F81008FDCF0 /* SourceSansPro-Light.ttf */,
+				A732451D278E8F81008FDCF0 /* SourceSansPro-LightItalic.ttf */,
+				A732451E278E8F81008FDCF0 /* SourceSansPro-Regular.ttf */,
+				A7324518278E8F81008FDCF0 /* SourceSansPro-SemiBold.ttf */,
+				A7324520278E8F82008FDCF0 /* SourceSansPro-SemiBoldItalic.ttf */,
+			);
+			path = SourceSansPro;
+			sourceTree = "<group>";
+		};
+		A74C322227915CF700763899 /* AuthVerificationCode */ = {
+			isa = PBXGroup;
+			children = (
+				A74C322327915D1700763899 /* AuthVerificationCodeVC.swift */,
+			);
+			path = AuthVerificationCode;
+			sourceTree = "<group>";
+		};
+		A74C3225279164CB00763899 /* Questions */ = {
+			isa = PBXGroup;
+			children = (
+				A74C32292791652F00763899 /* Questions.storyboard */,
+				A7CE544127968F3500191A7B /* LastPeriod */,
+				A74C322D2791991C00763899 /* YourGoal */,
+				A74C3226279164D800763899 /* AnswersFewQuestions */,
+			);
+			path = Questions;
+			sourceTree = "<group>";
+		};
+		A74C3226279164D800763899 /* AnswersFewQuestions */ = {
+			isa = PBXGroup;
+			children = (
+				A74C32272791650F00763899 /* AnswersFewQuestionsVC.swift */,
+			);
+			path = AnswersFewQuestions;
+			sourceTree = "<group>";
+		};
+		A74C322D2791991C00763899 /* YourGoal */ = {
+			isa = PBXGroup;
+			children = (
+				A7CE543A279678CF00191A7B /* Controller */,
+				A7CE543F27967E9100191A7B /* View */,
+			);
+			path = YourGoal;
+			sourceTree = "<group>";
+		};
+		A74C323027919E3900763899 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				A74C323127919F1200763899 /* BaseTableViewCell.swift */,
+			);
+			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		A77C71BC2797D20C007AB67E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A77F96BD27953A160083B5F7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A73244E2278E8E2A008FDCF0 /* AuthOptionVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A7CE543A279678CF00191A7B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A74C322E2791994600763899 /* YourGoalVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A7CE543F27967E9100191A7B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A7CE544027967EBD00191A7B /* GoalTableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A7CE544027967EBD00191A7B /* GoalTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A77F96BE27954AA50083B5F7 /* GoalTVC.swift */,
+			);
+			path = GoalTableViewCell;
+			sourceTree = "<group>";
+		};
+		A7CE544127968F3500191A7B /* LastPeriod */ = {
+			isa = PBXGroup;
+			children = (
+				A7CE544227968F5600191A7B /* Controller */,
+			);
+			path = LastPeriod;
+			sourceTree = "<group>";
+		};
+		A7CE544227968F5600191A7B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A7CE544327968F7300191A7B /* LastPeriodLongVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A7CE54812796B93800191A7B /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				A7CE54822796B9C200191A7B /* Constants+String.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A73244DA278E8E2A008FDCF0 /* OvaryIQ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7324505278E8E2C008FDCF0 /* Build configuration list for PBXNativeTarget "OvaryIQ" */;
+			buildPhases = (
+				46015E60E6EC96177E46ADB9 /* [CP] Check Pods Manifest.lock */,
+				A7CE54862796EBAB00191A7B /* SwiftLintRunScript */,
+				A73244D7278E8E2A008FDCF0 /* Sources */,
+				A73244D8278E8E2A008FDCF0 /* Frameworks */,
+				A73244D9278E8E2A008FDCF0 /* Resources */,
+				B9D945DC5AAA12CF44ECF789 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OvaryIQ;
+			productName = OvaryIQ;
+			productReference = A73244DB278E8E2A008FDCF0 /* OvaryIQ.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A73244F0278E8E2C008FDCF0 /* OvaryIQTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7324508278E8E2C008FDCF0 /* Build configuration list for PBXNativeTarget "OvaryIQTests" */;
+			buildPhases = (
+				A73244ED278E8E2C008FDCF0 /* Sources */,
+				A73244EE278E8E2C008FDCF0 /* Frameworks */,
+				A73244EF278E8E2C008FDCF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A73244F3278E8E2C008FDCF0 /* PBXTargetDependency */,
+			);
+			name = OvaryIQTests;
+			productName = OvaryIQTests;
+			productReference = A73244F1278E8E2C008FDCF0 /* OvaryIQTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A73244FA278E8E2C008FDCF0 /* OvaryIQUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A732450B278E8E2C008FDCF0 /* Build configuration list for PBXNativeTarget "OvaryIQUITests" */;
+			buildPhases = (
+				A73244F7278E8E2C008FDCF0 /* Sources */,
+				A73244F8278E8E2C008FDCF0 /* Frameworks */,
+				A73244F9278E8E2C008FDCF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A73244FD278E8E2C008FDCF0 /* PBXTargetDependency */,
+			);
+			name = OvaryIQUITests;
+			productName = OvaryIQUITests;
+			productReference = A73244FB278E8E2C008FDCF0 /* OvaryIQUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A73244D3278E8E2A008FDCF0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					A73244DA278E8E2A008FDCF0 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					A73244F0278E8E2C008FDCF0 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = A73244DA278E8E2A008FDCF0;
+					};
+					A73244FA278E8E2C008FDCF0 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = A73244DA278E8E2A008FDCF0;
+					};
+				};
+			};
+			buildConfigurationList = A73244D6278E8E2A008FDCF0 /* Build configuration list for PBXProject "OvaryIQ" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A73244D2278E8E2A008FDCF0;
+			productRefGroup = A73244DC278E8E2A008FDCF0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A73244DA278E8E2A008FDCF0 /* OvaryIQ */,
+				A73244F0278E8E2C008FDCF0 /* OvaryIQTests */,
+				A73244FA278E8E2C008FDCF0 /* OvaryIQUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A73244D9278E8E2A008FDCF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7324529278E8F82008FDCF0 /* SourceSansPro-BlackItalic.ttf in Resources */,
+				A7324527278E8F82008FDCF0 /* SourceSansPro-ExtraLight.ttf in Resources */,
+				A7324524278E8F82008FDCF0 /* SourceSansPro-BoldItalic.ttf in Resources */,
+				A732452B278E8F82008FDCF0 /* SourceSansPro-Regular.ttf in Resources */,
+				A732452C278E8F82008FDCF0 /* SourceSansPro-Italic.ttf in Resources */,
+				A7324525278E8F82008FDCF0 /* SourceSansPro-SemiBold.ttf in Resources */,
+				A74C322A2791652F00763899 /* Questions.storyboard in Resources */,
+				A73244EB278E8E2C008FDCF0 /* LaunchScreen.storyboard in Resources */,
+				A7324528278E8F82008FDCF0 /* SourceSansPro-Black.ttf in Resources */,
+				A73244E8278E8E2C008FDCF0 /* Assets.xcassets in Resources */,
+				A732452D278E8F82008FDCF0 /* SourceSansPro-SemiBoldItalic.ttf in Resources */,
+				A73244E6278E8E2A008FDCF0 /* Auth.storyboard in Resources */,
+				A7324521278E8F82008FDCF0 /* SourceSansPro-Light.ttf in Resources */,
+				A7324523278E8F82008FDCF0 /* SourceSansPro-Bold.ttf in Resources */,
+				A7324526278E8F82008FDCF0 /* SourceSansPro-ExtraLightItalic.ttf in Resources */,
+				A732452A278E8F82008FDCF0 /* SourceSansPro-LightItalic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A73244EF278E8E2C008FDCF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A73244F9278E8E2C008FDCF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46015E60E6EC96177E46ADB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OvaryIQ-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n\n\n\n\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7CE54862796EBAB00191A7B /* SwiftLintRunScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLintRunScript;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		B9D945DC5AAA12CF44ECF789 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OvaryIQ/Pods-OvaryIQ-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OvaryIQ/Pods-OvaryIQ-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OvaryIQ/Pods-OvaryIQ-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A73244D7278E8E2A008FDCF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A73244E3278E8E2A008FDCF0 /* AuthOptionVC.swift in Sources */,
+				A73244DF278E8E2A008FDCF0 /* AppDelegate.swift in Sources */,
+				A7CE54832796B9C200191A7B /* Constants+String.swift in Sources */,
+				A720FF46278EEC0A00893720 /* AuthSignUpVC.swift in Sources */,
+				A7CE543C27967A9300191A7B /* NSObject+Extension.swift in Sources */,
+				A74C322F2791994600763899 /* YourGoalVC.swift in Sources */,
+				A74C323227919F1200763899 /* BaseTableViewCell.swift in Sources */,
+				A7CE543E27967B7B00191A7B /* UITableView+Extension.swift in Sources */,
+				A74C32282791650F00763899 /* AnswersFewQuestionsVC.swift in Sources */,
+				A702267927902E51000E1C9F /* UIButton+Extensions.swift in Sources */,
+				A7069E5A278EC3C90028AA68 /* UIView+Extensions.swift in Sources */,
+				A77F96BF27954AA50083B5F7 /* GoalTVC.swift in Sources */,
+				A7022677278FF7FA000E1C9F /* Logger.swift in Sources */,
+				A720FF49278EFDB500893720 /* AuthForgotPasswordVC.swift in Sources */,
+				A73244E1278E8E2A008FDCF0 /* SceneDelegate.swift in Sources */,
+				A720FF43278ED70A00893720 /* AuthLoginVC.swift in Sources */,
+				A74C322427915D1700763899 /* AuthVerificationCodeVC.swift in Sources */,
+				A720FF4C278F063A00893720 /* ResetPasswordVC.swift in Sources */,
+				A7CE544427968F7300191A7B /* LastPeriodLongVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A73244ED278E8E2C008FDCF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A73244F6278E8E2C008FDCF0 /* OvaryIQTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A73244F7278E8E2C008FDCF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7324502278E8E2C008FDCF0 /* OvaryIQUITestsLaunchTests.swift in Sources */,
+				A7324500278E8E2C008FDCF0 /* OvaryIQUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A73244F3278E8E2C008FDCF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A73244DA278E8E2A008FDCF0 /* OvaryIQ */;
+			targetProxy = A73244F2278E8E2C008FDCF0 /* PBXContainerItemProxy */;
+		};
+		A73244FD278E8E2C008FDCF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A73244DA278E8E2A008FDCF0 /* OvaryIQ */;
+			targetProxy = A73244FC278E8E2C008FDCF0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A73244E4278E8E2A008FDCF0 /* Auth.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A73244E5278E8E2A008FDCF0 /* Base */,
+			);
+			name = Auth.storyboard;
+			sourceTree = "<group>";
+		};
+		A73244E9278E8E2C008FDCF0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A73244EA278E8E2C008FDCF0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A7324503278E8E2C008FDCF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A7324504278E8E2C008FDCF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A7324506278E8E2C008FDCF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E66D6041D13595645E3088A /* Pods-OvaryIQ.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OvaryIQ/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Auth;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.OvaryIQ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A7324507278E8E2C008FDCF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CD584F3C47F731F3EC64A7E /* Pods-OvaryIQ.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OvaryIQ/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Auth;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.OvaryIQ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A7324509278E8E2C008FDCF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.OvaryIQTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OvaryIQ.app/OvaryIQ";
+			};
+			name = Debug;
+		};
+		A732450A278E8E2C008FDCF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.OvaryIQTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OvaryIQ.app/OvaryIQ";
+			};
+			name = Release;
+		};
+		A732450C278E8E2C008FDCF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.OvaryIQUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OvaryIQ;
+			};
+			name = Debug;
+		};
+		A732450D278E8E2C008FDCF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.OvaryIQUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OvaryIQ;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A73244D6278E8E2A008FDCF0 /* Build configuration list for PBXProject "OvaryIQ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7324503278E8E2C008FDCF0 /* Debug */,
+				A7324504278E8E2C008FDCF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7324505278E8E2C008FDCF0 /* Build configuration list for PBXNativeTarget "OvaryIQ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7324506278E8E2C008FDCF0 /* Debug */,
+				A7324507278E8E2C008FDCF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7324508278E8E2C008FDCF0 /* Build configuration list for PBXNativeTarget "OvaryIQTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7324509278E8E2C008FDCF0 /* Debug */,
+				A732450A278E8E2C008FDCF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A732450B278E8E2C008FDCF0 /* Build configuration list for PBXNativeTarget "OvaryIQUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A732450C278E8E2C008FDCF0 /* Debug */,
+				A732450D278E8E2C008FDCF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A73244D3278E8E2A008FDCF0 /* Project object */;
+}
