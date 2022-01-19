@@ -9,10 +9,8 @@ import UIKit
 import Foundation
 
 // MARK: - Designable Extension
-
 @IBDesignable
 extension UIView {
-    
     @IBInspectable
     /// Should the corner be as circle
     public var circleCorner: Bool {
@@ -23,7 +21,7 @@ extension UIView {
             cornerRadius = newValue ? min(bounds.size.height, bounds.size.width) / 2 : cornerRadius
         }
     }
-    
+
     @IBInspectable
     /// Corner radius of view; also inspectable from Storyboard.
     public var cornerRadius: CGFloat {
@@ -32,7 +30,6 @@ extension UIView {
         }
         set {
             layer.cornerRadius = circleCorner ? min(bounds.size.height, bounds.size.width) / 2 : newValue
-                //abs(CGFloat(Int(newValue * 100)) / 100)
         }
     }
     
@@ -53,7 +50,7 @@ extension UIView {
             layer.borderColor = color.cgColor
         }
     }
-    
+
     @IBInspectable
     /// Border width of view; also inspectable from Storyboard.
     public var borderWidth: CGFloat {
@@ -78,7 +75,7 @@ extension UIView {
             layer.shadowColor = newValue?.cgColor
         }
     }
-    
+
     @IBInspectable
     /// Shadow offset of view; also inspectable from Storyboard.
     public var shadowOffset: CGSize {
@@ -89,7 +86,7 @@ extension UIView {
             layer.shadowOffset = newValue
         }
     }
-    
+
     @IBInspectable
     /// Shadow opacity of view; also inspectable from Storyboard.
     public var shadowOpacity: Double {
@@ -159,12 +156,8 @@ extension UIView {
     }
 }
 
-
-
 // MARK: - Properties
-
 public extension UIView {
-    
     /// Commented because of Invalid Redeclaration
     /*
     /// Size of view.
@@ -178,7 +171,6 @@ public extension UIView {
         }
     }
      */
-    
     /// Width of view.
     var width: CGFloat {
         get {
@@ -188,7 +180,6 @@ public extension UIView {
             self.frame.size.width = newValue
         }
     }
-    
     /// Height of view.
     var height: CGFloat {
         get {
@@ -201,24 +192,16 @@ public extension UIView {
 }
 
 extension UIView {
-    
     func superview<T>(of type: T.Type) -> T? {
         return superview as? T ?? superview.flatMap { $0.superview(of: T.self) }
     }
-    
 }
-
-
 // MARK: - Methods
-
 public extension UIView {
-    
     typealias Configuration = (UIView) -> Swift.Void
-    
     func config(configurate: Configuration?) {
         configurate?(self)
     }
-    
     /// Set some or all corners radiuses of view.
     ///
     /// - Parameters:
@@ -233,7 +216,6 @@ public extension UIView {
 }
 
 extension UIView {
-    
     func searchVisualEffectsSubview() -> UIVisualEffectView? {
         if let visualEffectView = self as? UIVisualEffectView {
             return visualEffectView
@@ -242,38 +224,18 @@ extension UIView {
                 if let found = subview.searchVisualEffectsSubview() {
                     return found
                 }
-            }
-        }
+            } }
         return nil
     }
-    
     /// This is the function to get subViews of a view of a particular type
     /// https://stackoverflow.com/a/45297466/5321670
-    func subViews<T : UIView>(type : T.Type) -> [T]{
+    func subViews<T : UIView>(type : T.Type) -> [T] {
         var all = [T]()
         for view in self.subviews {
-            if let aView = view as? T{
+            if let aView = view as? T {
                 all.append(aView)
-            }
-        }
+            } }
         return all
     }
-    
-    /*
-    /// Commented because of Invalid Redeclaration
-    /// This is a function to get subViews of a particular type from view recursively. It would look recursively in all subviews and return back the subviews of the type T
-    /// https://stackoverflow.com/a/45297466/5321670
-    func allSubViewsOf<T : UIView>(type : T.Type) -> [T]{
-        var all = [T]()
-        func getSubview(view: UIView) {
-            if let aView = view as? T{
-                all.append(aView)
-            }
-            guard view.subviews.count>0 else { return }
-            view.subviews.forEach{ getSubview(view: $0) }
-        }
-        getSubview(view: self)
-        return all
-    }
-     */
+
 }

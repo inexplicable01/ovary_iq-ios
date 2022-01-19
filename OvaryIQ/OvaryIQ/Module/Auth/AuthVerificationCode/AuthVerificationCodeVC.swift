@@ -6,19 +6,20 @@
 //
 
 import UIKit
-
 class AuthVerificationCodeVC: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet private weak var lblTime: UILabel!
     @IBOutlet private weak var bottomView: UIView!
-
+    // MARK: - Properties
+    internal var goBack: ((Bool) -> Void)?
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initalSetup()
         // Do any additional setup after loading the view.
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -57,12 +58,16 @@ class AuthVerificationCodeVC: UIViewController {
     @IBAction private func tapBtnResentOtp(sender: UIButton) {
         fLog()
     }
-    
+
     @IBAction private func tapBtnNext(_ sender: UIButton) {
          fLog()
+        self.dismiss(animated: true) {
+            self.goBack!(true)
+        }
     }
 
     @IBAction private func tapCrossBtn(sender: UIButton) {
         fLog()
+        self.dismiss(animated: true, completion: nil)
     }
 }

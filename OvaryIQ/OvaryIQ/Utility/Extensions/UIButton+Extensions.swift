@@ -22,9 +22,4 @@ extension UIButton {
         gradientLayer.frame = self.bounds
         self.layer.insertSublayer(gradientLayer, at: 0)
     }
-
-    // MARK: - for popViewController
-    func goBack() {
-        fLog()
-    }
 }

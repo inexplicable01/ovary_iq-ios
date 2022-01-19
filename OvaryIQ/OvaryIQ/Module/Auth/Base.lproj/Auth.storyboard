@@ -41,7 +41,7 @@
                                     <constraint firstAttribute="height" constant="28" id="YJt-VM-ekN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="28"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.1176470518" green="0.05882352591" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CalendarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="HSS-OA-QYe">
@@ -124,7 +124,7 @@ with the Ovary IQ App </string>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continue with Google" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pu8-R3-CIX">
                                                 <rect key="frame" x="85.5" y="13.5" width="234.5" height="23"/>
                                                 <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="18"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" red="0.1176470518" green="0.05882352591" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOe-fI-2X4">
@@ -176,7 +176,7 @@ with the Ovary IQ App </string>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continue with Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seK-zg-2er">
                                                 <rect key="frame" x="87.5" y="13.5" width="232.5" height="23"/>
                                                 <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="18"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" red="0.1176470518" green="0.05882352591" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5R-Wr-Iia">
@@ -287,7 +287,7 @@ with the Ovary IQ App </string>
                                 <rect key="frame" x="0.0" y="127" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AY6-1c-NCK">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="626"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="627"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eggLogo" translatesAutoresizingMaskIntoConstraints="NO" id="BLL-W6-Dtt">
                                                 <rect key="frame" x="188" y="50" width="38" height="51"/>
@@ -302,7 +302,7 @@ with the Ovary IQ App </string>
                                                     <constraint firstAttribute="height" constant="36" id="44Q-WA-Pb0"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="CreteRound-Regular" family="Crete Round" pointSize="28"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" red="0.1176470518" green="0.05882352591" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="Tir-at-h9I">
@@ -317,21 +317,14 @@ with the Ovary IQ App </string>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Welcome back! Log In to ">
                                                         <attributes>
+                                                            <color key="NSColor" red="0.1176470518" green="0.05882352591" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <font key="NSFont" size="16" name="SourceSansPro-Regular"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
-                                                    <fragment content="Ovary">
+                                                    <fragment content="Ovary IQ">
                                                         <attributes>
                                                             <color key="NSColor" red="0.96078431372549022" green="0.44705882352941173" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <font key="NSFont" size="16" name="SourceSansPro-Bold"/>
-                                                            <font key="NSOriginalFont" size="16" name="SourceSansPro-Bold"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content=" IQ">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.96078431610000004" green="0.44705885649999999" blue="0.57254904510000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <font key="NSFont" size="16" name="SourceSansPro-Bold"/>
                                                             <font key="NSOriginalFont" size="16" name="SourceSansPro-Bold"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -341,6 +334,7 @@ with the Ovary IQ App </string>
                                                         <string key="content"> 
 account</string>
                                                         <attributes>
+                                                            <color key="NSColor" red="0.1176470518" green="0.05882352591" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <font key="NSFont" size="16" name="SourceSansPro-Regular"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
@@ -362,14 +356,14 @@ account</string>
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="457-zg-ifA">
-                                                                <rect key="frame" x="45.5" y="0.0" width="280.5" height="50"/>
+                                                                <rect key="frame" x="45.5" y="0.0" width="278.5" height="50"/>
                                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="457-zg-ifA" secondAttribute="trailing" constant="8" id="DBF-EB-hy3"/>
+                                                            <constraint firstAttribute="trailing" secondItem="457-zg-ifA" secondAttribute="trailing" constant="10" id="DBF-EB-hy3"/>
                                                             <constraint firstAttribute="bottom" secondItem="457-zg-ifA" secondAttribute="bottom" id="QqA-T2-HLz"/>
                                                             <constraint firstAttribute="height" constant="50" id="TuO-Ps-0OS"/>
                                                             <constraint firstItem="457-zg-ifA" firstAttribute="top" secondItem="vzi-qg-gY2" secondAttribute="top" id="UHx-YZ-5Wy"/>
@@ -403,17 +397,22 @@ account</string>
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Nf-py-9nF">
-                                                                <rect key="frame" x="44.5" y="0.0" width="226.5" height="50"/>
+                                                                <rect key="frame" x="44.5" y="0.0" width="250.5" height="50"/>
                                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CD6-g8-TKy">
-                                                                <rect key="frame" x="276" y="16.5" width="40" height="17"/>
+                                                                <rect key="frame" x="300" y="16.5" width="16" height="17"/>
                                                                 <constraints>
+                                                                    <constraint firstAttribute="width" constant="16" id="L1T-gC-zcR"/>
                                                                     <constraint firstAttribute="height" constant="17.219999999999999" id="RIm-8x-AxH"/>
                                                                 </constraints>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="hideEye"/>
+                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" image="hideEye">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <state key="selected" image="ShowEye"/>
                                                                 <connections>
                                                                     <action selector="tapPasswordEyeBtn:" destination="Wt4-D7-o7u" eventType="touchUpInside" id="Gww-iJ-9ln"/>
                                                                 </connections>
@@ -449,14 +448,14 @@ account</string>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vh0-IG-MW2">
-                                                <rect key="frame" x="265" y="367.5" width="109" height="27.5"/>
+                                                <rect key="frame" x="275" y="367.5" width="99" height="28.5"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal">
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="Forgot Password?">
                                                             <attributes>
                                                                 <color key="NSColor" name="ThemeColor"/>
-                                                                <font key="NSFont" metaFont="system"/>
+                                                                <font key="NSFont" size="13" name="SourceSansPro-Semibold"/>
                                                                 <integer key="NSUnderline" value="1"/>
                                                             </attributes>
                                                         </fragment>
@@ -467,7 +466,7 @@ account</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKA-70-LdY">
-                                                <rect key="frame" x="40" y="430" width="334" height="50"/>
+                                                <rect key="frame" x="40" y="431" width="334" height="50"/>
                                                 <color key="backgroundColor" name="ThemeColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="4Pe-7o-Php"/>
@@ -490,7 +489,7 @@ account</string>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Rre-LU-1dl">
-                                                <rect key="frame" x="97.5" y="574" width="219" height="40"/>
+                                                <rect key="frame" x="97.5" y="575" width="219" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don’t have an account?" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epi-kg-zYI">
                                                         <rect key="frame" x="0.0" y="0.0" width="159" height="40"/>
@@ -646,7 +645,7 @@ account</string>
                                                     <constraint firstAttribute="height" constant="36" id="4Uo-4L-0yQ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="CreteRound-Regular" family="Crete Round" pointSize="28"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" red="0.1176470588" green="0.058823529409999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="1oy-BV-m4R">
@@ -661,13 +660,14 @@ account</string>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Create your ">
                                                         <attributes>
+                                                            <color key="NSColor" red="0.11764705882352941" green="0.058823529411764705" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <font key="NSFont" size="16" name="SourceSansPro-Regular"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                     <fragment content="Ovary IQ">
                                                         <attributes>
-                                                            <color key="NSColor" red="0.96078431372549022" green="0.44705882352941173" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="NSColor" red="0.96078431372549022" green="0.44705882352941173" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <font key="NSFont" size="16" name="SourceSansPro-Bold"/>
                                                             <font key="NSOriginalFont" size="16" name="SourceSansPro-Bold"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -675,13 +675,15 @@ account</string>
                                                     </fragment>
                                                     <fragment content=" ">
                                                         <attributes>
-                                                            <color key="NSColor" red="0.96078431372549022" green="0.44705882352941173" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="16" name="SourceSansPro-Regular"/>
+                                                            <color key="NSColor" red="0.11764705882352941" green="0.058823529411764705" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <font key="NSFont" size="16" name="SourceSansPro-Bold"/>
+                                                            <font key="NSOriginalFont" size="16" name="SourceSansPro-Bold"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                     <fragment content="Account">
                                                         <attributes>
+                                                            <color key="NSColor" red="0.11764705882352941" green="0.058823529411764705" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <font key="NSFont" size="16" name="SourceSansPro-Regular"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
@@ -703,7 +705,7 @@ account</string>
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jrt-KM-PlU">
-                                                                <rect key="frame" x="42" y="0.0" width="284" height="50"/>
+                                                                <rect key="frame" x="42" y="0.0" width="282" height="50"/>
                                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
@@ -716,7 +718,7 @@ account</string>
                                                             <constraint firstAttribute="bottom" secondItem="jrt-KM-PlU" secondAttribute="bottom" id="eWn-Fo-ZAZ"/>
                                                             <constraint firstItem="Tb0-aL-u6W" firstAttribute="centerY" secondItem="YIk-OD-tTo" secondAttribute="centerY" id="hLO-LU-Yqx"/>
                                                             <constraint firstAttribute="height" constant="50" id="m6c-y5-vad"/>
-                                                            <constraint firstAttribute="trailing" secondItem="jrt-KM-PlU" secondAttribute="trailing" constant="8" id="nZp-yX-upf"/>
+                                                            <constraint firstAttribute="trailing" secondItem="jrt-KM-PlU" secondAttribute="trailing" constant="10" id="nZp-yX-upf"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius1">
@@ -788,7 +790,7 @@ account</string>
                                                                 </constraints>
                                                             </view>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lHH-dW-MED">
-                                                                <rect key="frame" x="84.5" y="0.0" width="241.5" height="50"/>
+                                                                <rect key="frame" x="84.5" y="0.0" width="239.5" height="50"/>
                                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                             </textField>
@@ -799,7 +801,7 @@ account</string>
                                                             <constraint firstItem="LWE-ie-BzM" firstAttribute="centerY" secondItem="Rau-JV-420" secondAttribute="centerY" id="53H-78-TLW"/>
                                                             <constraint firstItem="LWE-ie-BzM" firstAttribute="leading" secondItem="Rau-JV-420" secondAttribute="trailing" constant="5" id="5vM-k1-5JS"/>
                                                             <constraint firstAttribute="bottom" secondItem="lHH-dW-MED" secondAttribute="bottom" id="7tE-NY-Ywx"/>
-                                                            <constraint firstAttribute="trailing" secondItem="lHH-dW-MED" secondAttribute="trailing" constant="8" id="MUf-8h-qA9"/>
+                                                            <constraint firstAttribute="trailing" secondItem="lHH-dW-MED" secondAttribute="trailing" constant="10" id="MUf-8h-qA9"/>
                                                             <constraint firstItem="Rau-JV-420" firstAttribute="leading" secondItem="RZa-mv-ugC" secondAttribute="leading" constant="20" id="Woh-pm-Lz8"/>
                                                             <constraint firstItem="lHH-dW-MED" firstAttribute="leading" secondItem="LWE-ie-BzM" secondAttribute="trailing" constant="8" id="X5s-4m-8Ye"/>
                                                             <constraint firstAttribute="bottom" secondItem="Rau-JV-420" secondAttribute="bottom" id="ZF9-JR-f2e"/>
@@ -832,7 +834,7 @@ account</string>
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jAB-I2-Xbq">
-                                                                <rect key="frame" x="45.5" y="0.0" width="280.5" height="50"/>
+                                                                <rect key="frame" x="45.5" y="0.0" width="278.5" height="50"/>
                                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                             </textField>
@@ -843,7 +845,7 @@ account</string>
                                                             <constraint firstAttribute="bottom" secondItem="jAB-I2-Xbq" secondAttribute="bottom" id="HbP-gn-xVK"/>
                                                             <constraint firstItem="Tfd-Uz-ZZy" firstAttribute="centerY" secondItem="kLR-nu-iYN" secondAttribute="centerY" id="ble-AF-YLx"/>
                                                             <constraint firstItem="jAB-I2-Xbq" firstAttribute="leading" secondItem="Tfd-Uz-ZZy" secondAttribute="trailing" constant="10" id="e0F-rl-iqn"/>
-                                                            <constraint firstAttribute="trailing" secondItem="jAB-I2-Xbq" secondAttribute="trailing" constant="8" id="kGw-7A-gqz"/>
+                                                            <constraint firstAttribute="trailing" secondItem="jAB-I2-Xbq" secondAttribute="trailing" constant="10" id="kGw-7A-gqz"/>
                                                             <constraint firstItem="Tfd-Uz-ZZy" firstAttribute="leading" secondItem="kLR-nu-iYN" secondAttribute="leading" constant="20" id="nFE-d2-m9F"/>
                                                             <constraint firstItem="jAB-I2-Xbq" firstAttribute="top" secondItem="kLR-nu-iYN" secondAttribute="top" id="oyc-t9-X2f"/>
                                                         </constraints>
@@ -873,14 +875,14 @@ account</string>
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQh-mn-sQ1">
-                                                                <rect key="frame" x="44.5" y="0.0" width="220.5" height="50"/>
+                                                                <rect key="frame" x="44.5" y="0.0" width="243.5" height="50"/>
                                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZo-UC-HXp">
-                                                                <rect key="frame" x="270" y="16.5" width="44" height="17"/>
+                                                                <rect key="frame" x="298" y="16.5" width="16" height="17"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="44" id="QMf-wp-Qcf"/>
+                                                                    <constraint firstAttribute="width" constant="16" id="QMf-wp-Qcf"/>
                                                                     <constraint firstAttribute="height" constant="17.219999999999999" id="m1i-eH-B54"/>
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
@@ -895,7 +897,7 @@ account</string>
                                                             <constraint firstAttribute="trailing" secondItem="vZo-UC-HXp" secondAttribute="trailing" constant="20" id="coO-3w-bTW"/>
                                                             <constraint firstItem="CQh-mn-sQ1" firstAttribute="top" secondItem="21r-W4-4c1" secondAttribute="top" id="eaZ-Bo-NQG"/>
                                                             <constraint firstItem="DAZ-Tk-p6B" firstAttribute="leading" secondItem="21r-W4-4c1" secondAttribute="leading" constant="20" id="eqY-Bg-Ncm"/>
-                                                            <constraint firstItem="vZo-UC-HXp" firstAttribute="leading" secondItem="CQh-mn-sQ1" secondAttribute="trailing" constant="5" id="l0V-jw-YdR"/>
+                                                            <constraint firstItem="vZo-UC-HXp" firstAttribute="leading" secondItem="CQh-mn-sQ1" secondAttribute="trailing" constant="10" id="l0V-jw-YdR"/>
                                                             <constraint firstItem="CQh-mn-sQ1" firstAttribute="leading" secondItem="DAZ-Tk-p6B" secondAttribute="trailing" constant="10" id="r4y-HB-4FQ"/>
                                                             <constraint firstItem="DAZ-Tk-p6B" firstAttribute="centerY" secondItem="21r-W4-4c1" secondAttribute="centerY" id="v4J-Ec-siD"/>
                                                         </constraints>
@@ -1194,6 +1196,9 @@ password reset</string>
                                                         <real key="value" value="25"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapBtnNextWithSender:" destination="BNq-vy-eHw" eventType="touchUpInside" id="sgJ-js-5cO"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1224,6 +1229,9 @@ password reset</string>
                                                                 </fragment>
                                                             </attributedString>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tapBtnSignUpWithSender:" destination="BNq-vy-eHw" eventType="touchUpInside" id="lwc-kJ-C1D"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -1280,10 +1288,13 @@ password reset</string>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Cross"/>
+                                <connections>
+                                    <action selector="tapBtnCrossWithSender:" destination="BNq-vy-eHw" eventType="touchUpInside" id="tmP-4a-LNo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Z1X-IA-9SN"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="0.57828443877551017" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.73333334920000004" green="0.71372550729999995" blue="0.75686275960000005" alpha="0.51068239795918369" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="OK4-oU-as8" secondAttribute="bottom" id="91d-bR-Vgm"/>
                             <constraint firstItem="OK4-oU-as8" firstAttribute="trailing" secondItem="Z1X-IA-9SN" secondAttribute="trailing" id="Bn9-iK-G4P"/>
@@ -1293,6 +1304,9 @@ password reset</string>
                             <constraint firstItem="OK4-oU-as8" firstAttribute="top" secondItem="Iva-LC-DW2" secondAttribute="bottom" constant="15" id="yPh-AS-3Qt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="txtFieldEmail" destination="ek3-Cs-GZx" id="doD-SH-7ff"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nh-Bx-wbs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1491,7 +1505,7 @@ xyz.ab@gmail.com</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="tapBtnNextWithSender:" destination="D8y-46-VMn" eventType="touchUpInside" id="Sba-Vw-M1g"/>
+                                                    <action selector="tapBtnNext:" destination="D8y-46-VMn" eventType="touchUpInside" id="mIL-yQ-uxp"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1594,7 +1608,7 @@ xyz.ab@gmail.com</string>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wsf-1z-eKf"/>
-                        <color key="backgroundColor" white="0.33333333329999998" alpha="0.57828443880000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.73333333333333328" green="0.71372549019607845" blue="0.75686274509803919" alpha="0.57828443880000002" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="73g-9r-rEj" secondAttribute="bottom" id="2VS-Nu-E1D"/>
                             <constraint firstItem="73g-9r-rEj" firstAttribute="top" secondItem="QQZ-lF-5So" secondAttribute="bottom" constant="15" id="CmF-ic-Rnf"/>
@@ -1605,7 +1619,6 @@ xyz.ab@gmail.com</string>
                     </view>
                     <connections>
                         <outlet property="bottomView" destination="thI-kW-9yR" id="aqJ-2K-Azm"/>
-                        <outlet property="time_lbl" destination="YUe-Cu-DOG" id="Y8D-eo-CIh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNG-gY-QlQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1660,8 +1673,9 @@ xyz.ab@gmail.com</string>
                                                             <constraint firstAttribute="width" constant="16" id="8aq-QB-EBF"/>
                                                             <constraint firstAttribute="height" constant="13.6" id="EEV-Ov-6QW"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="hideEye" title=""/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="" image="hideEye"/>
+                                                        <state key="selected" image="ShowEye"/>
                                                         <connections>
                                                             <action selector="tapPasswordEyeBtn:" destination="Wt4-D7-o7u" eventType="touchUpInside" id="Gbi-5j-DLY"/>
                                                         </connections>
@@ -1715,8 +1729,9 @@ xyz.ab@gmail.com</string>
                                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="16" id="0aS-9e-up1"/>
                                                             <constraint firstAttribute="height" constant="13.6" id="aZd-ge-whb"/>
                                                         </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="hideEye"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Button" image="hideEye"/>
+                                                        <state key="selected" image="ShowEye"/>
                                                         <connections>
                                                             <action selector="tapPasswordEyeBtn:" destination="Wt4-D7-o7u" eventType="touchUpInside" id="0gu-U2-gjg"/>
                                                         </connections>
@@ -1863,7 +1878,7 @@ xyz.ab@gmail.com</string>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZkI-cn-pAt"/>
-                        <color key="backgroundColor" white="0.33333333329999998" alpha="0.57828443880000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.73333333333333328" green="0.71372549019607845" blue="0.75686274509803919" alpha="0.51000000000000001" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="NhL-mT-k2l" firstAttribute="leading" secondItem="ZkI-cn-pAt" secondAttribute="leading" id="Hwa-lf-JSd"/>
                             <constraint firstAttribute="bottom" secondItem="NhL-mT-k2l" secondAttribute="bottom" id="UcP-Fo-MKo"/>
@@ -1874,8 +1889,8 @@ xyz.ab@gmail.com</string>
                     </view>
                     <connections>
                         <outlet property="bottomView" destination="Puu-EX-vWQ" id="NOL-2A-xB5"/>
-                        <outlet property="confirmPassword_txtfield" destination="Wgz-qz-Ahh" id="gmF-zp-5SM"/>
-                        <outlet property="newPassword_txtfield" destination="owa-6u-jh5" id="trA-b3-evt"/>
+                        <outlet property="confirmPasswordTxtfield" destination="Wgz-qz-Ahh" id="fGC-p4-tKX"/>
+                        <outlet property="newPasswordTxtfield" destination="owa-6u-jh5" id="daX-q4-frC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxe-zX-fK3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1906,6 +1921,7 @@ xyz.ab@gmail.com</string>
         <image name="Call" width="15" height="15"/>
         <image name="Cross" width="95" height="107"/>
         <image name="Line" width="35" height="2"/>
+        <image name="ShowEye" width="16.5" height="13"/>
         <image name="TopBanner" width="375.5" height="93.5"/>
         <image name="User" width="12.5" height="15"/>
         <image name="apple" width="20.5" height="24"/>

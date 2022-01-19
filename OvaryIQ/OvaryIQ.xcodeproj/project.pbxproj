@@ -36,11 +36,18 @@
 		A732452B278E8F82008FDCF0 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A732451E278E8F81008FDCF0 /* SourceSansPro-Regular.ttf */; };
 		A732452C278E8F82008FDCF0 /* SourceSansPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A732451F278E8F82008FDCF0 /* SourceSansPro-Italic.ttf */; };
 		A732452D278E8F82008FDCF0 /* SourceSansPro-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7324520278E8F82008FDCF0 /* SourceSansPro-SemiBoldItalic.ttf */; };
+		A73CA3A427981D69005085CB /* LogYearOfBirthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73CA3A327981D69005085CB /* LogYearOfBirthVC.swift */; };
+		A73CA3E327982866005085CB /* PeriodStartDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73CA3E227982866005085CB /* PeriodStartDateVC.swift */; };
+		A73CA3EC27982AF8005085CB /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73CA3EB27982AF8005085CB /* CalendarCollectionViewCell.swift */; };
 		A74C322427915D1700763899 /* AuthVerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C322327915D1700763899 /* AuthVerificationCodeVC.swift */; };
 		A74C32282791650F00763899 /* AnswersFewQuestionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C32272791650F00763899 /* AnswersFewQuestionsVC.swift */; };
 		A74C322A2791652F00763899 /* Questions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A74C32292791652F00763899 /* Questions.storyboard */; };
 		A74C322F2791994600763899 /* YourGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C322E2791994600763899 /* YourGoalVC.swift */; };
 		A74C323227919F1200763899 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C323127919F1200763899 /* BaseTableViewCell.swift */; };
+		A77C71C02797E65F007AB67E /* RegularOrIrregularCycleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C71BF2797E65F007AB67E /* RegularOrIrregularCycleVC.swift */; };
+		A77C71C32797EAAA007AB67E /* LoginSuccessPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C71C22797EAAA007AB67E /* LoginSuccessPopUpVC.swift */; };
+		A77C71C52797FB66007AB67E /* Struct+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C71C42797FB66007AB67E /* Struct+Storyboard.swift */; };
+		A77C71C72797FEEC007AB67E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C71C62797FEEC007AB67E /* Helper.swift */; };
 		A77F96BF27954AA50083B5F7 /* GoalTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77F96BE27954AA50083B5F7 /* GoalTVC.swift */; };
 		A7CE543C27967A9300191A7B /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE543B27967A9300191A7B /* NSObject+Extension.swift */; };
 		A7CE543E27967B7B00191A7B /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE543D27967B7B00191A7B /* UITableView+Extension.swift */; };
@@ -103,11 +110,18 @@
 		A732451E278E8F81008FDCF0 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		A732451F278E8F82008FDCF0 /* SourceSansPro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Italic.ttf"; sourceTree = "<group>"; };
 		A7324520278E8F82008FDCF0 /* SourceSansPro-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		A73CA3A327981D69005085CB /* LogYearOfBirthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogYearOfBirthVC.swift; sourceTree = "<group>"; };
+		A73CA3E227982866005085CB /* PeriodStartDateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodStartDateVC.swift; sourceTree = "<group>"; };
+		A73CA3EB27982AF8005085CB /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		A74C322327915D1700763899 /* AuthVerificationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVerificationCodeVC.swift; sourceTree = "<group>"; };
 		A74C32272791650F00763899 /* AnswersFewQuestionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersFewQuestionsVC.swift; sourceTree = "<group>"; };
 		A74C32292791652F00763899 /* Questions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Questions.storyboard; sourceTree = "<group>"; };
 		A74C322E2791994600763899 /* YourGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourGoalVC.swift; sourceTree = "<group>"; };
 		A74C323127919F1200763899 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		A77C71BF2797E65F007AB67E /* RegularOrIrregularCycleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularOrIrregularCycleVC.swift; sourceTree = SOURCE_ROOT; };
+		A77C71C22797EAAA007AB67E /* LoginSuccessPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccessPopUpVC.swift; sourceTree = SOURCE_ROOT; };
+		A77C71C42797FB66007AB67E /* Struct+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct+Storyboard.swift"; sourceTree = "<group>"; };
+		A77C71C62797FEEC007AB67E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		A77F96BE27954AA50083B5F7 /* GoalTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTVC.swift; sourceTree = "<group>"; };
 		A7CE543B27967A9300191A7B /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		A7CE543D27967B7B00191A7B /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
@@ -174,6 +188,7 @@
 				A7069E59278EC3C90028AA68 /* UIView+Extensions.swift */,
 				A702267827902E51000E1C9F /* UIButton+Extensions.swift */,
 				A7CE543B27967A9300191A7B /* NSObject+Extension.swift */,
+				A77C71C42797FB66007AB67E /* Struct+Storyboard.swift */,
 				A7CE543D27967B7B00191A7B /* UITableView+Extension.swift */,
 			);
 			path = Extensions;
@@ -359,6 +374,47 @@
 			path = SourceSansPro;
 			sourceTree = "<group>";
 		};
+		A73CA3A227981D3F005085CB /* LogYearOfBirth */ = {
+			isa = PBXGroup;
+			children = (
+				A73CA3A327981D69005085CB /* LogYearOfBirthVC.swift */,
+			);
+			path = LogYearOfBirth;
+			sourceTree = "<group>";
+		};
+		A73CA3E12798283B005085CB /* StartDateOfYourPeriod */ = {
+			isa = PBXGroup;
+			children = (
+				A73CA3E427982A11005085CB /* Controller */,
+				A73CA3E527982A1E005085CB /* View */,
+				A73CA3E627982A24005085CB /* ViewModel */,
+			);
+			path = StartDateOfYourPeriod;
+			sourceTree = "<group>";
+		};
+		A73CA3E427982A11005085CB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A73CA3E227982866005085CB /* PeriodStartDateVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A73CA3E527982A1E005085CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A73CA3EB27982AF8005085CB /* CalendarCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A73CA3E627982A24005085CB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A74C322227915CF700763899 /* AuthVerificationCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,8 +428,12 @@
 			children = (
 				A74C32292791652F00763899 /* Questions.storyboard */,
 				A7CE544127968F3500191A7B /* LastPeriod */,
+				A77C71C12797EA80007AB67E /* LoginSuccessPopUp */,
 				A74C322D2791991C00763899 /* YourGoal */,
 				A74C3226279164D800763899 /* AnswersFewQuestions */,
+				A73CA3A227981D3F005085CB /* LogYearOfBirth */,
+				A77C71BD2797E5A5007AB67E /* RegularIrregularCycle */,
+				A73CA3E12798283B005085CB /* StartDateOfYourPeriod */,
 			);
 			path = Questions;
 			sourceTree = "<group>";
@@ -406,8 +466,33 @@
 		A77C71BC2797D20C007AB67E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A77C71C62797FEEC007AB67E /* Helper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A77C71BD2797E5A5007AB67E /* RegularIrregularCycle */ = {
+			isa = PBXGroup;
+			children = (
+				A77C71BE2797E62B007AB67E /* Controller */,
+			);
+			path = RegularIrregularCycle;
+			sourceTree = "<group>";
+		};
+		A77C71BE2797E62B007AB67E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A77C71BF2797E65F007AB67E /* RegularOrIrregularCycleVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A77C71C12797EA80007AB67E /* LoginSuccessPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				A77C71C22797EAAA007AB67E /* LoginSuccessPopUpVC.swift */,
+			);
+			path = LoginSuccessPopUp;
 			sourceTree = "<group>";
 		};
 		A77F96BD27953A160083B5F7 /* Controller */ = {
@@ -628,7 +713,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n\n\n\n\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A7CE54862796EBAB00191A7B /* SwiftLintRunScript */ = {
@@ -673,7 +758,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A73CA3E327982866005085CB /* PeriodStartDateVC.swift in Sources */,
 				A73244E3278E8E2A008FDCF0 /* AuthOptionVC.swift in Sources */,
+				A73CA3EC27982AF8005085CB /* CalendarCollectionViewCell.swift in Sources */,
+				A77C71C52797FB66007AB67E /* Struct+Storyboard.swift in Sources */,
 				A73244DF278E8E2A008FDCF0 /* AppDelegate.swift in Sources */,
 				A7CE54832796B9C200191A7B /* Constants+String.swift in Sources */,
 				A720FF46278EEC0A00893720 /* AuthSignUpVC.swift in Sources */,
@@ -683,13 +771,17 @@
 				A7CE543E27967B7B00191A7B /* UITableView+Extension.swift in Sources */,
 				A74C32282791650F00763899 /* AnswersFewQuestionsVC.swift in Sources */,
 				A702267927902E51000E1C9F /* UIButton+Extensions.swift in Sources */,
+				A73CA3A427981D69005085CB /* LogYearOfBirthVC.swift in Sources */,
 				A7069E5A278EC3C90028AA68 /* UIView+Extensions.swift in Sources */,
 				A77F96BF27954AA50083B5F7 /* GoalTVC.swift in Sources */,
+				A77C71C32797EAAA007AB67E /* LoginSuccessPopUpVC.swift in Sources */,
 				A7022677278FF7FA000E1C9F /* Logger.swift in Sources */,
 				A720FF49278EFDB500893720 /* AuthForgotPasswordVC.swift in Sources */,
 				A73244E1278E8E2A008FDCF0 /* SceneDelegate.swift in Sources */,
+				A77C71C02797E65F007AB67E /* RegularOrIrregularCycleVC.swift in Sources */,
 				A720FF43278ED70A00893720 /* AuthLoginVC.swift in Sources */,
 				A74C322427915D1700763899 /* AuthVerificationCodeVC.swift in Sources */,
+				A77C71C72797FEEC007AB67E /* Helper.swift in Sources */,
 				A720FF4C278F063A00893720 /* ResetPasswordVC.swift in Sources */,
 				A7CE544427968F7300191A7B /* LastPeriodLongVC.swift in Sources */,
 			);
@@ -874,8 +966,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OvaryIQ/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Auth;
+				INFOPLIST_KEY_UILaunchStoryboardName = Questions;
+				INFOPLIST_KEY_UIMainStoryboardFile = Questions;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -904,8 +996,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OvaryIQ/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Auth;
+				INFOPLIST_KEY_UILaunchStoryboardName = Questions;
+				INFOPLIST_KEY_UIMainStoryboardFile = Questions;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

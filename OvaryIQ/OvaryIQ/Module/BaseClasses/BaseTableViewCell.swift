@@ -8,16 +8,11 @@
 import UIKit
 
 class BaseTableViewCell: UITableViewCell {
-    
     // MARK: - IBOutlets
-
     // MARK: - Properties
-
     // MARK: - View Life Cycle Functions
-
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         self.selectionStyle = .none
         self.accessoryType = .none
         self.contentView.backgroundColor = .clear

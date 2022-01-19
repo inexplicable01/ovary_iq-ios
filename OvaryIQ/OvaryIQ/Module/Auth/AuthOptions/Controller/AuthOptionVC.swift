@@ -14,6 +14,7 @@ class AuthOptionVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -41,14 +42,23 @@ class AuthOptionVC: UIViewController {
     deinit {
        classReleased()
     }
+
     // MARK: - Button Actions
     @IBAction private func tapBtnApple(_ sender: Any) {
         fLog()
+        let answersFewQuestionsVC = Storyboard.Questions.instantiateViewController(identifier: AnswersFewQuestionsVC.className)
+        self.navigationController?.pushViewController(answersFewQuestionsVC, animated: true)
     }
+
     @IBAction private func tapBtnGoogle(_ sender: Any) {
         fLog()
+        let answersFewQuestionsVC = Storyboard.Questions.instantiateViewController(identifier: AnswersFewQuestionsVC.className)
+        self.navigationController?.pushViewController(answersFewQuestionsVC, animated: true)
     }
+
     @IBAction private func tapBtnEmail(_ sender: Any) {
         fLog()
+        let authLoginVC = Storyboard.Auth.instantiateViewController(identifier: AuthLoginVC.className)
+        self.navigationController?.pushViewController(authLoginVC, animated: true)
     }
 }

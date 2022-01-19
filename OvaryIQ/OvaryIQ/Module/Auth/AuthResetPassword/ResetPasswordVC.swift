@@ -1,4 +1,4 @@
-//
+
 //  ResetPasswordVC.swift
 //  OvaryIQ
 //
@@ -12,7 +12,9 @@ class ResetPasswordVC: UIViewController {
     @IBOutlet private weak var bottomView: UIView!
     @IBOutlet private weak var newPasswordTxtfield: UITextField!
     @IBOutlet private weak var confirmPasswordTxtfield: UITextField!
-    // MARK: - View
+    // MARK: - Properties
+    internal var goBack: ((Bool) -> Void)?
+    // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initalSetup()
@@ -46,6 +48,7 @@ class ResetPasswordVC: UIViewController {
     deinit {
         classReleased()
     }
+
     // MARK: - Private Functions
     private func initalSetup() {
         self.bottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner] // Top right corner, Top left corner respectively
@@ -54,13 +57,19 @@ class ResetPasswordVC: UIViewController {
     // MARK: - Button Actions
     @IBAction private func tapBtnSignUp(sender: UIButton) {
         fLog()
+        let authSignUpVC = Storyboard.Auth.instantiateViewController(identifier: AuthSignUpVC.className)
+        self.navigationController?.pushViewController(authSignUpVC, animated: true)
     }
 
     @IBAction private func tapBtnSubmit(sender: UIButton) {
          fLog()
+        self.dismiss(animated: true) {
+            self.goBack!(true)
+        }
     }
 
     @IBAction private func tapCrossBtn(sender: UIButton) {
         fLog()
+        self.dismiss(animated: true, completion: nil)
     }
 }

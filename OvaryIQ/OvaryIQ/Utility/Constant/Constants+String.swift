@@ -7,9 +7,5 @@
 
 import Foundation
 
-struct OvaryConstant{
-    
-    
-    
-    
+struct OvaryConstant{ 
 }

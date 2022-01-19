@@ -10,7 +10,7 @@ import UIKit
 
 extension UITableView {
     func emptyCell() -> UITableViewCell {
-        let cellDefault: UITableViewCell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
+        let cellDefault:UITableViewCell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
         cellDefault.selectionStyle = .none
         cellDefault.textLabel?.text = ""
         cellDefault.imageView?.image = nil
