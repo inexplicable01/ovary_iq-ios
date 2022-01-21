@@ -1,20 +1,24 @@
 PODS:
+  - FSCalendar (2.8.2)
   - IQKeyboardManagerSwift (6.5.9)
   - SwiftLint (0.45.1)
 
 DEPENDENCIES:
+  - FSCalendar
   - IQKeyboardManagerSwift
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - FSCalendar
     - IQKeyboardManagerSwift
     - SwiftLint
 
 SPEC CHECKSUMS:
+  FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   SwiftLint: 06ac37e4d38c7068e0935bb30cda95f093bec761
 
-PODFILE CHECKSUM: e35cafd54ae8202467d2c06bd4b54d3abc5f3c20
+PODFILE CHECKSUM: e1e93205af2cd5fffd97c5f2c79b2032f0e1c50e
 
 COCOAPODS: 1.11.2

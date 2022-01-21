@@ -8,7 +8,11 @@ use_frameworks!
 #Usage:- KeyBoard Management
 pod 'IQKeyboardManagerSwift'
 
-pod 'SwiftLint'
+#Usage:- for Calendar
+ pod 'FSCalendar'
+
+ #Usage:- for set your coding style rules
+ pod 'SwiftLint'
 
 end
 post_install do |installer|

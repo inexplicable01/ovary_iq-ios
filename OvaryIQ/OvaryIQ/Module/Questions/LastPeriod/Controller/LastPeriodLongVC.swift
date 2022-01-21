@@ -95,7 +95,7 @@ extension LastPeriodLongVC: UIPickerViewDelegate, UIPickerViewDataSource {
                 pickerView.subviews.forEach({
                     $0.isHidden = $0.frame.height < 1.0
                 })
-            }
+         }
         pickerLabel.font = UIFont(name: "SourceSansPro-Bold", size: 26.0)
         let rowSize = pickerView.rowSize(forComponent: component)
         pickerLabel = .init(frame: CGRect(x: 0, y: 0, width: rowSize.height, height: rowSize.height))
@@ -111,7 +111,6 @@ extension LastPeriodLongVC: UIPickerViewDelegate, UIPickerViewDataSource {
         } else {
             pickerLabel.backgroundColor = UIColor.clear
         }
-        
         return pickerLabel
     }
 
