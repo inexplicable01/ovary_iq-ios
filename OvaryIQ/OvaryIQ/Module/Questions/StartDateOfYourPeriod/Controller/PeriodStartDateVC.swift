@@ -10,12 +10,12 @@ import FSCalendar
 
 class PeriodStartDateVC: UIViewController {
     // MARK: - IBOutlets
-
     @IBOutlet private weak var lblYear: UILabel!
     @IBOutlet private weak var lblMonthYear: UILabel!
     @IBOutlet private weak var calendar: FSCalendar!
     @IBOutlet private weak var btnSave: UIButton!
-
+    @IBOutlet private weak var viewyearAndMonth: UIView!
+    @IBOutlet private weak var viewSide: UIView!
     // MARK: - Properties
     private var currentPage: Date?
     private lazy var today: Date = {
@@ -60,6 +60,10 @@ class PeriodStartDateVC: UIViewController {
     // MARK: - Private Functions
     private func initialSetup() {
      self.btnSave.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
+        self.viewyearAndMonth.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner] // Top right corner, Top left corner respectively
+        self.viewSide.layer.maskedCorners = [.layerMaxXMaxYCorner,
+                                             .layerMaxXMinYCorner]
+     self.calendar.appearance.titleFont = UIFont(name: "SourceSansPro-Bold", size: 16)
         self.calendarSetUp()
     }
 
@@ -74,15 +78,14 @@ class PeriodStartDateVC: UIViewController {
         lblMonthYear.sizeToFit()
         calendar.scrollDirection = .vertical
         calendar.delegate = self
+      //  self.calendar.backgroundColor = UIColor(red: 253.0 / 255.0, green: 245.0 / 255.0, blue: 247.0 / 255.0, alpha: 1.0)
     }
-
-
     internal func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         print("change calendar ")
         let currentPageDate = calendar.currentPage
         let month = Calendar.current.component(.month, from: currentPageDate)
         let year = Calendar.current.component(.year, from: currentPageDate)
-        let monthName  = DateFormatter().monthSymbols[month - 1]
+        let monthName = DateFormatter().monthSymbols[month - 1]
        // print("monthName:- ",monthName)
         lblMonthYear.text = "\(monthName) \(String(describing: year))"
         lblYear.text = "\(year)"
@@ -95,14 +98,16 @@ class PeriodStartDateVC: UIViewController {
         self.currentPage = calendar.date(byAdding: dateComponents, to: self.currentPage ?? self.today)
         self.calendar.setCurrentPage(self.currentPage!, animated: true)
         let values = Calendar.current.dateComponents([Calendar.Component.month, Calendar.Component.year], from: self.calendar.currentPage)
-        if let month = values.month{
+        if let month = values.month {
             let monthName = DateFormatter().monthSymbols[month - 1]
             lblMonthYear.text = "\(monthName) \(String(describing: values.year ?? 0))"
         }
-        if let year = values.year{
+
+        if let year = values.year {
             lblYear.text = "\(String(describing: year) )"
         }
     }
+
     // MARK: - Button Actions
     @IBAction private func tapBtnPreviousArrow(_ sender: UIButton) {
         fLog()
@@ -115,7 +120,6 @@ class PeriodStartDateVC: UIViewController {
         calendar.scrollDirection = .horizontal
         self.moveCurrentPage(moveUp: true)
     }
-
 
     @IBAction private func tapBtnSave(_ sender: UIButton) {
        fLog()

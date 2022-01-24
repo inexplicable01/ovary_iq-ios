@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Group 77049.png",
+      "filename" : "Rectangle 335.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Group 77049@2x.png",
+      "filename" : "Rectangle 335@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Group 77049@3x.png",
+      "filename" : "Rectangle 335@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -19,8 +19,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "template-rendering-intent" : "original"
   }
 }

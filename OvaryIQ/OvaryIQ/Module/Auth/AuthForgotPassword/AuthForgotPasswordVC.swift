@@ -10,13 +10,14 @@ class AuthForgotPasswordVC: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet private weak var txtFieldEmail: UITextField!
+    @IBOutlet private weak var bottomView: UIView!
     // MARK: - Properties
     internal var goBack: ((Bool) -> Void)?
 
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.initalSetup()
         // Do any additional setup after loading the view.
     }
 
@@ -48,6 +49,9 @@ class AuthForgotPasswordVC: UIViewController {
        classReleased()
     }
     // MARK: - Private Functions
+    private func initalSetup() {
+        self.bottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner] // Top right corner, Top left corner respectively
+    }
     // MARK: - Button Actions
     @IBAction private func tapBtnNext(sender: UIButton) {
          fLog()

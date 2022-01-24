@@ -78,6 +78,13 @@ class LogYearOfBirthVC: UIViewController {
     @IBAction private func tapNextBtn(_ sender: UIButton) {
         fLog()
     }
+
+
+    @IBAction private func tapBtnBack(_ sender: Any) {
+        fLog()
+        self.navigationController?.popViewController(animated: true)
+    }
+
 }
 // MARK: - UIPickerDelegate, UIPickerDataSource
 

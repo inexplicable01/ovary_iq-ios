@@ -52,6 +52,8 @@ class AnswersFewQuestionsVC: UIViewController {
     // MARK: - Button Actions
     @IBAction private func tapBtnContinue(sender: UIButton) {
         fLog()
+        let answersFewQuestionsVC = Storyboard.Questions.instantiateViewController(identifier: YourGoalVC.className)
+        self.navigationController?.pushViewController(answersFewQuestionsVC, animated: true)
     }
 
 }

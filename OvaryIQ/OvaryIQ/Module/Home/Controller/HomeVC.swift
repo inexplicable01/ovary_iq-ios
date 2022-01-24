@@ -1,22 +1,22 @@
 //
-//  RegularOrIrregularCycleVC.swift
+//  HomeVC.swift
 //  OvaryIQ
 //
-//  Created by Mobcoder on 19/01/22.
+//  Created by Mobcoder on 24/01/22.
 //
 
 import UIKit
 
-class RegularOrIrregularCycleVC: UIViewController {
+class HomeVC: UIViewController {
     // MARK: - IBOutlets
     // MARK: - Properties
-    // MARK: - View Life Cycle Functions
-
+    // MARK: - view life cycle function
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -46,19 +46,9 @@ class RegularOrIrregularCycleVC: UIViewController {
     }
 
     // MARK: - Private Functions
-     // MARK: - Button Actions
-    @IBAction private func tapBtnRegular(_ sender: UIButton) {
+    // MARK: - Button Actions
+    @IBAction private func tapBtnProfile(_ sender: UIButton) {
         fLog()
-       sender.isSelected = !sender.isSelected
-    }
-
-    @IBAction private func tapBtnIrrRegular(_ sender: UIButton) {
-        fLog()
-       sender.isSelected = !sender.isSelected
-    }
-
-    @IBAction private func tapBtnDontKnow(_ sender: UIButton) {
-        fLog()
-       sender.isSelected = !sender.isSelected
+        self.logOutPopUp()
     }
 }

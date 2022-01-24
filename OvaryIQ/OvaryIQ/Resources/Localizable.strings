@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  OvaryIQ
+
+  Created by Mobcoder on 24/01/22.
+  
+*/
+// MARK: - Messages
+"msg_code_conversion_error" = "Code conversion error";
+"Do_you_want_to_logout?" = "Do you want to logout?";
+"OvaryIQ" = "OvaryIQ";
+"txt_cancel" = "Cancel";
+"txt_ok" = "Ok";

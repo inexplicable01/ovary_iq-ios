@@ -59,7 +59,9 @@ class AuthLoginVC: UIViewController {
 
     @IBAction private func tapPasswordEyeBtn(_ sender: UIButton) {
         fLog()
+        txtFieldPassword.isSecureTextEntry = sender.isSelected
         sender.isSelected = !sender.isSelected
+
     }
 
     @IBAction private func tapForgotPasswordBtn(_ sender: Any) {
@@ -93,6 +95,7 @@ class AuthLoginVC: UIViewController {
 
     @IBAction private func tapBtnLogin(_ sender: UIButton) {
         fLog()
+        Helper.showHomeScreen()
     }
 
     @IBAction private func tapSignUpBtn(_ sender: Any) {

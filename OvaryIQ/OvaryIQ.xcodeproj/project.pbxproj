@@ -44,6 +44,9 @@
 		A74C322A2791652F00763899 /* Questions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A74C32292791652F00763899 /* Questions.storyboard */; };
 		A74C322F2791994600763899 /* YourGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C322E2791994600763899 /* YourGoalVC.swift */; };
 		A74C323227919F1200763899 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C323127919F1200763899 /* BaseTableViewCell.swift */; };
+		A760457C279EC7DC008655B6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A760457B279EC7DC008655B6 /* String.swift */; };
+		A7604580279ED32F008655B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A760457F279ED32F008655B6 /* Localizable.strings */; };
+		A7604583279ED91E008655B6 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7604582279ED91E008655B6 /* UIViewController+Extension.swift */; };
 		A77B277E2799299100C1FE2C /* FirstDayPeriodDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B277D2799299100C1FE2C /* FirstDayPeriodDuration.swift */; };
 		A77B27802799454100C1FE2C /* CalendarTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B277F2799454100C1FE2C /* CalendarTVC.swift */; };
 		A77C71C02797E65F007AB67E /* RegularOrIrregularCycleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C71BF2797E65F007AB67E /* RegularOrIrregularCycleVC.swift */; };
@@ -51,10 +54,15 @@
 		A77C71C52797FB66007AB67E /* Struct+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C71C42797FB66007AB67E /* Struct+Storyboard.swift */; };
 		A77C71C72797FEEC007AB67E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C71C62797FEEC007AB67E /* Helper.swift */; };
 		A77F96BF27954AA50083B5F7 /* GoalTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77F96BE27954AA50083B5F7 /* GoalTVC.swift */; };
+		A797A1DB279E94C900AB3896 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A797A1DA279E94C900AB3896 /* Home.storyboard */; };
+		A797A1DE279E950B00AB3896 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A1DD279E950B00AB3896 /* HomeVC.swift */; };
+		A797A1E2279EB41B00AB3896 /* Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = A797A1E1279EB41B00AB3896 /* Loader.json */; };
+		A797A1E4279EC03200AB3896 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A1E3279EC03200AB3896 /* Utility.swift */; };
+		A797A1E6279EC4FC00AB3896 /* Toast + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A1E5279EC4FC00AB3896 /* Toast + Extension.swift */; };
 		A7CE543C27967A9300191A7B /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE543B27967A9300191A7B /* NSObject+Extension.swift */; };
 		A7CE543E27967B7B00191A7B /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE543D27967B7B00191A7B /* UITableView+Extension.swift */; };
 		A7CE544427968F7300191A7B /* LastPeriodLongVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE544327968F7300191A7B /* LastPeriodLongVC.swift */; };
-		A7CE54832796B9C200191A7B /* Constants+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE54822796B9C200191A7B /* Constants+String.swift */; };
+		A7CE54832796B9C200191A7B /* Constants+TextsMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE54822796B9C200191A7B /* Constants+TextsMessages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +128,9 @@
 		A74C32292791652F00763899 /* Questions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Questions.storyboard; sourceTree = "<group>"; };
 		A74C322E2791994600763899 /* YourGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourGoalVC.swift; sourceTree = "<group>"; };
 		A74C323127919F1200763899 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		A760457B279EC7DC008655B6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		A760457F279ED32F008655B6 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		A7604582279ED91E008655B6 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A77B277D2799299100C1FE2C /* FirstDayPeriodDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDayPeriodDuration.swift; sourceTree = "<group>"; };
 		A77B277F2799454100C1FE2C /* CalendarTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTVC.swift; sourceTree = "<group>"; };
 		A77C71BF2797E65F007AB67E /* RegularOrIrregularCycleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularOrIrregularCycleVC.swift; sourceTree = SOURCE_ROOT; };
@@ -127,10 +138,15 @@
 		A77C71C42797FB66007AB67E /* Struct+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct+Storyboard.swift"; sourceTree = "<group>"; };
 		A77C71C62797FEEC007AB67E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		A77F96BE27954AA50083B5F7 /* GoalTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTVC.swift; sourceTree = "<group>"; };
+		A797A1DA279E94C900AB3896 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		A797A1DD279E950B00AB3896 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		A797A1E1279EB41B00AB3896 /* Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loader.json; sourceTree = "<group>"; };
+		A797A1E3279EC03200AB3896 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		A797A1E5279EC4FC00AB3896 /* Toast + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Toast + Extension.swift"; sourceTree = "<group>"; };
 		A7CE543B27967A9300191A7B /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		A7CE543D27967B7B00191A7B /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		A7CE544327968F7300191A7B /* LastPeriodLongVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPeriodLongVC.swift; sourceTree = "<group>"; };
-		A7CE54822796B9C200191A7B /* Constants+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+String.swift"; sourceTree = "<group>"; };
+		A7CE54822796B9C200191A7B /* Constants+TextsMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+TextsMessages.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +210,8 @@
 				A7CE543B27967A9300191A7B /* NSObject+Extension.swift */,
 				A77C71C42797FB66007AB67E /* Struct+Storyboard.swift */,
 				A7CE543D27967B7B00191A7B /* UITableView+Extension.swift */,
+				A7604582279ED91E008655B6 /* UIViewController+Extension.swift */,
+				A797A1E3279EC03200AB3896 /* Utility.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -311,6 +329,7 @@
 		A732450F278E8E5B008FDCF0 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				A797A1D9279E94AE00AB3896 /* Home */,
 				A74C3225279164CB00763899 /* Questions */,
 				A7324511278E8E96008FDCF0 /* Auth */,
 				A7324510278E8E85008FDCF0 /* Launch */,
@@ -346,6 +365,7 @@
 			children = (
 				A7324513278E8F0F008FDCF0 /* Fonts */,
 				A73244E7278E8E2C008FDCF0 /* Assets.xcassets */,
+				A760457F279ED32F008655B6 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -431,6 +451,7 @@
 		A74C3225279164CB00763899 /* Questions */ = {
 			isa = PBXGroup;
 			children = (
+				A797A1E5279EC4FC00AB3896 /* Toast + Extension.swift */,
 				A74C32292791652F00763899 /* Questions.storyboard */,
 				A7CE544127968F3500191A7B /* LastPeriod */,
 				A77C71C12797EA80007AB67E /* LoginSuccessPopUp */,
@@ -480,6 +501,7 @@
 		A77C71BC2797D20C007AB67E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A797A1E1279EB41B00AB3896 /* Loader.json */,
 				A77C71C62797FEEC007AB67E /* Helper.swift */,
 			);
 			path = Helpers;
@@ -513,6 +535,23 @@
 			isa = PBXGroup;
 			children = (
 				A73244E2278E8E2A008FDCF0 /* AuthOptionVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A797A1D9279E94AE00AB3896 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A797A1DA279E94C900AB3896 /* Home.storyboard */,
+				A797A1DC279E94D900AB3896 /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A797A1DC279E94D900AB3896 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A797A1DD279E950B00AB3896 /* HomeVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -560,7 +599,8 @@
 		A7CE54812796B93800191A7B /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				A7CE54822796B9C200191A7B /* Constants+String.swift */,
+				A7CE54822796B9C200191A7B /* Constants+TextsMessages.swift */,
+				A760457B279EC7DC008655B6 /* String.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -676,6 +716,7 @@
 				A7324527278E8F82008FDCF0 /* SourceSansPro-ExtraLight.ttf in Resources */,
 				A7324524278E8F82008FDCF0 /* SourceSansPro-BoldItalic.ttf in Resources */,
 				A732452B278E8F82008FDCF0 /* SourceSansPro-Regular.ttf in Resources */,
+				A797A1DB279E94C900AB3896 /* Home.storyboard in Resources */,
 				A732452C278E8F82008FDCF0 /* SourceSansPro-Italic.ttf in Resources */,
 				A7324525278E8F82008FDCF0 /* SourceSansPro-SemiBold.ttf in Resources */,
 				A74C322A2791652F00763899 /* Questions.storyboard in Resources */,
@@ -684,8 +725,10 @@
 				A73244E8278E8E2C008FDCF0 /* Assets.xcassets in Resources */,
 				A732452D278E8F82008FDCF0 /* SourceSansPro-SemiBoldItalic.ttf in Resources */,
 				A73244E6278E8E2A008FDCF0 /* Auth.storyboard in Resources */,
+				A797A1E2279EB41B00AB3896 /* Loader.json in Resources */,
 				A7324521278E8F82008FDCF0 /* SourceSansPro-Light.ttf in Resources */,
 				A7324523278E8F82008FDCF0 /* SourceSansPro-Bold.ttf in Resources */,
+				A7604580279ED32F008655B6 /* Localizable.strings in Resources */,
 				A7324526278E8F82008FDCF0 /* SourceSansPro-ExtraLightItalic.ttf in Resources */,
 				A732452A278E8F82008FDCF0 /* SourceSansPro-LightItalic.ttf in Resources */,
 			);
@@ -777,24 +820,29 @@
 				A73CA3EC27982AF8005085CB /* CalendarCollectionViewCell.swift in Sources */,
 				A77C71C52797FB66007AB67E /* Struct+Storyboard.swift in Sources */,
 				A73244DF278E8E2A008FDCF0 /* AppDelegate.swift in Sources */,
-				A7CE54832796B9C200191A7B /* Constants+String.swift in Sources */,
+				A7CE54832796B9C200191A7B /* Constants+TextsMessages.swift in Sources */,
 				A720FF46278EEC0A00893720 /* AuthSignUpVC.swift in Sources */,
 				A7CE543C27967A9300191A7B /* NSObject+Extension.swift in Sources */,
 				A74C322F2791994600763899 /* YourGoalVC.swift in Sources */,
 				A74C323227919F1200763899 /* BaseTableViewCell.swift in Sources */,
 				A7CE543E27967B7B00191A7B /* UITableView+Extension.swift in Sources */,
+				A797A1E6279EC4FC00AB3896 /* Toast + Extension.swift in Sources */,
 				A74C32282791650F00763899 /* AnswersFewQuestionsVC.swift in Sources */,
 				A702267927902E51000E1C9F /* UIButton+Extensions.swift in Sources */,
+				A7604583279ED91E008655B6 /* UIViewController+Extension.swift in Sources */,
 				A73CA3A427981D69005085CB /* LogYearOfBirthVC.swift in Sources */,
 				A7069E5A278EC3C90028AA68 /* UIView+Extensions.swift in Sources */,
+				A760457C279EC7DC008655B6 /* String.swift in Sources */,
 				A77F96BF27954AA50083B5F7 /* GoalTVC.swift in Sources */,
 				A77C71C32797EAAA007AB67E /* LoginSuccessPopUpVC.swift in Sources */,
 				A7022677278FF7FA000E1C9F /* Logger.swift in Sources */,
 				A720FF49278EFDB500893720 /* AuthForgotPasswordVC.swift in Sources */,
 				A73244E1278E8E2A008FDCF0 /* SceneDelegate.swift in Sources */,
+				A797A1E4279EC03200AB3896 /* Utility.swift in Sources */,
 				A77C71C02797E65F007AB67E /* RegularOrIrregularCycleVC.swift in Sources */,
 				A720FF43278ED70A00893720 /* AuthLoginVC.swift in Sources */,
 				A74C322427915D1700763899 /* AuthVerificationCodeVC.swift in Sources */,
+				A797A1DE279E950B00AB3896 /* HomeVC.swift in Sources */,
 				A77B27802799454100C1FE2C /* CalendarTVC.swift in Sources */,
 				A77C71C72797FEEC007AB67E /* Helper.swift in Sources */,
 				A720FF4C278F063A00893720 /* ResetPasswordVC.swift in Sources */,
@@ -982,8 +1030,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OvaryIQ/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = Questions;
-				INFOPLIST_KEY_UIMainStoryboardFile = Questions;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Auth;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1012,8 +1060,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OvaryIQ/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = Questions;
-				INFOPLIST_KEY_UIMainStoryboardFile = Questions;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Auth;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

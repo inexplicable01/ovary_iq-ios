@@ -273,14 +273,15 @@ with the Ovary IQ App </string>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sw1-BC-MlD">
-                                <rect key="frame" x="20" y="64" width="59" height="35"/>
+                                <rect key="frame" x="20" y="64" width="35" height="35"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="2E8-gg-BHc"/>
                                     <constraint firstAttribute="height" constant="35" id="ayI-eR-ILt"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="backArrow"/>
                                 <connections>
-                                    <action selector="tapBackBtn:" destination="Wt4-D7-o7u" eventType="touchUpInside" id="dcK-Ir-27R"/>
+                                    <action selector="tapBackBtn:" destination="Wt4-D7-o7u" eventType="touchUpInside" id="8MC-DN-p1k"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tm-IK-VWT">
@@ -505,7 +506,7 @@ account</string>
                                                                 <fragment content="Sign UP">
                                                                     <attributes>
                                                                         <color key="NSColor" name="ThemeColor"/>
-                                                                        <font key="NSFont" metaFont="system" size="15"/>
+                                                                        <font key="NSFont" size="16" name="SourceSansPro-Bold"/>
                                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         <integer key="NSUnderline" value="1"/>
                                                                     </attributes>
@@ -577,7 +578,6 @@ account</string>
                             <constraint firstItem="ZFg-fB-I3v" firstAttribute="leading" secondItem="xyk-Go-F5p" secondAttribute="leading" id="hXa-yW-7vk"/>
                             <constraint firstItem="3tm-IK-VWT" firstAttribute="leading" secondItem="xyk-Go-F5p" secondAttribute="leading" id="kgE-9t-l9k"/>
                             <constraint firstAttribute="bottom" secondItem="3tm-IK-VWT" secondAttribute="bottom" id="lqr-mW-2wY"/>
-                            <constraint firstItem="DD3-hP-4dJ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Sw1-BC-MlD" secondAttribute="trailing" symbolic="YES" id="mfI-ae-7cu"/>
                             <constraint firstItem="uZC-7W-Nvx" firstAttribute="leading" secondItem="DD3-hP-4dJ" secondAttribute="leading" id="qtW-SS-pEw"/>
                             <constraint firstItem="Sw1-BC-MlD" firstAttribute="bottom" secondItem="UCm-UH-wTL" secondAttribute="bottom" id="woe-fQ-XyM"/>
                         </constraints>
@@ -625,12 +625,15 @@ account</string>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="backArrow"/>
+                                <connections>
+                                    <action selector="tapBtnBack:" destination="Dby-aU-Sdv" eventType="touchUpInside" id="EJa-Xn-emH"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgn-uY-Ouo">
                                 <rect key="frame" x="0.0" y="127" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJX-ZK-Bmw">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="718.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="726.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eggLogo" translatesAutoresizingMaskIntoConstraints="NO" id="kYP-X5-h0r">
                                                 <rect key="frame" x="188" y="50" width="38" height="51"/>
@@ -885,8 +888,13 @@ account</string>
                                                                     <constraint firstAttribute="width" constant="16" id="QMf-wp-Qcf"/>
                                                                     <constraint firstAttribute="height" constant="17.219999999999999" id="m1i-eH-B54"/>
                                                                 </constraints>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="hideEye"/>
+                                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="Button" image="hideEye"/>
+                                                                <state key="selected" image="ShowEye"/>
+                                                                <connections>
+                                                                    <action selector="tapBtnEye:" destination="Dby-aU-Sdv" eventType="touchUpInside" id="yBy-0U-HKR"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -991,9 +999,12 @@ account</string>
                                                         <real key="value" value="25"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapBtnCreateAccount:" destination="Dby-aU-Sdv" eventType="touchUpInside" id="BWi-pv-rZS"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="C75-ff-b1J">
-                                                <rect key="frame" x="97" y="666.5" width="220.5" height="40"/>
+                                                <rect key="frame" x="98" y="666.5" width="218.5" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbQ-UR-HCe">
                                                         <rect key="frame" x="0.0" y="0.0" width="173.5" height="40"/>
@@ -1002,14 +1013,14 @@ account</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A3i-Bm-tKZ">
-                                                        <rect key="frame" x="178.5" y="0.0" width="42" height="40"/>
+                                                        <rect key="frame" x="178.5" y="0.0" width="40" height="40"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal">
                                                             <attributedString key="attributedTitle">
                                                                 <fragment content="Log In">
                                                                     <attributes>
                                                                         <color key="NSColor" name="ThemeColor"/>
-                                                                        <font key="NSFont" metaFont="system" size="15"/>
+                                                                        <font key="NSFont" size="15" name="SourceSansPro-Bold"/>
                                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                         <integer key="NSUnderline" value="1"/>
                                                                     </attributes>
@@ -1042,7 +1053,7 @@ account</string>
                                             <constraint firstItem="beX-Mf-Kwm" firstAttribute="leading" secondItem="YJQ-AF-cwj" secondAttribute="trailing" constant="10" id="R6O-Fh-5aS"/>
                                             <constraint firstItem="jyT-L9-3Bj" firstAttribute="centerX" secondItem="fJX-ZK-Bmw" secondAttribute="centerX" id="aVr-1n-Q7N"/>
                                             <constraint firstItem="kYP-X5-h0r" firstAttribute="centerX" secondItem="fJX-ZK-Bmw" secondAttribute="centerX" id="bAD-QA-8oX"/>
-                                            <constraint firstAttribute="bottom" secondItem="C75-ff-b1J" secondAttribute="bottom" constant="12" id="bxC-U5-O9b"/>
+                                            <constraint firstAttribute="bottom" secondItem="C75-ff-b1J" secondAttribute="bottom" constant="20" id="bxC-U5-O9b"/>
                                             <constraint firstItem="beX-Mf-Kwm" firstAttribute="centerY" secondItem="YJQ-AF-cwj" secondAttribute="centerY" id="dNw-tj-zI0"/>
                                             <constraint firstItem="kYP-X5-h0r" firstAttribute="top" secondItem="fJX-ZK-Bmw" secondAttribute="top" constant="50" id="ffL-HZ-oMa"/>
                                             <constraint firstItem="C75-ff-b1J" firstAttribute="top" secondItem="Jmh-3q-vRX" secondAttribute="bottom" constant="94" id="hEO-bg-Wt7"/>
@@ -1264,6 +1275,7 @@ password reset</string>
                                     <constraint firstItem="FW7-io-ppE" firstAttribute="top" secondItem="OK4-oU-as8" secondAttribute="top" constant="32" id="LYw-co-cLw"/>
                                     <constraint firstItem="Xge-tr-Wsr" firstAttribute="top" secondItem="ftu-2R-qlk" secondAttribute="bottom" constant="7.5" id="THx-Tg-aRe"/>
                                     <constraint firstItem="MwQ-33-jHE" firstAttribute="top" secondItem="FW7-io-ppE" secondAttribute="bottom" constant="10" id="VN6-uv-rPE"/>
+                                    <constraint firstAttribute="height" constant="370" id="W51-AH-6fz"/>
                                     <constraint firstItem="MwQ-33-jHE" firstAttribute="centerX" secondItem="FW7-io-ppE" secondAttribute="centerX" id="ZDl-2u-KqU"/>
                                     <constraint firstItem="FW7-io-ppE" firstAttribute="centerX" secondItem="OK4-oU-as8" secondAttribute="centerX" id="euF-XU-cBm"/>
                                     <constraint firstAttribute="trailing" secondItem="QrW-ez-Sgq" secondAttribute="trailing" id="fFc-gZ-kxe"/>
@@ -1281,7 +1293,7 @@ password reset</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iva-LC-DW2">
-                                <rect key="frame" x="189.5" y="464.5" width="35" height="46.5"/>
+                                <rect key="frame" x="189.5" y="471.5" width="35" height="46.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46.57" id="C6Z-zU-4t4"/>
                                     <constraint firstAttribute="width" constant="35" id="Mk5-EG-Jmv"/>
@@ -1300,11 +1312,11 @@ password reset</string>
                             <constraint firstItem="OK4-oU-as8" firstAttribute="trailing" secondItem="Z1X-IA-9SN" secondAttribute="trailing" id="Bn9-iK-G4P"/>
                             <constraint firstItem="Iva-LC-DW2" firstAttribute="centerX" secondItem="Z1X-IA-9SN" secondAttribute="centerX" id="FO3-fy-EQy"/>
                             <constraint firstItem="OK4-oU-as8" firstAttribute="leading" secondItem="Z1X-IA-9SN" secondAttribute="leading" id="LP8-JA-LnA"/>
-                            <constraint firstItem="OK4-oU-as8" firstAttribute="height" secondItem="uqy-dh-R42" secondAttribute="height" multiplier="0.413" id="vDX-rP-d4z"/>
-                            <constraint firstItem="OK4-oU-as8" firstAttribute="top" secondItem="Iva-LC-DW2" secondAttribute="bottom" constant="15" id="yPh-AS-3Qt"/>
+                            <constraint firstItem="OK4-oU-as8" firstAttribute="top" secondItem="Iva-LC-DW2" secondAttribute="bottom" constant="8" symbolic="YES" id="egh-9f-4zz"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomView" destination="QrW-ez-Sgq" id="gyj-Iq-dIq"/>
                         <outlet property="txtFieldEmail" destination="ek3-Cs-GZx" id="doD-SH-7ff"/>
                     </connections>
                 </viewController>
@@ -1354,12 +1366,15 @@ xyz.ab@gmail.com</string>
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="one-time-code"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="one-time-code"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
                                                                 <integer key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="textFieldEditingChanged:" destination="D8y-46-VMn" eventType="editingChanged" id="VN2-uD-eeb"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1382,12 +1397,15 @@ xyz.ab@gmail.com</string>
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="one-time-code"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="one-time-code"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
                                                                 <integer key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="textFieldEditingChanged:" destination="D8y-46-VMn" eventType="editingChanged" id="iZB-4Q-4h8"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1410,12 +1428,15 @@ xyz.ab@gmail.com</string>
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="one-time-code"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="one-time-code"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
                                                                 <integer key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="textFieldEditingChanged:" destination="D8y-46-VMn" eventType="editingChanged" id="b7A-uD-kRZ"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1438,12 +1459,15 @@ xyz.ab@gmail.com</string>
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
                                                                 <integer key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="textFieldEditingChanged:" destination="D8y-46-VMn" eventType="editingChanged" id="7fV-bE-BER"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1619,6 +1643,11 @@ xyz.ab@gmail.com</string>
                     </view>
                     <connections>
                         <outlet property="bottomView" destination="thI-kW-9yR" id="aqJ-2K-Azm"/>
+                        <outlet property="lblTime" destination="YUe-Cu-DOG" id="uUJ-ZG-DhT"/>
+                        <outlet property="txtFieldOtp1" destination="DIV-dF-9ta" id="dRJ-oO-h9Z"/>
+                        <outlet property="txtFieldOtp2" destination="wFu-UE-dFB" id="gz3-JK-hcf"/>
+                        <outlet property="txtFieldOtp3" destination="neS-hr-HYh" id="5Is-1Y-8rU"/>
+                        <outlet property="txtFieldOtp4" destination="UKY-A5-Oq0" id="ItV-uS-gQo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNG-gY-QlQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1673,11 +1702,12 @@ xyz.ab@gmail.com</string>
                                                             <constraint firstAttribute="width" constant="16" id="8aq-QB-EBF"/>
                                                             <constraint firstAttribute="height" constant="13.6" id="EEV-Ov-6QW"/>
                                                         </constraints>
+                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="" image="hideEye"/>
                                                         <state key="selected" image="ShowEye"/>
                                                         <connections>
-                                                            <action selector="tapPasswordEyeBtn:" destination="Wt4-D7-o7u" eventType="touchUpInside" id="Gbi-5j-DLY"/>
+                                                            <action selector="tapBtnEyePassword:" destination="awc-1u-sea" eventType="touchUpInside" id="uMh-27-3BF"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1729,11 +1759,12 @@ xyz.ab@gmail.com</string>
                                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="16" id="0aS-9e-up1"/>
                                                             <constraint firstAttribute="height" constant="13.6" id="aZd-ge-whb"/>
                                                         </constraints>
+                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button" image="hideEye"/>
                                                         <state key="selected" image="ShowEye"/>
                                                         <connections>
-                                                            <action selector="tapPasswordEyeBtn:" destination="Wt4-D7-o7u" eventType="touchUpInside" id="0gu-U2-gjg"/>
+                                                            <action selector="tapBtnEyeConfirmPassword:" destination="awc-1u-sea" eventType="touchUpInside" id="ho6-AH-rhe"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

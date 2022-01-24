@@ -7,6 +7,7 @@
 
 import UIKit
 import Foundation
+import Lottie
 
 // MARK: - Designable Extension
 @IBDesignable
@@ -238,4 +239,24 @@ extension UIView {
         return all
     }
 
+}
+extension UIView {
+    // MARK: -  Loading Progress View
+    func showLoader() {
+        hideLoader()
+        var progressView: AnimationView?
+        progressView = AnimationView(name: "Loader")
+        progressView?.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        progressView?.center = self.center
+        progressView?.contentMode = .scaleAspectFill
+        progressView?.animationSpeed = 1
+        progressView?.loopMode = .loop
+        self.addSubview(progressView!)
+        progressView?.play()
+    }
+    func hideLoader() {
+        for view in self.subviews where view is AnimationView {
+            view.removeFromSuperview()
+        }
+    }
 }

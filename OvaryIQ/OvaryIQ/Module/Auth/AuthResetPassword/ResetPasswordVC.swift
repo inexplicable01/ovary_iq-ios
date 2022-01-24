@@ -68,6 +68,19 @@ class ResetPasswordVC: UIViewController {
         }
     }
 
+    @IBAction private func tapBtnEyePassword(_ sender: UIButton) {
+        fLog()
+        newPasswordTxtfield.isSecureTextEntry = sender.isSelected
+        sender.isSelected = !sender.isSelected
+    }
+
+    @IBAction private func tapBtnEyeConfirmPassword(_ sender: UIButton) {
+        fLog()
+        confirmPasswordTxtfield.isSecureTextEntry = sender.isSelected
+        sender.isSelected = !sender.isSelected
+    }
+
+
     @IBAction private func tapCrossBtn(sender: UIButton) {
         fLog()
         self.dismiss(animated: true, completion: nil)

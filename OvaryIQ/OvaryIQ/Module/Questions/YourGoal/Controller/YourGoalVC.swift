@@ -6,29 +6,32 @@
 //
 
 import UIKit
-// struct goal{
-//
-//    var title: String?
-//    var title_image = UIImage(named: "")
-//
-//    init(title:String,title_image: UIImage){
-//        self.title = title
-//        self.title_image = title_image
-// }
-// }
+ struct Goal {
+    var title: String?
+    var titleImage: UIImage?
+    var selectedImage: UIImage?
+    var isSelected: Bool?
+
+     init(title: String, titleImage: UIImage, selectedImage: UIImage, isSelected: Bool) {
+        self.title = title
+        self.titleImage = titleImage
+        self.selectedImage = selectedImage
+        self.isSelected = isSelected
+    }
+ }
 class YourGoalVC: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var btnNext: UIButton!
     // MARK: - Properties
-  //  private var goalArr = ["Get pregnant","Track symptoms","Avoid pregnancy","Period tracking"]
+    private var goalArr = [Goal(title: "Get pregnant", titleImage: UIImage(named: "get_Preganent") ?? UIImage(), selectedImage: UIImage(named: "SelectedPreganent") ?? UIImage(), isSelected: false),Goal(title: "Track symptoms", titleImage: UIImage(named: "symptoms") ?? UIImage(), selectedImage: UIImage(named: "SelectedPreganent") ?? UIImage(), isSelected: false),Goal(title: "Avoid pregnancy", titleImage: UIImage(named: "Unselectinjection") ?? UIImage(), selectedImage: UIImage(named: "selectInjection") ?? UIImage(), isSelected: false),Goal(title: "Period tracking", titleImage: UIImage(named: "unselectedPeriodTracker") ?? UIImage(), selectedImage: UIImage(named: "selectedPeriodTracker") ?? UIImage(), isSelected: true)]
     // MARK: - View Life Cycle Functions
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialSetup()
         // Do any additional setup after loading the view.
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -64,6 +67,8 @@ class YourGoalVC: UIViewController {
     // MARK: - Button Actions
     @IBAction private func tapBtnNext(_ sender: Any) {
         fLog()
+        let answersFewQuestionsVC = Storyboard.Questions.instantiateViewController(identifier: LogYearOfBirthVC.className)
+        self.navigationController?.pushViewController(answersFewQuestionsVC, animated: true)
     }
 }
 
@@ -107,6 +112,14 @@ extension YourGoalVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         fLog()
+        for indx in 0..<goalArr.count {
+            if indx == indexPath.row {
+                self.goalArr[indx].isSelected = true
+            } else {
+                self.goalArr[indx].isSelected = false
+            }
+        }
+        self.tableView.reloadData()
     }
 
     // MARK: - UITableViewDataSource
@@ -116,13 +129,13 @@ extension YourGoalVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return goalArr.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell: GoalTVC = tableView.dequeueReusableCell(withIdentifier: GoalTVC.className, for: indexPath) as? GoalTVC {
           // cell.delegate = self
-           // cell.configCell()
+            cell.configCell(model: goalArr[indexPath.row])
             return cell
         } else {
             return tableView.emptyCell()

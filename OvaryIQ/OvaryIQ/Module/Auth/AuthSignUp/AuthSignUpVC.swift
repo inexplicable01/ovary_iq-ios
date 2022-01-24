@@ -65,5 +65,23 @@ class AuthSignUpVC: UIViewController {
 
     @IBAction private func tapBtnLogin(_ sender: Any) {
         fLog()
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction private func tapBtnEye(_ sender: UIButton) {
+        fLog()
+        txtFieldPassword.isSecureTextEntry = sender.isSelected
+        sender.isSelected = !sender.isSelected
+    }
+
+    @IBAction private func tapBtnBack(_ sender: UIButton) {
+        fLog()
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction private func tapBtnCreateAccount(_ sender: UIButton) {
+        fLog()
+        let authSignUpVC = Storyboard.Questions.instantiateViewController(identifier: AnswersFewQuestionsVC.className)
+        self.navigationController?.pushViewController(authSignUpVC, animated: true)
     }
 }
