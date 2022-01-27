@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '9.0'
+platform :ios, '11.0'
 
 target 'OvaryIQ' do
 
@@ -19,6 +19,13 @@ pod 'IQKeyboardManagerSwift'
 
  #Usage:- for Banners or pop-ups
  pod 'SwiftEntryKit', '1.2.3'
+
+
+ #Usage:- Networking / API handling
+ pod 'Alamofire', '5.4.4'
+
+ pod 'Kingfisher'
+ pod 'SwiftMessages'
 
 end
 post_install do |installer|

@@ -7,10 +7,10 @@
 
 import Foundation
 import UIKit
-enum AlertType: String {
-    case success = "SUCCESS"
-    case apiFailure = "API_FAILURE"
-    case validationFailure = "VALIDATION_FAILURE"
+enum AlertToastType: String {
+    case successAlert = "SUCCESS"
+    case apiFailureAlert = "API_FAILURE"
+    case validationFailureAlert = "VALIDATION_FAILURE"
     var title: String {
         return NSLocalizedString(self.rawValue, comment: "")
     }
@@ -19,11 +19,11 @@ enum AlertType: String {
        // return Color.colorPrimary.value
 
             switch self {
-            case .validationFailure:
+            case .validationFailureAlert:
               return Color.failureValidationColor.value
-            case .apiFailure:
+            case .apiFailureAlert:
               return Color.failureValidationColor.value
-            case .success:
+            case .successAlert:
               return Color.successColor.value
             }
     }
@@ -39,5 +39,13 @@ enum Color: String {
      case successColor = "GreenColor"
     var value: UIColor {
         return UIColor(named: self.rawValue) ?? UIColor()
+    }
+}
+// MARK: - DefaultKeys
+enum DefaultKeys: String {
+     case deviceToken = "deviceToken"
+     var instance: String {
+    return self.rawValue
+
     }
 }

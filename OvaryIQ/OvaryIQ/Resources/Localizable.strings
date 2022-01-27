@@ -11,3 +11,8 @@
 "OvaryIQ" = "OvaryIQ";
 "txt_cancel" = "Cancel";
 "txt_ok" = "Ok";
+"msg_timeout" = "Request has timeout.";
+"msg_no_internet_connection" = "Please check your internet connection";
+"msg_enable_location_services_title" = "Enable Location Services";
+"txt_not_now" = "Not Now";
+"txt_settings" = "Settings";

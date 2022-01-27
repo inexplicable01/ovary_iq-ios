@@ -47,6 +47,33 @@
 		A760457C279EC7DC008655B6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A760457B279EC7DC008655B6 /* String.swift */; };
 		A7604580279ED32F008655B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A760457F279ED32F008655B6 /* Localizable.strings */; };
 		A7604583279ED91E008655B6 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7604582279ED91E008655B6 /* UIViewController+Extension.swift */; };
+		A76D649C279FD51500397D1C /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D649B279FD51500397D1C /* APIHelper.swift */; };
+		A76D649F279FD73800397D1C /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D649E279FD73800397D1C /* AppConfig.swift */; };
+		A76D64A1279FD84600397D1C /* Constants+Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64A0279FD84600397D1C /* Constants+Macros.swift */; };
+		A76D64A327A021A200397D1C /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64A227A021A200397D1C /* APIRouter.swift */; };
+		A76D64A527A0255B00397D1C /* UserPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64A427A0255B00397D1C /* UserPreference.swift */; };
+		A76D64AC27A02ABC00397D1C /* AuthSignUpDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64AB27A02ABC00397D1C /* AuthSignUpDataModel.swift */; };
+		A76D64B427A05F9F00397D1C /* JsonHelper+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64B327A05F9F00397D1C /* JsonHelper+Extensions.swift */; };
+		A76D64B627A060AB00397D1C /* UserResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64B527A060AB00397D1C /* UserResponseModel.swift */; };
+		A76D64B827A0670D00397D1C /* RequestScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64B727A0670D00397D1C /* RequestScheduler.swift */; };
+		A76D64BA27A0673C00397D1C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64B927A0673C00397D1C /* NetworkManager.swift */; };
+		A76D64BC27A0676E00397D1C /* RestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64BB27A0676E00397D1C /* RestHelper.swift */; };
+		A76D64BF27A0687100397D1C /* EventLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64BE27A0687100397D1C /* EventLoop.swift */; };
+		A76D64C127A0688600397D1C /* LocalEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64C027A0688600397D1C /* LocalEvents.swift */; };
+		A76D64C327A0689900397D1C /* RestEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64C227A0689900397D1C /* RestEvents.swift */; };
+		A76D64C527A068B200397D1C /* CoreEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64C427A068B200397D1C /* CoreEngine.swift */; };
+		A76D64C727A068CD00397D1C /* SocketEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64C627A068CD00397D1C /* SocketEvents.swift */; };
+		A76D64CA27A0694400397D1C /* SocketHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64C927A0694400397D1C /* SocketHandler.swift */; };
+		A76D64CE27A0755C00397D1C /* ActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64CD27A0755C00397D1C /* ActivityIndicatorManager.swift */; };
+		A76D64D127A2646300397D1C /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64D027A2646300397D1C /* DatabaseHandler.swift */; };
+		A76D64D327A2647E00397D1C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64D227A2647E00397D1C /* CoreDataManager.swift */; };
+		A76D64D527A264BB00397D1C /* QueuedPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64D427A264BB00397D1C /* QueuedPrint.swift */; };
+		A76D64D827A2657400397D1C /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64D727A2657400397D1C /* UserInfo.swift */; };
+		A76D64DC27A2677900397D1C /* UserPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64DB27A2677900397D1C /* UserPhoto.swift */; };
+		A76D64DE27A267A700397D1C /* BusinessHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64DD27A267A700397D1C /* BusinessHour.swift */; };
+		A76D64E027A267C200397D1C /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64DF27A267C200397D1C /* Venue.swift */; };
+		A76D64E227A2686800397D1C /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64E127A2686800397D1C /* UserDefaults+Extensions.swift */; };
+		A76D64E427A26A0700397D1C /* AlertControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64E327A26A0700397D1C /* AlertControllerManager.swift */; };
 		A77B277E2799299100C1FE2C /* FirstDayPeriodDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B277D2799299100C1FE2C /* FirstDayPeriodDuration.swift */; };
 		A77B27802799454100C1FE2C /* CalendarTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B277F2799454100C1FE2C /* CalendarTVC.swift */; };
 		A77C71C02797E65F007AB67E /* RegularOrIrregularCycleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C71BF2797E65F007AB67E /* RegularOrIrregularCycleVC.swift */; };
@@ -54,6 +81,7 @@
 		A77C71C52797FB66007AB67E /* Struct+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C71C42797FB66007AB67E /* Struct+Storyboard.swift */; };
 		A77C71C72797FEEC007AB67E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C71C62797FEEC007AB67E /* Helper.swift */; };
 		A77F96BF27954AA50083B5F7 /* GoalTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77F96BE27954AA50083B5F7 /* GoalTVC.swift */; };
+		A78AECE227A2960E003E05C2 /* SharedPref.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AECE127A2960E003E05C2 /* SharedPref.swift */; };
 		A797A1DB279E94C900AB3896 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A797A1DA279E94C900AB3896 /* Home.storyboard */; };
 		A797A1DE279E950B00AB3896 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A1DD279E950B00AB3896 /* HomeVC.swift */; };
 		A797A1E2279EB41B00AB3896 /* Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = A797A1E1279EB41B00AB3896 /* Loader.json */; };
@@ -131,6 +159,33 @@
 		A760457B279EC7DC008655B6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A760457F279ED32F008655B6 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		A7604582279ED91E008655B6 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		A76D649B279FD51500397D1C /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		A76D649E279FD73800397D1C /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		A76D64A0279FD84600397D1C /* Constants+Macros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Macros.swift"; sourceTree = "<group>"; };
+		A76D64A227A021A200397D1C /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		A76D64A427A0255B00397D1C /* UserPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreference.swift; sourceTree = "<group>"; };
+		A76D64AB27A02ABC00397D1C /* AuthSignUpDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignUpDataModel.swift; sourceTree = "<group>"; };
+		A76D64B327A05F9F00397D1C /* JsonHelper+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JsonHelper+Extensions.swift"; sourceTree = "<group>"; };
+		A76D64B527A060AB00397D1C /* UserResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseModel.swift; sourceTree = "<group>"; };
+		A76D64B727A0670D00397D1C /* RequestScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestScheduler.swift; sourceTree = "<group>"; };
+		A76D64B927A0673C00397D1C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A76D64BB27A0676E00397D1C /* RestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestHelper.swift; sourceTree = "<group>"; };
+		A76D64BE27A0687100397D1C /* EventLoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventLoop.swift; sourceTree = "<group>"; };
+		A76D64C027A0688600397D1C /* LocalEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalEvents.swift; sourceTree = "<group>"; };
+		A76D64C227A0689900397D1C /* RestEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestEvents.swift; sourceTree = "<group>"; };
+		A76D64C427A068B200397D1C /* CoreEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreEngine.swift; sourceTree = "<group>"; };
+		A76D64C627A068CD00397D1C /* SocketEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketEvents.swift; sourceTree = "<group>"; };
+		A76D64C927A0694400397D1C /* SocketHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketHandler.swift; sourceTree = "<group>"; };
+		A76D64CD27A0755C00397D1C /* ActivityIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorManager.swift; sourceTree = "<group>"; };
+		A76D64D027A2646300397D1C /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
+		A76D64D227A2647E00397D1C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		A76D64D427A264BB00397D1C /* QueuedPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueuedPrint.swift; sourceTree = "<group>"; };
+		A76D64D727A2657400397D1C /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		A76D64DB27A2677900397D1C /* UserPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhoto.swift; sourceTree = "<group>"; };
+		A76D64DD27A267A700397D1C /* BusinessHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessHour.swift; sourceTree = "<group>"; };
+		A76D64DF27A267C200397D1C /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		A76D64E127A2686800397D1C /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
+		A76D64E327A26A0700397D1C /* AlertControllerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerManager.swift; sourceTree = "<group>"; };
 		A77B277D2799299100C1FE2C /* FirstDayPeriodDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDayPeriodDuration.swift; sourceTree = "<group>"; };
 		A77B277F2799454100C1FE2C /* CalendarTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTVC.swift; sourceTree = "<group>"; };
 		A77C71BF2797E65F007AB67E /* RegularOrIrregularCycleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularOrIrregularCycleVC.swift; sourceTree = SOURCE_ROOT; };
@@ -138,6 +193,7 @@
 		A77C71C42797FB66007AB67E /* Struct+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct+Storyboard.swift"; sourceTree = "<group>"; };
 		A77C71C62797FEEC007AB67E /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		A77F96BE27954AA50083B5F7 /* GoalTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTVC.swift; sourceTree = "<group>"; };
+		A78AECE127A2960E003E05C2 /* SharedPref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPref.swift; sourceTree = "<group>"; };
 		A797A1DA279E94C900AB3896 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		A797A1DD279E950B00AB3896 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		A797A1E1279EB41B00AB3896 /* Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loader.json; sourceTree = "<group>"; };
@@ -147,6 +203,7 @@
 		A7CE543D27967B7B00191A7B /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		A7CE544327968F7300191A7B /* LastPeriodLongVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPeriodLongVC.swift; sourceTree = "<group>"; };
 		A7CE54822796B9C200191A7B /* Constants+TextsMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+TextsMessages.swift"; sourceTree = "<group>"; };
+		FBCB68E659126C3B68DB5CDC /* Pods-OvaryIQ.stagging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OvaryIQ.stagging.xcconfig"; path = "Target Support Files/Pods-OvaryIQ/Pods-OvaryIQ.stagging.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +245,7 @@
 			children = (
 				3E66D6041D13595645E3088A /* Pods-OvaryIQ.debug.xcconfig */,
 				8CD584F3C47F731F3EC64A7E /* Pods-OvaryIQ.release.xcconfig */,
+				FBCB68E659126C3B68DB5CDC /* Pods-OvaryIQ.stagging.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -195,9 +253,11 @@
 		A7022675278FF7DF000E1C9F /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				A78AECE027A295F9003E05C2 /* PropertyWrappers */,
 				A7CE54812796B93800191A7B /* Constant */,
 				A7069E58278EC37F0028AA68 /* Extensions */,
 				A7022676278FF7FA000E1C9F /* Logger.swift */,
+				A76D64A0279FD84600397D1C /* Constants+Macros.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -207,11 +267,13 @@
 			children = (
 				A7069E59278EC3C90028AA68 /* UIView+Extensions.swift */,
 				A702267827902E51000E1C9F /* UIButton+Extensions.swift */,
+				A76D64E127A2686800397D1C /* UserDefaults+Extensions.swift */,
 				A7CE543B27967A9300191A7B /* NSObject+Extension.swift */,
 				A77C71C42797FB66007AB67E /* Struct+Storyboard.swift */,
 				A7CE543D27967B7B00191A7B /* UITableView+Extension.swift */,
 				A7604582279ED91E008655B6 /* UIViewController+Extension.swift */,
 				A797A1E3279EC03200AB3896 /* Utility.swift */,
+				A76D64B327A05F9F00397D1C /* JsonHelper+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -244,7 +306,11 @@
 		A720FF44278EEBA600893720 /* AuthSignUp */ = {
 			isa = PBXGroup;
 			children = (
-				A720FF45278EEC0A00893720 /* AuthSignUpVC.swift */,
+				A76D64A627A0294B00397D1C /* Controller */,
+				A76D64A827A0297F00397D1C /* View */,
+				A76D64A727A0295E00397D1C /* Model */,
+				A76D64A927A029A000397D1C /* ViewModel */,
+				A76D64AA27A029AE00397D1C /* Protocol */,
 			);
 			path = AuthSignUp;
 			sourceTree = "<group>";
@@ -290,10 +356,12 @@
 		A73244DD278E8E2A008FDCF0 /* OvaryIQ */ = {
 			isa = PBXGroup;
 			children = (
-				A77C71BC2797D20C007AB67E /* Helpers */,
+				A76D649D279FD71C00397D1C /* AppConfig */,
 				A732450E278E8E3E008FDCF0 /* AppDelegate */,
+				A77C71BC2797D20C007AB67E /* Helpers */,
 				A7022675278FF7DF000E1C9F /* Utility */,
 				A732450F278E8E5B008FDCF0 /* Module */,
+				A76D6499279FD4BE00397D1C /* Core */,
 				A7324512278E8EC3008FDCF0 /* Resources */,
 				A73244EC278E8E2C008FDCF0 /* Info.plist */,
 			);
@@ -329,6 +397,7 @@
 		A732450F278E8E5B008FDCF0 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				A76D64AD27A02DBC00397D1C /* UserResponseModel */,
 				A797A1D9279E94AE00AB3896 /* Home */,
 				A74C3225279164CB00763899 /* Questions */,
 				A7324511278E8E96008FDCF0 /* Auth */,
@@ -490,6 +559,123 @@
 			path = BaseClasses;
 			sourceTree = "<group>";
 		};
+		A76D6499279FD4BE00397D1C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A76D64CF27A2644200397D1C /* Database */,
+				A76D64C827A0692C00397D1C /* Socket */,
+				A76D64BD27A0684000397D1C /* CoreEngine */,
+				A76D649A279FD4F200397D1C /* Network */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A76D649A279FD4F200397D1C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A76D64D627A2655100397D1C /* APIResponseModels */,
+				A76D649B279FD51500397D1C /* APIHelper.swift */,
+				A76D64A227A021A200397D1C /* APIRouter.swift */,
+				A76D64B727A0670D00397D1C /* RequestScheduler.swift */,
+				A76D64B927A0673C00397D1C /* NetworkManager.swift */,
+				A76D64BB27A0676E00397D1C /* RestHelper.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A76D649D279FD71C00397D1C /* AppConfig */ = {
+			isa = PBXGroup;
+			children = (
+				A76D649E279FD73800397D1C /* AppConfig.swift */,
+			);
+			path = AppConfig;
+			sourceTree = "<group>";
+		};
+		A76D64A627A0294B00397D1C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A720FF45278EEC0A00893720 /* AuthSignUpVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A76D64A727A0295E00397D1C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A76D64AB27A02ABC00397D1C /* AuthSignUpDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A76D64A827A0297F00397D1C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A76D64A927A029A000397D1C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A76D64AA27A029AE00397D1C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		A76D64AD27A02DBC00397D1C /* UserResponseModel */ = {
+			isa = PBXGroup;
+			children = (
+				A76D64B527A060AB00397D1C /* UserResponseModel.swift */,
+			);
+			path = UserResponseModel;
+			sourceTree = "<group>";
+		};
+		A76D64BD27A0684000397D1C /* CoreEngine */ = {
+			isa = PBXGroup;
+			children = (
+				A76D64BE27A0687100397D1C /* EventLoop.swift */,
+				A76D64C027A0688600397D1C /* LocalEvents.swift */,
+				A76D64C227A0689900397D1C /* RestEvents.swift */,
+				A76D64C427A068B200397D1C /* CoreEngine.swift */,
+				A76D64C627A068CD00397D1C /* SocketEvents.swift */,
+			);
+			path = CoreEngine;
+			sourceTree = "<group>";
+		};
+		A76D64C827A0692C00397D1C /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				A76D64C927A0694400397D1C /* SocketHandler.swift */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
+		A76D64CF27A2644200397D1C /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				A76D64D027A2646300397D1C /* DatabaseHandler.swift */,
+				A76D64D227A2647E00397D1C /* CoreDataManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		A76D64D627A2655100397D1C /* APIResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				A76D64D727A2657400397D1C /* UserInfo.swift */,
+				A76D64DD27A267A700397D1C /* BusinessHour.swift */,
+				A76D64DF27A267C200397D1C /* Venue.swift */,
+				A76D64DB27A2677900397D1C /* UserPhoto.swift */,
+			);
+			path = APIResponseModels;
+			sourceTree = "<group>";
+		};
 		A77B277C2799296C00C1FE2C /* FirstDayPeriodDuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,6 +689,9 @@
 			children = (
 				A797A1E1279EB41B00AB3896 /* Loader.json */,
 				A77C71C62797FEEC007AB67E /* Helper.swift */,
+				A76D64CD27A0755C00397D1C /* ActivityIndicatorManager.swift */,
+				A76D64D427A264BB00397D1C /* QueuedPrint.swift */,
+				A76D64E327A26A0700397D1C /* AlertControllerManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -537,6 +726,14 @@
 				A73244E2278E8E2A008FDCF0 /* AuthOptionVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A78AECE027A295F9003E05C2 /* PropertyWrappers */ = {
+			isa = PBXGroup;
+			children = (
+				A78AECE127A2960E003E05C2 /* SharedPref.swift */,
+			);
+			path = PropertyWrappers;
 			sourceTree = "<group>";
 		};
 		A797A1D9279E94AE00AB3896 /* Home */ = {
@@ -601,6 +798,7 @@
 			children = (
 				A7CE54822796B9C200191A7B /* Constants+TextsMessages.swift */,
 				A760457B279EC7DC008655B6 /* String.swift */,
+				A76D64A427A0255B00397D1C /* UserPreference.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -815,38 +1013,66 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A76D64D327A2647E00397D1C /* CoreDataManager.swift in Sources */,
+				A76D64BF27A0687100397D1C /* EventLoop.swift in Sources */,
 				A73CA3E327982866005085CB /* PeriodStartDateVC.swift in Sources */,
+				A76D64A527A0255B00397D1C /* UserPreference.swift in Sources */,
 				A73244E3278E8E2A008FDCF0 /* AuthOptionVC.swift in Sources */,
+				A76D64B427A05F9F00397D1C /* JsonHelper+Extensions.swift in Sources */,
 				A73CA3EC27982AF8005085CB /* CalendarCollectionViewCell.swift in Sources */,
+				A76D64C327A0689900397D1C /* RestEvents.swift in Sources */,
 				A77C71C52797FB66007AB67E /* Struct+Storyboard.swift in Sources */,
 				A73244DF278E8E2A008FDCF0 /* AppDelegate.swift in Sources */,
+				A76D64E427A26A0700397D1C /* AlertControllerManager.swift in Sources */,
 				A7CE54832796B9C200191A7B /* Constants+TextsMessages.swift in Sources */,
 				A720FF46278EEC0A00893720 /* AuthSignUpVC.swift in Sources */,
 				A7CE543C27967A9300191A7B /* NSObject+Extension.swift in Sources */,
+				A76D649C279FD51500397D1C /* APIHelper.swift in Sources */,
+				A76D64D527A264BB00397D1C /* QueuedPrint.swift in Sources */,
 				A74C322F2791994600763899 /* YourGoalVC.swift in Sources */,
 				A74C323227919F1200763899 /* BaseTableViewCell.swift in Sources */,
+				A76D64E027A267C200397D1C /* Venue.swift in Sources */,
 				A7CE543E27967B7B00191A7B /* UITableView+Extension.swift in Sources */,
 				A797A1E6279EC4FC00AB3896 /* Toast + Extension.swift in Sources */,
+				A76D64C727A068CD00397D1C /* SocketEvents.swift in Sources */,
+				A76D64AC27A02ABC00397D1C /* AuthSignUpDataModel.swift in Sources */,
 				A74C32282791650F00763899 /* AnswersFewQuestionsVC.swift in Sources */,
+				A76D64A1279FD84600397D1C /* Constants+Macros.swift in Sources */,
 				A702267927902E51000E1C9F /* UIButton+Extensions.swift in Sources */,
 				A7604583279ED91E008655B6 /* UIViewController+Extension.swift in Sources */,
+				A76D64D127A2646300397D1C /* DatabaseHandler.swift in Sources */,
+				A78AECE227A2960E003E05C2 /* SharedPref.swift in Sources */,
 				A73CA3A427981D69005085CB /* LogYearOfBirthVC.swift in Sources */,
+				A76D64CE27A0755C00397D1C /* ActivityIndicatorManager.swift in Sources */,
+				A76D64B827A0670D00397D1C /* RequestScheduler.swift in Sources */,
 				A7069E5A278EC3C90028AA68 /* UIView+Extensions.swift in Sources */,
 				A760457C279EC7DC008655B6 /* String.swift in Sources */,
+				A76D64C527A068B200397D1C /* CoreEngine.swift in Sources */,
 				A77F96BF27954AA50083B5F7 /* GoalTVC.swift in Sources */,
+				A76D64DE27A267A700397D1C /* BusinessHour.swift in Sources */,
 				A77C71C32797EAAA007AB67E /* LoginSuccessPopUpVC.swift in Sources */,
 				A7022677278FF7FA000E1C9F /* Logger.swift in Sources */,
+				A76D64CA27A0694400397D1C /* SocketHandler.swift in Sources */,
 				A720FF49278EFDB500893720 /* AuthForgotPasswordVC.swift in Sources */,
 				A73244E1278E8E2A008FDCF0 /* SceneDelegate.swift in Sources */,
+				A76D64B627A060AB00397D1C /* UserResponseModel.swift in Sources */,
+				A76D64A327A021A200397D1C /* APIRouter.swift in Sources */,
+				A76D64C127A0688600397D1C /* LocalEvents.swift in Sources */,
 				A797A1E4279EC03200AB3896 /* Utility.swift in Sources */,
 				A77C71C02797E65F007AB67E /* RegularOrIrregularCycleVC.swift in Sources */,
+				A76D64DC27A2677900397D1C /* UserPhoto.swift in Sources */,
 				A720FF43278ED70A00893720 /* AuthLoginVC.swift in Sources */,
+				A76D64BC27A0676E00397D1C /* RestHelper.swift in Sources */,
 				A74C322427915D1700763899 /* AuthVerificationCodeVC.swift in Sources */,
 				A797A1DE279E950B00AB3896 /* HomeVC.swift in Sources */,
 				A77B27802799454100C1FE2C /* CalendarTVC.swift in Sources */,
 				A77C71C72797FEEC007AB67E /* Helper.swift in Sources */,
+				A76D64E227A2686800397D1C /* UserDefaults+Extensions.swift in Sources */,
+				A76D649F279FD73800397D1C /* AppConfig.swift in Sources */,
 				A720FF4C278F063A00893720 /* ResetPasswordVC.swift in Sources */,
 				A7CE544427968F7300191A7B /* LastPeriodLongVC.swift in Sources */,
+				A76D64BA27A0673C00397D1C /* NetworkManager.swift in Sources */,
+				A76D64D827A2657400397D1C /* UserInfo.swift in Sources */,
 				A77B277E2799299100C1FE2C /* FirstDayPeriodDuration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1023,6 +1249,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E66D6041D13595645E3088A /* Pods-OvaryIQ.debug.xcconfig */;
 			buildSettings = {
+				API_BASE_URL = "http://54.200.204.89/api/";
+				APP_NAME = "OvaryIQ D";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1035,12 +1263,14 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
+				NEW_SETTING1 = "";
 				PRODUCT_BUNDLE_IDENTIFIER = test.OvaryIQ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1053,6 +1283,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8CD584F3C47F731F3EC64A7E /* Pods-OvaryIQ.release.xcconfig */;
 			buildSettings = {
+				API_BASE_URL = "http://54.200.204.89/api/";
+				APP_NAME = OvaryIQ;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1065,12 +1297,14 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
+				NEW_SETTING1 = "";
 				PRODUCT_BUNDLE_IDENTIFIER = test.OvaryIQ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1151,6 +1385,137 @@
 			};
 			name = Release;
 		};
+		A76D64AE27A05C7400397D1C /* Stagging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Stagging;
+		};
+		A76D64AF27A05C7400397D1C /* Stagging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBCB68E659126C3B68DB5CDC /* Pods-OvaryIQ.stagging.xcconfig */;
+			buildSettings = {
+				API_BASE_URL = "http://54.200.204.89/api/";
+				APP_NAME = "OvaryIQ D";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OvaryIQ/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Auth;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
+				NEW_SETTING1 = "";
+				PRODUCT_BUNDLE_IDENTIFIER = test.OvaryIQ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Stagging;
+		};
+		A76D64B027A05C7400397D1C /* Stagging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.OvaryIQTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OvaryIQ.app/OvaryIQ";
+			};
+			name = Stagging;
+		};
+		A76D64B127A05C7400397D1C /* Stagging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.OvaryIQUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OvaryIQ;
+			};
+			name = Stagging;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1158,6 +1523,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7324503278E8E2C008FDCF0 /* Debug */,
+				A76D64AE27A05C7400397D1C /* Stagging */,
 				A7324504278E8E2C008FDCF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1167,6 +1533,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7324506278E8E2C008FDCF0 /* Debug */,
+				A76D64AF27A05C7400397D1C /* Stagging */,
 				A7324507278E8E2C008FDCF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1176,6 +1543,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7324509278E8E2C008FDCF0 /* Debug */,
+				A76D64B027A05C7400397D1C /* Stagging */,
 				A732450A278E8E2C008FDCF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1185,6 +1553,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A732450C278E8E2C008FDCF0 /* Debug */,
+				A76D64B127A05C7400397D1C /* Stagging */,
 				A732450D278E8E2C008FDCF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

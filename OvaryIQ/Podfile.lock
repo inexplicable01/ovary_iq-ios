@@ -1,36 +1,50 @@
 PODS:
+  - Alamofire (5.4.4)
   - FSCalendar (2.8.2)
   - IQKeyboardManagerSwift (6.5.9)
+  - Kingfisher (4.10.1)
   - lottie-ios (3.2.3)
   - QuickLayout (3.0.0)
   - SwiftEntryKit (1.2.3):
     - QuickLayout (= 3.0.0)
   - SwiftLint (0.45.1)
+  - SwiftMessages (9.0.6):
+    - SwiftMessages/App (= 9.0.6)
+  - SwiftMessages/App (9.0.6)
 
 DEPENDENCIES:
+  - Alamofire (= 5.4.4)
   - FSCalendar
   - IQKeyboardManagerSwift
+  - Kingfisher
   - lottie-ios
   - SwiftEntryKit (= 1.2.3)
   - SwiftLint
+  - SwiftMessages
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - FSCalendar
     - IQKeyboardManagerSwift
+    - Kingfisher
     - lottie-ios
     - QuickLayout
     - SwiftEntryKit
     - SwiftLint
+    - SwiftMessages
 
 SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
   SwiftEntryKit: 340713c2e4a6662c5149629990bf1088bf5f0389
   SwiftLint: 06ac37e4d38c7068e0935bb30cda95f093bec761
+  SwiftMessages: f0c7ef4705a570ad6c5e208b611f4333e660ed92
 
-PODFILE CHECKSUM: 7a471652f782177ece1a32352874db133c92bf7d
+PODFILE CHECKSUM: 726f34a4a520d2408b717e2dfd8acb7a5a12d92a
 
 COCOAPODS: 1.11.2
