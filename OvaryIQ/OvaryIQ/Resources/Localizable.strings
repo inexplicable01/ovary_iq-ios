@@ -16,3 +16,8 @@
 "msg_enable_location_services_title" = "Enable Location Services";
 "txt_not_now" = "Not Now";
 "txt_settings" = "Settings";
+// validation messages
+"msg_empty_name" = "Please enter first name.";
+"msg_empty_phoneNumber" = "Please enter phone number.";
+"msg_empty_email" = "Please enter your email id";
+"msg_empty_password" = "Please enter password.";

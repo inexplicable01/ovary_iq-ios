@@ -68,7 +68,6 @@ extension UserDefaults {
     @SharedPref(key: UDKey.UserLocation, defaultValue: "")
     static var userLocation: String
 
-
     func clear() {
         self.set("", forKey: UDKey.AccessToken)
         self.set("", forKey: UDKey.RefreshToken)

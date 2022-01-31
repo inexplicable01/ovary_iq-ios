@@ -1,4 +1,3 @@
-
 //  AuthSignUpVC.swift
 //  OvaryIQ
 //
@@ -7,7 +6,7 @@
 
 import UIKit
 
-class AuthSignUpVC: UIViewController {
+class AuthSignUpVC: BaseViewC {
 
     // MARK: - IBOutlets
     @IBOutlet private weak var btnCreateAccount: UIButton!
@@ -18,16 +17,18 @@ class AuthSignUpVC: UIViewController {
     @IBOutlet private weak var txtFieldPassword: UITextField!
 
     // MARK: - Properties
-
+    private var viewModel = AuthSignUpViewModel()
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialSetup()
+        self.viewModel.registerCoreEngineEventsCallBack()
         // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.viewModel.registerCoreEngineEventsCallBack()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -36,6 +37,7 @@ class AuthSignUpVC: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.viewModel.unregisterCoreEngineEventsCallBack()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -51,6 +53,7 @@ class AuthSignUpVC: UIViewController {
     }
 
     deinit {
+        self.viewModel.unregisterCoreEngineEventsCallBack()
        classReleased()
     }
 
@@ -60,7 +63,8 @@ class AuthSignUpVC: UIViewController {
 
     private func initialSetup() {
         self.btnCreateAccount.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
-}
+   }
+
     // MARK: - Button Actions
 
     @IBAction private func tapBtnLogin(_ sender: Any) {
@@ -81,7 +85,78 @@ class AuthSignUpVC: UIViewController {
 
     @IBAction private func tapBtnCreateAccount(_ sender: UIButton) {
         fLog()
-        let authSignUpVC = Storyboard.Questions.instantiateViewController(identifier: AnswersFewQuestionsVC.className)
-        self.navigationController?.pushViewController(authSignUpVC, animated: true)
+
+        let name = self.viewModel.authSignupRequestModel.name
+        let phoneNumber = self.viewModel.authSignupRequestModel.mobile
+        let email = self.viewModel.authSignupRequestModel.email
+        let password = self.viewModel.authSignupRequestModel.password
+
+        if name.isEmpty {
+            AlertControllerManager.showToast(message: ErrorMessages.emptyName.localizedString, type: .error)
+        }
+
+      //  self.viewModel.callApiToSignUp()
+//        let authSignUpVC = Storyboard.Questions.instantiateViewController(identifier: AnswersFewQuestionsVC.className)
+//        self.navigationController?.pushViewController(authSignUpVC, animated: true)
+    }
+}
+// MARK: - UITextFieldDelegate
+
+extension AuthSignUpVC: UITextFieldDelegate {
+
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let finalText = currentText.replacingCharacters(in: stringRange, with: string)
+
+        dLog(message: "Final Text :: \(finalText)")
+        if textField == self.txtFieldName {
+            if let range = string.rangeOfCharacter(from: .letters) {
+                self.viewModel.authSignupRequestModel.name = finalText.removeWhiteSpacesAndNewLines()
+                return true
+            }else {
+                return false
+            }
+        } else if textField == self.txtfieldPhoneNumber {
+            if let range = string.rangeOfCharacter(from: .alphanumerics) {
+                self.viewModel.authSignupRequestModel.mobile = finalText.removeWhiteSpacesAndNewLines()
+                return true
+            }else {
+                return false
+            }
+
+        } else if textField == self.txtFieldEmail {
+            self.viewModel.authSignupRequestModel.email = finalText.removeWhiteSpacesAndNewLines()
+        } else if textField == self.txtFieldPassword {
+            self.viewModel.authSignupRequestModel.password = finalText.removeWhiteSpacesAndNewLines()
+        }
+
+        return true
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        fLog()
+        textField.resignFirstResponder()
+        return true
+    }
+
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        return true
     }
 }

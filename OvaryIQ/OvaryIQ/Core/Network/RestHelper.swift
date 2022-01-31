@@ -58,75 +58,18 @@ class RestHelper: NSObject {
 
         let restEventId = RestEvents(rawValue: evObj.eventID)!
 
-    //    switch restEventId {
-    
+        switch restEventId {
+           case .SignUp:
+            if let parameters = evObj.object as? [String:Any] {
+                evObj.apiRequest =  APIRouter.signUp(params: parameters)
+            }else{
+                dLog(message: "Parameter Missing :: \(APIName.SignUp)")
+            }
 
-//        case .sendOtp:
-//            if let parameters = evObj.object as? [String: Any] {
-//                evObj.apiRequest = APIRouter.sendOtp(params: parameters)
-//            } else {
-//                dLog(message: "Parameter Missing :: \(APIName.SendOtp)")
-//            }
-//
-//        case .verifyOtp:
-//            if let parameters = evObj.object as? [String: Any] {
-//                evObj.apiRequest = APIRouter.verifyOtp(params: parameters)
-//            } else {
-//                dLog(message: "Parameter Missing :: \(APIName.VerifyOtp)")
-//            }
-//
-//        case .validateSocialId:
-//            if let parameters = evObj.object as? [String: Any] {
-//                evObj.apiRequest = APIRouter.validateSocialId(params: parameters)
-//            } else {
-//                dLog(message: "Parameter Missing :: \(APIName.ValidateSocialId)")
-//            }
-//
-//        case .registration:
-//            if let parameters = evObj.object as? [String: Any] {
-//                evObj.apiRequest = APIRouter.registration(params: parameters)
-//            } else {
-//                dLog(message: "Parameter Missing :: \(APIName.Registration)")
-//            }
-//
-//        case .editProfile:
-//            if let parameters = evObj.object as? [String: Any] {
-//                evObj.apiRequest = APIRouter.editProfile(params: parameters)
-//            } else {
-//                dLog(message: "Parameter Missing :: \(APIName.EditProfile)")
-//            }
-//
-//        case .deleteProfileImage:
-//            if let parameters = evObj.object as? [String: Any] {
-//                evObj.apiRequest = APIRouter.deleteProfileImage(params: parameters)
-//            } else {
-//                dLog(message: "Parameter Missing :: \(APIName.DeleteProfileImage)")
-//            }
-//
-//        case .logout:
-//            if let parameters = evObj.object as? [String: Any] {
-//                evObj.apiRequest = APIRouter.logout(params: parameters)
-//            } else {
-//                dLog(message: "Parameter Missing :: \(APIName.Logout)")
-//            }
-//
-//        case .getAllVenues:
-//            if let parameters = evObj.object as? [String: Any] {
-//                evObj.apiRequest = APIRouter.getAllVenues(params: parameters)
-//            } else {
-//                dLog(message: "Parameter Missing :: \(APIName.GetAllVenues)")
-//            }
-//
-//        case .userUpdateLocation:
-//            if let parameters = evObj.object as? [String: Any] {
-//                evObj.apiRequest = APIRouter.userUpdateLocation(params: parameters)
-//            } else {
-//                dLog(message: "Parameter Missing :: \(APIName.UserUpdateLocation)")
-//            }
+           case .networkError:
+            break
 
-   //     case .networkError:
-     //       break
-       // }
+        }
 
         self.addRequestInScheduler(requestObj: evObj)
     }

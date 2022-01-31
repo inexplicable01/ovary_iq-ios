@@ -1,4 +1,3 @@
-//
 //  Constants+String.swift
 //  OvaryIQ
 //
@@ -14,6 +13,11 @@ enum ErrorMessages: String {
     case timeout = "msg_timeout"
     case apiFail = "msg_api_fail"
     case enableLocationServicesTitle = "msg_enable_location_services_title"
+    // Validation Messages
+    case emptyName = "msg_empty_name"
+    case emptyPhoneNumber = "msg_empty_phoneNumber"
+    case emptyEmail = "msg_empty_email"
+    case emptyPassword = "msg_empty_password"
     var localizedString: String {
         return NSLocalizedString(self.rawValue, comment: "")
     }

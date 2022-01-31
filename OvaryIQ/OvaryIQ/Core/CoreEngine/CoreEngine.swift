@@ -189,64 +189,26 @@ class CoreEngine: EventLoop {
             dLog(message: "Response for :: \(evobj.eventID) is :: \(String(describing: evobj.object))")
 
             switch (eventID) {
-            case .sendOtp:
-                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
-                    notifyToGUI = true
-                }
-
-            case .verifyOtp:
-                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
-                    self.handleUserInformationForVerifyOtp(responseDict: responseDict)
-                    notifyToGUI = true
-                }
-
-            case .validateSocialId:
-                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
-                    self.handleUserInformationForVerifyOtp(responseDict: responseDict)
-                    notifyToGUI = true
-                }
-
-            case .registration:
-                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
-                    self.handleUserInformationForVerifyOtp(responseDict: responseDict)
-                    notifyToGUI = true
-                }
-
-            case .editProfile:
-                if let responseDict = evobj.object as? [String: Any],
-                    !self.validateResponseError(response: responseDict) {
-                    self.handleUserInformationForEditProfile(responseDict: responseDict)
-                    notifyToGUI = true
-                } else if let data = evobj.object as? Data,
-                          let responseDict = Utility.dataToJsonDict(data) as? [String: Any],
-                          !self.validateResponseError(response: responseDict) {
-                    evobj.object = responseDict as AnyObject
-                    self.handleUserInformationForEditProfile(responseDict: responseDict)
-                    notifyToGUI = true
-                }
-
-            case .deleteProfileImage:
-                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
-                    notifyToGUI = true
-                }
-
-            case .logout:
-                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
-
-                    DispatchQueue.main.async {
-                        self.logoutMethod()
-                    }
-                }
-
-            case .getAllVenues:
-                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
-                    notifyToGUI = true
-                }
-
-            case .userUpdateLocation:
+            case .SignUp:
                 if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
                     notifyToGUI = false
-                }
+            }
+//            case .registration:
+//                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
+//                    self.handleUserInformationForVerifyOtp(responseDict: responseDict)
+//                    notifyToGUI = true
+//                }
+
+
+
+//            case .logout:
+//                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
+//
+//                    DispatchQueue.main.async {
+//                        self.logoutMethod()
+//                    }
+//                }
+
 
             default :
                 if let responseDict = evobj.object as? [String: Any],

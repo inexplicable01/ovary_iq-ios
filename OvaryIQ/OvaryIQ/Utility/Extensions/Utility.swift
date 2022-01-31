@@ -582,27 +582,27 @@ extension Utility {
 
 // MARK: - Encode & Decode
 
-extension Utility {
-    class func decode(_ str: String) -> String? {
-        let data = str.data(using: .utf8)!
-        return String(data: data, encoding: .nonLossyASCII)
-    }
-
-    class func encode(_ str: String) -> String {
-        let data = str.data(using: .nonLossyASCII, allowLossyConversion: true)!
-        return String(data: data, encoding: .utf8)!
-    }
-
-    class func encodeEmoji(_ str: String) -> String {
-        let data = str.data(using: .nonLossyASCII, allowLossyConversion: true)!
-        return String(data: data, encoding: .utf8)!
-    }
-
-    class func decodeEmoji(_ str: String) -> String? {
-        let data = str.data(using: .utf8)!
-        return String(data: data, encoding: .nonLossyASCII)
-    }
-}
+//extension Utility {
+//    class func decode(_ str: String) -> String? {
+//        let data = str.data(using: .utf8)!
+//        return String(data: data, encoding: .nonLossyASCII)
+//    }
+//
+//    class func encode(_ str: String) -> String {
+//        let data = str.data(using: .nonLossyASCII, allowLossyConversion: true)!
+//        return String(data: data, encoding: .utf8)!
+//    }
+//
+//    class func encodeEmoji(_ str: String) -> String {
+//        let data = str.data(using: .nonLossyASCII, allowLossyConversion: true)!
+//        return String(data: data, encoding: .utf8)!
+//    }
+//
+//    class func decodeEmoji(_ str: String) -> String? {
+//        let data = str.data(using: .utf8)!
+//        return String(data: data, encoding: .nonLossyASCII)
+//    }
+//}
 
 // MARK: - Starify
 

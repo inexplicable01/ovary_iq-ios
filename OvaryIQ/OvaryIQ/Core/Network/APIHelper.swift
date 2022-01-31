@@ -33,4 +33,6 @@ struct APIParam  {
     static let Time = "time"
 
     static let keyName = "keyName"
-    static let keyName1 = "keyName1"}
+    static let keyName1 = "keyName1"
+    
+}

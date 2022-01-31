@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S5v-pd-Cwb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -272,14 +273,14 @@ with the Ovary IQ App </string>
                                     <constraint firstAttribute="height" constant="55" id="kuz-j1-gXb"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sw1-BC-MlD">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sw1-BC-MlD">
                                 <rect key="frame" x="20" y="64" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="2E8-gg-BHc"/>
                                     <constraint firstAttribute="height" constant="35" id="ayI-eR-ILt"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="backArrow"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="     " image="backArrow"/>
                                 <connections>
                                     <action selector="tapBackBtn:" destination="Wt4-D7-o7u" eventType="touchUpInside" id="8MC-DN-p1k"/>
                                 </connections>
@@ -617,14 +618,14 @@ account</string>
                                     <constraint firstAttribute="height" constant="55" id="Ve2-0X-MJ9"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqQ-JS-0fn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqQ-JS-0fn">
                                 <rect key="frame" x="20" y="64" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="5rW-Pw-6Mu"/>
                                     <constraint firstAttribute="height" constant="35" id="Aa6-MQ-6qg"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="backArrow"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="backArrow"/>
                                 <connections>
                                     <action selector="tapBtnBack:" destination="Dby-aU-Sdv" eventType="touchUpInside" id="EJa-Xn-emH"/>
                                 </connections>
@@ -633,7 +634,7 @@ account</string>
                                 <rect key="frame" x="0.0" y="127" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJX-ZK-Bmw">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="726.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="704.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eggLogo" translatesAutoresizingMaskIntoConstraints="NO" id="kYP-X5-h0r">
                                                 <rect key="frame" x="188" y="50" width="38" height="51"/>
@@ -711,6 +712,9 @@ account</string>
                                                                 <rect key="frame" x="42" y="0.0" width="282" height="50"/>
                                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="Dby-aU-Sdv" id="Cct-Hg-Fvd"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -796,6 +800,9 @@ account</string>
                                                                 <rect key="frame" x="84.5" y="0.0" width="239.5" height="50"/>
                                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="Dby-aU-Sdv" id="f8j-Iw-Fdw"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -840,6 +847,9 @@ account</string>
                                                                 <rect key="frame" x="45.5" y="0.0" width="278.5" height="50"/>
                                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="Dby-aU-Sdv" id="Se6-Ku-ewx"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -881,6 +891,9 @@ account</string>
                                                                 <rect key="frame" x="44.5" y="0.0" width="243.5" height="50"/>
                                                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="Dby-aU-Sdv" id="S8F-ix-sPE"/>
+                                                                </connections>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZo-UC-HXp">
                                                                 <rect key="frame" x="298" y="16.5" width="16" height="17"/>
@@ -927,7 +940,7 @@ account</string>
                                                 </subviews>
                                             </stackView>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJQ-AF-cwj">
-                                                <rect key="frame" x="40" y="471.5" width="16" height="16"/>
+                                                <rect key="frame" x="40" y="459.5" width="16" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="Vxj-oJ-0pI"/>
                                                     <constraint firstAttribute="width" constant="16" id="dsy-2O-A0L"/>
@@ -936,7 +949,7 @@ account</string>
                                                 <state key="normal" title="" image="tick"/>
                                             </button>
                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="-10" translatesAutoresizingMaskIntoConstraints="NO" id="beX-Mf-Kwm">
-                                                <rect key="frame" x="66" y="464.5" width="240" height="30.5"/>
+                                                <rect key="frame" x="66" y="452.5" width="240" height="30.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree to" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1w-db-0dk">
                                                         <rect key="frame" x="0.0" y="0.0" width="50.5" height="30.5"/>
@@ -981,7 +994,7 @@ account</string>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmh-3q-vRX">
-                                                <rect key="frame" x="40" y="522.5" width="334" height="50"/>
+                                                <rect key="frame" x="40" y="500.5" width="334" height="50"/>
                                                 <color key="backgroundColor" red="1" green="0.42745098039215684" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="pzP-UQ-gAi"/>
@@ -1004,7 +1017,7 @@ account</string>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="C75-ff-b1J">
-                                                <rect key="frame" x="98" y="666.5" width="218.5" height="40"/>
+                                                <rect key="frame" x="98" y="644.5" width="218.5" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbQ-UR-HCe">
                                                         <rect key="frame" x="0.0" y="0.0" width="173.5" height="40"/>
@@ -1039,7 +1052,7 @@ account</string>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="Jmh-3q-vRX" firstAttribute="top" secondItem="YJQ-AF-cwj" secondAttribute="bottom" constant="35" id="099-QF-NIm"/>
+                                            <constraint firstItem="Jmh-3q-vRX" firstAttribute="top" secondItem="YJQ-AF-cwj" secondAttribute="bottom" constant="25" id="099-QF-NIm"/>
                                             <constraint firstItem="Jmh-3q-vRX" firstAttribute="trailing" secondItem="3Re-yP-J4P" secondAttribute="trailing" id="2b8-fc-l3h"/>
                                             <constraint firstItem="C75-ff-b1J" firstAttribute="centerX" secondItem="Jmh-3q-vRX" secondAttribute="centerX" id="4Sj-9A-EBm"/>
                                             <constraint firstItem="1oy-BV-m4R" firstAttribute="top" secondItem="vGP-dY-1Nx" secondAttribute="bottom" constant="13" id="8Q3-ET-7uW"/>
@@ -1048,7 +1061,7 @@ account</string>
                                             <constraint firstItem="Jmh-3q-vRX" firstAttribute="leading" secondItem="3Re-yP-J4P" secondAttribute="leading" id="Eke-aN-N88"/>
                                             <constraint firstItem="3Re-yP-J4P" firstAttribute="top" secondItem="jyT-L9-3Bj" secondAttribute="bottom" constant="30" id="FVk-sI-IXH"/>
                                             <constraint firstItem="3Re-yP-J4P" firstAttribute="leading" secondItem="fJX-ZK-Bmw" secondAttribute="leading" constant="40" id="H59-S7-wEU"/>
-                                            <constraint firstItem="YJQ-AF-cwj" firstAttribute="top" secondItem="3Re-yP-J4P" secondAttribute="bottom" constant="12" id="K7O-4E-HD3"/>
+                                            <constraint firstItem="YJQ-AF-cwj" firstAttribute="top" secondItem="3Re-yP-J4P" secondAttribute="bottom" id="K7O-4E-HD3"/>
                                             <constraint firstItem="vGP-dY-1Nx" firstAttribute="top" secondItem="kYP-X5-h0r" secondAttribute="bottom" constant="11" id="KLV-5M-IxV"/>
                                             <constraint firstItem="beX-Mf-Kwm" firstAttribute="leading" secondItem="YJQ-AF-cwj" secondAttribute="trailing" constant="10" id="R6O-Fh-5aS"/>
                                             <constraint firstItem="jyT-L9-3Bj" firstAttribute="centerX" secondItem="fJX-ZK-Bmw" secondAttribute="centerX" id="aVr-1n-Q7N"/>
@@ -1298,7 +1311,9 @@ password reset</string>
                                     <constraint firstAttribute="height" constant="46.57" id="C6Z-zU-4t4"/>
                                     <constraint firstAttribute="width" constant="35" id="Mk5-EG-Jmv"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="Cross"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Cross"/>
                                 <connections>
                                     <action selector="tapBtnCrossWithSender:" destination="BNq-vy-eHw" eventType="touchUpInside" id="tmP-4a-LNo"/>
@@ -1619,12 +1634,14 @@ xyz.ab@gmail.com</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQZ-lF-5So">
-                                <rect key="frame" x="147.5" y="368.5" width="119" height="46.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQZ-lF-5So">
+                                <rect key="frame" x="189.5" y="368.5" width="35" height="46.5"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="9pp-QW-74s"/>
                                     <constraint firstAttribute="height" constant="46.57" id="mzX-te-pa1"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="Cross"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Cross"/>
                                 <connections>
                                     <action selector="tapCrossBtnWithSender:" destination="D8y-46-VMn" eventType="touchUpInside" id="aFu-qB-Ck0"/>
@@ -1896,13 +1913,16 @@ xyz.ab@gmail.com</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQI-Zt-3QY">
-                                <rect key="frame" x="147.5" y="464.5" width="119" height="46.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQI-Zt-3QY">
+                                <rect key="frame" x="189.5" y="464.5" width="35" height="46.5"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="IfA-He-vZ0"/>
                                     <constraint firstAttribute="height" constant="46.57" id="yPz-Vn-8SB"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="Cross"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="" image="Cross"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Cross" title=""/>
                                 <connections>
                                     <action selector="tapCrossBtnWithSender:" destination="awc-1u-sea" eventType="touchUpInside" id="qY0-SR-Fak"/>
                                 </connections>

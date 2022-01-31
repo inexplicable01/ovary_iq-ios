@@ -13,16 +13,8 @@ let minRestEvent  =   1000
 let maxRestEvent  =   1999
 
 enum RestEvents: Int {
-    case sendOtp =   1000
-    case verifyOtp
-    case registration
-    case editProfile
-    case deleteProfileImage
-    case validateSocialId
-    case logout
-    case getAllVenues
-    case userUpdateLocation
-
+    case SignUp
+   // case logout
     case networkError
 }
 

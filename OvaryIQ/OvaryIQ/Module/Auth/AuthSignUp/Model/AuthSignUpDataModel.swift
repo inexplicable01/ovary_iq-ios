@@ -22,4 +22,15 @@ struct AuthSignUpDataModel: Codable {
         case createdAt = "created_at"
         case id = "id"
     }
+
+//    init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: CodingKeys.self)
+//        name = try values.decodeIfPresent(Int.self, forKey: .name)
+//        roleName = try values.decodeIfPresent(String.self, forKey: .roleName)
+//        userType = try values.decodeIfPresent(String.self, forKey: .userType)
+//        value = try values.decodeIfPresent(String.self, forKey: .value)
+//        isActive = try values.decodeIfPresent(Bool.self, forKey: .isActive)
+//        isDeleted = try values.decodeIfPresent(Bool.self, forKey: .isDeleted)
+//        organizationID = try values.decodeIfPresent(Int.self, forKey: .organizationID)
+//    }
 }
