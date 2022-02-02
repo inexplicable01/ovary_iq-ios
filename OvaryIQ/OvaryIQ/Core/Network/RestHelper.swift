@@ -60,7 +60,7 @@ class RestHelper: NSObject {
 
         switch restEventId {
            case .SignUp:
-            if let parameters = evObj.object as? [String:Any] {
+            if let parameters = evObj.object as? [String: Any] {
                 evObj.apiRequest =  APIRouter.signUp(params: parameters)
             }else{
                 dLog(message: "Parameter Missing :: \(APIName.SignUp)")

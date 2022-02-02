@@ -18,6 +18,7 @@ enum ErrorMessages: String {
     case emptyPhoneNumber = "msg_empty_phoneNumber"
     case emptyEmail = "msg_empty_email"
     case emptyPassword = "msg_empty_password"
+    case somethingWentWrong = "msg_something_went_wrong"
     var localizedString: String {
         return NSLocalizedString(self.rawValue, comment: "")
     }

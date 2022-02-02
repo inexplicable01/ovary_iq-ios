@@ -9,9 +9,12 @@ import UIKit
 
 class AuthOptionVC: UIViewController {
     // MARK: - IBOutlets
+    // MARK: - Properties
+    private var viewModel = AuthOptionViewModel()
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.initialSetup()
         // Do any additional setup after loading the view.
     }
 
@@ -42,18 +45,34 @@ class AuthOptionVC: UIViewController {
     deinit {
        classReleased()
     }
+    // MARK: - Private Functions
+
+    private func initialSetup() {
+        viewModel.viewContreoller = self
+   }
 
     // MARK: - Button Actions
     @IBAction private func tapBtnApple(_ sender: Any) {
         fLog()
-        let answersFewQuestionsVC = Storyboard.Questions.instantiateViewController(identifier: AnswersFewQuestionsVC.className)
-        self.navigationController?.pushViewController(answersFewQuestionsVC, animated: true)
+        self.viewModel.validateSocialId(loginType: .apple)
+//        let answersFewQuestionsVC = Storyboard.Questions.instantiateViewController(identifier: AnswersFewQuestionsVC.className)
+//        self.navigationController?.pushViewController(answersFewQuestionsVC, animated: true)
     }
 
     @IBAction private func tapBtnGoogle(_ sender: Any) {
         fLog()
-        let answersFewQuestionsVC = Storyboard.Questions.instantiateViewController(identifier: AnswersFewQuestionsVC.className)
-        self.navigationController?.pushViewController(answersFewQuestionsVC, animated: true)
+
+        self.viewModel.validateSocialId(loginType: .google)
+//        GoogleManager.shared.login(viewController: self) { (socialUserInfo, message, success) in
+//                    if !success {
+//                       // Utility.showToast(message: message ?? "Google Login Error")
+//                    } else {
+//                          if let userInfo = socialUserInfo {
+//                          }
+//                    }
+//        }
+//        let answersFewQuestionsVC = Storyboard.Questions.instantiateViewController(identifier: AnswersFewQuestionsVC.className)
+//        self.navigationController?.pushViewController(answersFewQuestionsVC, animated: true)
     }
 
     @IBAction private func tapBtnEmail(_ sender: Any) {

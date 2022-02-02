@@ -21,10 +21,10 @@ import UIKit
  }
 class YourGoalVC: UIViewController {
     // MARK: - IBOutlets
-    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var btnNext: UIButton!
     // MARK: - Properties
-    private var goalArr = [Goal(title: "Get pregnant", titleImage: UIImage(named: "get_Preganent") ?? UIImage(), selectedImage: UIImage(named: "SelectedPreganent") ?? UIImage(), isSelected: false),Goal(title: "Track symptoms", titleImage: UIImage(named: "symptoms") ?? UIImage(), selectedImage: UIImage(named: "SelectedPreganent") ?? UIImage(), isSelected: false),Goal(title: "Avoid pregnancy", titleImage: UIImage(named: "Unselectinjection") ?? UIImage(), selectedImage: UIImage(named: "selectInjection") ?? UIImage(), isSelected: false),Goal(title: "Period tracking", titleImage: UIImage(named: "unselectedPeriodTracker") ?? UIImage(), selectedImage: UIImage(named: "selectedPeriodTracker") ?? UIImage(), isSelected: true)]
+    private var goalArr = [Goal(title: "Get pregnant", titleImage: UIImage(named: "get_Preganent") ?? UIImage(), selectedImage: UIImage(named: "SelectedPreganent") ?? UIImage(), isSelected: false),Goal(title: "Period tracking", titleImage: UIImage(named: "unselectedPeriodTracker") ?? UIImage(), selectedImage: UIImage(named: "selectedPeriodTracker") ?? UIImage(), isSelected: true)]
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,73 +72,54 @@ class YourGoalVC: UIViewController {
     }
 }
 
-// MARK: - UITableViewDelegate, UITableViewDataSource
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 
-extension YourGoalVC: UITableViewDelegate, UITableViewDataSource {
+extension YourGoalVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    // MARK: - UITableViewDelegate
+    // MARK: - UICollectionViewDelegate
 
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.0
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
     }
 
-    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        return 0.0
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+
     }
-
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return nil
-    }
-
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.0
-    }
-
-    func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
-        return 0.0
-    }
-
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return nil
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70.0
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        fLog()
-        for indx in 0..<goalArr.count {
-            if indx == indexPath.row {
-                self.goalArr[indx].isSelected = true
-            } else {
-                self.goalArr[indx].isSelected = false
-            }
-        }
-        self.tableView.reloadData()
-    }
-
-    // MARK: - UITableViewDataSource
-
-    func numberOfSections(in tableView: UITableView) -> Int {
+    // MARK: - UICollectionViewDataSource
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return goalArr.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell: GoalTVC = tableView.dequeueReusableCell(withIdentifier: GoalTVC.className, for: indexPath) as? GoalTVC {
-          // cell.delegate = self
-            cell.configCell(model: goalArr[indexPath.row])
-            return cell
-        } else {
-            return tableView.emptyCell()
-        }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+            if let cell: GoalCVC = collectionView.dequeueReusableCell(withReuseIdentifier: GoalCVC.className, for: indexPath) as? GoalCVC {
+                return cell
+            } else {
+                return UICollectionViewCell()
+            }
+
+    }
+
+    // MARK: - UICollectionViewDelgateFlowLayout
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10.0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10.0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.size.width / 2
+        return CGSize(width: width - 15, height: width - 15)
     }
 }

@@ -20,6 +20,18 @@ pod 'IQKeyboardManagerSwift'
  #Usage:- for Banners or pop-ups
  pod 'SwiftEntryKit', '1.2.3'
 
+ #Usage:- Google signin
+ pod 'GoogleSignIn'
+
+ #Usage:- for picking country or dialing code
+ pod 'SKCountryPicker'
+
+
+ #Usage:- for facebook login
+#pod 'FBSDKLoginKit'
+# pod 'FBSDKCoreKit'
+# pod 'FBSDKShareKit'
+
 
  #Usage:- Networking / API handling
  pod 'Alamofire', '5.4.4'

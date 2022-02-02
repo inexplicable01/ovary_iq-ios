@@ -8,7 +8,9 @@
 import UIKit
 
 class CalendarTVC: UITableViewCell {
-
+    // MARK: - IBOutlets
+    // MARK: - Properties
+    // MARK: - View Life Cycle Functions
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

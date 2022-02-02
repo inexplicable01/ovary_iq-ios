@@ -771,6 +771,9 @@ account</string>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfE-KA-uUa">
                                                                         <rect key="frame" x="0.0" y="0.0" width="50.5" height="50"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <connections>
+                                                                            <action selector="tapBtnCountryPicker:" destination="Dby-aU-Sdv" eventType="touchUpInside" id="Mjz-un-kw9"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1114,6 +1117,7 @@ account</string>
                     <connections>
                         <outlet property="btnCreateAccount" destination="Jmh-3q-vRX" id="mGe-Uj-ZUO"/>
                         <outlet property="btnEyeShowHidePassword" destination="vZo-UC-HXp" id="1Nt-Wc-B0P"/>
+                        <outlet property="lblCountryCode" destination="i8S-cA-ofj" id="0Dr-mF-fgd"/>
                         <outlet property="txtFieldEmail" destination="jAB-I2-Xbq" id="39w-9B-zKh"/>
                         <outlet property="txtFieldName" destination="jrt-KM-PlU" id="7Yj-ne-edi"/>
                         <outlet property="txtFieldPassword" destination="CQh-mn-sQ1" id="2SC-9G-hoc"/>

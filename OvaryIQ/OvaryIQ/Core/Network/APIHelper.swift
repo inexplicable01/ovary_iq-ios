@@ -11,7 +11,11 @@ let baseURL = AppConfig.getAPIBaseURL()
 
 // MARK: - Api name
 struct APIName {
-    static let SignUp = "auth/register"
+    static let SignUp =  baseURL + "auth/register"
+    static let Login  =  baseURL + "auth/login"
+    static let LogOut  =  baseURL + "auth/logout"
+    static let FetchGoals  =  baseURL + "auth/fetch_goals"
+    static let SaveGoalsDetails  =  baseURL + "auth/save_user_goal_details"
 }
 
 // MARK: - Parameter keys
@@ -22,11 +26,11 @@ struct APIParam  {
     static let Error = "error"
     static let Errors = "errors"
     static let ErrorCode = "errorCode"
-    static let ResponseMessage = "responseMessage"
+    static let ResponseMessage = "message"
 
 
     static let StatusCode = "statusCode"
-    static let ResponseData = "responseData"
+    static let Data = "data"
     static let Response = "response"
     static let Result = "result"
     static let Message = "message"

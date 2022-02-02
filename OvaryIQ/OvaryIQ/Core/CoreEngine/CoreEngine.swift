@@ -191,7 +191,7 @@ class CoreEngine: EventLoop {
             switch (eventID) {
             case .SignUp:
                 if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
-                    notifyToGUI = false
+                    notifyToGUI = true
             }
 //            case .registration:
 //                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
@@ -220,6 +220,7 @@ class CoreEngine: EventLoop {
             }
 
             // notify the response to the GUI
+            dLog(message: "notifyui::",filename: "\(notifyToGUI)")
             if notifyToGUI {
                 self.notifyToGUI(cbType: EventCallBack.restCallBack, eventID: evobj.eventID, result: success, response: evobj.object)
             }
@@ -279,7 +280,7 @@ class CoreEngine: EventLoop {
 
                         if statusCode == 1 {
 
-                            if let responseData = responseDict[APIParam.ResponseData] as? [String: Any] {
+                            if let responseData = responseDict[APIParam.Data] as? [String: Any] {
 
                                 DispatchQueue.main.async {
                                     completionBlock(eventID, result, responseData, nil, true)
@@ -355,7 +356,7 @@ extension CoreEngine {
 
                 var errorStr = ""
 
-                if let errorMsg = errorDict["error"] as? String {
+                if let errorMsg = errorDict[APIParam.ResponseMessage] as? String {
                     errorStr = errorMsg
                 } else if let errorMsg = errorDict[APIParam.ResponseMessage] as? String {
                     errorStr = errorMsg
@@ -369,7 +370,8 @@ extension CoreEngine {
                 }
 
 
-                if errCode == 19  || errCode == 2 {
+                if errCode == 401  || errCode == 2 {
+                    // for session expired
                     DispatchQueue.main.async {
                         AlertControllerManager.showAlert(title: AppConfig.getAppName(), message: errorStr, buttons: [Text.oks.localizedString]) { index in
                             self.logoutMethod()
@@ -377,6 +379,8 @@ extension CoreEngine {
                     }
                 } else {
                     DispatchQueue.main.async {
+                     //   AlertControllerManager.showToast(message: errorStr, type: AlertType.error)
+
                         AlertControllerManager.showToast(message: errorStr, type: AlertType.error)
                     }
                 }
@@ -413,7 +417,7 @@ extension CoreEngine {
 
     private func handleUserInformationForVerifyOtp(responseDict: [String: Any]) {
 
-        if let responseData = responseDict[APIParam.ResponseData] as? [String: Any],
+        if let responseData = responseDict[APIParam.Data] as? [String: Any],
            let accessToken =  responseData[APIParam.AccessToken] as? String,
               let userProfile = responseData["userProfile"] as? [String: Any],
               let userProfileData = Utility.jsonToData(json: userProfile) {
@@ -471,7 +475,7 @@ extension CoreEngine {
 
     private func handleUserInformationForEditProfile(responseDict: [String: Any]) {
 
-        if let responseData = responseDict[APIParam.ResponseData] as? [String: Any],
+        if let responseData = responseDict[APIParam.Data] as? [String: Any],
               let userProfile = responseData["userProfile"] as? [String: Any],
               let userProfileData = Utility.jsonToData(json: userProfile) {
             do {

@@ -11,38 +11,30 @@ import Alamofire
 enum APIRouter: URLRequestConvertible {
 
     case signUp(params: Parameters)
-//    case verifyOtp(params: Parameters)
-//    case validateSocialId(params: Parameters)
-//    case registration(params: Parameters)
-//    case editProfile(params: Parameters)
-//    case deleteProfileImage(params: Parameters)
-//    case logout(params: Parameters)
-//    case getAllVenues(params: Parameters)
-//    case userUpdateLocation(params: Parameters)
+    case login(params: Parameters)
+    case logOut(params: Parameters)
+    case fetchGoals(params: Parameters)
+    case savezGoalsDetails(params: Parameters)
 
     var method: HTTPMethod {
 
         switch self {
-
-//        case .getAllVenues, .logout:
-//            return .get
-
-        case .signUp:
+        case .signUp, .login, .logOut, .savezGoalsDetails:
             return .post
+
+        case .fetchGoals:
+            return .get
+
         }
     }
 
     var path: String {
         switch self {
         case .signUp: return APIName.SignUp
-//        case .verifyOtp: return APIName.VerifyOtp
-//        case .validateSocialId: return APIName.ValidateSocialId
-//        case .registration: return APIName.Registration
-//        case .editProfile: return APIName.EditProfile
-//        case .deleteProfileImage: return APIName.DeleteProfileImage
-//        case .logout: return APIName.Logout
-//        case .getAllVenues: return APIName.GetAllVenues
-//        case .userUpdateLocation: return APIName.UserUpdateLocation
+        case .login: return APIName.Login
+        case .logOut: return APIName.LogOut
+        case .fetchGoals: return APIName.FetchGoals
+        case .savezGoalsDetails: return APIName.SaveGoalsDetails
         }
     }
 
@@ -68,8 +60,12 @@ enum APIRouter: URLRequestConvertible {
         urlRequest.cachePolicy = .reloadIgnoringCacheData
 
         switch self {
-        case .signUp(let params):
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
+        case .signUp(let params),
+             .login(let params),
+             .logOut(let params),
+             .fetchGoals(let params),
+             .savezGoalsDetails(let params):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
 
             //urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
             //urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)

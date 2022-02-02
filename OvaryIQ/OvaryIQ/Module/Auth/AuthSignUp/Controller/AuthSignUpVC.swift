@@ -5,6 +5,7 @@
 //
 
 import UIKit
+import SKCountryPicker
 
 class AuthSignUpVC: BaseViewC {
 
@@ -15,6 +16,7 @@ class AuthSignUpVC: BaseViewC {
     @IBOutlet private weak var txtfieldPhoneNumber: UITextField!
     @IBOutlet private weak var txtFieldEmail: UITextField!
     @IBOutlet private weak var txtFieldPassword: UITextField!
+    @IBOutlet private weak var lblCountryCode: UILabel!
 
     // MARK: - Properties
     private var viewModel = AuthSignUpViewModel()
@@ -63,10 +65,23 @@ class AuthSignUpVC: BaseViewC {
 
     private func initialSetup() {
         self.btnCreateAccount.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
-   }
+    }
+
+    private func showCountyPicker() -> Void {
+        _ = CountryPickerWithSectionViewController.presentController(on: self) { [weak self] (country: Country) in
+             guard let self = self else { return }
+             self.lblCountryCode.text = country.dialingCode
+            self.viewModel.authSignupRequestModel.countryCode = country.dialingCode ?? "+91"
+         }
+     }
 
     // MARK: - Button Actions
 
+    @IBAction private func tapBtnCountryPicker(_ sender: UIButton){
+        fLog()
+        self.showCountyPicker()
+
+    }
     @IBAction private func tapBtnLogin(_ sender: Any) {
         fLog()
         self.navigationController?.popViewController(animated: true)
@@ -93,9 +108,15 @@ class AuthSignUpVC: BaseViewC {
 
         if name.isEmpty {
             AlertControllerManager.showToast(message: ErrorMessages.emptyName.localizedString, type: .error)
-        }
-
-      //  self.viewModel.callApiToSignUp()
+        } else if phoneNumber.isEmpty {
+            AlertControllerManager.showToast(message: ErrorMessages.emptyPhoneNumber.localizedString, type: .error)
+        } else if email.isEmpty {
+            AlertControllerManager.showToast(message: ErrorMessages.emptyEmail.localizedString, type: .error)
+        } else if password.isEmpty {
+            AlertControllerManager.showToast(message: ErrorMessages.emptyPassword.localizedString, type: .error)
+        } else {
+            self.viewModel.callApiToSignUp()
+       }
 //        let authSignUpVC = Storyboard.Questions.instantiateViewController(identifier: AnswersFewQuestionsVC.className)
 //        self.navigationController?.pushViewController(authSignUpVC, animated: true)
     }
@@ -127,19 +148,16 @@ extension AuthSignUpVC: UITextFieldDelegate {
 
         dLog(message: "Final Text :: \(finalText)")
         if textField == self.txtFieldName {
-            if let range = string.rangeOfCharacter(from: .letters) {
-                self.viewModel.authSignupRequestModel.name = finalText.removeWhiteSpacesAndNewLines()
-                return true
-            }else {
-                return false
-            }
+            self.viewModel.authSignupRequestModel.name = finalText.removeWhiteSpacesAndNewLines()
+//            if let range = string.rangeOfCharacter(from: .letters) {
+//                self.viewModel.authSignupRequestModel.name = finalText.removeWhiteSpacesAndNewLines()
+//                return true
+//            } else {
+//                return false
+//            }
         } else if textField == self.txtfieldPhoneNumber {
-            if let range = string.rangeOfCharacter(from: .alphanumerics) {
-                self.viewModel.authSignupRequestModel.mobile = finalText.removeWhiteSpacesAndNewLines()
-                return true
-            }else {
-                return false
-            }
+            self.viewModel.authSignupRequestModel.mobile = finalText.removeWhiteSpacesAndNewLines()
+//
 
         } else if textField == self.txtFieldEmail {
             self.viewModel.authSignupRequestModel.email = finalText.removeWhiteSpacesAndNewLines()

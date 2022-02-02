@@ -72,6 +72,15 @@
 		A76D64E027A267C200397D1C /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64DF27A267C200397D1C /* Venue.swift */; };
 		A76D64E227A2686800397D1C /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64E127A2686800397D1C /* UserDefaults+Extensions.swift */; };
 		A76D64E427A26A0700397D1C /* AlertControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64E327A26A0700397D1C /* AlertControllerManager.swift */; };
+		A77AD29D27A8EA8C007C389F /* AppleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77AD29C27A8EA8C007C389F /* AppleSignInManager.swift */; };
+		A77AD29F27A8EADF007C389F /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77AD29E27A8EADF007C389F /* KeychainManager.swift */; };
+		A77AD2A127A8EBD4007C389F /* SocialUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77AD2A027A8EBD4007C389F /* SocialUserInfo.swift */; };
+		A77AD2A627A8F0BD007C389F /* AuthOptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77AD2A527A8F0BD007C389F /* AuthOptionViewModel.swift */; };
+		A77AD2A827A8F2E4007C389F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77AD2A727A8F2E4007C389F /* Enums.swift */; };
+		A77AD2AA27A8F3BE007C389F /* ValidateSocialIdRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77AD2A927A8F3BE007C389F /* ValidateSocialIdRequest.swift */; };
+		A77AD2AC27A90305007C389F /* GoogleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77AD2AB27A90305007C389F /* GoogleManager.swift */; };
+		A77AD2AF27AA8CFF007C389F /* GoalCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77AD2AE27AA8CFF007C389F /* GoalCVC.swift */; };
+		A77AD2B127AA8D37007C389F /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77AD2B027AA8D37007C389F /* BaseCollectionViewCell.swift */; };
 		A77B277E2799299100C1FE2C /* FirstDayPeriodDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B277D2799299100C1FE2C /* FirstDayPeriodDuration.swift */; };
 		A77B27802799454100C1FE2C /* CalendarTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B277F2799454100C1FE2C /* CalendarTVC.swift */; };
 		A77C71C02797E65F007AB67E /* RegularOrIrregularCycleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C71BF2797E65F007AB67E /* RegularOrIrregularCycleVC.swift */; };
@@ -82,7 +91,6 @@
 		A78AECE227A2960E003E05C2 /* SharedPref.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AECE127A2960E003E05C2 /* SharedPref.swift */; };
 		A78AECE427A2D1DC003E05C2 /* BaseViewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AECE327A2D1DC003E05C2 /* BaseViewC.swift */; };
 		A78AECE627A2D2B0003E05C2 /* AuthSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AECE527A2D2B0003E05C2 /* AuthSignUpViewModel.swift */; };
-		A78AECE827A3C875003E05C2 /* AuthSignaUpViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AECE727A3C875003E05C2 /* AuthSignaUpViewModelProtocol.swift */; };
 		A78AECEA27A3DBBC003E05C2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AECE927A3DBBC003E05C2 /* String+Extension.swift */; };
 		A78AECEC27A3DEDC003E05C2 /* AuthSignUpRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AECEB27A3DEDC003E05C2 /* AuthSignUpRequestModel.swift */; };
 		A78AECEE27A40356003E05C2 /* Decodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AECED27A40356003E05C2 /* Decodable+Extension.swift */; };
@@ -188,6 +196,16 @@
 		A76D64DF27A267C200397D1C /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		A76D64E127A2686800397D1C /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		A76D64E327A26A0700397D1C /* AlertControllerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerManager.swift; sourceTree = "<group>"; };
+		A77AD29C27A8EA8C007C389F /* AppleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInManager.swift; sourceTree = "<group>"; };
+		A77AD29E27A8EADF007C389F /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		A77AD2A027A8EBD4007C389F /* SocialUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUserInfo.swift; sourceTree = "<group>"; };
+		A77AD2A527A8F0BD007C389F /* AuthOptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOptionViewModel.swift; sourceTree = "<group>"; };
+		A77AD2A727A8F2E4007C389F /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		A77AD2A927A8F3BE007C389F /* ValidateSocialIdRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateSocialIdRequest.swift; sourceTree = "<group>"; };
+		A77AD2AB27A90305007C389F /* GoogleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleManager.swift; sourceTree = "<group>"; };
+		A77AD2AD27A933C9007C389F /* OvaryIQStagging.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OvaryIQStagging.entitlements; sourceTree = "<group>"; };
+		A77AD2AE27AA8CFF007C389F /* GoalCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCVC.swift; sourceTree = "<group>"; };
+		A77AD2B027AA8D37007C389F /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		A77B277D2799299100C1FE2C /* FirstDayPeriodDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDayPeriodDuration.swift; sourceTree = "<group>"; };
 		A77B277F2799454100C1FE2C /* CalendarTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTVC.swift; sourceTree = "<group>"; };
 		A77C71BF2797E65F007AB67E /* RegularOrIrregularCycleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularOrIrregularCycleVC.swift; sourceTree = SOURCE_ROOT; };
@@ -198,7 +216,6 @@
 		A78AECE127A2960E003E05C2 /* SharedPref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPref.swift; sourceTree = "<group>"; };
 		A78AECE327A2D1DC003E05C2 /* BaseViewC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewC.swift; sourceTree = "<group>"; };
 		A78AECE527A2D2B0003E05C2 /* AuthSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignUpViewModel.swift; sourceTree = "<group>"; };
-		A78AECE727A3C875003E05C2 /* AuthSignaUpViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignaUpViewModelProtocol.swift; sourceTree = "<group>"; };
 		A78AECE927A3DBBC003E05C2 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		A78AECEB27A3DEDC003E05C2 /* AuthSignUpRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignUpRequestModel.swift; sourceTree = "<group>"; };
 		A78AECED27A40356003E05C2 /* Decodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extension.swift"; sourceTree = "<group>"; };
@@ -267,6 +284,7 @@
 				A7022676278FF7FA000E1C9F /* Logger.swift */,
 				A76D64A0279FD84600397D1C /* Constants+Macros.swift */,
 				A797A1E5279EC4FC00AB3896 /* Toast + Extension.swift */,
+				A77AD2A727A8F2E4007C389F /* Enums.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -301,6 +319,9 @@
 			isa = PBXGroup;
 			children = (
 				A77F96BD27953A160083B5F7 /* Controller */,
+				A77AD2A327A8F05C007C389F /* View */,
+				A77AD2A427A8F064007C389F /* Model */,
+				A77AD2A227A8F02A007C389F /* ViewModel */,
 			);
 			path = AuthOptions;
 			sourceTree = "<group>";
@@ -320,7 +341,6 @@
 				A76D64A827A0297F00397D1C /* View */,
 				A76D64A727A0295E00397D1C /* Model */,
 				A76D64A927A029A000397D1C /* ViewModel */,
-				A76D64AA27A029AE00397D1C /* Protocol */,
 			);
 			path = AuthSignUp;
 			sourceTree = "<group>";
@@ -366,6 +386,7 @@
 		A73244DD278E8E2A008FDCF0 /* OvaryIQ */ = {
 			isa = PBXGroup;
 			children = (
+				A77AD2AD27A933C9007C389F /* OvaryIQStagging.entitlements */,
 				A76D649D279FD71C00397D1C /* AppConfig */,
 				A732450E278E8E3E008FDCF0 /* AppDelegate */,
 				A77C71BC2797D20C007AB67E /* Helpers */,
@@ -565,6 +586,7 @@
 			children = (
 				A74C323127919F1200763899 /* BaseTableViewCell.swift */,
 				A78AECE327A2D1DC003E05C2 /* BaseViewC.swift */,
+				A77AD2B027AA8D37007C389F /* BaseCollectionViewCell.swift */,
 			);
 			path = BaseClasses;
 			sourceTree = "<group>";
@@ -633,14 +655,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		A76D64AA27A029AE00397D1C /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				A78AECE727A3C875003E05C2 /* AuthSignaUpViewModelProtocol.swift */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
 		A76D64AD27A02DBC00397D1C /* UserResponseModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -689,6 +703,40 @@
 			path = APIResponseModels;
 			sourceTree = "<group>";
 		};
+		A77AD29B27A8EA77007C389F /* SocialManagers */ = {
+			isa = PBXGroup;
+			children = (
+				A77AD29C27A8EA8C007C389F /* AppleSignInManager.swift */,
+				A77AD29E27A8EADF007C389F /* KeychainManager.swift */,
+				A77AD2A027A8EBD4007C389F /* SocialUserInfo.swift */,
+				A77AD2AB27A90305007C389F /* GoogleManager.swift */,
+			);
+			path = SocialManagers;
+			sourceTree = "<group>";
+		};
+		A77AD2A227A8F02A007C389F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A77AD2A527A8F0BD007C389F /* AuthOptionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A77AD2A327A8F05C007C389F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A77AD2A427A8F064007C389F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A77AD2A927A8F3BE007C389F /* ValidateSocialIdRequest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A77B277C2799296C00C1FE2C /* FirstDayPeriodDuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -700,6 +748,7 @@
 		A77C71BC2797D20C007AB67E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A77AD29B27A8EA77007C389F /* SocialManagers */,
 				A797A1E1279EB41B00AB3896 /* Loader.json */,
 				A77C71C62797FEEC007AB67E /* Helper.swift */,
 				A76D64CD27A0755C00397D1C /* ActivityIndicatorManager.swift */,
@@ -777,17 +826,18 @@
 		A7CE543F27967E9100191A7B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A7CE544027967EBD00191A7B /* GoalTableViewCell */,
+				A7CE544027967EBD00191A7B /* GoalCollectionViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		A7CE544027967EBD00191A7B /* GoalTableViewCell */ = {
+		A7CE544027967EBD00191A7B /* GoalCollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				A77F96BE27954AA50083B5F7 /* GoalTVC.swift */,
+				A77AD2AE27AA8CFF007C389F /* GoalCVC.swift */,
 			);
-			path = GoalTableViewCell;
+			path = GoalCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		A7CE544127968F3500191A7B /* LastPeriod */ = {
@@ -1048,11 +1098,15 @@
 				A797A1E6279EC4FC00AB3896 /* Toast + Extension.swift in Sources */,
 				A76D64C727A068CD00397D1C /* SocketEvents.swift in Sources */,
 				A76D64AC27A02ABC00397D1C /* AuthSignUpDataModel.swift in Sources */,
+				A77AD2AF27AA8CFF007C389F /* GoalCVC.swift in Sources */,
 				A74C32282791650F00763899 /* AnswersFewQuestionsVC.swift in Sources */,
 				A76D64A1279FD84600397D1C /* Constants+Macros.swift in Sources */,
 				A702267927902E51000E1C9F /* UIButton+Extensions.swift in Sources */,
 				A7604583279ED91E008655B6 /* UIViewController+Extension.swift in Sources */,
+				A77AD2AA27A8F3BE007C389F /* ValidateSocialIdRequest.swift in Sources */,
+				A77AD2B127AA8D37007C389F /* BaseCollectionViewCell.swift in Sources */,
 				A76D64D127A2646300397D1C /* DatabaseHandler.swift in Sources */,
+				A77AD29D27A8EA8C007C389F /* AppleSignInManager.swift in Sources */,
 				A78AECEE27A40356003E05C2 /* Decodable+Extension.swift in Sources */,
 				A78AECE227A2960E003E05C2 /* SharedPref.swift in Sources */,
 				A73CA3A427981D69005085CB /* LogYearOfBirthVC.swift in Sources */,
@@ -1073,19 +1127,23 @@
 				A76D64C127A0688600397D1C /* LocalEvents.swift in Sources */,
 				A797A1E4279EC03200AB3896 /* Utility.swift in Sources */,
 				A77C71C02797E65F007AB67E /* RegularOrIrregularCycleVC.swift in Sources */,
+				A77AD2A127A8EBD4007C389F /* SocialUserInfo.swift in Sources */,
 				A76D64DC27A2677900397D1C /* UserPhoto.swift in Sources */,
 				A720FF43278ED70A00893720 /* AuthLoginVC.swift in Sources */,
 				A76D64BC27A0676E00397D1C /* RestHelper.swift in Sources */,
-				A78AECE827A3C875003E05C2 /* AuthSignaUpViewModelProtocol.swift in Sources */,
 				A74C322427915D1700763899 /* AuthVerificationCodeVC.swift in Sources */,
 				A797A1DE279E950B00AB3896 /* HomeVC.swift in Sources */,
+				A77AD2A827A8F2E4007C389F /* Enums.swift in Sources */,
 				A77B27802799454100C1FE2C /* CalendarTVC.swift in Sources */,
+				A77AD2AC27A90305007C389F /* GoogleManager.swift in Sources */,
 				A77C71C72797FEEC007AB67E /* Helper.swift in Sources */,
 				A76D64E227A2686800397D1C /* UserDefaults+Extensions.swift in Sources */,
 				A78AECEA27A3DBBC003E05C2 /* String+Extension.swift in Sources */,
 				A78AECEC27A3DEDC003E05C2 /* AuthSignUpRequestModel.swift in Sources */,
 				A76D649F279FD73800397D1C /* AppConfig.swift in Sources */,
 				A720FF4C278F063A00893720 /* ResetPasswordVC.swift in Sources */,
+				A77AD29F27A8EADF007C389F /* KeychainManager.swift in Sources */,
+				A77AD2A627A8F0BD007C389F /* AuthOptionViewModel.swift in Sources */,
 				A7CE544427968F7300191A7B /* LastPeriodLongVC.swift in Sources */,
 				A76D64BA27A0673C00397D1C /* NetworkManager.swift in Sources */,
 				A76D64D827A2657400397D1C /* UserInfo.swift in Sources */,
@@ -1470,8 +1528,11 @@
 				APP_NAME = "OvaryIQ D";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = OvaryIQ/OvaryIQStagging.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DCPCNSLGGR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OvaryIQ/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1488,8 +1549,9 @@
 				MARKETING_VERSION = 1.0;
 				NEW_SETTING = "";
 				NEW_SETTING1 = "";
-				PRODUCT_BUNDLE_IDENTIFIER = test.OvaryIQ;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.ovary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = ovary_Dev_1_Feb;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
