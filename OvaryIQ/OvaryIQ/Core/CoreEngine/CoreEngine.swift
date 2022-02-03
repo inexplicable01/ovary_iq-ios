@@ -193,6 +193,15 @@ class CoreEngine: EventLoop {
                 if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
                     notifyToGUI = true
             }
+            case .login:
+                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
+                    notifyToGUI = true
+            }
+            case .fetchGoal:
+                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
+                    notifyToGUI = true
+            }
+
 //            case .registration:
 //                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
 //                    self.handleUserInformationForVerifyOtp(responseDict: responseDict)
@@ -270,6 +279,8 @@ class CoreEngine: EventLoop {
 
         self.mutex.lock()
 
+        dLog(message: "cbHandlerValue...\(self.cbHndler[cbType.rawValue] as? [String: Any])")
+
         if let cbhndl = self.cbHndler[cbType.rawValue] as? [String: Any] {
 
             cbhndl.keys.forEach { (key) in
@@ -281,6 +292,7 @@ class CoreEngine: EventLoop {
                         if statusCode == 1 {
 
                             if let responseData = responseDict[APIParam.Data] as? [String: Any] {
+                                
 
                                 DispatchQueue.main.async {
                                     completionBlock(eventID, result, responseData, nil, true)
@@ -410,119 +422,6 @@ extension CoreEngine {
 
             //6. Reset Root of Window
           //  kAppDelegate?.setRootViewC()
-        }
-    }
-
-    // MARK: - Handle User Information When Return from Verify Otp, Registration, Edit Profile
-
-    private func handleUserInformationForVerifyOtp(responseDict: [String: Any]) {
-
-        if let responseData = responseDict[APIParam.Data] as? [String: Any],
-           let accessToken =  responseData[APIParam.AccessToken] as? String,
-              let userProfile = responseData["userProfile"] as? [String: Any],
-              let userProfileData = Utility.jsonToData(json: userProfile) {
-            do {
-                let userInfo = try JSONDecoder().decode(UserInfo.self, from: userProfileData)
-
-                self.userInfo = userInfo
-
-                // 1. Save Access Token, User Id and Few More Infos to UserDefault
-//                kUserDefaults.accessToken = accessToken
-//                kUserDefaults.userId = userInfo.userId
-//                kUserDefaults.isUserLogin = true
-
-//                let userType = UserType(rawValue: kUserDefaults.userType)
-//                if userType == UserType.user {
-//                    // User Profile
-//                    if userInfo.isUserProfileCompleted() {
-//                        kUserDefaults.isProfileCompleted = true
-//
-//                        // Enable Location and Start Monitoring User Current Location
-//                        kAppDelegate?.startMonitoringUserCurrentLocation()
-//                    }
-//                } else {
-//                    // Business Profile
-//                    if userInfo.isBusinessProfileCompleted() {
-//                        kUserDefaults.isProfileCompleted = true
-//
-//                        // Enable Location and Start Monitoring User Current Location
-//                        kAppDelegate?.startMonitoringUserCurrentLocation()
-//                    }
-//                }
-
-                // 2. Save User Info to CoreData DB
-              //  self.databaseHandler.saveUser(userInfo: userInfo)
-
-                // 3. Connect Socket
-                // TODO: - Connect Socket
-
-            } catch let DecodingError.dataCorrupted(context) {
-                dLog(message: "Data Corrupted :: \(context)")
-            } catch let DecodingError.keyNotFound(key, context) {
-                dLog(message: "Key '\(key)' not found :: \(context.debugDescription)")
-                dLog(message: "Coding Path :: \(context.codingPath)")
-            } catch let DecodingError.valueNotFound(value, context) {
-                dLog(message: "Value '\(value)' not found :: \(context.debugDescription)")
-                dLog(message: "Coding Path :: \(context.codingPath)")
-            } catch let DecodingError.typeMismatch(type, context)  {
-                dLog(message: "Type '\(type)' mismatch :: \(context.debugDescription)")
-                dLog(message: "Coding Path :: \(context.codingPath)")
-            } catch {
-                dLog(message: "Error :: \(error)")
-            }
-        }
-    }
-
-    private func handleUserInformationForEditProfile(responseDict: [String: Any]) {
-
-        if let responseData = responseDict[APIParam.Data] as? [String: Any],
-              let userProfile = responseData["userProfile"] as? [String: Any],
-              let userProfileData = Utility.jsonToData(json: userProfile) {
-            do {
-                let userInfo = try JSONDecoder().decode(UserInfo.self, from: userProfileData)
-
-                self.userInfo = userInfo
-
-                // 1. Save User Id and Few More Infos to UserDefault
-//                kUserDefaults.userId = userInfo.userId
-//                kUserDefaults.isUserLogin = true
-
-//                let userType = UserType(rawValue: kUserDefaults.userType)
-//                if userType == UserType.user {
-//                    // User Profile
-//                    if userInfo.isUserProfileCompleted() {
-//                        kUserDefaults.isProfileCompleted = true
-//                    }
-//                } else {
-//                    // Business Profile
-//                    if userInfo.isBusinessProfileCompleted() {
-//                        kUserDefaults.isProfileCompleted = true
-//                    }
-//                }
-
-                // 2. Save User Info to CoreData DB
-               // self.databaseHandler.saveUser(userInfo: userInfo)
-
-                // 3. Connect Socket
-                // TODO: - Connect Socket
-
-                // 4. Enable Location and Start Monitoring User Current Location
-                // kAppDelegate?.startMonitoringUserCurrentLocation()
-
-            } catch let DecodingError.dataCorrupted(context) {
-                dLog(message: "Data Corrupted :: \(context)")
-            } catch let DecodingError.keyNotFound(key, context) {
-                dLog(message: "Key '\(key)' not found :: \(context.debugDescription)")
-                dLog(message: "Coding Path :: \(context.codingPath)")
-            } catch let DecodingError.valueNotFound(value, context) {
-                dLog(message: "Value '\(value)' not found :: \(context.debugDescription)")
-                dLog(message: "Coding Path :: \(context.codingPath)")
-            } catch let DecodingError.typeMismatch(type, context)  {
-                dLog(message: "Type '\(type)' mismatch :: \(context.debugDescription)")
-                dLog(message: "Coding Path :: \(context.codingPath)")
-            } catch {
-                dLog(message: "Error :: \(error)")
-            }
         }
     }
 }

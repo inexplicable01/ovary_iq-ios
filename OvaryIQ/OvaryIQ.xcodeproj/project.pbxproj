@@ -81,6 +81,10 @@
 		A77AD2AC27A90305007C389F /* GoogleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77AD2AB27A90305007C389F /* GoogleManager.swift */; };
 		A77AD2AF27AA8CFF007C389F /* GoalCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77AD2AE27AA8CFF007C389F /* GoalCVC.swift */; };
 		A77AD2B127AA8D37007C389F /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77AD2B027AA8D37007C389F /* BaseCollectionViewCell.swift */; };
+		A77AD2B727ABDEA3007C389F /* AuthLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77AD2B627ABDEA3007C389F /* AuthLoginViewModel.swift */; };
+		A77AD2B927ABEA41007C389F /* AuthLoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77AD2B827ABEA41007C389F /* AuthLoginRequestModel.swift */; };
+		A77AD2BE27AC0A71007C389F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77AD2BD27AC0A71007C389F /* HomeViewModel.swift */; };
+		A77AD2C427AC0D4A007C389F /* GoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77AD2C327AC0D4A007C389F /* GoalViewModel.swift */; };
 		A77B277E2799299100C1FE2C /* FirstDayPeriodDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B277D2799299100C1FE2C /* FirstDayPeriodDuration.swift */; };
 		A77B27802799454100C1FE2C /* CalendarTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77B277F2799454100C1FE2C /* CalendarTVC.swift */; };
 		A77C71C02797E65F007AB67E /* RegularOrIrregularCycleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C71BF2797E65F007AB67E /* RegularOrIrregularCycleVC.swift */; };
@@ -206,6 +210,10 @@
 		A77AD2AD27A933C9007C389F /* OvaryIQStagging.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OvaryIQStagging.entitlements; sourceTree = "<group>"; };
 		A77AD2AE27AA8CFF007C389F /* GoalCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCVC.swift; sourceTree = "<group>"; };
 		A77AD2B027AA8D37007C389F /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		A77AD2B627ABDEA3007C389F /* AuthLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLoginViewModel.swift; sourceTree = "<group>"; };
+		A77AD2B827ABEA41007C389F /* AuthLoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLoginRequestModel.swift; sourceTree = "<group>"; };
+		A77AD2BD27AC0A71007C389F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A77AD2C327AC0D4A007C389F /* GoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewModel.swift; sourceTree = "<group>"; };
 		A77B277D2799299100C1FE2C /* FirstDayPeriodDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDayPeriodDuration.swift; sourceTree = "<group>"; };
 		A77B277F2799454100C1FE2C /* CalendarTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTVC.swift; sourceTree = "<group>"; };
 		A77C71BF2797E65F007AB67E /* RegularOrIrregularCycleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularOrIrregularCycleVC.swift; sourceTree = SOURCE_ROOT; };
@@ -329,7 +337,10 @@
 		A720FF41278ED6D000893720 /* AuthLogin */ = {
 			isa = PBXGroup;
 			children = (
-				A720FF42278ED70A00893720 /* AuthLoginVC.swift */,
+				A77AD2B227ABDE0F007C389F /* Controller */,
+				A77AD2B527ABDE52007C389F /* ViewModel */,
+				A77AD2B427ABDE3C007C389F /* Model */,
+				A77AD2B327ABDE26007C389F /* View */,
 			);
 			path = AuthLogin;
 			sourceTree = "<group>";
@@ -567,7 +578,10 @@
 		A74C3226279164D800763899 /* AnswersFewQuestions */ = {
 			isa = PBXGroup;
 			children = (
-				A74C32272791650F00763899 /* AnswersFewQuestionsVC.swift */,
+				A77AD2C227AC0D30007C389F /* Model */,
+				A77AD2C127AC0D2A007C389F /* View */,
+				A77AD2C027AC0D23007C389F /* ViewModel */,
+				A77AD2BF27AC0D16007C389F /* Controller */,
 			);
 			path = AnswersFewQuestions;
 			sourceTree = "<group>";
@@ -575,6 +589,8 @@
 		A74C322D2791991C00763899 /* YourGoal */ = {
 			isa = PBXGroup;
 			children = (
+				A7D201A927AC1149000F5BF2 /* Model */,
+				A7D201A827AC113C000F5BF2 /* ViewModel */,
 				A7CE543A279678CF00191A7B /* Controller */,
 				A7CE543F27967E9100191A7B /* View */,
 			);
@@ -737,6 +753,88 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A77AD2B227ABDE0F007C389F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A720FF42278ED70A00893720 /* AuthLoginVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A77AD2B327ABDE26007C389F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A77AD2B427ABDE3C007C389F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A77AD2B827ABEA41007C389F /* AuthLoginRequestModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A77AD2B527ABDE52007C389F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A77AD2B627ABDEA3007C389F /* AuthLoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A77AD2BA27AC0A32007C389F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A77AD2BD27AC0A71007C389F /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A77AD2BB27AC0A3D007C389F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A77AD2BC27AC0A54007C389F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A77AD2BF27AC0D16007C389F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A74C32272791650F00763899 /* AnswersFewQuestionsVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A77AD2C027AC0D23007C389F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A77AD2C127AC0D2A007C389F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A77AD2C227AC0D30007C389F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A77B277C2799296C00C1FE2C /* FirstDayPeriodDuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -803,6 +901,9 @@
 			children = (
 				A797A1DA279E94C900AB3896 /* Home.storyboard */,
 				A797A1DC279E94D900AB3896 /* Controller */,
+				A77AD2BA27AC0A32007C389F /* ViewModel */,
+				A77AD2BB27AC0A3D007C389F /* View */,
+				A77AD2BC27AC0A54007C389F /* Model */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -863,6 +964,21 @@
 				A760457B279EC7DC008655B6 /* String.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		A7D201A827AC113C000F5BF2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A77AD2C327AC0D4A007C389F /* GoalViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A7D201A927AC1149000F5BF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1094,10 +1210,12 @@
 				A78AECE427A2D1DC003E05C2 /* BaseViewC.swift in Sources */,
 				A74C323227919F1200763899 /* BaseTableViewCell.swift in Sources */,
 				A76D64E027A267C200397D1C /* Venue.swift in Sources */,
+				A77AD2BE27AC0A71007C389F /* HomeViewModel.swift in Sources */,
 				A7CE543E27967B7B00191A7B /* UITableView+Extension.swift in Sources */,
 				A797A1E6279EC4FC00AB3896 /* Toast + Extension.swift in Sources */,
 				A76D64C727A068CD00397D1C /* SocketEvents.swift in Sources */,
 				A76D64AC27A02ABC00397D1C /* AuthSignUpDataModel.swift in Sources */,
+				A77AD2B927ABEA41007C389F /* AuthLoginRequestModel.swift in Sources */,
 				A77AD2AF27AA8CFF007C389F /* GoalCVC.swift in Sources */,
 				A74C32282791650F00763899 /* AnswersFewQuestionsVC.swift in Sources */,
 				A76D64A1279FD84600397D1C /* Constants+Macros.swift in Sources */,
@@ -1112,6 +1230,7 @@
 				A73CA3A427981D69005085CB /* LogYearOfBirthVC.swift in Sources */,
 				A76D64CE27A0755C00397D1C /* ActivityIndicatorManager.swift in Sources */,
 				A76D64B827A0670D00397D1C /* RequestScheduler.swift in Sources */,
+				A77AD2C427AC0D4A007C389F /* GoalViewModel.swift in Sources */,
 				A7069E5A278EC3C90028AA68 /* UIView+Extensions.swift in Sources */,
 				A760457C279EC7DC008655B6 /* String.swift in Sources */,
 				A76D64C527A068B200397D1C /* CoreEngine.swift in Sources */,
@@ -1133,6 +1252,7 @@
 				A76D64BC27A0676E00397D1C /* RestHelper.swift in Sources */,
 				A74C322427915D1700763899 /* AuthVerificationCodeVC.swift in Sources */,
 				A797A1DE279E950B00AB3896 /* HomeVC.swift in Sources */,
+				A77AD2B727ABDEA3007C389F /* AuthLoginViewModel.swift in Sources */,
 				A77AD2A827A8F2E4007C389F /* Enums.swift in Sources */,
 				A77B27802799454100C1FE2C /* CalendarTVC.swift in Sources */,
 				A77AD2AC27A90305007C389F /* GoogleManager.swift in Sources */,

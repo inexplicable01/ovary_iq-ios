@@ -15,7 +15,7 @@ extension UIViewController {
 
     // add an action (button)
          alert.addAction(UIAlertAction.init(title: Text.oks.localizedString,style: UIAlertAction.Style.default,handler: { (action) in
-          //   Helper.LogoutApiHit()
+            // Helper.LogoutApiHit()
              Helper.showLoginScreen()
     }))
          alert.addAction(UIAlertAction.init(title: Text.cancel.localizedString, style: UIAlertAction.Style.default, handler: { (action) in

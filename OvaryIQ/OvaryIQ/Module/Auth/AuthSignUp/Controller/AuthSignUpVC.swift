@@ -65,6 +65,7 @@ class AuthSignUpVC: BaseViewC {
 
     private func initialSetup() {
         self.btnCreateAccount.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
+        self.viewModel.delegate = self
     }
 
     private func showCountyPicker() -> Void {
@@ -117,8 +118,6 @@ class AuthSignUpVC: BaseViewC {
         } else {
             self.viewModel.callApiToSignUp()
        }
-//        let authSignUpVC = Storyboard.Questions.instantiateViewController(identifier: AnswersFewQuestionsVC.className)
-//        self.navigationController?.pushViewController(authSignUpVC, animated: true)
     }
 }
 // MARK: - UITextFieldDelegate
@@ -176,5 +175,16 @@ extension AuthSignUpVC: UITextFieldDelegate {
 
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         return true
+    }
+}
+
+// MARK: - Protocol and delegate method
+extension AuthSignUpVC: AuthSignUpViewModelDelegate {
+
+    // here after sucess response of signup we jump to answer few Questions screen
+    func sucessRegisterApiResponse() {
+        Helper.showHomeScreen()
+//        let authSignUpVC = Storyboard.Questions.instantiateViewController(identifier: AnswersFewQuestionsVC.className)
+//        self.navigationController?.pushViewController(authSignUpVC, animated: true)
     }
 }

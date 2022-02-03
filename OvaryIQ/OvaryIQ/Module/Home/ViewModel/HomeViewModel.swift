@@ -7,11 +7,11 @@
 
 import Foundation
 import UIKit
-@objc protocol AuthSignUpViewModelDelegate {
-    @objc optional func sucessRegisterApiResponse()
+@objc protocol HomeViewModelDelegate {
+    @objc optional func sucessLogoutApiResponse()
 }
 
-class AuthSignUpViewModel {
+class HomeViewModel {
     // MARK: - Properties
     private var restEventCallBackID: String?
     private let coreEngine = CoreEngine.shared
@@ -22,7 +22,7 @@ class AuthSignUpViewModel {
         }
     }
 
-    internal var delegate: AuthSignUpViewModelDelegate?
+    internal var delegate: HomeViewModelDelegate?
     internal func unregisterCoreEngineEventsCallBack() {
         if let callBackID = self.restEventCallBackID {
             self.coreEngine.unregisterEventForID(cbType: .restCallBack, regId: callBackID)
@@ -31,20 +31,19 @@ class AuthSignUpViewModel {
     }
 
     // MARK: - Private Functions - API Calls
-     func callApiToSignUp() {
+     func callApiTologout() {
          fLog()
-         let params = self.authSignupRequestModel.dictionary
-         dLog(message: "Rest Event Name :: \(RestEvents.SignUp) and Params :: \(String(describing: params))")
-         let restEvent = RestEngineEvents(id: RestEvents.SignUp, obj: params)
+//         let params = self.authSignupRequestModel.dictionary
+         dLog(message: "Rest Event Name :: \(RestEvents.logout)")
+         let restEvent = RestEngineEvents(id: RestEvents.logout, obj: [:])
          restEvent.showActivityIndicator = true
         self.coreEngine.addEngineEventsWithOutWait(evObj: restEvent)
         // self.coreEngine.addEvent(evObj: restEvent)
     }
-    
 }
 // MARK: - Register Rest Event Call Back
 
-extension AuthSignUpViewModel {
+extension HomeViewModel {
     internal func registerRestEventCallBack() {
         fLog()
         self.restEventCallBackID = self.coreEngine.registerEventCallBack(cbType: .restCallBack, cbBlock: { eventId, result, response, message, isSuccess in
@@ -55,16 +54,8 @@ extension AuthSignUpViewModel {
                     fLog()
                 if isSuccess {
                     do {
-                        let encodedDictionary = try JSONDecoder().decode(AuthSignUpDataModel.self, from: JSONSerialization.data(withJSONObject: response))
-                        dLog(message: "signupResponse:- \(encodedDictionary)")
-                        // 1. Save Access Token
-                        if let acessToken = encodedDictionary.accessToken {
-                            kUserDefaults.accessToken = acessToken
-                        }
-                        if let tokenType = encodedDictionary.tokenType {
-                            kUserDefaults.tokenType = tokenType
-                       }
-                       self.delegate?.sucessRegisterApiResponse?()
+
+                       self.delegate?.sucessLogoutApiResponse?()
 
                     } catch {
                         print("Error: ", error)
@@ -80,3 +71,4 @@ extension AuthSignUpViewModel {
         })
     }
 }
+

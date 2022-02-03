@@ -46,12 +46,12 @@ enum APIRouter: URLRequestConvertible {
        // let authorizationHeader = HTTPHeader.authorization(username: AppConfig.getAuthUsername(), password: AppConfig.getAuthPassword())
      //   headers["Authorization"] = authorizationHeader.value
 
-        headers["Authorization"] = ""
+      //  headers["Authorization"] = ""
 
-//        let accessToken = UserDefaults.accessToken
-//        if accessToken.length > 0 {
-//            headers[APIParam.AccessToken] = accessToken
-//        }
+        let accessToken = "\(UserDefaults.tokenType) \(UserDefaults.accessToken)"
+        if accessToken.length > 0 {
+            headers[APIParam.Authorization] = accessToken
+        }
 
         var urlRequest = URLRequest(url: try path.asURL())
         urlRequest.httpMethod = method.rawValue

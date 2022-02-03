@@ -24,16 +24,20 @@ class YourGoalVC: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var btnNext: UIButton!
     // MARK: - Properties
+    private var viewModel = GoalViewModel()
     private var goalArr = [Goal(title: "Get pregnant", titleImage: UIImage(named: "get_Preganent") ?? UIImage(), selectedImage: UIImage(named: "SelectedPreganent") ?? UIImage(), isSelected: false),Goal(title: "Period tracking", titleImage: UIImage(named: "unselectedPeriodTracker") ?? UIImage(), selectedImage: UIImage(named: "selectedPeriodTracker") ?? UIImage(), isSelected: true)]
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialSetup()
+        self.viewModel.registerCoreEngineEventsCallBack()
+        self.viewModel.callApiToFetchGoalResponse()
         // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.viewModel.registerCoreEngineEventsCallBack()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -42,6 +46,7 @@ class YourGoalVC: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.viewModel.unregisterCoreEngineEventsCallBack()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -57,12 +62,15 @@ class YourGoalVC: UIViewController {
     }
 
     deinit {
+        self.viewModel.unregisterCoreEngineEventsCallBack()
        classReleased()
     }
+
     
     // MARK: - Private Functions
     private func initialSetup() {
         self.btnNext.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
+
     }
     // MARK: - Button Actions
     @IBAction private func tapBtnNext(_ sender: Any) {

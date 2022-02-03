@@ -15,6 +15,7 @@ extension UserDefaults {
         static let IsFirstLaunch             = "UD_Key_Is_First_Launch"
         static let DeviceToken               = "UD_Key_Device_Token"
         static let AccessToken               = "UD_Key_Access_Token"
+        static let TokenType                 = "UD_Key_TokenType"
         static let RefreshToken              = "UD_Key_Refresh_Token"
 
         static let IsUserLogin               = "UD_Key_Is_User_Login"
@@ -37,6 +38,9 @@ extension UserDefaults {
 
     @SharedPref(key: UDKey.AccessToken, defaultValue: "")
     static var accessToken: String
+
+    @SharedPref(key: UDKey.TokenType, defaultValue: "")
+    static var tokenType: String
 
     @SharedPref(key: UDKey.RefreshToken, defaultValue: "")
     static var refreshToken: String
@@ -70,6 +74,7 @@ extension UserDefaults {
 
     func clear() {
         self.set("", forKey: UDKey.AccessToken)
+        self.set("", forKey: UDKey.TokenType)
         self.set("", forKey: UDKey.RefreshToken)
 
         self.set(nil, forKey: UDKey.UserId)

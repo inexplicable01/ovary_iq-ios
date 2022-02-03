@@ -60,14 +60,33 @@ class RestHelper: NSObject {
 
         switch restEventId {
            case .SignUp:
-            if let parameters = evObj.object as? [String: Any] {
+             if let parameters = evObj.object as? [String: Any] {
                 evObj.apiRequest =  APIRouter.signUp(params: parameters)
-            }else{
+              }else{
                 dLog(message: "Parameter Missing :: \(APIName.SignUp)")
-            }
+              }
 
+           case .login:
+             if let parameters = evObj.object as? [String: Any] {
+                evObj.apiRequest =  APIRouter.login(params: parameters)
+              }else{
+                dLog(message: "Parameter Missing :: \(APIName.Login)")
+              }
+
+           case .logout:
+              if let parameters = evObj.object as? [String: Any] {
+                evObj.apiRequest = APIRouter.logOut(params: parameters)
+              } else {
+                dLog(message: "Parameter Missing :: \(APIName.LogOut)")
+              }
+           case .fetchGoal:
+              if let parameters = evObj.object as? [String: Any] {
+                evObj.apiRequest = APIRouter.fetchGoals(params: parameters)
+              } else {
+                dLog(message: "Parameter Missing :: \(APIName.FetchGoals)")
+              }
            case .networkError:
-            break
+              break
 
         }
 

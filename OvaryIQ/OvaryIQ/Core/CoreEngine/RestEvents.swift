@@ -13,8 +13,10 @@ let minRestEvent  =   1000
 let maxRestEvent  =   1999
 
 enum RestEvents: Int {
-    case SignUp = 1000
-   // case logout
+    case SignUp
+    case login = 1000
+    case logout
+    case fetchGoal
     case networkError
 }
 
