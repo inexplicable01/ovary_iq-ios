@@ -210,6 +210,18 @@ class CoreEngine: EventLoop {
                 if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
                     notifyToGUI = true
             }
+            case .forgotPassword:
+                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
+                    notifyToGUI = true
+            }
+            case .verifyCode:
+                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
+                    notifyToGUI = true
+            }
+            case .resetPassword:
+                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
+                    notifyToGUI = true
+            }
             default :
                 if let responseDict = evobj.object as? [String: Any],
                     !self.validateResponseError(response: responseDict) {
@@ -232,19 +244,19 @@ class CoreEngine: EventLoop {
         let eventID = LocalEvents(rawValue: evobj.eventID)!
 
         switch (eventID) {
-        case .fetchUser:
-//            if let userInfo = self.databaseHandler.fetchUserWith(userId: kUserDefaults.userId, fromMain: true) {
-//                evobj.object  = userInfo
-//                self.userInfo = userInfo
-//            }
-
-            self.notifyToGUI(cbType: EventCallBack.localCallBack, eventID: evobj.eventID, result: success, response: evobj.object)
-
-//        case .deleteUserPhoto:
-//            if let params = evobj.object as? [String: Any],
-//                let photoId = params[APIParam.id] as? String {
-//                evobj.object = self.databaseHandler.deleteUserPhoto(photoId: photoId)
-//            }
+//        case .fetchUser:
+////            if let userInfo = self.databaseHandler.fetchUserWith(userId: kUserDefaults.userId, fromMain: true) {
+////                evobj.object  = userInfo
+////                self.userInfo = userInfo
+////            }
+//
+//            self.notifyToGUI(cbType: EventCallBack.localCallBack, eventID: evobj.eventID, result: success, response: evobj.object)
+//
+////        case .deleteUserPhoto:
+////            if let params = evobj.object as? [String: Any],
+////                let photoId = params[APIParam.id] as? String {
+////                evobj.object = self.databaseHandler.deleteUserPhoto(photoId: photoId)
+////            }
 
         default:
             self.notifyToGUI(cbType: EventCallBack.localCallBack, eventID: evobj.eventID, result: success, response: evobj.object)

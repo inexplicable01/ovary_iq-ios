@@ -14,6 +14,8 @@ class FirstDayPeriodDuration: UIViewController {
     @IBOutlet private weak var txtFieldSecondPeriods: UITextField!
     @IBOutlet weak var txtFieldFirstPeriods: UITextField!
 
+    @IBOutlet weak var bannerImgView: UIImageView!
+
     // MARK: - Properties
     internal var periodIrregularDetailModelRequestModel = TryingGetPreganantRequestModel()
     private var viewModel = LastPeriodViewModel()
@@ -62,6 +64,13 @@ class FirstDayPeriodDuration: UIViewController {
        // self.view.showLoader()
         self.btnSubmit.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
         self.viewModel.delegate = self
+
+
+        if self.periodIrregularDetailModelRequestModel.goalId == "2" {
+            self.bannerImgView.image = UIImage(named: "periodBanner_3")
+        } else {
+            self.bannerImgView.image = UIImage(named: "banner_4")
+        }
     }
 
     // MARK: - Button Actions
@@ -92,6 +101,10 @@ class FirstDayPeriodDuration: UIViewController {
 
     @IBAction private func tapBtnNotRemember(_ sender: UIButton) {
         fLog()
+        if let importantInformationVC = Storyboard.Questions.instantiateViewController(identifier: ImportantInformationVC.className) as? ImportantInformationVC {
+            importantInformationVC.modalPresentationStyle = .overFullScreen
+             self.present(importantInformationVC, animated: true, completion: nil)
+        }
     }
 
     @IBAction private func tapBtnBack(_ sender: UIButton) {

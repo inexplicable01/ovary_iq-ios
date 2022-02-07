@@ -6,6 +6,10 @@
 	<string>$(API_BASE_URL)</string>
 	<key>APP_NAME</key>
 	<string>$(APP_NAME)</string>
+	<key>AUTH_PASSWORD</key>
+	<string>$(AUTH_PASSWORD)</string>
+	<key>AUTH_USERNAME</key>
+	<string>$(AUTH_USERNAME)</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>

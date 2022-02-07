@@ -12,6 +12,8 @@ class LastPeriodLongVC: UIViewController {
     @IBOutlet private weak var btnSubmit: UIButton!
     @IBOutlet private weak var pickerView: UIPickerView!
     @IBOutlet private weak var lblTitle: UILabel!
+
+    @IBOutlet private weak var bannerImgView: UIImageView!
     // MARK: - Properties
    // private var pickerData: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
     private var pickerData: [String] {
@@ -79,6 +81,11 @@ class LastPeriodLongVC: UIViewController {
             })
         }
         self.viewModel.delegate = self
+        if self.periodDetailModelRequest.goalId == "2"{
+            self.bannerImgView.image = UIImage(named: "periodBanner_3")
+        } else {
+            self.bannerImgView.image = UIImage(named: "banner_4")
+        }
     }
 
     // MARK: - Button Actions

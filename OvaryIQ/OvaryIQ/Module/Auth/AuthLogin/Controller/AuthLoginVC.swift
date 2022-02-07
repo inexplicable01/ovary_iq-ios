@@ -75,14 +75,16 @@ class AuthLoginVC: UIViewController {
         fLog()
         if let authForgotPasswordVC = Storyboard.Auth.instantiateViewController(identifier: AuthForgotPasswordVC.className) as? AuthForgotPasswordVC {
             authForgotPasswordVC.modalPresentationStyle = .overFullScreen
-            authForgotPasswordVC.goBack = { [weak self] isBool in
+            authForgotPasswordVC.goBack = { [weak self] isBool, otp in
             if isBool {
                 if let authVerificationCodeVC = Storyboard.Auth.instantiateViewController(identifier: AuthVerificationCodeVC.className) as? AuthVerificationCodeVC {
                     authVerificationCodeVC.modalPresentationStyle = .overFullScreen
-                    authVerificationCodeVC.goBack = { [weak self] isBool in
+                    authVerificationCodeVC.otpCode = otp
+                    authVerificationCodeVC.goBack = { [weak self]  isBool, fourDigitCode in
                         if isBool {
                             if let resetPasswordVC = Storyboard.Auth.instantiateViewController(identifier: ResetPasswordVC.className) as? ResetPasswordVC {
                                 resetPasswordVC.modalPresentationStyle = .overFullScreen
+                                resetPasswordVC.code = fourDigitCode
                                 resetPasswordVC.goBack = { [weak self] isBool in
                                     if isBool {
                                         let loginSuccessPopUpVC = Storyboard.Questions.instantiateViewController(identifier: LoginSuccessPopUpVC.className)

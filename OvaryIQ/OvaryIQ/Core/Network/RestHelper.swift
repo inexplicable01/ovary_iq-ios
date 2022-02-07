@@ -80,16 +80,39 @@ class RestHelper: NSObject {
                 dLog(message: "Parameter Missing :: \(APIName.LogOut)")
               }
            case .fetchGoal:
-                evObj.apiRequest = APIRouter.fetchGoals
+            if let parameters = evObj.object as? [String: Any] {
+              evObj.apiRequest = APIRouter.fetchGoals(params: parameters)
+            } else {
+              dLog(message: "Parameter Missing :: \(APIName.FetchGoals)")
+            }
+               // evObj.apiRequest = APIRouter.fetchGoals
            case .networkError:
               break
 
-          case .saveUserFetchGoalDetails:
-            if let parameters = evObj.object as? [String: Any] {
-              evObj.apiRequest = APIRouter.savezGoalsDetails(params: parameters)
-            } else {
-              dLog(message: "Parameter Missing :: \(APIName.SaveGoalsDetails)")
-            }
+           case .saveUserFetchGoalDetails:
+             if let parameters = evObj.object as? [String: Any] {
+               evObj.apiRequest = APIRouter.savezGoalsDetails(params: parameters)
+             } else {
+               dLog(message: "Parameter Missing :: \(APIName.SaveGoalsDetails)")
+             }
+           case .forgotPassword:
+              if let parameters = evObj.object as? [String: Any] {
+                  evObj.apiRequest = APIRouter.forgotPassword(params: parameters)
+              } else {
+                 dLog(message: "Parameter Missing :: \(APIName.ForgotPassword)")
+              }
+           case .verifyCode:
+              if let parameters = evObj.object as? [String: Any] {
+                 evObj.apiRequest = APIRouter.verifyCode(params: parameters)
+              } else {
+                 dLog(message: "Parameter Missing :: \(APIName.VerifyCode)")
+              }
+           case .resetPassword:
+              if let parameters = evObj.object as? [String: Any] {
+                 evObj.apiRequest = APIRouter.ResetPassword(params: parameters)
+              } else {
+                 dLog(message: "Parameter Missing :: \(APIName.ResetPassword)")
+             }
         }
 
         self.addRequestInScheduler(requestObj: evObj)

@@ -7,11 +7,17 @@
 
 import Foundation
 import UIKit
+
+@objc protocol AuthOptionViewModelDelegate {
+    @objc optional func sucessLoginSocialApiResponse()
+}
+
 class AuthOptionViewModel {
     // MARK: - Properties
     private var restEventCallBackID: String?
     private let coreEngine = CoreEngine.shared
     internal var validateSocialIdRequestModel = ValidateSocialIdRequest()
+    internal var delegate: AuthOptionViewModelDelegate?
     internal var viewContreoller = UIViewController()
     // MARK: - Init & AuthOptionViewModelProtocol
 //    required init(coreEngine: CoreEngine) {
@@ -42,33 +48,39 @@ class AuthOptionViewModel {
                     // sself.validateSocialIdRequestFailed.send(AppError.somethingWentWrong)
                 } else {
                     if let userInfo = socialUserInfo {
-                        self?.validateSocialIdRequestModel.loginType = loginType.rawValue
+                        self?.validateSocialIdRequestModel.email = userInfo.email
                         self?.validateSocialIdRequestModel.socialId = userInfo.socialId
-//
-//                        sself.registrationRequestModel.loginType = loginType.rawValue
-//                        sself.registrationRequestModel.socialId = userInfo.socialId
-//                        sself.registrationRequestModel.firstName = userInfo.firstName
-//                        sself.registrationRequestModel.lastName = userInfo.lastName
-//                        sself.registrationRequestModel.email = userInfo.email
+                        self?.validateSocialIdRequestModel.loginType = userInfo.type.rawValue
+                        self?.validateSocialIdRequestModel.name = userInfo.name
+                        self?.validateSocialIdRequestModel.profile = userInfo.profilePic
+                        self?.callApiToSocialLogin()
 
-                        if ((self?.validateSocialIdRequestModel.socialId.isEmpty) != nil) {
-                            dLog(message: "Error :: Social Id is Empty.")
-                           // validateSocialIdRequestFailed.send(ErrorMessages.somethingWentWrong)
-                            return
-                        } else {
-                            //sself.callApiToValidateSocialId()
-                        }
+//                        if ((self?.validateSocialIdRequestModel.socialId.isEmpty) != nil) {
+//                            dLog(message: "Error :: Social Id is Empty.")
+//                           // validateSocialIdRequestFailed.send(ErrorMessages.somethingWentWrong)
+//                            return
+//                        } else {
+//                            //sself.callApiToValidateSocialId()
+//                        }
                     }
                 }
             }
         } else if loginType == LoginType.google {
             GoogleManager.shared.login(viewController: viewContreoller) { (socialUserInfo, message, success) in
                 if !success {
+                    dLog(message: "Google Login Error")
                     // Utility.showToast(message: message ?? "Google Login Error")
                 } else {
                     if let userInfo = socialUserInfo {
                         fLog()
                        print("Google user details:- ", userInfo)
+                        self.validateSocialIdRequestModel.email = userInfo.email
+                        self.validateSocialIdRequestModel.socialId = userInfo.socialId
+                        self.validateSocialIdRequestModel.loginType = userInfo.type.rawValue
+                        self.validateSocialIdRequestModel.name = userInfo.name
+                        self.validateSocialIdRequestModel.profile = userInfo.profilePic
+                        self.callApiToSocialLogin()
+
                     }
                 }
             }
@@ -77,6 +89,19 @@ class AuthOptionViewModel {
           //  self.validateSocialIdRequestFailed.send(AppError.somethingWentWrong)
         }
     }
+
+    // MARK: - Private Functions - API Calls
+     func callApiToSocialLogin() {
+         fLog()
+         let params = self.validateSocialIdRequestModel.dictionary
+         dLog(message: "Rest Event Name :: \(RestEvents.login) and Params :: \(String(describing: params))")
+         let restEvent = RestEngineEvents(id: RestEvents.login, obj: params)
+        //restEvent.showActivityIndicator = true
+         Helper.showLoader()
+       self.coreEngine.addEngineEventsWithOutWait(evObj: restEvent)
+         //self.coreEngine.addEvent(evObj: restEvent)
+    }
+
 }
 extension AuthOptionViewModel {
 
@@ -88,10 +113,24 @@ extension AuthOptionViewModel {
             if let eventId = RestEvents(rawValue: eventId) {
 
                 switch eventId {
-                case .SignUp:
+                case .login:
                     fLog()
                     if isSuccess {
                        // sself.handleResponseForRegistration(response: response)
+
+                        do {
+                            let encodedDictionary = try JSONDecoder().decode(AuthSignUpDataModel.self, from: JSONSerialization.data(withJSONObject: response))
+                            dLog(message: "socialLoginResponse:- \(encodedDictionary)")
+                            // 1. Save Access Token
+                            if let acessToken = encodedDictionary.accessToken {
+                                kUserDefaults.accessToken = acessToken
+                            }
+                            self?.delegate?.sucessLoginSocialApiResponse?()
+
+                        } catch {
+                            print("Error: ", error)
+                        }
+
                     } else {
                         AlertControllerManager.showToast(message: ErrorMessages.somethingWentWrong.localizedString, type: .error)
                     }

@@ -9,6 +9,8 @@ import UIKit
 
 class ImportantInformationVC: UIViewController {
     // MARK: - IBOutlets
+
+    @IBOutlet weak var btnOk: UIButton!
     // MARK: - Properties
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
@@ -48,5 +50,9 @@ class ImportantInformationVC: UIViewController {
     // MARK: - Private Functions
     // MARK: - Button Actions
 
+    @IBAction func tapBtnOk(_ sender: Any) {
+        fLog()
+        self.dismiss(animated: true, completion: nil)
+    }
 
 }

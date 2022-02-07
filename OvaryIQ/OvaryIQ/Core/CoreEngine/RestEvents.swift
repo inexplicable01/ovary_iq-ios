@@ -18,6 +18,9 @@ enum RestEvents: Int {
     case logout
     case fetchGoal
     case saveUserFetchGoalDetails
+    case forgotPassword
+    case verifyCode
+    case resetPassword
     case networkError
 }
 

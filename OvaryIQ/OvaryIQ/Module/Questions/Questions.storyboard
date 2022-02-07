@@ -458,6 +458,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerImgView" destination="LTQ-cJ-ZSC" id="Veq-ii-71p"/>
                         <outlet property="btnSubmit" destination="oa2-v3-Vp5" id="wcY-ZL-16F"/>
                         <outlet property="lblTitle" destination="Vwf-3E-ZIy" id="v5x-li-IGj"/>
                         <outlet property="pickerView" destination="zy3-hN-Ifo" id="wIm-kM-X24"/>
@@ -657,7 +658,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerImgView" destination="UXs-p8-ot4" id="KB8-CW-slY"/>
+                        <outlet property="btnDontKnow" destination="4Go-5t-Sxc" id="ChV-Id-uAU"/>
+                        <outlet property="btnIrregular" destination="Zrm-7G-GAz" id="BP1-dh-eJX"/>
                         <outlet property="btnNext" destination="mgR-ES-ueW" id="POV-y2-kNF"/>
+                        <outlet property="btnRegular" destination="Sfl-MI-oKf" id="PI0-Zc-3Vf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WXX-nr-8F0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -902,6 +907,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bannerImgView" destination="vQS-sm-PoC" id="FmV-yG-PHs"/>
                         <outlet property="btnNext" destination="QVf-rb-kaS" id="eaD-Ko-Vv5"/>
                         <outlet property="lblTitle" destination="TZb-rG-tbT" id="SAt-or-dhK"/>
                         <outlet property="pickerView" destination="wkt-WY-FAd" id="ovQ-S8-NpP"/>
@@ -1277,6 +1283,7 @@
                     </view>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
+                        <outlet property="bannerImgview" destination="7oc-S5-WRR" id="D8c-7w-i0B"/>
                         <outlet property="btnSave" destination="m5O-CU-g3s" id="3Kl-5L-wXR"/>
                         <outlet property="calendar" destination="zb3-zW-0Fm" id="NeV-Au-nTE"/>
                         <outlet property="lblMonthYear" destination="3Dn-7U-Cn0" id="fQU-rA-1By"/>
@@ -1626,6 +1633,7 @@
                     </view>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
+                        <outlet property="bannerImgView" destination="iRe-S5-n6j" id="rBT-Hk-pHK"/>
                         <outlet property="btnSubmit" destination="YZj-rx-Cse" id="f3K-db-Tny"/>
                         <outlet property="txtFieldFirstPeriods" destination="3JT-eW-TSu" id="O7J-Zn-GkI"/>
                         <outlet property="txtFieldSecondPeriods" destination="BFx-3f-NcO" id="RmT-wf-aGJ"/>
@@ -1773,29 +1781,29 @@
             </objects>
             <point key="canvasLocation" x="3522" y="740"/>
         </scene>
-        <!--View Controller-->
+        <!--Important InformationVC-->
         <scene sceneID="47I-en-3Ho">
             <objects>
-                <viewController id="meu-gi-lBH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImportantInformationVC" id="meu-gi-lBH" customClass="ImportantInformationVC" customModule="OvaryIQ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XvT-Q6-A3x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsc-rl-Dt2">
-                                <rect key="frame" x="30" y="293" width="354" height="320"/>
+                                <rect key="frame" x="30" y="270.5" width="354" height="365"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG Img" translatesAutoresizingMaskIntoConstraints="NO" id="mVA-mx-SEF">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="320"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="365"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starSuccess" translatesAutoresizingMaskIntoConstraints="NO" id="p93-pe-fju">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InfomationImg" translatesAutoresizingMaskIntoConstraints="NO" id="p93-pe-fju">
                                         <rect key="frame" x="120" y="24" width="114" height="91"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="114" id="rwm-G1-th4"/>
                                             <constraint firstAttribute="height" constant="91" id="zSS-wu-NiP"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Success!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTD-5i-UVc">
-                                        <rect key="frame" x="133.5" y="137" width="87.5" height="31"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Important Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTD-5i-UVc">
+                                        <rect key="frame" x="53" y="137" width="248" height="31"/>
                                         <fontDescription key="fontDescription" name="CreteRound-Regular" family="Crete Round" pointSize="24"/>
                                         <color key="textColor" red="0.11372549830000001" green="0.05882352591" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -1807,20 +1815,20 @@
                                             <constraint firstAttribute="width" constant="35" id="hG0-JD-eUx"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Password has been changed!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpl-0c-EHZ">
-                                        <rect key="frame" x="10" y="200" width="334" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ovary IQ will not be able to predict your period and ovulation dates without 3 months of data" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpl-0c-EHZ">
+                                        <rect key="frame" x="30" y="200" width="294" height="60.5"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPm-Oi-ReI">
-                                        <rect key="frame" x="40" y="245.5" width="274" height="50"/>
+                                        <rect key="frame" x="40" y="285.5" width="274" height="50"/>
                                         <color key="backgroundColor" name="ThemeColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Vhp-ku-JgG"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Back to Log In">
+                                        <buttonConfiguration key="configuration" style="plain" title="Ok">
                                             <fontDescription key="titleFontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="18"/>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
@@ -1833,34 +1841,43 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="tapBtnbackToLoginWithSender:" destination="meu-gi-lBH" eventType="touchUpInside" id="mPa-Wp-9vO"/>
+                                            <action selector="tapBtnOk:" destination="meu-gi-lBH" eventType="touchUpInside" id="uJv-uc-akG"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="lTD-5i-UVc" firstAttribute="centerX" secondItem="p93-pe-fju" secondAttribute="centerX" id="4Oh-t4-dEg"/>
+                                    <constraint firstItem="xPm-Oi-ReI" firstAttribute="top" secondItem="Rpl-0c-EHZ" secondAttribute="bottom" constant="25" id="59H-Yo-u1Q"/>
                                     <constraint firstItem="xPm-Oi-ReI" firstAttribute="leading" secondItem="hsc-rl-Dt2" secondAttribute="leading" constant="40" id="688-zu-yr2"/>
-                                    <constraint firstAttribute="trailing" secondItem="Rpl-0c-EHZ" secondAttribute="trailing" constant="10" id="E4f-yD-pmL"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rpl-0c-EHZ" secondAttribute="trailing" constant="30" id="E4f-yD-pmL"/>
                                     <constraint firstItem="Rpl-0c-EHZ" firstAttribute="top" secondItem="dmq-FQ-4yk" secondAttribute="bottom" constant="20" id="Hnh-RB-JCx"/>
-                                    <constraint firstAttribute="height" constant="320" id="HwS-G7-xqS"/>
+                                    <constraint firstAttribute="height" constant="365" id="HwS-G7-xqS"/>
                                     <constraint firstItem="mVA-mx-SEF" firstAttribute="top" secondItem="hsc-rl-Dt2" secondAttribute="top" id="Ky0-iP-ION"/>
                                     <constraint firstItem="dmq-FQ-4yk" firstAttribute="centerX" secondItem="lTD-5i-UVc" secondAttribute="centerX" id="PM0-OB-EjK"/>
-                                    <constraint firstAttribute="bottom" secondItem="xPm-Oi-ReI" secondAttribute="bottom" constant="24.5" id="WFo-eZ-cJs"/>
                                     <constraint firstItem="dmq-FQ-4yk" firstAttribute="top" secondItem="lTD-5i-UVc" secondAttribute="bottom" constant="10" id="aeu-bU-Hhj"/>
                                     <constraint firstAttribute="trailing" secondItem="xPm-Oi-ReI" secondAttribute="trailing" constant="40" id="cmG-eM-438"/>
                                     <constraint firstItem="p93-pe-fju" firstAttribute="top" secondItem="hsc-rl-Dt2" secondAttribute="top" constant="24" id="dxU-48-vG4"/>
                                     <constraint firstAttribute="bottom" secondItem="mVA-mx-SEF" secondAttribute="bottom" id="fyN-xL-uTK"/>
                                     <constraint firstItem="p93-pe-fju" firstAttribute="centerX" secondItem="mVA-mx-SEF" secondAttribute="centerX" id="iHp-U7-Zrb"/>
-                                    <constraint firstItem="Rpl-0c-EHZ" firstAttribute="leading" secondItem="hsc-rl-Dt2" secondAttribute="leading" constant="10" id="m9i-0e-Wsx"/>
+                                    <constraint firstItem="Rpl-0c-EHZ" firstAttribute="leading" secondItem="hsc-rl-Dt2" secondAttribute="leading" constant="30" id="m9i-0e-Wsx"/>
                                     <constraint firstAttribute="trailing" secondItem="mVA-mx-SEF" secondAttribute="trailing" id="nrl-3l-12Y"/>
                                     <constraint firstItem="mVA-mx-SEF" firstAttribute="leading" secondItem="hsc-rl-Dt2" secondAttribute="leading" id="prB-qI-Oeh"/>
-                                    <constraint firstItem="xPm-Oi-ReI" firstAttribute="top" secondItem="Rpl-0c-EHZ" secondAttribute="bottom" constant="25" id="qG0-rD-o6l"/>
+                                    <constraint firstAttribute="bottom" secondItem="xPm-Oi-ReI" secondAttribute="bottom" constant="29.5" id="teo-R5-eK7"/>
                                     <constraint firstItem="lTD-5i-UVc" firstAttribute="top" secondItem="p93-pe-fju" secondAttribute="bottom" constant="22" id="uUY-DM-2xG"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
+                                        <real key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -1875,7 +1892,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnBackToLogIn" destination="xPm-Oi-ReI" id="1ya-Wz-AC5"/>
+                        <outlet property="btnOk" destination="xPm-Oi-ReI" id="vv7-SK-MM3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6la-zy-74O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1886,6 +1903,7 @@
     <resources>
         <image name=" selectedPeriodTracker" width="50" height="50"/>
         <image name="BG Img" width="375" height="812"/>
+        <image name="InfomationImg" width="115" height="91.5"/>
         <image name="Line" width="35" height="2"/>
         <image name="Ovary" width="249" height="299.5"/>
         <image name="Regular" width="130" height="130"/>

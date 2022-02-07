@@ -46,6 +46,15 @@
 		A74C323227919F1200763899 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74C323127919F1200763899 /* BaseTableViewCell.swift */; };
 		A753831D27B0CEFF00F9FE83 /* LoginSuccessPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753831C27B0CEFF00F9FE83 /* LoginSuccessPopUpVC.swift */; };
 		A753832127B0CF5200F9FE83 /* RegularOrIrregularCycleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753832027B0CF5200F9FE83 /* RegularOrIrregularCycleVC.swift */; };
+		A753832727B117EA00F9FE83 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753832627B117EA00F9FE83 /* ForgotPasswordViewModel.swift */; };
+		A753832927B1185E00F9FE83 /* ForgotPasswordDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753832827B1185E00F9FE83 /* ForgotPasswordDataModel.swift */; };
+		A753832B27B11EE500F9FE83 /* ForgotPasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753832A27B11EE500F9FE83 /* ForgotPasswordRequestModel.swift */; };
+		A753833127B128EE00F9FE83 /* AuthVerificationCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753833027B128EE00F9FE83 /* AuthVerificationCodeViewModel.swift */; };
+		A753833327B1298800F9FE83 /* AuthVerificationCodeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753833227B1298800F9FE83 /* AuthVerificationCodeDataModel.swift */; };
+		A753833527B12A5D00F9FE83 /* AuthVerificationCodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753833427B12A5D00F9FE83 /* AuthVerificationCodeRequestModel.swift */; };
+		A753833B27B138E600F9FE83 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753833A27B138E600F9FE83 /* ResetPasswordViewModel.swift */; };
+		A753833D27B1392700F9FE83 /* ResetPasswordRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753833C27B1392700F9FE83 /* ResetPasswordRequestModel.swift */; };
+		A753833F27B13A3100F9FE83 /* ResetPasswordDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753833E27B13A3100F9FE83 /* ResetPasswordDataModel.swift */; };
 		A760457C279EC7DC008655B6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A760457B279EC7DC008655B6 /* String.swift */; };
 		A7604580279ED32F008655B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A760457F279ED32F008655B6 /* Localizable.strings */; };
 		A7604583279ED91E008655B6 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7604582279ED91E008655B6 /* UIViewController+Extension.swift */; };
@@ -180,6 +189,17 @@
 		A74C323127919F1200763899 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		A753831C27B0CEFF00F9FE83 /* LoginSuccessPopUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSuccessPopUpVC.swift; sourceTree = "<group>"; };
 		A753832027B0CF5200F9FE83 /* RegularOrIrregularCycleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularOrIrregularCycleVC.swift; sourceTree = "<group>"; };
+		A753832627B117EA00F9FE83 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		A753832827B1185E00F9FE83 /* ForgotPasswordDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordDataModel.swift; sourceTree = "<group>"; };
+		A753832A27B11EE500F9FE83 /* ForgotPasswordRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequestModel.swift; sourceTree = "<group>"; };
+		A753833027B128EE00F9FE83 /* AuthVerificationCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVerificationCodeViewModel.swift; sourceTree = "<group>"; };
+		A753833227B1298800F9FE83 /* AuthVerificationCodeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVerificationCodeDataModel.swift; sourceTree = "<group>"; };
+		A753833427B12A5D00F9FE83 /* AuthVerificationCodeRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVerificationCodeRequestModel.swift; sourceTree = "<group>"; };
+		A753833A27B138E600F9FE83 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
+		A753833C27B1392700F9FE83 /* ResetPasswordRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordRequestModel.swift; sourceTree = "<group>"; };
+		A753833E27B13A3100F9FE83 /* ResetPasswordDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordDataModel.swift; sourceTree = "<group>"; };
+		A753834027B162D400F9FE83 /* OvaryIQDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OvaryIQDebug.entitlements; sourceTree = "<group>"; };
+		A753834127B162E700F9FE83 /* OvaryIQRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OvaryIQRelease.entitlements; sourceTree = "<group>"; };
 		A760457B279EC7DC008655B6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A760457F279ED32F008655B6 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		A7604582279ED91E008655B6 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -371,7 +391,10 @@
 		A720FF47278EFD8200893720 /* AuthForgotPassword */ = {
 			isa = PBXGroup;
 			children = (
-				A720FF48278EFDB500893720 /* AuthForgotPasswordVC.swift */,
+				A753832527B117CC00F9FE83 /* Model */,
+				A753832427B117C500F9FE83 /* View */,
+				A753832327B117A200F9FE83 /* ViewModel */,
+				A753832227B1179900F9FE83 /* Controller */,
 			);
 			path = AuthForgotPassword;
 			sourceTree = "<group>";
@@ -379,7 +402,10 @@
 		A720FF4A278F061800893720 /* AuthResetPassword */ = {
 			isa = PBXGroup;
 			children = (
-				A720FF4B278F063A00893720 /* ResetPasswordVC.swift */,
+				A753833927B138CC00F9FE83 /* View */,
+				A753833827B138C700F9FE83 /* Model */,
+				A753833727B138C000F9FE83 /* ViewModel */,
+				A753833627B138AF00F9FE83 /* Controller */,
 			);
 			path = AuthResetPassword;
 			sourceTree = "<group>";
@@ -409,6 +435,8 @@
 		A73244DD278E8E2A008FDCF0 /* OvaryIQ */ = {
 			isa = PBXGroup;
 			children = (
+				A753834127B162E700F9FE83 /* OvaryIQRelease.entitlements */,
+				A753834027B162D400F9FE83 /* OvaryIQDebug.entitlements */,
 				A77AD2AD27A933C9007C389F /* OvaryIQStagging.entitlements */,
 				A76D649D279FD71C00397D1C /* AppConfig */,
 				A732450E278E8E3E008FDCF0 /* AppDelegate */,
@@ -566,7 +594,10 @@
 		A74C322227915CF700763899 /* AuthVerificationCode */ = {
 			isa = PBXGroup;
 			children = (
-				A74C322327915D1700763899 /* AuthVerificationCodeVC.swift */,
+				A753832F27B128D600F9FE83 /* View */,
+				A753832E27B128D000F9FE83 /* Model */,
+				A753832D27B128CA00F9FE83 /* ViewModel */,
+				A753832C27B128B200F9FE83 /* Controller */,
 			);
 			path = AuthVerificationCode;
 			sourceTree = "<group>";
@@ -643,6 +674,102 @@
 				A753832027B0CF5200F9FE83 /* RegularOrIrregularCycleVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A753832227B1179900F9FE83 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A720FF48278EFDB500893720 /* AuthForgotPasswordVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A753832327B117A200F9FE83 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A753832627B117EA00F9FE83 /* ForgotPasswordViewModel.swift */,
+				A753832A27B11EE500F9FE83 /* ForgotPasswordRequestModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A753832427B117C500F9FE83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A753832527B117CC00F9FE83 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A753832827B1185E00F9FE83 /* ForgotPasswordDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A753832C27B128B200F9FE83 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A74C322327915D1700763899 /* AuthVerificationCodeVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A753832D27B128CA00F9FE83 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A753833027B128EE00F9FE83 /* AuthVerificationCodeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A753832E27B128D000F9FE83 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A753833227B1298800F9FE83 /* AuthVerificationCodeDataModel.swift */,
+				A753833427B12A5D00F9FE83 /* AuthVerificationCodeRequestModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A753832F27B128D600F9FE83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A753833627B138AF00F9FE83 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A720FF4B278F063A00893720 /* ResetPasswordVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A753833727B138C000F9FE83 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A753833A27B138E600F9FE83 /* ResetPasswordViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A753833827B138C700F9FE83 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A753833C27B1392700F9FE83 /* ResetPasswordRequestModel.swift */,
+				A753833E27B13A3100F9FE83 /* ResetPasswordDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A753833927B138CC00F9FE83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A76D6499279FD4BE00397D1C /* Core */ = {
@@ -1313,12 +1440,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A753832927B1185E00F9FE83 /* ForgotPasswordDataModel.swift in Sources */,
 				A76D64D327A2647E00397D1C /* CoreDataManager.swift in Sources */,
 				A76D64BF27A0687100397D1C /* EventLoop.swift in Sources */,
 				A73CA3E327982866005085CB /* PeriodStartDateVC.swift in Sources */,
+				A753833F27B13A3100F9FE83 /* ResetPasswordDataModel.swift in Sources */,
 				A73244E3278E8E2A008FDCF0 /* AuthOptionVC.swift in Sources */,
 				A73CA3EC27982AF8005085CB /* CalendarCollectionViewCell.swift in Sources */,
 				A76D64C327A0689900397D1C /* RestEvents.swift in Sources */,
+				A753833527B12A5D00F9FE83 /* AuthVerificationCodeRequestModel.swift in Sources */,
 				A77C71C52797FB66007AB67E /* Struct+Storyboard.swift in Sources */,
 				A73244DF278E8E2A008FDCF0 /* AppDelegate.swift in Sources */,
 				A76D64E427A26A0700397D1C /* AlertControllerManager.swift in Sources */,
@@ -1337,8 +1467,10 @@
 				A76D64E027A267C200397D1C /* Venue.swift in Sources */,
 				A77AD2BE27AC0A71007C389F /* HomeViewModel.swift in Sources */,
 				A7CE543E27967B7B00191A7B /* UITableView+Extension.swift in Sources */,
+				A753832727B117EA00F9FE83 /* ForgotPasswordViewModel.swift in Sources */,
 				A753831D27B0CEFF00F9FE83 /* LoginSuccessPopUpVC.swift in Sources */,
 				A797A1E6279EC4FC00AB3896 /* Toast + Extension.swift in Sources */,
+				A753833127B128EE00F9FE83 /* AuthVerificationCodeViewModel.swift in Sources */,
 				A76D64C727A068CD00397D1C /* SocketEvents.swift in Sources */,
 				A76D64AC27A02ABC00397D1C /* AuthSignUpDataModel.swift in Sources */,
 				A77AD2B927ABEA41007C389F /* AuthLoginRequestModel.swift in Sources */,
@@ -1374,7 +1506,9 @@
 				A797A1E4279EC03200AB3896 /* Utility.swift in Sources */,
 				A77AD2A127A8EBD4007C389F /* SocialUserInfo.swift in Sources */,
 				A76D64DC27A2677900397D1C /* UserPhoto.swift in Sources */,
+				A753833B27B138E600F9FE83 /* ResetPasswordViewModel.swift in Sources */,
 				A7717F6527AE50AF00422539 /* SaveFetchGoalDataModel.swift in Sources */,
+				A753833D27B1392700F9FE83 /* ResetPasswordRequestModel.swift in Sources */,
 				A720FF43278ED70A00893720 /* AuthLoginVC.swift in Sources */,
 				A76D64BC27A0676E00397D1C /* RestHelper.swift in Sources */,
 				A74C322427915D1700763899 /* AuthVerificationCodeVC.swift in Sources */,
@@ -1385,11 +1519,13 @@
 				A77B27802799454100C1FE2C /* CalendarTVC.swift in Sources */,
 				A77AD2AC27A90305007C389F /* GoogleManager.swift in Sources */,
 				A77C71C72797FEEC007AB67E /* Helper.swift in Sources */,
+				A753832B27B11EE500F9FE83 /* ForgotPasswordRequestModel.swift in Sources */,
 				A76D64E227A2686800397D1C /* UserDefaults+Extensions.swift in Sources */,
 				A78AECEA27A3DBBC003E05C2 /* String+Extension.swift in Sources */,
 				A78AECEC27A3DEDC003E05C2 /* AuthSignUpRequestModel.swift in Sources */,
 				A76D649F279FD73800397D1C /* AppConfig.swift in Sources */,
 				A720FF4C278F063A00893720 /* ResetPasswordVC.swift in Sources */,
+				A753833327B1298800F9FE83 /* AuthVerificationCodeDataModel.swift in Sources */,
 				A77AD29F27A8EADF007C389F /* KeychainManager.swift in Sources */,
 				A77AD2A627A8F0BD007C389F /* AuthOptionViewModel.swift in Sources */,
 				A7CE544427968F7300191A7B /* LastPeriodLongVC.swift in Sources */,
@@ -1575,8 +1711,13 @@
 				APP_NAME = "OvaryIQ D";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				AUTH_PASSWORD = admin;
+				AUTH_USERNAME = admin;
+				CODE_SIGN_ENTITLEMENTS = OvaryIQ/OvaryIQDebug.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development: Girijesh Kumar (M239VCHQ96)";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DCPCNSLGGR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OvaryIQ/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1593,8 +1734,9 @@
 				MARKETING_VERSION = 1.0;
 				NEW_SETTING = "";
 				NEW_SETTING1 = "";
-				PRODUCT_BUNDLE_IDENTIFIER = test.OvaryIQ;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.ovary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = Ovary_Dev_7_Feb;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1609,6 +1751,9 @@
 				APP_NAME = OvaryIQ;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				AUTH_PASSWORD = admin;
+				AUTH_USERNAME = admin;
+				CODE_SIGN_ENTITLEMENTS = OvaryIQ/OvaryIQRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1776,6 +1921,8 @@
 				APP_NAME = "OvaryIQ D";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				AUTH_PASSWORD = admin;
+				AUTH_USERNAME = admin;
 				CODE_SIGN_ENTITLEMENTS = OvaryIQ/OvaryIQStagging.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;

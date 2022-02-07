@@ -9,7 +9,7 @@
 import Foundation
 
 struct SocialUserInfo {
-    var type: SocialLoginType = .facebook
+    var type: LoginType = .apple
     var socialId: String = ""
     var name: String = ""
     var email: String = ""
@@ -24,11 +24,11 @@ struct SocialUserInfo {
     }
 }
 
-enum SocialLoginType: Int {
-    case facebook = 1
-    case google = 2
-    case apple = 3
-}
+//enum SocialLoginType: Int {
+//    case facebook = 1
+//    case google = 2
+//    case apple = 3
+//}
 
 
 struct Name {

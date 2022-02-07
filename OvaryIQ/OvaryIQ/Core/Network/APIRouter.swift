@@ -13,16 +13,21 @@ enum APIRouter: URLRequestConvertible {
     case signUp(params: Parameters)
     case login(params: Parameters)
     case logOut(params: Parameters)
-    case fetchGoals
+    case fetchGoals(params: Parameters)
     case savezGoalsDetails(params: Parameters)
+    case forgotPassword(params: Parameters)
+    case verifyCode(params: Parameters)
+    case ResetPassword(params: Parameters)
+
 
     var method: HTTPMethod {
 
         switch self {
-        case .signUp, .login, .logOut, .savezGoalsDetails:
+        case .signUp,
+                .login, .logOut, .savezGoalsDetails, .forgotPassword, .ResetPassword:
             return .post
 
-        case .fetchGoals:
+        case .fetchGoals,.verifyCode:
             return .get
 
         }
@@ -35,22 +40,22 @@ enum APIRouter: URLRequestConvertible {
         case .logOut: return APIName.LogOut
         case .fetchGoals: return APIName.FetchGoals
         case .savezGoalsDetails: return APIName.SaveGoalsDetails
-        }
+        case .forgotPassword: return APIName.ForgotPassword
+        case .verifyCode: return APIName.VerifyCode
+        case .ResetPassword: return APIName.ResetPassword
+      }
     }
 
     //MARK: - URLRequestConvertible
 
     func asURLRequest() throws -> URLRequest {
-
+        // Make Basic Auth for api authentication
         var headers: [String: String] = [:]
-       // let authorizationHeader = HTTPHeader.authorization(username: AppConfig.getAuthUsername(), password: AppConfig.getAuthPassword())
-     //   headers["Authorization"] = authorizationHeader.value
-
-      //  headers["Authorization"] = ""
-
-        let accessToken = "\(UserDefaults.tokenType) \(UserDefaults.accessToken)"
+        let authorizationHeader = HTTPHeader.authorization(username: AppConfig.getAuthUsername(), password: AppConfig.getAuthPassword())
+        headers["Authorization"] = authorizationHeader.value
+        let accessToken = "\(UserDefaults.accessToken)"
         if accessToken.length > 0 {
-            headers[APIParam.Authorization] = accessToken
+            headers[APIParam.AccessToken] = accessToken
         }
 
         var urlRequest = URLRequest(url: try path.asURL())
@@ -63,14 +68,23 @@ enum APIRouter: URLRequestConvertible {
         case .signUp(let params),
              .login(let params),
              .logOut(let params),
-             .savezGoalsDetails(let params):
+             .savezGoalsDetails(let params),
+             .forgotPassword(let params),
+             .ResetPassword(let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
 
-        case .fetchGoals:
+        case .fetchGoals(let params):
+
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
+        case   .verifyCode(let params):
+            if let url = urlRequest.url,
+               let code = params["code"] as? Double {
+                var urlStr = url.absoluteString
+                urlStr += "/" + "\(code)"
+                urlRequest.url = URL(string: urlStr)
+            }
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
 
-            //urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
-            //urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
         }
 
         dLog(message: "API URL Request :: \(urlRequest)")

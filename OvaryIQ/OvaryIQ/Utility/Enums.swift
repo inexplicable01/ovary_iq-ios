@@ -6,20 +6,11 @@
 //
 
 import Foundation
-enum LoginType: Int {
-    case google = 1
-    case facebook = 2
-    case apple = 3
-   // case phoneNo = 4
+enum LoginType: String {
+    case google = "google"
+    case facebook = "facebook"
+    case apple = "apple"
 
-    var value: String {
-        switch self {
-        case .google: return "1"
-        case .facebook: return "2"
-        case .apple: return "3"
-      //  case .phoneNo: return "4"
-        }
-    }
 }
 
 enum PeriodCycleType: String {

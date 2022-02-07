@@ -18,6 +18,7 @@ enum ErrorMessages: String {
     case emptyPhoneNumber = "msg_empty_phoneNumber"
     case emptyEmail = "msg_empty_email"
     case emptyPassword = "msg_empty_password"
+    case emptyConfirmPassword = "msg_empty_confirmPassword"
     case somethingWentWrong = "msg_something_went_wrong"
     case invalidEmailId = "msg_invalid_emailId"
     case selectPeriodCycle = "msg_period_cycle"
@@ -25,6 +26,8 @@ enum ErrorMessages: String {
     case emptyLastThirdPeriod = "msg_empty_LastThirdPeriod"
     case emptyLastSecondPeriod = "msg_empty_LastSecondPeriod"
     case empptyLastPeriod = "msg_empty_LastPeriod"
+    case empptyVerificationCode = "msg_empty_Otp"
+    case passwordDoesNotMatch = "msg_password_doesnot_match"
     var localizedString: String {
         return NSLocalizedString(self.rawValue, comment: "")
     }

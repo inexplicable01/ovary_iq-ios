@@ -15,11 +15,13 @@ class AuthOptionVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialSetup()
+        self.viewModel.registerCoreEngineEventsCallBack()
         // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.viewModel.registerCoreEngineEventsCallBack()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -28,6 +30,7 @@ class AuthOptionVC: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.viewModel.unregisterCoreEngineEventsCallBack()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -43,12 +46,14 @@ class AuthOptionVC: UIViewController {
     }
 
     deinit {
+        self.viewModel.unregisterCoreEngineEventsCallBack()
        classReleased()
     }
     // MARK: - Private Functions
 
     private func initialSetup() {
         viewModel.viewContreoller = self
+        self.viewModel.delegate = self
    }
 
     // MARK: - Button Actions
@@ -80,4 +85,10 @@ class AuthOptionVC: UIViewController {
         let authLoginVC = Storyboard.Auth.instantiateViewController(identifier: AuthLoginVC.className)
         self.navigationController?.pushViewController(authLoginVC, animated: true)
     }
+}
+extension AuthOptionVC: AuthOptionViewModelDelegate {
+    func sucessLoginSocialApiResponse() {
+        Helper.showAnswerFewQuestionsScreen()
+    }
+
 }

@@ -196,7 +196,7 @@ class AppleSignInManager: NSObject, ASAuthorizationControllerDelegate, ASAuthori
                 }
             }
 
-            let socialUserInfo = SocialUserInfo(type: SocialLoginType.apple, socialId: identifier, name: "\(fName + " " + lName)", email: email, profilePic: "")
+            let socialUserInfo = SocialUserInfo(type: LoginType.apple, socialId: identifier, name: "\(fName + " " + lName)", email: email, profilePic: "")
 
             print("AppleSignInManager :: User Info = UserId: \(userIdentifier), UserName: \(userFullName), UserEmail: \(userEmail), IdentityToken: \(identityToken), AuthorizationCode: \(authorizationCode)")
 

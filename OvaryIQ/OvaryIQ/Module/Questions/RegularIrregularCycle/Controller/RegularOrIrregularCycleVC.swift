@@ -11,13 +11,19 @@ import FSCalendar
 class RegularOrIrregularCycleVC: UIViewController {
     // MARK: - IBOutlets
 
-    @IBOutlet weak var btnNext: UIButton!
+    @IBOutlet private weak var btnNext: UIButton!
+    @IBOutlet private weak var bannerImgView: UIImageView!
+    @IBOutlet private weak var btnRegular: UIButton!
+    @IBOutlet private weak var btnIrregular: UIButton!
+    @IBOutlet private weak var btnDontKnow: UIButton!
     // MARK: - Properties
     internal var tryingRegularIregulatTypeRequestModel = TryingGetPreganantRequestModel()
     // MARK: - View Life Cycle Functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.intialSetup()
+
         // Do any additional setup after loading the view.
     }
 
@@ -50,14 +56,23 @@ class RegularOrIrregularCycleVC: UIViewController {
     }
 
     // MARK: - Private Functions
+    private func intialSetup() {
+        if self.tryingRegularIregulatTypeRequestModel.goalId == "2" {
+            self.bannerImgView.image = UIImage(named: "PeriodBanner_2")
+        } else {
+            self.bannerImgView.image = UIImage(named: "banner_3")
+        }
+    }
      // MARK: - Button Actions
     @IBAction private func tapBtnRegular(_ sender: UIButton) {
         fLog()
        sender.isSelected = !sender.isSelected
         if sender.isSelected {
             self.tryingRegularIregulatTypeRequestModel.periodCycle = PeriodCycleType.regular.rawValue
+    
         } else {
             self.tryingRegularIregulatTypeRequestModel.periodCycle = ""
+            
         }
 
     }

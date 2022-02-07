@@ -57,20 +57,23 @@ class GoogleManager: NSObject {
                 if let profilePic = user.profile?.imageURL(withDimension: 200) {
                     imageURL = profilePic.absoluteString
                 }
-                let socialUserInfo = SocialUserInfo(type: SocialLoginType.google, socialId: userId, name: name, email: email, profilePic: imageURL)
+                let socialUserInfo = SocialUserInfo(type: LoginType.google, socialId: userId, name: name, email: email, profilePic: imageURL)
 
                 print("GoogleManager :: User Info = UserId: \(userId), UserName: \(name), UserEmail: \(email), UserProfilePic: \(imageURL)")
 
                 self.googleLoginResult?(socialUserInfo, "Google login success", true)
+                completionClosure(socialUserInfo,"Google login success", (success != 0))
             }
-            self.googleLoginResult = { socialUserInfo, message, success in
-                completionClosure(socialUserInfo, message, success)
-              }
+//            self.googleLoginResult = { socialUserInfo, message, success in
+//
+//                completionClosure(socialUserInfo, message, success)
+//
+//              }
 
         }
     }
 
-    func logout() {
+    func googlLogout() {
         GoogleSignIn.GIDSignIn.sharedInstance.signOut()
     }
 

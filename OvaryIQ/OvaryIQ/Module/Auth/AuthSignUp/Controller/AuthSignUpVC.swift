@@ -204,17 +204,3 @@ extension AuthSignUpVC: AuthSignUpViewModelDelegate {
 //        self.navigationController?.pushViewController(authSignUpVC, animated: true)
     }
 }
-
-extension String {
-    var isAlphaWithMinium: Bool {
-        get {
-            do {
-            let regex = try NSRegularExpression(pattern: "^[a-zA-Z]{2,5}*$", options: .caseInsensitive)
-            return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
-
-            } catch {
-               return false
-            }
-        }
-    }
-}

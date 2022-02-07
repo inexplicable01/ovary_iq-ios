@@ -28,4 +28,6 @@
 "msg_empty_LastThirdPeriod" = "Please enter number of days in 3 periods ago.";
 "msg_empty_LastSecondPeriod" = "Please enter number of days in 2 periods ago.";
 "msg_empty_LastPeriod" = "Please enter number of days in 1 periods ago.";
-
+"msg_empty_Otp" = "Please enter verification code";
+"msg_password_doesnot_match" = "The passwords do not match";
+"msg_empty_confirmPassword" = "Please enter confirm password";

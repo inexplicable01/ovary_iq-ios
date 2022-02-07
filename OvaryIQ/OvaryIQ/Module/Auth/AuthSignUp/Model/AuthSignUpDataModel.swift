@@ -7,14 +7,13 @@
 
 import Foundation
 struct AuthSignUpDataModel: Codable {
-    var message, accessToken, tokenType, isSaveGoal: String?
+    var message, accessToken, isSaveGoal: String?
     var expiresIn: Int?
     var user: UserDataModel?
 
        enum CodingKeys: String, CodingKey {
            case message
            case accessToken = "access_token"
-           case tokenType = "token_type"
            case expiresIn = "expires_in"
            case isSaveGoal
            case user
@@ -24,8 +23,7 @@ struct AuthSignUpDataModel: Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         message = try? values.decodeIfPresent(String.self, forKey: .message) ?? ""
         accessToken = try? values.decodeIfPresent(String.self, forKey: .accessToken) ?? ""
-        tokenType = try? values.decodeIfPresent(String.self, forKey: .tokenType) ?? ""
-         isSaveGoal = try? values.decodeIfPresent(String.self, forKey: .isSaveGoal) ?? ""
+        isSaveGoal = try? values.decodeIfPresent(String.self, forKey: .isSaveGoal) ?? ""
         expiresIn = try? values.decodeIfPresent(Int.self, forKey: .expiresIn) ?? 0
         expiresIn = try? values.decodeIfPresent(Int.self, forKey: .expiresIn) ?? 0
         user = try? values.decodeIfPresent(UserDataModel.self, forKey: .user) ?? nil

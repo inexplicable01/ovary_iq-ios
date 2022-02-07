@@ -13,6 +13,8 @@ class LogYearOfBirthVC: UIViewController {
     @IBOutlet private weak var pickerView: UIPickerView!
     @IBOutlet private weak var lblTitle: UILabel!
     @IBOutlet private weak var btnNext: UIButton!
+
+    @IBOutlet private weak var bannerImgView: UIImageView!
     internal var selectedGoalId: Int?
     internal var tryingPregantYearModelRequest = TryingGetPreganantRequestModel()
     // MARK: - Properties
@@ -73,6 +75,11 @@ class LogYearOfBirthVC: UIViewController {
             pickerView.subviews.forEach({
                 $0.isHidden = $0.frame.height < 1.0
             })
+        }
+        if selectedGoalId == 2 {
+            self.bannerImgView.image = UIImage(named: "periodBanner")
+        } else {
+            self.bannerImgView.image = UIImage(named: "banner_2")
         }
     }
 

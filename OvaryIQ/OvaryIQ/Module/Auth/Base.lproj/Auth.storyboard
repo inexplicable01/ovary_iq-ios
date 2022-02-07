@@ -27,7 +27,7 @@
         <!--Auth OptionVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AuthOptionVC" customModule="OvaryIQ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthOptionVC" id="BYZ-38-t0r" customClass="AuthOptionVC" customModule="OvaryIQ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1184,6 +1184,9 @@ password reset</string>
                                                         <rect key="frame" x="45.5" y="0.0" width="280.5" height="50"/>
                                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BNq-vy-eHw" id="jbl-OI-Be2"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1399,6 +1402,7 @@ xyz.ab@gmail.com</string>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="textFieldEditingChanged:" destination="D8y-46-VMn" eventType="editingChanged" id="VN2-uD-eeb"/>
+                                                            <outlet property="delegate" destination="D8y-46-VMn" id="joQ-VD-FkK"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -1430,6 +1434,7 @@ xyz.ab@gmail.com</string>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="textFieldEditingChanged:" destination="D8y-46-VMn" eventType="editingChanged" id="iZB-4Q-4h8"/>
+                                                            <outlet property="delegate" destination="D8y-46-VMn" id="fWZ-c4-7h9"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -1461,6 +1466,7 @@ xyz.ab@gmail.com</string>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="textFieldEditingChanged:" destination="D8y-46-VMn" eventType="editingChanged" id="b7A-uD-kRZ"/>
+                                                            <outlet property="delegate" destination="D8y-46-VMn" id="tia-LQ-0iL"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -1492,6 +1498,7 @@ xyz.ab@gmail.com</string>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="textFieldEditingChanged:" destination="D8y-46-VMn" eventType="editingChanged" id="7fV-bE-BER"/>
+                                                            <outlet property="delegate" destination="D8y-46-VMn" id="pZ9-AT-ZWV"/>
                                                         </connections>
                                                     </textField>
                                                 </subviews>
@@ -1722,6 +1729,9 @@ xyz.ab@gmail.com</string>
                                                         <rect key="frame" x="44.5" y="0.0" width="250.5" height="50"/>
                                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="awc-1u-sea" id="HZD-05-aRz"/>
+                                                        </connections>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aza-4G-fjL">
                                                         <rect key="frame" x="300" y="18" width="16" height="14"/>
@@ -1779,6 +1789,9 @@ xyz.ab@gmail.com</string>
                                                         <rect key="frame" x="44.5" y="0.0" width="250.5" height="50"/>
                                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="awc-1u-sea" id="ec5-cz-Sx0"/>
+                                                        </connections>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2P-cz-Yqj">
                                                         <rect key="frame" x="300" y="18" width="16" height="14"/>

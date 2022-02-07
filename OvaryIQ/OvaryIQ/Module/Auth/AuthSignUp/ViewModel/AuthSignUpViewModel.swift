@@ -64,9 +64,6 @@ extension AuthSignUpViewModel {
                         if let acessToken = encodedDictionary.accessToken {
                             kUserDefaults.accessToken = acessToken
                         }
-                        if let tokenType = encodedDictionary.tokenType {
-                            kUserDefaults.tokenType = tokenType
-                       }
                        self.delegate?.sucessRegisterApiResponse?()
 
                     } catch {

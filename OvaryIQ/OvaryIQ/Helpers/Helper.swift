@@ -22,7 +22,7 @@ class Helper {
 
     //MARK: -  Show Login Screen as root controller
     class func showLoginScreen() {
-        let vc = Storyboard.Auth.instantiateViewController(withIdentifier: AuthLoginVC.className) as! AuthLoginVC
+        let vc = Storyboard.Auth.instantiateViewController(withIdentifier: AuthOptionVC.className) as! AuthOptionVC
         let nav = UINavigationController.init(rootViewController: vc)
         nav.isNavigationBarHidden = true
         if let window = UIApplication.shared.windows.first {
