@@ -80,14 +80,16 @@ class RestHelper: NSObject {
                 dLog(message: "Parameter Missing :: \(APIName.LogOut)")
               }
            case .fetchGoal:
-              if let parameters = evObj.object as? [String: Any] {
-                evObj.apiRequest = APIRouter.fetchGoals(params: parameters)
-              } else {
-                dLog(message: "Parameter Missing :: \(APIName.FetchGoals)")
-              }
+                evObj.apiRequest = APIRouter.fetchGoals
            case .networkError:
               break
 
+          case .saveUserFetchGoalDetails:
+            if let parameters = evObj.object as? [String: Any] {
+              evObj.apiRequest = APIRouter.savezGoalsDetails(params: parameters)
+            } else {
+              dLog(message: "Parameter Missing :: \(APIName.SaveGoalsDetails)")
+            }
         }
 
         self.addRequestInScheduler(requestObj: evObj)

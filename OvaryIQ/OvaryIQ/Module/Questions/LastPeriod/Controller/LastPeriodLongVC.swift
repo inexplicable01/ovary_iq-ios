@@ -13,18 +13,28 @@ class LastPeriodLongVC: UIViewController {
     @IBOutlet private weak var pickerView: UIPickerView!
     @IBOutlet private weak var lblTitle: UILabel!
     // MARK: - Properties
-    private var pickerData: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+   // private var pickerData: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+    private var pickerData: [String] {
+        var daysArr = [String]()
+        for indx in (1...20) {
+            daysArr.append("\(indx)")
+        }
+        return daysArr
+    }
     private var pickerLabel = UILabel()
     private var selectedIndex: Int = 5
+    internal var periodDetailModelRequest = TryingGetPreganantRequestModel()
+    private var viewModel = LastPeriodViewModel()
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialSetup()
+        self.viewModel.registerCoreEngineEventsCallBack()
         // Do any additional setup after loading the view.
     }
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.viewModel.registerCoreEngineEventsCallBack()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -33,6 +43,7 @@ class LastPeriodLongVC: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.viewModel.unregisterCoreEngineEventsCallBack()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -48,14 +59,16 @@ class LastPeriodLongVC: UIViewController {
     }
 
     deinit {
+        self.viewModel.unregisterCoreEngineEventsCallBack()
        classReleased()
     }
+
     // MARK: - Notifications Functions
 
     // MARK: - Private Functions
     private func initialSetup() {
         self.btnSubmit.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
-        self.lblTitle.text = "What long did your last period \n last for?"
+        self.lblTitle.text = "How long did your last period \n last for?"
         pickerView.selectRow(selectedIndex, inComponent: 0, animated: true)
         pickerView.inputView?.backgroundColor = .clear
         if #available(iOS 14.0, *) {
@@ -65,12 +78,23 @@ class LastPeriodLongVC: UIViewController {
                 $0.isHidden = $0.frame.height < 1.0
             })
         }
+        self.viewModel.delegate = self
     }
 
     // MARK: - Button Actions
     @IBAction private func tapBtnSubmit(_ sender: Any) {
         fLog()
+        self.periodDetailModelRequest.totalDaysOfLastPeriod = Int(self.pickerData[self.selectedIndex])
+        self.viewModel.fetchGoalRequestModel =  self.periodDetailModelRequest
+        self.viewModel.callApiTosaveFetchGoalDetails()
     }
+
+    @IBAction private func tapBtnBack(_ sender: UIButton) {
+        fLog()
+        self.navigationController?.popViewController(animated: true)
+    }
+
+
 }
 
 // MARK: - UIPickerDelegate, UIPickerDataSource
@@ -121,5 +145,13 @@ extension LastPeriodLongVC: UIPickerViewDelegate, UIPickerViewDataSource {
 
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 100
+    }
+}
+
+// MARK: - Protocol and delegate method
+extension LastPeriodLongVC: LastPeriodViewModelDelegate {
+    func sucesssSaveGoalsApiResponse() {
+        Helper.showHomeScreen()
+
     }
 }

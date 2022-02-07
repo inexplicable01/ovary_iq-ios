@@ -240,23 +240,27 @@ extension UIView {
     }
 
 }
-extension UIView {
-    // MARK: -  Loading Progress View
-    func showLoader() {
-        hideLoader()
-        var progressView: AnimationView?
-        progressView = AnimationView(name: "Loader")
-        progressView?.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-        progressView?.center = self.center
-        progressView?.contentMode = .scaleAspectFill
-        progressView?.animationSpeed = 1
-        progressView?.loopMode = .loop
-        self.addSubview(progressView!)
-        progressView?.play()
-    }
-    func hideLoader() {
-        for view in self.subviews where view is AnimationView {
-            view.removeFromSuperview()
-        }
-    }
-}
+//extension UIView {
+//    // MARK: -  Loading Progress View
+//    func showLoader() {
+//        hideLoader()
+//        var container: UIView = UIView()
+//        self.container.bounds = (UIApplication.shared.windows.first { $0.isKeyWindow }?.bounds)!
+//        self.container.center = (UIApplication.shared.windows.first { $0.isKeyWindow }?.center)!
+//        self.container.backgroundColor = UIColor.clear
+//        var progressView: AnimationView?
+//        progressView = AnimationView(name: "Loader")
+//        progressView?.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+//        progressView?.center = self.center
+//        progressView?.contentMode = .scaleAspectFill
+//        progressView?.animationSpeed = 1
+//        progressView?.loopMode = .loop
+//        co.addSubview(progressView!)
+//        progressView?.play()
+//    }
+//    func hideLoader() {
+//        for view in self.subviews where view is AnimationView {
+//            view.removeFromSuperview()
+//        }
+//    }
+//}

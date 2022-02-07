@@ -14,13 +14,14 @@ class HomeVC: UIViewController {
     // MARK: - view life cycle function
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel.registerCoreEngineEventsCallBack()
+      //  self.initialSetup()
+       // self.viewModel.registerCoreEngineEventsCallBack()
         // Do any additional setup after loading the view.
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.viewModel.registerCoreEngineEventsCallBack()
+       // self.viewModel.registerCoreEngineEventsCallBack()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -50,9 +51,27 @@ class HomeVC: UIViewController {
     }
 
     // MARK: - Private Functions
+//    private func initialSetup() {
+//        self.viewModel.delegate = self
+//    }
     // MARK: - Button Actions
     @IBAction private func tapBtnProfile(_ sender: UIButton) {
         fLog()
-        self.logOutPopUp()
+           // create the alert
+            let alert = UIAlertController(title: Text.appName.localizedString, message: Text.logOut.localizedString, preferredStyle: UIAlertController.Style.alert)
+
+       // add an action (button)
+            alert.addAction(UIAlertAction.init(title: Text.oks.localizedString,style: UIAlertAction.Style.default,handler: { (action) in
+                self.viewModel.callApiTologout()
+       }))
+            alert.addAction(UIAlertAction.init(title: Text.cancel.localizedString, style: UIAlertAction.Style.default, handler: { (action) in
+
+       }))
+       self.present(alert, animated: true, completion: nil)
     }
 }
+//extension HomeVC: HomeViewModelDelegate {
+//    func sucessLogoutApiResponse() {
+//        Helper.showLoginScreen()
+//    }
+//}

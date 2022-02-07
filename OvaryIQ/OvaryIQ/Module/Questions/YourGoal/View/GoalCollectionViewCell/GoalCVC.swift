@@ -19,10 +19,19 @@ class GoalCVC: BaseCollectionViewCell {
         // Initialization code
     }
     // MARK: - Internal Functions
-//    internal func configCell(model: Goal) {
-//        lblTitle.text = model.title ?? ""
-//        self.view.borderColor = model.isSelected ?? false ? UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0) : UIColor(red: 255.0 / 255.0, green: 236.0 / 255.0, blue: 241.0 / 255.0, alpha: 1.0)
-//        self.imgViewGoal.image = model.isSelected ?? false ?  model.selectedImage : model.titleImage
-//    }
+    internal func configCell(model: GoalTypeModel, index: Int) {
+        lblTitle.text = model.goalType ?? ""
+        self.view.borderColor = model.isSelected ? UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0) : UIColor(red: 255.0 / 255.0, green: 236.0 / 255.0, blue: 241.0 / 255.0, alpha: 1.0)
+
+        switch index {
+        case 0 :
+
+            self.imageView.image = model.isSelected ? UIImage(named: "SelectedPreganent") : UIImage(named: "get_Preganent")
+
+        default:
+            self.imageView.image = model.isSelected ? UIImage(named: "selectedPeriodTracker") : UIImage(named: "unselectedPeriodTracker")
+
+        }
+    }
 
 }

@@ -107,6 +107,8 @@ class AuthLoginVC: UIViewController {
 
         if email.isEmpty {
             AlertControllerManager.showToast(message: ErrorMessages.emptyEmail.localizedString, type: .error)
+        } else if !(email.isValidemail()) {
+            AlertControllerManager.showToast(message: ErrorMessages.invalidEmailId.localizedString, type: .error)
         } else if password.isEmpty {
             AlertControllerManager.showToast(message: ErrorMessages.emptyPassword.localizedString, type: .error)
         } else {
@@ -179,7 +181,6 @@ extension AuthLoginVC: LoginViewModelDelegate {
     // here after sucess response of signup we jump to answer few Questions screen
     func sucessLoginApiResponse() {
         let authSignUpVC = Storyboard.Questions.instantiateViewController(identifier: AnswersFewQuestionsVC.className)
-        self.navigationController?.pushViewController(authSignUpVC, animated: true)
-       // Helper.showHomeScreen()
+       self.navigationController?.pushViewController(authSignUpVC, animated: true)
     }
 }

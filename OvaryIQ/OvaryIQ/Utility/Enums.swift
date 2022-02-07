@@ -21,3 +21,9 @@ enum LoginType: Int {
         }
     }
 }
+
+enum PeriodCycleType: String {
+   case regular = "regular"
+   case irregular = "irregular"
+   case notKnow = "not_know"
+}

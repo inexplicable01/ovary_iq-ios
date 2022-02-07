@@ -1,31 +1,29 @@
 //
-//  LogYearOfBirthVC.swift
+//  TryingGetPregnantVC.swift
 //  OvaryIQ
 //
-//  Created by Mobcoder on 19/01/22.
+//  Created by Mobcoder on 04/02/22.
 //
 
 import UIKit
 
-class LogYearOfBirthVC: UIViewController {
-
+class TryingGetPregnantVC: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var pickerView: UIPickerView!
-    @IBOutlet private weak var lblTitle: UILabel!
     @IBOutlet private weak var btnNext: UIButton!
     internal var selectedGoalId: Int?
-    internal var tryingPregantYearModelRequest = TryingGetPreganantRequestModel()
+    private var tryingPregantModelRequest = TryingGetPreganantRequestModel()
+
     // MARK: - Properties
    // private var pickerData: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
     private var pickerLabel = UILabel()
     private var selectedIndex: Int = 5
     private var pickerData: [String] {
-        let currentYear = Calendar.current.component(.year, from: Date())
-        var years = [String]()
-        for indx in (1922...currentYear) {
-            years.append("\(indx)")
+        var monthArr = [String]()
+        for indx in (1...12) {
+            monthArr.append("\(indx)")
         }
-        return years
+        return monthArr
     }
     // MARK: - view life cycle Functions
     override func viewDidLoad() {
@@ -80,17 +78,15 @@ class LogYearOfBirthVC: UIViewController {
     @IBAction private func tapNextBtn(_ sender: UIButton) {
         fLog()
         if let id = selectedGoalId {
-            self.tryingPregantYearModelRequest.goalId = "\(id)"
+            self.tryingPregantModelRequest.goalId = "\(id)"
         }
-        self.tryingPregantYearModelRequest.birthYear = self.pickerData[self.selectedIndex]
-        if let regularOrIrregularCycleVC = Storyboard.Questions.instantiateViewController(identifier: RegularOrIrregularCycleVC.className) as? RegularOrIrregularCycleVC {
-            regularOrIrregularCycleVC.tryingRegularIregulatTypeRequestModel = self.tryingPregantYearModelRequest
-             self.navigationController?.pushViewController(regularOrIrregularCycleVC, animated: true)
-        }
+        self.tryingPregantModelRequest.tryingMonthsToPregnant = Int(self.pickerData[self.selectedIndex])
+       if let logYearOfBirthVC = Storyboard.Questions.instantiateViewController(identifier: LogYearOfBirthVC.className) as? LogYearOfBirthVC {
+           logYearOfBirthVC.tryingPregantYearModelRequest = self.tryingPregantModelRequest
+            self.navigationController?.pushViewController(logYearOfBirthVC, animated: true)
+       }
 
-        
     }
-
 
     @IBAction private func tapBtnBack(_ sender: Any) {
         fLog()
@@ -100,7 +96,7 @@ class LogYearOfBirthVC: UIViewController {
 }
 // MARK: - UIPickerDelegate, UIPickerDataSource
 
-extension LogYearOfBirthVC: UIPickerViewDelegate, UIPickerViewDataSource {
+extension TryingGetPregnantVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -121,6 +117,7 @@ extension LogYearOfBirthVC: UIPickerViewDelegate, UIPickerViewDataSource {
                     $0.isHidden = $0.frame.height < 1.0
                 })
          }
+
         pickerLabel.font = UIFont(name: "SourceSansPro-Bold", size: 26.0)
         let rowSize = pickerView.rowSize(forComponent: component)
         pickerLabel = .init(frame: CGRect(x: 0, y: 0, width: rowSize.height, height: rowSize.height))
@@ -147,4 +144,5 @@ extension LogYearOfBirthVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 100
     }
+
 }

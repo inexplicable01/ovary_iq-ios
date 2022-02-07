@@ -21,6 +21,13 @@ class PeriodStartDateVC: UIViewController {
     private lazy var today: Date = {
         return Date()
     }()
+    private lazy var dateFormatter: DateFormatter = {
+           let formatter = DateFormatter()
+           formatter.dateFormat = "dd"
+           return formatter
+    }()
+    private var selectedPeriodStartDate: Int?
+    internal var tryingPeriodDetailModelrequest = TryingGetPreganantRequestModel()
 
     // MARK: - view life cycle function
     override func viewDidLoad() {
@@ -65,6 +72,7 @@ class PeriodStartDateVC: UIViewController {
                                              .layerMaxXMinYCorner]
      self.calendar.appearance.titleFont = UIFont(name: "SourceSansPro-Bold", size: 16)
         self.calendarSetUp()
+        self.selectedPeriodStartDate = Int(self.dateFormatter.string(from: Date()))
     }
 
     private func calendarSetUp() {
@@ -123,13 +131,44 @@ class PeriodStartDateVC: UIViewController {
 
     @IBAction private func tapBtnSave(_ sender: UIButton) {
        fLog()
+        self.tryingPeriodDetailModelrequest.startDateLastPeriod = self.selectedPeriodStartDate
+        if self.tryingPeriodDetailModelrequest.periodCycle == PeriodCycleType.regular.rawValue {
+            if let lastPeriodLongVC = Storyboard.Questions.instantiateViewController(identifier: LastPeriodLongVC.className) as? LastPeriodLongVC {
+                lastPeriodLongVC.periodDetailModelRequest = self.tryingPeriodDetailModelrequest
+                 self.navigationController?.pushViewController(lastPeriodLongVC, animated: true)
+            }
+        } else {
+            if let firstDayPeriodDuration = Storyboard.Questions.instantiateViewController(identifier: FirstDayPeriodDuration.className) as? FirstDayPeriodDuration {
+                firstDayPeriodDuration.periodIrregularDetailModelRequestModel = self.tryingPeriodDetailModelrequest
+                 self.navigationController?.pushViewController(firstDayPeriodDuration, animated: true)
+            }
+        }
+
+
     }
+    
+    @IBAction func tapNotSureBtn(_ sender: UIButton) {
+    }
+
+    @IBAction func tapBtnBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+
 }
 
 // MARK: -  FSCalendarDelegate,FSCalendarDataSource
-extension PeriodStartDateVC: FSCalendarDelegate {
+extension PeriodStartDateVC: FSCalendarDelegate, FSCalendarDataSource{
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
        calendar.scrollDirection = .vertical
+
+    }
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        print("did select date \(self.dateFormatter.string(from: date))")
+
+        self.selectedPeriodStartDate = Int(self.dateFormatter.string(from: date))
+//
+//                let selectedDates = calendar.selectedDates.map({self.dateFormatter.string(from: $0)})
+//        print("selected dates is \(selectedDates)")
 
     }
 }

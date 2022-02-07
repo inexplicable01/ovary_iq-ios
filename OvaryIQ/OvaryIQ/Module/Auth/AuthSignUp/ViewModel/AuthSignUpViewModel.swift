@@ -37,6 +37,9 @@ class AuthSignUpViewModel {
          dLog(message: "Rest Event Name :: \(RestEvents.SignUp) and Params :: \(String(describing: params))")
          let restEvent = RestEngineEvents(id: RestEvents.SignUp, obj: params)
          restEvent.showActivityIndicator = true
+
+        // self.view.showLoader()
+//         ActivityIndicatorManager.sharedInstance.showLoader()
         self.coreEngine.addEngineEventsWithOutWait(evObj: restEvent)
         // self.coreEngine.addEvent(evObj: restEvent)
     }

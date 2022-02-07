@@ -140,8 +140,9 @@ class CoreEngine: EventLoop {
 
                 if evobj.showActivityIndicator {
                     DispatchQueue.main.async {
+                        Helper.showLoader()
                         
-                        ActivityIndicatorManager.sharedInstance.showActivityIndicator()
+                        //ActivityIndicatorManager.sharedInstance.showActivityIndicator()
                         //Loader.showLoader()
                     }
                 }
@@ -150,9 +151,7 @@ class CoreEngine: EventLoop {
 
             } else {
                 DispatchQueue.main.async {
-                    ActivityIndicatorManager.sharedInstance.hideActivityIndicator()
-                    //Loader.hideLoader()
-//                    Toast.shared.showAlert(type: .apiFailure, message: ErrorMessages.noInternetConnection.localizedString)
+                    Helper.hideLoader()
                    AlertControllerManager.showToast(message: ErrorMessages.noInternetConnection.localizedString, type: AlertType.warning)
                 }
             }
@@ -178,8 +177,7 @@ class CoreEngine: EventLoop {
                 if self.progressHudCount <= 0 {
                     dLog(message: "Reset :: Hud Count :: \(self.progressHudCount)")
                     self.progressHudCount = 0
-                    ActivityIndicatorManager.sharedInstance.hideActivityIndicator()
-                    //Loader.hideLoader()
+                    Helper.hideLoader()
                 }
             }
 
@@ -197,28 +195,21 @@ class CoreEngine: EventLoop {
                 if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
                     notifyToGUI = true
             }
+            case .logout:
+                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
+                    notifyToGUI = true
+                    DispatchQueue.main.async {
+                            self.logoutMethod()
+                    }
+            }
             case .fetchGoal:
                 if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
                     notifyToGUI = true
             }
-
-//            case .registration:
-//                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
-//                    self.handleUserInformationForVerifyOtp(responseDict: responseDict)
-//                    notifyToGUI = true
-//                }
-
-
-
-//            case .logout:
-//                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
-//
-//                    DispatchQueue.main.async {
-//                        self.logoutMethod()
-//                    }
-//                }
-
-
+            case .saveUserFetchGoalDetails:
+                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
+                    notifyToGUI = true
+            }
             default :
                 if let responseDict = evobj.object as? [String: Any],
                     !self.validateResponseError(response: responseDict) {
@@ -414,6 +405,7 @@ extension CoreEngine {
         DispatchQueue.main.async {
             //1. Remove All Data Stored in UserDefault
             kUserDefaults.standard.clear()
+            
 
             //2. Delete All Data from CoreData DB
            // self.databaseHandler.cleanDB()
@@ -422,6 +414,7 @@ extension CoreEngine {
 
             //6. Reset Root of Window
           //  kAppDelegate?.setRootViewC()
+            Helper.showLoginScreen()
         }
     }
 }

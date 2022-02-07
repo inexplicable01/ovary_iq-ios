@@ -6,8 +6,8 @@
 
 
 import Foundation
-struct AuthSignUpDataModel: Decodable {
-    var message, accessToken, tokenType: String?
+struct AuthSignUpDataModel: Codable {
+    var message, accessToken, tokenType, isSaveGoal: String?
     var expiresIn: Int?
     var user: UserDataModel?
 
@@ -16,6 +16,7 @@ struct AuthSignUpDataModel: Decodable {
            case accessToken = "access_token"
            case tokenType = "token_type"
            case expiresIn = "expires_in"
+           case isSaveGoal
            case user
        }
 
@@ -24,13 +25,14 @@ struct AuthSignUpDataModel: Decodable {
         message = try? values.decodeIfPresent(String.self, forKey: .message) ?? ""
         accessToken = try? values.decodeIfPresent(String.self, forKey: .accessToken) ?? ""
         tokenType = try? values.decodeIfPresent(String.self, forKey: .tokenType) ?? ""
+         isSaveGoal = try? values.decodeIfPresent(String.self, forKey: .isSaveGoal) ?? ""
         expiresIn = try? values.decodeIfPresent(Int.self, forKey: .expiresIn) ?? 0
         expiresIn = try? values.decodeIfPresent(Int.self, forKey: .expiresIn) ?? 0
         user = try? values.decodeIfPresent(UserDataModel.self, forKey: .user) ?? nil
     }
 }
 // MARK: - User
-struct UserDataModel: Decodable {
+struct UserDataModel: Codable {
    var id: Int?
    var role, name: String?
    var countryCode: String?

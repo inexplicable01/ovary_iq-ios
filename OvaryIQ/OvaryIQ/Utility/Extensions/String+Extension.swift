@@ -141,17 +141,17 @@ extension String {
         return boundingBox.width
     }
 
-    func emojiSupportServerSide() -> String {
-        let data =  self.data(using: .nonLossyASCII)
-        let emojiString = String.init(data: data!, encoding: .utf8)
-        return emojiString ?? ""
-    }
-
-    func emojiSupportAppSide() -> String {
-        let data = self.data(using: .utf8)
-        let emoji = String.init(data: data!, encoding: .nonLossyASCII)
-       return emoji ?? ""
-    }
+//    func emojiSupportServerSide() -> String {
+//        let data =  self.data(using: .nonLossyASCII)
+//        let emojiString = String.init(data: data!, encoding: .utf8)
+//        return emojiString ?? ""
+//    }
+//
+//    func emojiSupportAppSide() -> String {
+//        let data = self.data(using: .utf8)
+//        let emoji = String.init(data: data!, encoding: .nonLossyASCII)
+//       return emoji ?? ""
+//    }
 
     func stringToDictionary() -> [String: Any] {
         var dictonary: [String: Any]?
@@ -169,4 +169,23 @@ extension String {
         }
         return [:]
     }
+
+    // MARK: - for check valid email format
+    func isValidemail() -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+        return  NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: self)
+    }
+
+    // MARK: - Password must be between 8 to 16 character,one uppercase,one lowercase and one special character
+    func isValidPassword() -> Bool {
+        let regularExpression = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&#])[A-Za-z\\d$@$!%*?&#]{8,16}"
+        let passwordValidation = NSPredicate.init(format: "SELF MATCHES %@", regularExpression)
+        return passwordValidation.evaluate(with: self)
+    }
+
+    func isAlphabet() -> Bool {
+           let regularExpression = "^[a-zA-Z0-9]{8,}$"
+           let passwordValidation = NSPredicate.init(format: "SELF MATCHES %@", regularExpression)
+           return passwordValidation.evaluate(with: self)
+       }
 }

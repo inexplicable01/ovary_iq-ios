@@ -7,8 +7,8 @@
 
 import Foundation
 import UIKit
-@objc protocol GoalViewModelDelegate {
-    @objc optional func sucesszfetchGoalResponse()
+protocol GoalViewModelDelegate {
+     func sucessResponseFetchGoal(dataModel: GoalDataModel?)
 }
 
 class GoalViewModel {
@@ -55,16 +55,9 @@ extension GoalViewModel {
                     fLog()
                 if isSuccess {
                     do {
-//                        let encodedDictionary = try JSONDecoder().decode(AuthSignUpDataModel.self, from: JSONSerialization.data(withJSONObject: response))
-//                        dLog(message: "signupResponse:- \(encodedDictionary)")
-//                        // 1. Save Access Token
-//                        if let acessToken = encodedDictionary.accessToken {
-//                            kUserDefaults.accessToken = acessToken
-//                        }
-//                        if let tokenType = encodedDictionary.tokenType {
-//                            kUserDefaults.tokenType = tokenType
-//                       }
-                        self.delegate?.sucesszfetchGoalResponse?()
+                        let encodedDictionary = try JSONDecoder().decode(GoalDataModel.self, from: JSONSerialization.data(withJSONObject: response))
+                        dLog(message: "GoalResponse:- \(encodedDictionary)")
+                        self.delegate?.sucessResponseFetchGoal(dataModel: encodedDictionary)
 
                     } catch {
                         print("Error: ", error)
@@ -80,5 +73,3 @@ extension GoalViewModel {
         })
     }
 }
-
-

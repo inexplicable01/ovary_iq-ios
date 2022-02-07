@@ -19,6 +19,12 @@ enum ErrorMessages: String {
     case emptyEmail = "msg_empty_email"
     case emptyPassword = "msg_empty_password"
     case somethingWentWrong = "msg_something_went_wrong"
+    case invalidEmailId = "msg_invalid_emailId"
+    case selectPeriodCycle = "msg_period_cycle"
+    case invalidPassword = "msg_inavild_Password"
+    case emptyLastThirdPeriod = "msg_empty_LastThirdPeriod"
+    case emptyLastSecondPeriod = "msg_empty_LastSecondPeriod"
+    case empptyLastPeriod = "msg_empty_LastPeriod"
     var localizedString: String {
         return NSLocalizedString(self.rawValue, comment: "")
     }

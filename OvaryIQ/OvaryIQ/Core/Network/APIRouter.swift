@@ -13,7 +13,7 @@ enum APIRouter: URLRequestConvertible {
     case signUp(params: Parameters)
     case login(params: Parameters)
     case logOut(params: Parameters)
-    case fetchGoals(params: Parameters)
+    case fetchGoals
     case savezGoalsDetails(params: Parameters)
 
     var method: HTTPMethod {
@@ -63,9 +63,11 @@ enum APIRouter: URLRequestConvertible {
         case .signUp(let params),
              .login(let params),
              .logOut(let params),
-             .fetchGoals(let params),
              .savezGoalsDetails(let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+
+        case .fetchGoals:
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
 
             //urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
             //urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)

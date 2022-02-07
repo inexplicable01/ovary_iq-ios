@@ -6,32 +6,21 @@
 //
 
 import UIKit
- struct Goal {
-    var title: String?
-    var titleImage: UIImage?
-    var selectedImage: UIImage?
-    var isSelected: Bool?
-
-     init(title: String, titleImage: UIImage, selectedImage: UIImage, isSelected: Bool) {
-        self.title = title
-        self.titleImage = titleImage
-        self.selectedImage = selectedImage
-        self.isSelected = isSelected
-    }
- }
 class YourGoalVC: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var btnNext: UIButton!
     // MARK: - Properties
     private var viewModel = GoalViewModel()
-    private var goalArr = [Goal(title: "Get pregnant", titleImage: UIImage(named: "get_Preganent") ?? UIImage(), selectedImage: UIImage(named: "SelectedPreganent") ?? UIImage(), isSelected: false),Goal(title: "Period tracking", titleImage: UIImage(named: "unselectedPeriodTracker") ?? UIImage(), selectedImage: UIImage(named: "selectedPeriodTracker") ?? UIImage(), isSelected: true)]
+    private var goalArr = [GoalTypeModel]()
+    private var isSlectedGetPregnant: Bool = true
+    private var pregantRequestModel = TryingGetPreganantRequestModel()
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialSetup()
         self.viewModel.registerCoreEngineEventsCallBack()
-        self.viewModel.callApiToFetchGoalResponse()
+
         // Do any additional setup after loading the view.
     }
 
@@ -66,18 +55,40 @@ class YourGoalVC: UIViewController {
        classReleased()
     }
 
-    
     // MARK: - Private Functions
     private func initialSetup() {
         self.btnNext.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
-
+        self.viewModel.delegate = self
+        self.viewModel.callApiToFetchGoalResponse()
     }
+
     // MARK: - Button Actions
     @IBAction private func tapBtnNext(_ sender: Any) {
         fLog()
-        let answersFewQuestionsVC = Storyboard.Questions.instantiateViewController(identifier: LogYearOfBirthVC.className)
-        self.navigationController?.pushViewController(answersFewQuestionsVC, animated: true)
+        if isSlectedGetPregnant {
+            if let tryingGetPregnantVC = Storyboard.Questions.instantiateViewController(identifier: TryingGetPregnantVC.className) as? TryingGetPregnantVC {
+                if let goalId = self.goalArr.filter({$0.isSelected == true}).first.map({$0.id}) {
+                    tryingGetPregnantVC.selectedGoalId = goalId
+                }
+                self.navigationController?.pushViewController(tryingGetPregnantVC, animated: true)
+            }
+
+        } else {
+           if  let logYearOfBirthVC = Storyboard.Questions.instantiateViewController(identifier: LogYearOfBirthVC.className) as? LogYearOfBirthVC {
+               if let goalId = self.goalArr.filter({$0.isSelected == true}).first.map({$0.id}) {
+                   logYearOfBirthVC.selectedGoalId = goalId
+               }
+               self.navigationController?.pushViewController(logYearOfBirthVC, animated: true)
+            }
+
+        }
+
     }
+
+    @IBAction private func tapBtnBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false)
+    }
+
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
@@ -88,11 +99,23 @@ extension YourGoalVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
+        isSlectedGetPregnant = indexPath.row == 0 ? true : false
+        for (indx,mod) in goalArr.enumerated() {
+            if indx == indexPath.row {
+                self.goalArr[indx].isSelected = true
+            } else {
+                self.goalArr[indx].isSelected = false
+            }
+
+        }
+        self.collectionView.reloadData()
+
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
 
     }
+
     // MARK: - UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -105,6 +128,7 @@ extension YourGoalVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
             if let cell: GoalCVC = collectionView.dequeueReusableCell(withReuseIdentifier: GoalCVC.className, for: indexPath) as? GoalCVC {
+                cell.configCell(model: goalArr[indexPath.row], index: indexPath.row)
                 return cell
             } else {
                 return UICollectionViewCell()
@@ -130,4 +154,22 @@ extension YourGoalVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         let width = collectionView.frame.size.width / 2
         return CGSize(width: width - 15, height: width - 15)
     }
+    
+}
+// MARK: - Protocol and delegate method
+extension YourGoalVC: GoalViewModelDelegate {
+    func sucessResponseFetchGoal(dataModel: GoalDataModel?) {
+        self.goalArr = dataModel?.goalType ?? []
+        for (indx, _) in goalArr.enumerated() {
+            if indx == 0 {
+                self.goalArr[indx].isSelected = true
+            } else {
+                self.goalArr[indx].isSelected = false
+            }
+        }
+
+        self.collectionView.reloadData()
+
+    }
+
 }

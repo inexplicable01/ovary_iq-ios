@@ -113,8 +113,12 @@ class AuthSignUpVC: BaseViewC {
             AlertControllerManager.showToast(message: ErrorMessages.emptyPhoneNumber.localizedString, type: .error)
         } else if email.isEmpty {
             AlertControllerManager.showToast(message: ErrorMessages.emptyEmail.localizedString, type: .error)
+        } else if !(email.isValidemail()) {
+            AlertControllerManager.showToast(message: ErrorMessages.invalidEmailId.localizedString, type: .error)
         } else if password.isEmpty {
             AlertControllerManager.showToast(message: ErrorMessages.emptyPassword.localizedString, type: .error)
+        } else if !(password.isValidPassword()) {
+            AlertControllerManager.showToast(message: ErrorMessages.invalidPassword.localizedString, type: .error)
         } else {
             self.viewModel.callApiToSignUp()
        }
@@ -148,13 +152,25 @@ extension AuthSignUpVC: UITextFieldDelegate {
         dLog(message: "Final Text :: \(finalText)")
         if textField == self.txtFieldName {
             self.viewModel.authSignupRequestModel.name = finalText.removeWhiteSpacesAndNewLines()
-//            if let range = string.rangeOfCharacter(from: .letters) {
-//                self.viewModel.authSignupRequestModel.name = finalText.removeWhiteSpacesAndNewLines()
-//                return true
-//            } else {
-//                return false
-//            }
-        } else if textField == self.txtfieldPhoneNumber {
+            do {
+
+//                let regularExpression = "^[a-zA-Z]{2,5}$"
+//                let passwordValidation = NSPredicate.init(format: "SELF MATCHES %@", regularExpression)
+//                return passwordValidation.evaluate(with: finalText)
+
+//               // ".*[^A-Za-z ].*"
+                let regex = try NSRegularExpression(pattern: ".*[^A-Za-z ].*", options: [])
+                    if regex.firstMatch(in: string, options: [], range: NSMakeRange(0, string.count)) != nil {
+                            return false
+                    }
+                }
+                catch {
+                    print("ERROR")
+                }
+
+               return true
+
+          } else if textField == self.txtfieldPhoneNumber {
             self.viewModel.authSignupRequestModel.mobile = finalText.removeWhiteSpacesAndNewLines()
 //
 
@@ -186,5 +202,19 @@ extension AuthSignUpVC: AuthSignUpViewModelDelegate {
         Helper.showHomeScreen()
 //        let authSignUpVC = Storyboard.Questions.instantiateViewController(identifier: AnswersFewQuestionsVC.className)
 //        self.navigationController?.pushViewController(authSignUpVC, animated: true)
+    }
+}
+
+extension String {
+    var isAlphaWithMinium: Bool {
+        get {
+            do {
+            let regex = try NSRegularExpression(pattern: "^[a-zA-Z]{2,5}*$", options: .caseInsensitive)
+            return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
+
+            } catch {
+               return false
+            }
+        }
     }
 }

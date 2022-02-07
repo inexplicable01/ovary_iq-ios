@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import FSCalendar
 
 class RegularOrIrregularCycleVC: UIViewController {
     // MARK: - IBOutlets
+
+    @IBOutlet weak var btnNext: UIButton!
     // MARK: - Properties
+    internal var tryingRegularIregulatTypeRequestModel = TryingGetPreganantRequestModel()
     // MARK: - View Life Cycle Functions
 
     override func viewDidLoad() {
@@ -50,15 +54,48 @@ class RegularOrIrregularCycleVC: UIViewController {
     @IBAction private func tapBtnRegular(_ sender: UIButton) {
         fLog()
        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            self.tryingRegularIregulatTypeRequestModel.periodCycle = PeriodCycleType.regular.rawValue
+        } else {
+            self.tryingRegularIregulatTypeRequestModel.periodCycle = ""
+        }
+
     }
+
+    @IBAction private func tapBtnBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+
 
     @IBAction private func tapBtnIrrRegular(_ sender: UIButton) {
         fLog()
        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            self.tryingRegularIregulatTypeRequestModel.periodCycle = PeriodCycleType.irregular.rawValue
+        } else {
+            self.tryingRegularIregulatTypeRequestModel.periodCycle = ""
+        }
     }
-
     @IBAction private func tapBtnDontKnow(_ sender: UIButton) {
         fLog()
        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            self.tryingRegularIregulatTypeRequestModel.periodCycle = PeriodCycleType.notKnow.rawValue
+        } else {
+            self.tryingRegularIregulatTypeRequestModel.periodCycle = ""
+        }
+    }
+
+    @IBAction func tapBtnNext(_ sender: UIButton) {
+        if self.tryingRegularIregulatTypeRequestModel.periodCycle.isEmpty {
+            AlertControllerManager.showToast(message: ErrorMessages.selectPeriodCycle.localizedString, type: .error)
+        } else {
+            if let periodStartDateVC = Storyboard.Questions.instantiateViewController(identifier: PeriodStartDateVC.className) as? PeriodStartDateVC {
+                periodStartDateVC.tryingPeriodDetailModelrequest = self.tryingRegularIregulatTypeRequestModel
+                 self.navigationController?.pushViewController(periodStartDateVC, animated: true)
+            }
+        }
+        
     }
 }
+
