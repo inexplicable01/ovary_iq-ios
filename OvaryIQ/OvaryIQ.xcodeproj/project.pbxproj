@@ -1714,7 +1714,7 @@
 				AUTH_PASSWORD = admin;
 				AUTH_USERNAME = admin;
 				CODE_SIGN_ENTITLEMENTS = OvaryIQ/OvaryIQDebug.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development: Girijesh Kumar (M239VCHQ96)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DCPCNSLGGR;

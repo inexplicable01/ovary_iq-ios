@@ -1529,7 +1529,7 @@ xyz.ab@gmail.com</string>
                                             <constraint firstAttribute="bottom" secondItem="eKc-Ex-dht" secondAttribute="bottom" id="uut-zs-m1d"/>
                                         </constraints>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:58" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUe-Cu-DOG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUe-Cu-DOG">
                                         <rect key="frame" x="10" y="279.5" width="394" height="31.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31.5" id="9BQ-3P-ZwN"/>
@@ -1678,6 +1678,7 @@ xyz.ab@gmail.com</string>
                     <connections>
                         <outlet property="bottomView" destination="thI-kW-9yR" id="aqJ-2K-Azm"/>
                         <outlet property="lblTime" destination="YUe-Cu-DOG" id="uUJ-ZG-DhT"/>
+                        <outlet property="lblTitle" destination="DEK-7m-vH5" id="tfm-jN-I07"/>
                         <outlet property="txtFieldOtp1" destination="DIV-dF-9ta" id="dRJ-oO-h9Z"/>
                         <outlet property="txtFieldOtp2" destination="wFu-UE-dFB" id="gz3-JK-hcf"/>
                         <outlet property="txtFieldOtp3" destination="neS-hr-HYh" id="5Is-1Y-8rU"/>

@@ -20,8 +20,9 @@ class TryingGetPregnantVC: UIViewController {
     private var selectedIndex: Int = 5
     private var pickerData: [String] {
         var monthArr = [String]()
-        for indx in (1...12) {
-            monthArr.append("\(indx)")
+        for indx in (1...13) {
+                monthArr.append("\(indx)")
+
         }
         return monthArr
     }
@@ -127,7 +128,12 @@ extension TryingGetPregnantVC: UIPickerViewDelegate, UIPickerViewDataSource {
         pickerLabel.textAlignment = .center
         pickerLabel.center = CGPoint(x: pickerView.frame.size.width / 2,
                                      y: pickerView.frame.size.height / 2)
-        pickerLabel.text = pickerData[row]
+
+        if (row == (pickerData.count - 1)) {
+            pickerLabel.text = "\(pickerData[row])+"
+        } else {
+            pickerLabel.text = pickerData[row]
+        }
         if selectedIndex == row {
             pickerLabel.backgroundColor = UIColor(red: 236.0 / 255.0, green: 220.0 / 255.0, blue: 224.0 / 255.0, alpha: 1.0)
         } else {

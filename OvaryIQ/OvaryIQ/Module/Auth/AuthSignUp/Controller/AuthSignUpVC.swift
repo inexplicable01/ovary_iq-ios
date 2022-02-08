@@ -199,8 +199,13 @@ extension AuthSignUpVC: AuthSignUpViewModelDelegate {
 
     // here after sucess response of signup we jump to answer few Questions screen
     func sucessRegisterApiResponse() {
-        Helper.showHomeScreen()
-//        let authSignUpVC = Storyboard.Questions.instantiateViewController(identifier: AnswersFewQuestionsVC.className)
-//        self.navigationController?.pushViewController(authSignUpVC, animated: true)
+        if UserDefaults.IsSaveGoal == nil || UserDefaults.IsSaveGoal == "" || UserDefaults.IsSaveGoal == "False"{
+                //here show answer question screen as rootviewController
+                Helper.showAnswerFewQuestionsScreen()
+        }else{
+                //here show home screen as rootviewController
+                Helper.showHomeScreen()
+        }
+
     }
 }

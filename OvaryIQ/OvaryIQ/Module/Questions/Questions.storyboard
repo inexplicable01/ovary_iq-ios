@@ -1012,7 +1012,7 @@
                                                         <real key="value" value="16"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
-                                                        <color key="value" red="0.96078431369999995" green="0.44705882349999998" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="value" red="0.94509804249999996" green="0.6549019814" blue="0.73333334920000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="todaySelectionColor">
                                                         <color key="value" red="0.96078431369999995" green="0.44705882349999998" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1217,7 +1217,7 @@
                                                     <color key="titleColor" red="0.1176470588" green="0.058823529409999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="tapNotSureBtn:" destination="8BL-Wv-ZV2" eventType="touchUpInside" id="leO-9a-ILa"/>
+                                                    <action selector="tapBtnSave:" destination="8BL-Wv-ZV2" eventType="touchUpInside" id="FgZ-xz-mmu"/>
                                                 </connections>
                                             </button>
                                         </subviews>

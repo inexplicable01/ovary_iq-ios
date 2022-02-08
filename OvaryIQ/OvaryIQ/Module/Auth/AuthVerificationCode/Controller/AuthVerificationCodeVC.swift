@@ -15,13 +15,17 @@ class AuthVerificationCodeVC: UIViewController {
     @IBOutlet private weak var txtFieldOtp2: UITextField!
     @IBOutlet private weak var txtFieldOtp3: UITextField!
     @IBOutlet private weak var txtFieldOtp4: UITextField!
+    @IBOutlet private weak var lblTitle: UILabel!
 
     // MARK: - Properties
     internal var goBack: ((Bool, String) -> Void)?
     internal var otpCode: String = ""
     private var viewModel = AuthVerificationViewModel()
-    var fourDigitCode = ""
+    private var fourDigitCode = ""
     private var counter = 60
+    private var timerTest: Timer?
+    internal var resentOtpRequestModel = ForgotPasswordRequestModel()
+    private var resentOtpViewModel = ForgotPasswordViewModel()
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +33,6 @@ class AuthVerificationCodeVC: UIViewController {
         self.viewModel.registerCoreEngineEventsCallBack()
         // Do any additional setup after loading the view.
     }
-
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.viewModel.registerCoreEngineEventsCallBack()
@@ -65,6 +67,7 @@ class AuthVerificationCodeVC: UIViewController {
     // MARK: - Private Functions
     private func initalSetup() {
         self.bottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner] // Top right corner, Top left corner respectively
+        self.lblTitle.text = "Enter the 4-digit verification code emailed to \(self.resentOtpRequestModel.email)"
         // For Auto Fill OTP
         if #available(iOS 12.0, *) {
             self.txtFieldOtp1.textContentType = .oneTimeCode
@@ -72,26 +75,59 @@ class AuthVerificationCodeVC: UIViewController {
             self.txtFieldOtp3.textContentType = .oneTimeCode
             self.txtFieldOtp4.textContentType = .oneTimeCode
         }
+
         self.txtFieldOtp1.becomeFirstResponder()
         self.viewModel.delegate = self
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+        startTimer()
+
     }
+
+    private func startTimer () {
+      guard timerTest == nil else { return }
+      timerTest = Timer.scheduledTimer(
+        timeInterval: TimeInterval(1.0),target: self,selector: #selector(Self.updateCounter),userInfo: nil,repeats: true)
+    }
+
+    private func stopTimerTest() {
+        timerTest?.invalidate()
+        timerTest = nil
+     }
+
      @objc private func updateCounter() {
-        if counter > 0 {
+        if counter > -1 {
             dLog(message: "\(counter) seconds to the end of the world")
+             if counter == 0 {
+                self.otpCodeExipredAlert()
+            }
             if counter < 10 {
                 lblTime.text = "00:0\(counter)"
-            } else {
+            }
+            else {
                 lblTime.text = "00:\(counter)"
             }
-
             counter -= 1
         }
+     }
+    private func otpCodeExipredAlert() {
+        AlertControllerManager.showToast(message: ErrorMessages.otpcodeExipred.localizedString, type: .error)
+        self.txtFieldOtp1.becomeFirstResponder()
+        self.txtFieldOtp1.text = ""
+        self.txtFieldOtp2.text = ""
+        self.txtFieldOtp3.text = ""
+        self.txtFieldOtp4.text = ""
+        self.fourDigitCode = ""
+        self.viewModel.authVerificationCodeRequestModel.otp = nil
+        self.stopTimerTest()
     }
     // MARK: - Button Actions
 
     @IBAction private func tapBtnResentOtp(sender: UIButton) {
         fLog()
+        self.startTimer()
+        self.counter = 60
+        self.txtFieldOtp1.becomeFirstResponder()
+        self.resentOtpViewModel.forgotPasswordRequestModel = self.resentOtpRequestModel
+        self.resentOtpViewModel.callApiToForgotPassword()
     }
 
     @IBAction private func tapBtnNext(_ sender: UIButton) {
@@ -161,6 +197,7 @@ class AuthVerificationCodeVC: UIViewController {
 extension AuthVerificationCodeVC: AuthVerificationViewModelDelegate {
     func sucessVerificationCodeApiResponse(code: String?) {
        self.dismiss(animated: true) {
+           self.startTimer()
            self.goBack!(true, code ?? "")
         }
     }

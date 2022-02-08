@@ -6,14 +6,19 @@
 //
 
 import UIKit
+protocol AuthForgotPasswordVCDeleagte {
+    func tapBtnSignup()
+}
+
 class AuthForgotPasswordVC: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet private weak var txtFieldEmail: UITextField!
     @IBOutlet private weak var bottomView: UIView!
     // MARK: - Properties
-    internal var goBack: ((Bool,String) -> Void)?
+    internal var goBack: ((Bool,String, ForgotPasswordRequestModel) -> Void)?
     private var viewModel = ForgotPasswordViewModel()
+    internal var delegate: AuthForgotPasswordVCDeleagte?
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,8 +84,9 @@ class AuthForgotPasswordVC: UIViewController {
 
     @IBAction private func tapBtnSignUp(sender: UIButton) {
          fLog()
-        let authSignUpVC = Storyboard.Auth.instantiateViewController(identifier: AuthSignUpVC.className)
-        self.navigationController?.pushViewController(authSignUpVC, animated: true)
+        self.dismiss(animated: true) {
+            self.delegate?.tapBtnSignup()
+        }
     }
 }
 // MARK: - UITextFieldDelegate
@@ -129,10 +135,9 @@ extension AuthForgotPasswordVC: UITextFieldDelegate {
 
 // MARK: - Protocol and delegate method
 extension AuthForgotPasswordVC: ForgotPasswordViewModelDelegate {
-
     func sucessForgotPasswordApiResponse(code: String?) {
         self.dismiss(animated: true) {
-            self.goBack!(true, code ?? "")
+            self.goBack!(true, code ?? "", self.viewModel.forgotPasswordRequestModel)
         }
     }
 }

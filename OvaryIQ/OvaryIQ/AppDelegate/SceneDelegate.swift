@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             //here show login screen as rootviewController
             Helper.showLoginScreen()
      } else {
-        if UserDefaults.IsSaveGoal == nil || UserDefaults.IsSaveGoal == "" {
+        if UserDefaults.IsSaveGoal == nil || UserDefaults.IsSaveGoal == "" ||  UserDefaults.IsSaveGoal == "False"{
                 //here show answer question screen as rootviewController
                 Helper.showAnswerFewQuestionsScreen()
         }else{

@@ -28,6 +28,9 @@ enum ErrorMessages: String {
     case empptyLastPeriod = "msg_empty_LastPeriod"
     case empptyVerificationCode = "msg_empty_Otp"
     case passwordDoesNotMatch = "msg_password_doesnot_match"
+    case otpcodeExipred = "msg_expire_otpCode"
+    case logYourBirth = "msg_select_birthLog"
+    case selectPeriodStartDate = "msg_select_periodSelectDate"
     var localizedString: String {
         return NSLocalizedString(self.rawValue, comment: "")
     }

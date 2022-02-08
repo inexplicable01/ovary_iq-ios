@@ -69,6 +69,9 @@ class RegularOrIrregularCycleVC: UIViewController {
        sender.isSelected = !sender.isSelected
         if sender.isSelected {
             self.tryingRegularIregulatTypeRequestModel.periodCycle = PeriodCycleType.regular.rawValue
+            self.btnIrregular.isSelected = false
+            self.btnRegular.isSelected = true
+            self.btnDontKnow.isSelected = false
     
         } else {
             self.tryingRegularIregulatTypeRequestModel.periodCycle = ""
@@ -87,6 +90,9 @@ class RegularOrIrregularCycleVC: UIViewController {
        sender.isSelected = !sender.isSelected
         if sender.isSelected {
             self.tryingRegularIregulatTypeRequestModel.periodCycle = PeriodCycleType.irregular.rawValue
+            self.btnIrregular.isSelected = true
+            self.btnRegular.isSelected = false
+            self.btnDontKnow.isSelected = false
         } else {
             self.tryingRegularIregulatTypeRequestModel.periodCycle = ""
         }
@@ -96,6 +102,9 @@ class RegularOrIrregularCycleVC: UIViewController {
        sender.isSelected = !sender.isSelected
         if sender.isSelected {
             self.tryingRegularIregulatTypeRequestModel.periodCycle = PeriodCycleType.notKnow.rawValue
+            self.btnIrregular.isSelected = false
+            self.btnRegular.isSelected = false
+            self.btnDontKnow.isSelected = true
         } else {
             self.tryingRegularIregulatTypeRequestModel.periodCycle = ""
         }
@@ -110,7 +119,6 @@ class RegularOrIrregularCycleVC: UIViewController {
                  self.navigationController?.pushViewController(periodStartDateVC, animated: true)
             }
         }
-        
     }
 }
 

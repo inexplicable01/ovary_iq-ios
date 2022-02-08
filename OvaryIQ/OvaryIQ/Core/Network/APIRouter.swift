@@ -74,11 +74,11 @@ enum APIRouter: URLRequestConvertible {
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
 
         case .fetchGoals(let params):
-
             urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
+
         case   .verifyCode(let params):
             if let url = urlRequest.url,
-               let code = params["code"] as? Double {
+               let code = params["code"] as? Int {
                 var urlStr = url.absoluteString
                 urlStr += "/" + "\(code)"
                 urlRequest.url = URL(string: urlStr)

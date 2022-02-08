@@ -75,7 +75,7 @@ class PeriodStartDateVC: UIViewController {
                                              .layerMaxXMinYCorner]
      self.calendar.appearance.titleFont = UIFont(name: "SourceSansPro-Bold", size: 16)
         self.calendarSetUp()
-        self.selectedPeriodStartDate = Int(self.dateFormatter.string(from: Date()))
+      //  self.selectedPeriodStartDate = Int(self.dateFormatter.string(from: Date()))
         if self.tryingPeriodDetailModelrequest.goalId == "2" {
             self.bannerImgview.image = UIImage(named: "PeriodBanner_2")
         } else {
@@ -139,20 +139,22 @@ class PeriodStartDateVC: UIViewController {
 
     @IBAction private func tapBtnSave(_ sender: UIButton) {
        fLog()
-        self.tryingPeriodDetailModelrequest.startDateLastPeriod = self.selectedPeriodStartDate
-        if self.tryingPeriodDetailModelrequest.periodCycle == PeriodCycleType.regular.rawValue {
-            if let lastPeriodLongVC = Storyboard.Questions.instantiateViewController(identifier: LastPeriodLongVC.className) as? LastPeriodLongVC {
-                lastPeriodLongVC.periodDetailModelRequest = self.tryingPeriodDetailModelrequest
-                 self.navigationController?.pushViewController(lastPeriodLongVC, animated: true)
-            }
+        if selectedPeriodStartDate == nil {
+            AlertControllerManager.showToast(message: ErrorMessages.selectPeriodStartDate.localizedString, type: .error)
         } else {
-            if let firstDayPeriodDuration = Storyboard.Questions.instantiateViewController(identifier: FirstDayPeriodDuration.className) as? FirstDayPeriodDuration {
-                firstDayPeriodDuration.periodIrregularDetailModelRequestModel = self.tryingPeriodDetailModelrequest
-                 self.navigationController?.pushViewController(firstDayPeriodDuration, animated: true)
+            self.tryingPeriodDetailModelrequest.startDateLastPeriod = self.selectedPeriodStartDate
+            if self.tryingPeriodDetailModelrequest.periodCycle == PeriodCycleType.regular.rawValue {
+                if let lastPeriodLongVC = Storyboard.Questions.instantiateViewController(identifier: LastPeriodLongVC.className) as? LastPeriodLongVC {
+                    lastPeriodLongVC.periodDetailModelRequest = self.tryingPeriodDetailModelrequest
+                     self.navigationController?.pushViewController(lastPeriodLongVC, animated: true)
+                }
+            } else {
+                if let firstDayPeriodDuration = Storyboard.Questions.instantiateViewController(identifier: FirstDayPeriodDuration.className) as? FirstDayPeriodDuration {
+                    firstDayPeriodDuration.periodIrregularDetailModelRequestModel = self.tryingPeriodDetailModelrequest
+                     self.navigationController?.pushViewController(firstDayPeriodDuration, animated: true)
+                }
             }
         }
-
-
     }
     
     @IBAction func tapNotSureBtn(_ sender: UIButton) {

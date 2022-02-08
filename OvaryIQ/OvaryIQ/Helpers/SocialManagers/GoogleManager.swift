@@ -43,7 +43,7 @@ class GoogleManager: NSObject {
         print("GoogleManager :: Google Login Initiated")
         //SharedPref.shared.isUserLoggedIn = true
 
-        let signInConfig = GIDConfiguration.init(clientID: "121267152265-f2iln3jdd2m4c2ji9k7r49llhl3k9rlb.apps.googleusercontent.com")
+        let signInConfig = GIDConfiguration.init(clientID: "753182945454-h073ft8ib83kqht89ia0ahk5rmmafjv6.apps.googleusercontent.com")
         GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: viewController) { user, error in
 
             if let error = error {

@@ -60,6 +60,7 @@ class AuthLoginVC: UIViewController {
     private func initialSetup() {
         self.loginBtn.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
         self.viewModel.delegate = self
+
     }
 
     // MARK: - Button Actions
@@ -75,11 +76,13 @@ class AuthLoginVC: UIViewController {
         fLog()
         if let authForgotPasswordVC = Storyboard.Auth.instantiateViewController(identifier: AuthForgotPasswordVC.className) as? AuthForgotPasswordVC {
             authForgotPasswordVC.modalPresentationStyle = .overFullScreen
-            authForgotPasswordVC.goBack = { [weak self] isBool, otp in
+            authForgotPasswordVC.delegate = self
+            authForgotPasswordVC.goBack = { [weak self] isBool, otp, forgotPasswordRequestModel in
             if isBool {
                 if let authVerificationCodeVC = Storyboard.Auth.instantiateViewController(identifier: AuthVerificationCodeVC.className) as? AuthVerificationCodeVC {
                     authVerificationCodeVC.modalPresentationStyle = .overFullScreen
                     authVerificationCodeVC.otpCode = otp
+                    authVerificationCodeVC.resentOtpRequestModel = forgotPasswordRequestModel
                     authVerificationCodeVC.goBack = { [weak self]  isBool, fourDigitCode in
                         if isBool {
                             if let resetPasswordVC = Storyboard.Auth.instantiateViewController(identifier: ResetPasswordVC.className) as? ResetPasswordVC {
@@ -179,10 +182,18 @@ extension AuthLoginVC: UITextFieldDelegate {
 }
 
 // MARK: - Protocol and delegate method
-extension AuthLoginVC: LoginViewModelDelegate {
-    // here after sucess response of signup we jump to answer few Questions screen
+extension AuthLoginVC: LoginViewModelDelegate, AuthForgotPasswordVCDeleagte {
+    func tapBtnSignup() {
+        let authSignUpVC = Storyboard.Auth.instantiateViewController(identifier: AuthSignUpVC.className)
+        self.navigationController?.pushViewController(authSignUpVC, animated: true)
+    }
     func sucessLoginApiResponse() {
-        let authSignUpVC = Storyboard.Questions.instantiateViewController(identifier: AnswersFewQuestionsVC.className)
-       self.navigationController?.pushViewController(authSignUpVC, animated: true)
+        if UserDefaults.IsSaveGoal == nil || UserDefaults.IsSaveGoal == "" || UserDefaults.IsSaveGoal == "False" {
+                //here show answer question screen as rootviewController
+                Helper.showAnswerFewQuestionsScreen()
+        }else{
+                //here show home screen as rootviewController
+                Helper.showHomeScreen()
+        }
     }
 }
