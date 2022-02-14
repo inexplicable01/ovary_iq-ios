@@ -49,6 +49,7 @@ class AuthVerificationCodeVC: UIViewController {
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        self.stopTimerTest()
     }
 
     override func viewWillLayoutSubviews() {

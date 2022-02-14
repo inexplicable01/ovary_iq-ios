@@ -99,9 +99,12 @@ class FirstDayPeriodDuration: UIViewController {
        }
     }
 
+
+
     @IBAction private func tapBtnNotRemember(_ sender: UIButton) {
         fLog()
         if let importantInformationVC = Storyboard.Questions.instantiateViewController(identifier: ImportantInformationVC.className) as? ImportantInformationVC {
+            importantInformationVC.delegate = self
             importantInformationVC.modalPresentationStyle = .overFullScreen
              self.present(importantInformationVC, animated: true, completion: nil)
         }
@@ -161,7 +164,12 @@ extension FirstDayPeriodDuration: UITextFieldDelegate {
 }
 
 // MARK: - Protocol and delegate method
-extension FirstDayPeriodDuration: LastPeriodViewModelDelegate {
+extension FirstDayPeriodDuration: LastPeriodViewModelDelegate,ImportantInformationVCDeleagte {
+    func goBackAfterDismissThisController(isDismiss: Bool) {
+        self.viewModel.fetchGoalRequestModel = periodIrregularDetailModelRequestModel
+        self.viewModel.callApiTosaveFetchGoalDetails()
+    }
+
     func sucesssSaveGoalsApiResponse() {
         Helper.showHomeScreen()
 

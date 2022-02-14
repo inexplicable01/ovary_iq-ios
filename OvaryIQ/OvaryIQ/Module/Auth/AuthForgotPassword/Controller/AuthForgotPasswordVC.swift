@@ -57,11 +57,13 @@ class AuthForgotPasswordVC: UIViewController {
         self.viewModel.unregisterCoreEngineEventsCallBack()
        classReleased()
     }
+
     // MARK: - Private Functions
     private func initalSetup() {
         self.bottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner] // Top right corner, Top left corner respectively
         self.viewModel.delegate = self
     }
+
     // MARK: - Button Actions
     @IBAction private func tapBtnNext(sender: UIButton) {
          fLog()
@@ -88,6 +90,7 @@ class AuthForgotPasswordVC: UIViewController {
             self.delegate?.tapBtnSignup()
         }
     }
+    
 }
 // MARK: - UITextFieldDelegate
 

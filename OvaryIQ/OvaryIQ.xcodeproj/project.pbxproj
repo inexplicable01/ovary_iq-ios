@@ -1714,7 +1714,7 @@
 				AUTH_PASSWORD = admin;
 				AUTH_USERNAME = admin;
 				CODE_SIGN_ENTITLEMENTS = OvaryIQ/OvaryIQDebug.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Mobcoder Technologies Private Limited (DCPCNSLGGR)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DCPCNSLGGR;
@@ -1736,7 +1736,7 @@
 				NEW_SETTING1 = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.ovary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Ovary_Dev_7_Feb;
+				PROVISIONING_PROFILE_SPECIFIER = OvaryIQ_Dis_11Feb;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1754,8 +1754,10 @@
 				AUTH_PASSWORD = admin;
 				AUTH_USERNAME = admin;
 				CODE_SIGN_ENTITLEMENTS = OvaryIQ/OvaryIQRelease.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Distribution: Mobcoder Technologies Private Limited (DCPCNSLGGR)";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DCPCNSLGGR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OvaryIQ/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1772,8 +1774,9 @@
 				MARKETING_VERSION = 1.0;
 				NEW_SETTING = "";
 				NEW_SETTING1 = "";
-				PRODUCT_BUNDLE_IDENTIFIER = test.OvaryIQ;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.ovary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = OvaryIQ_Dis_11Feb;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1924,7 +1927,7 @@
 				AUTH_PASSWORD = admin;
 				AUTH_USERNAME = admin;
 				CODE_SIGN_ENTITLEMENTS = OvaryIQ/OvaryIQStagging.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Distribution: Mobcoder Technologies Private Limited (DCPCNSLGGR)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DCPCNSLGGR;
@@ -1946,7 +1949,7 @@
 				NEW_SETTING1 = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.ovary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = ovary_Dev_1_Feb;
+				PROVISIONING_PROFILE_SPECIFIER = OvaryIQ_Dis_11Feb;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

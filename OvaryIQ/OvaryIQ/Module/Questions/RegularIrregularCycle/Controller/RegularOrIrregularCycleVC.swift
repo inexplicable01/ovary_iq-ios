@@ -72,10 +72,8 @@ class RegularOrIrregularCycleVC: UIViewController {
             self.btnIrregular.isSelected = false
             self.btnRegular.isSelected = true
             self.btnDontKnow.isSelected = false
-    
         } else {
             self.tryingRegularIregulatTypeRequestModel.periodCycle = ""
-            
         }
 
     }
@@ -83,7 +81,6 @@ class RegularOrIrregularCycleVC: UIViewController {
     @IBAction private func tapBtnBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-
 
     @IBAction private func tapBtnIrrRegular(_ sender: UIButton) {
         fLog()
@@ -97,6 +94,7 @@ class RegularOrIrregularCycleVC: UIViewController {
             self.tryingRegularIregulatTypeRequestModel.periodCycle = ""
         }
     }
+
     @IBAction private func tapBtnDontKnow(_ sender: UIButton) {
         fLog()
        sender.isSelected = !sender.isSelected
@@ -110,7 +108,7 @@ class RegularOrIrregularCycleVC: UIViewController {
         }
     }
 
-    @IBAction func tapBtnNext(_ sender: UIButton) {
+    @IBAction private func tapBtnNext(_ sender: UIButton) {
         if self.tryingRegularIregulatTypeRequestModel.periodCycle.isEmpty {
             AlertControllerManager.showToast(message: ErrorMessages.selectPeriodCycle.localizedString, type: .error)
         } else {
@@ -121,4 +119,3 @@ class RegularOrIrregularCycleVC: UIViewController {
         }
     }
 }
-

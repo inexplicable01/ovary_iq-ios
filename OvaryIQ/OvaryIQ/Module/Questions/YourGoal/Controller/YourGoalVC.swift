@@ -78,6 +78,7 @@ class YourGoalVC: UIViewController {
                if let goalId = self.goalArr.filter({$0.isSelected == true}).first.map({$0.id}) {
                    logYearOfBirthVC.selectedGoalId = goalId
                }
+               
                self.navigationController?.pushViewController(logYearOfBirthVC, animated: true)
             }
 

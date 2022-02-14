@@ -6,12 +6,15 @@
 //
 
 import UIKit
-
+protocol ImportantInformationVCDeleagte {
+    func goBackAfterDismissThisController(isDismiss: Bool)
+}
 class ImportantInformationVC: UIViewController {
     // MARK: - IBOutlets
 
     @IBOutlet weak var btnOk: UIButton!
     // MARK: - Properties
+    internal var delegate: ImportantInformationVCDeleagte?
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +58,11 @@ class ImportantInformationVC: UIViewController {
 
     @IBAction func tapBtnOk(_ sender: Any) {
         fLog()
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) {
+            self.dismiss(animated: true) {
+                self.delegate?.goBackAfterDismissThisController(isDismiss: true)
+            }
+        }
     }
 
 }

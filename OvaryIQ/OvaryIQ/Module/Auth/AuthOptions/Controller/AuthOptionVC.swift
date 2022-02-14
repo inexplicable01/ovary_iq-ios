@@ -49,6 +49,7 @@ class AuthOptionVC: UIViewController {
         self.viewModel.unregisterCoreEngineEventsCallBack()
        classReleased()
     }
+
     // MARK: - Private Functions
 
     private func initialSetup() {
@@ -85,13 +86,14 @@ class AuthOptionVC: UIViewController {
         let authLoginVC = Storyboard.Auth.instantiateViewController(identifier: AuthLoginVC.className)
         self.navigationController?.pushViewController(authLoginVC, animated: true)
     }
+
 }
 extension AuthOptionVC: AuthOptionViewModelDelegate {
     func sucessLoginSocialApiResponse() {
         if UserDefaults.IsSaveGoal == nil || UserDefaults.IsSaveGoal == "" || UserDefaults.IsSaveGoal == "False" {
                 //here show answer question screen as rootviewController
                 Helper.showAnswerFewQuestionsScreen()
-        }else{
+        } else {
                 //here show home screen as rootviewController
                 Helper.showHomeScreen()
         }
