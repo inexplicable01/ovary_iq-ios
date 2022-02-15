@@ -62,6 +62,7 @@ class RegularOrIrregularCycleVC: UIViewController {
         } else {
             self.bannerImgView.image = UIImage(named: "banner_3")
         }
+        self.changeNextBtnColor()
     }
      // MARK: - Button Actions
     @IBAction private func tapBtnRegular(_ sender: UIButton) {
@@ -74,6 +75,23 @@ class RegularOrIrregularCycleVC: UIViewController {
             self.btnDontKnow.isSelected = false
         } else {
             self.tryingRegularIregulatTypeRequestModel.periodCycle = ""
+        }
+        self.changeNextBtnColor()
+
+    }
+
+    private func changeNextBtnColor() {
+
+        if self.tryingRegularIregulatTypeRequestModel.periodCycle.isEmpty {
+            AppConfig.defautMainQ.async {
+                self.btnNext.layer.sublayers = self.btnNext.layer.sublayers?.filter { theLayer in
+                      !theLayer.isKind(of: CAGradientLayer.classForCoder())
+                }
+                self.btnNext.backgroundColor = UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 0.5)
+            }
+
+        } else {
+            self.btnNext.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
         }
 
     }
@@ -93,6 +111,7 @@ class RegularOrIrregularCycleVC: UIViewController {
         } else {
             self.tryingRegularIregulatTypeRequestModel.periodCycle = ""
         }
+        self.changeNextBtnColor()
     }
 
     @IBAction private func tapBtnDontKnow(_ sender: UIButton) {
@@ -106,6 +125,7 @@ class RegularOrIrregularCycleVC: UIViewController {
         } else {
             self.tryingRegularIregulatTypeRequestModel.periodCycle = ""
         }
+        self.changeNextBtnColor()
     }
 
     @IBAction private func tapBtnNext(_ sender: UIButton) {

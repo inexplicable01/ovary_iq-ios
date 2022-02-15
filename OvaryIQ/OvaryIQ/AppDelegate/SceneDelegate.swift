@@ -17,7 +17,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
-
      if UserDefaults.accessToken == nil || UserDefaults.accessToken == "" {
             //here show login screen as rootviewController
             Helper.showLoginScreen()
@@ -25,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if UserDefaults.IsSaveGoal == nil || UserDefaults.IsSaveGoal == "" ||  UserDefaults.IsSaveGoal == "False"{
                 //here show answer question screen as rootviewController
                 Helper.showAnswerFewQuestionsScreen()
-        }else{
+        } else {
                 //here show home screen as rootviewController
                 Helper.showHomeScreen()
         }

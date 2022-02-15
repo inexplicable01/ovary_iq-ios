@@ -74,11 +74,13 @@ class AuthOptionViewModel {
                     if let userInfo = socialUserInfo {
                         fLog()
                        print("Google user details:- ", userInfo)
+
                         self.validateSocialIdRequestModel.email = userInfo.email
                         self.validateSocialIdRequestModel.socialId = userInfo.socialId
                         self.validateSocialIdRequestModel.loginType = userInfo.type.rawValue
                         self.validateSocialIdRequestModel.name = userInfo.name
                         self.validateSocialIdRequestModel.profile = userInfo.profilePic
+
                         self.callApiToSocialLogin()
 
                     }

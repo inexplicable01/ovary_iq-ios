@@ -87,13 +87,14 @@ class LogYearOfBirthVC: UIViewController {
     // MARK: - Button Actions
     @IBAction private func tapNextBtn(_ sender: UIButton) {
         fLog()
+        self.tryingPregantYearModelRequest.birthYear = self.pickerData[self.selectedIndex]
         if isYearSelected == false {
             AlertControllerManager.showToast(message: ErrorMessages.logYourBirth.localizedString, type: .error)
         } else {
             if let id = selectedGoalId {
                 self.tryingPregantYearModelRequest.goalId = "\(id)"
             }
-            self.tryingPregantYearModelRequest.birthYear = self.pickerData[self.selectedIndex]
+           // self.tryingPregantYearModelRequest.birthYear = self.pickerData[self.selectedIndex]
             if let regularOrIrregularCycleVC = Storyboard.Questions.instantiateViewController(identifier: RegularOrIrregularCycleVC.className) as? RegularOrIrregularCycleVC {
                 regularOrIrregularCycleVC.tryingRegularIregulatTypeRequestModel = self.tryingPregantYearModelRequest
                  self.navigationController?.pushViewController(regularOrIrregularCycleVC, animated: true)
@@ -158,22 +159,19 @@ extension LogYearOfBirthVC: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if isYearSelected == false {
-            isYearSelected = true
-        } else {
-            if  self.tryingPregantYearModelRequest.birthYear == nil ||  self.tryingPregantYearModelRequest.birthYear == "" {
-                isYearSelected = false
-            } else {
-                isYearSelected = true
-            }
-
-
-
-        }
+        isYearSelected = true
+//        if isYearSelected == false {
+//            isYearSelected = true
+//        } else {
+//            if  self.tryingPregantYearModelRequest.birthYear == nil ||  (self.tryingPregantYearModelRequest.birthYear ?? "") == "" {
+//                isYearSelected = false
+//            } else {
+//                isYearSelected = true
+//            }
+//
+//        }
         selectedIndex = row
-        DispatchQueue.main.async {
-            self.pickerView.reloadAllComponents()
-        }
+        self.pickerView.reloadAllComponents()
 
     }
 

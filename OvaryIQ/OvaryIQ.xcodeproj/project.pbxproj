@@ -113,6 +113,8 @@
 		A78AECEA27A3DBBC003E05C2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AECE927A3DBBC003E05C2 /* String+Extension.swift */; };
 		A78AECEC27A3DEDC003E05C2 /* AuthSignUpRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AECEB27A3DEDC003E05C2 /* AuthSignUpRequestModel.swift */; };
 		A78AECEE27A40356003E05C2 /* Decodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AECED27A40356003E05C2 /* Decodable+Extension.swift */; };
+		A78D6F8327BB6668008F6399 /* CreteRound-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7069E5C278ED2070028AA68 /* CreteRound-Italic.ttf */; };
+		A78D6F8427BB6668008F6399 /* CreteRound-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7069E5D278ED2070028AA68 /* CreteRound-Regular.ttf */; };
 		A797A1DB279E94C900AB3896 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A797A1DA279E94C900AB3896 /* Home.storyboard */; };
 		A797A1DE279E950B00AB3896 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A1DD279E950B00AB3896 /* HomeVC.swift */; };
 		A797A1E2279EB41B00AB3896 /* Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = A797A1E1279EB41B00AB3896 /* Loader.json */; };
@@ -1337,6 +1339,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A78D6F8327BB6668008F6399 /* CreteRound-Italic.ttf in Resources */,
+				A78D6F8427BB6668008F6399 /* CreteRound-Regular.ttf in Resources */,
 				A7324529278E8F82008FDCF0 /* SourceSansPro-BlackItalic.ttf in Resources */,
 				A7324527278E8F82008FDCF0 /* SourceSansPro-ExtraLight.ttf in Resources */,
 				A7324524278E8F82008FDCF0 /* SourceSansPro-BoldItalic.ttf in Resources */,

@@ -18,5 +18,7 @@ struct ValidateSocialIdRequest: Codable {
        // case deviceToken = "deviceToken"
         case loginType = "login_type"
         case socialId = "media_login_id"
+        case name = "name"
+        case email = "email"
   }
 }

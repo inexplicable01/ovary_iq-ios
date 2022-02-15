@@ -124,6 +124,20 @@ class PeriodStartDateVC: UIViewController {
         }
     }
 
+    private func redirectToNextScreen() {
+        if self.tryingPeriodDetailModelrequest.periodCycle == PeriodCycleType.regular.rawValue {
+            if let lastPeriodLongVC = Storyboard.Questions.instantiateViewController(identifier: LastPeriodLongVC.className) as? LastPeriodLongVC {
+                lastPeriodLongVC.periodDetailModelRequest = self.tryingPeriodDetailModelrequest
+                 self.navigationController?.pushViewController(lastPeriodLongVC, animated: true)
+            }
+        } else {
+            if let firstDayPeriodDuration = Storyboard.Questions.instantiateViewController(identifier: FirstDayPeriodDuration.className) as? FirstDayPeriodDuration {
+                firstDayPeriodDuration.periodIrregularDetailModelRequestModel = self.tryingPeriodDetailModelrequest
+                 self.navigationController?.pushViewController(firstDayPeriodDuration, animated: true)
+            }
+        }
+    }
+
     // MARK: - Button Actions
     @IBAction private func tapBtnPreviousArrow(_ sender: UIButton) {
         fLog()
@@ -143,24 +157,18 @@ class PeriodStartDateVC: UIViewController {
             AlertControllerManager.showToast(message: ErrorMessages.selectPeriodStartDate.localizedString, type: .error)
         } else {
             self.tryingPeriodDetailModelrequest.startDateLastPeriod = self.selectedPeriodStartDate
-            if self.tryingPeriodDetailModelrequest.periodCycle == PeriodCycleType.regular.rawValue {
-                if let lastPeriodLongVC = Storyboard.Questions.instantiateViewController(identifier: LastPeriodLongVC.className) as? LastPeriodLongVC {
-                    lastPeriodLongVC.periodDetailModelRequest = self.tryingPeriodDetailModelrequest
-                     self.navigationController?.pushViewController(lastPeriodLongVC, animated: true)
-                }
-            } else {
-                if let firstDayPeriodDuration = Storyboard.Questions.instantiateViewController(identifier: FirstDayPeriodDuration.className) as? FirstDayPeriodDuration {
-                    firstDayPeriodDuration.periodIrregularDetailModelRequestModel = self.tryingPeriodDetailModelrequest
-                     self.navigationController?.pushViewController(firstDayPeriodDuration, animated: true)
-                }
-            }
+            redirectToNextScreen()
         }
     }
     
-    @IBAction func tapNotSureBtn(_ sender: UIButton) {
+    @IBAction private func tapNotSureBtn(_ sender: UIButton) {
+       fLog()
+        self.tryingPeriodDetailModelrequest.startDateLastPeriod = nil
+       redirectToNextScreen()
     }
 
-    @IBAction func tapBtnBack(_ sender: Any) {
+    @IBAction private func tapBtnBack(_ sender: Any) {
+        fLog()
         self.navigationController?.popViewController(animated: true)
     }
 

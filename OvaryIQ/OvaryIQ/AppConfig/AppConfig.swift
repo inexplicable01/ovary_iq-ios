@@ -7,7 +7,10 @@
 
 import Foundation
 class AppConfig: NSObject {
-
+    static let defautQ = DispatchQueue.global(qos: .default)
+    static let defautMainQ = DispatchQueue.main
+    static let backgrountQ = DispatchQueue.global(qos: .background)
+    static let priorityQ = DispatchQueue.global(qos: .userInteractive)
     struct WebUrl {
         static let TermsCondition   = "https://www.google.com/"
         static let TermsOfService   = "https://www.google.com/"
@@ -114,4 +117,6 @@ class AppConfig: NSObject {
         let bundle = kMainBundle.object(forInfoDictionaryKey: AppCustomConfig.safetyCenter.rawValue)
         return bundle as? String ?? ""
     }
+
+
 }

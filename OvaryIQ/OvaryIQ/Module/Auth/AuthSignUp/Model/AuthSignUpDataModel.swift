@@ -23,7 +23,7 @@ struct AuthSignUpDataModel: Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         message = try? values.decodeIfPresent(String.self, forKey: .message) ?? ""
         accessToken = try? values.decodeIfPresent(String.self, forKey: .accessToken) ?? ""
-        isSaveGoal = try? values.decodeIfPresent(String.self, forKey: .isSaveGoal) ?? ""
+        isSaveGoal = try? values.decodeIfPresent(String.self, forKey: .isSaveGoal) ?? "False"
         expiresIn = try? values.decodeIfPresent(Int.self, forKey: .expiresIn) ?? 0
         expiresIn = try? values.decodeIfPresent(Int.self, forKey: .expiresIn) ?? 0
         user = try? values.decodeIfPresent(UserDataModel.self, forKey: .user) ?? nil
