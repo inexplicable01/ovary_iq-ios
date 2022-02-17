@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             //here show login screen as rootviewController
             Helper.showLoginScreen()
      } else {
-        if UserDefaults.IsSaveGoal == nil || UserDefaults.IsSaveGoal == "" ||  UserDefaults.IsSaveGoal == "False"{
+        if UserDefaults.isGoalSaved ==  false {
                 //here show answer question screen as rootviewController
                 Helper.showAnswerFewQuestionsScreen()
         } else {

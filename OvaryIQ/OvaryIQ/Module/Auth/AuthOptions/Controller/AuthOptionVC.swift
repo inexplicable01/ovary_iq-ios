@@ -90,7 +90,7 @@ class AuthOptionVC: UIViewController {
 }
 extension AuthOptionVC: AuthOptionViewModelDelegate {
     func sucessLoginSocialApiResponse() {
-        if UserDefaults.IsSaveGoal == nil || UserDefaults.IsSaveGoal == "" || UserDefaults.IsSaveGoal == "False" {
+        if UserDefaults.isGoalSaved == false {
                 //here show answer question screen as rootviewController
                 Helper.showAnswerFewQuestionsScreen()
         } else {

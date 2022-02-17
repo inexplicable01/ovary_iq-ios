@@ -199,7 +199,7 @@ extension AuthSignUpVC: AuthSignUpViewModelDelegate {
 
     // here after sucess response of signup we jump to answer few Questions screen
     func sucessRegisterApiResponse() {
-        if UserDefaults.IsSaveGoal == nil || UserDefaults.IsSaveGoal == "" || UserDefaults.IsSaveGoal == "False"{
+        if UserDefaults.isGoalSaved == false {
                 //here show answer question screen as rootviewController
                 Helper.showAnswerFewQuestionsScreen()
         }else{

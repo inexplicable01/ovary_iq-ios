@@ -387,13 +387,14 @@ extension CoreEngine {
 
                 if errCode == 401  || errCode == 2 {
                     // for session expired
-                    DispatchQueue.main.async {
+                    AppConfig.defautMainQ.async {
                         AlertControllerManager.showAlert(title: AppConfig.getAppName(), message: errorStr, buttons: [Text.oks.localizedString]) { index in
                             self.logoutMethod()
                         }
                     }
+
                 } else {
-                    DispatchQueue.main.async {
+                    AppConfig.defautMainQ.async {
                      //   AlertControllerManager.showToast(message: errorStr, type: AlertType.error)
 
                         AlertControllerManager.showToast(message: errorStr, type: AlertType.error)
@@ -414,7 +415,7 @@ extension CoreEngine {
     // MARK: - Reset all User defaults and Global Variables
 
     private func resetAllKeys() {
-        DispatchQueue.main.async {
+        AppConfig.defautMainQ.async {
             //1. Remove All Data Stored in UserDefault
             kUserDefaults.standard.clear()
             

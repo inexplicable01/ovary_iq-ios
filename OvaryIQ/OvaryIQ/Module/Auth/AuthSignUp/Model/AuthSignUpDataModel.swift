@@ -7,7 +7,8 @@
 
 import Foundation
 struct AuthSignUpDataModel: Codable {
-    var message, accessToken, isSaveGoal: String?
+    var message, accessToken: String?
+    var isGoalSaved: Bool?
     var expiresIn: Int?
     var user: UserDataModel?
 
@@ -15,7 +16,7 @@ struct AuthSignUpDataModel: Codable {
            case message
            case accessToken = "access_token"
            case expiresIn = "expires_in"
-           case isSaveGoal
+           case isGoalSaved
            case user
        }
 
@@ -23,7 +24,7 @@ struct AuthSignUpDataModel: Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         message = try? values.decodeIfPresent(String.self, forKey: .message) ?? ""
         accessToken = try? values.decodeIfPresent(String.self, forKey: .accessToken) ?? ""
-        isSaveGoal = try? values.decodeIfPresent(String.self, forKey: .isSaveGoal) ?? "False"
+         isGoalSaved = try? values.decodeIfPresent(Bool.self, forKey: .isGoalSaved)
         expiresIn = try? values.decodeIfPresent(Int.self, forKey: .expiresIn) ?? 0
         expiresIn = try? values.decodeIfPresent(Int.self, forKey: .expiresIn) ?? 0
         user = try? values.decodeIfPresent(UserDataModel.self, forKey: .user) ?? nil

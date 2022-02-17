@@ -63,8 +63,8 @@ extension AuthLoginViewModel {
                             kUserDefaults.accessToken = acessToken
                         }
                         
-                        if let isSaveGoal = encodedDictionary.isSaveGoal {
-                            kUserDefaults.IsSaveGoal = isSaveGoal
+                        if let isGoalSaved = encodedDictionary.isGoalSaved {
+                            kUserDefaults.isGoalSaved = isGoalSaved
                         }
                         self.delegate?.sucessLoginApiResponse?()
 

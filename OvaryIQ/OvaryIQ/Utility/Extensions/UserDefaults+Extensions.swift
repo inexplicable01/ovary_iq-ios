@@ -17,7 +17,7 @@ extension UserDefaults {
         static let AccessToken               = "UD_Key_Access_Token"
         static let TokenType                 = "UD_Key_TokenType"
         static let RefreshToken              = "UD_Key_Refresh_Token"
-        static let IsSaveGoal                = "UD_Key_Save_Goal"
+        static let isGoalSaved                = "UD_Key_Save_Goal"
 
         static let IsUserLogin               = "UD_Key_Is_User_Login"
         static let IsProfileCompleted        = "UD_Key_Is_Profile_Completed"
@@ -46,8 +46,8 @@ extension UserDefaults {
     @SharedPref(key: UDKey.RefreshToken, defaultValue: "")
     static var refreshToken: String
 
-    @SharedPref(key: UDKey.IsSaveGoal, defaultValue: "")
-    static var IsSaveGoal: String
+    @SharedPref(key: UDKey.isGoalSaved, defaultValue: false)
+    static var isGoalSaved: Bool
 
     @SharedPref(key: UDKey.IsUserLogin, defaultValue: false)
     static var isUserLogin: Bool
@@ -80,7 +80,7 @@ extension UserDefaults {
         self.set("", forKey: UDKey.AccessToken)
         self.set("", forKey: UDKey.TokenType)
         self.set("", forKey: UDKey.RefreshToken)
-        self.set("", forKey: UDKey.IsSaveGoal)
+        self.set("", forKey: UDKey.isGoalSaved)
 
         self.set(nil, forKey: UDKey.UserId)
         self.set(false, forKey: UDKey.IsUserLogin)

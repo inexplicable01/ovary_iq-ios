@@ -188,10 +188,10 @@ extension AuthLoginVC: LoginViewModelDelegate, AuthForgotPasswordVCDeleagte {
         self.navigationController?.pushViewController(authSignUpVC, animated: true)
     }
     func sucessLoginApiResponse() {
-        if UserDefaults.IsSaveGoal == nil || UserDefaults.IsSaveGoal == "" || UserDefaults.IsSaveGoal == "False" {
+        if UserDefaults.isGoalSaved == false {
                 //here show answer question screen as rootviewController
                 Helper.showAnswerFewQuestionsScreen()
-        }else{
+        } else {
                 //here show home screen as rootviewController
                 Helper.showHomeScreen()
         }
