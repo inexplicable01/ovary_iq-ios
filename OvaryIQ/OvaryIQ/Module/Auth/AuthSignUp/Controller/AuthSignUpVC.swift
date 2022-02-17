@@ -96,7 +96,7 @@ class AuthSignUpVC: BaseViewC {
 
     @IBAction private func tapBtnBack(_ sender: UIButton) {
         fLog()
-        self.navigationController?.popViewController(animated: true)
+        Helper.showAuthOptionVCScreen()
     }
 
     @IBAction private func tapBtnCreateAccount(_ sender: UIButton) {
@@ -172,7 +172,19 @@ extension AuthSignUpVC: UITextFieldDelegate {
 
           } else if textField == self.txtfieldPhoneNumber {
             self.viewModel.authSignupRequestModel.mobile = finalText.removeWhiteSpacesAndNewLines()
-//
+              do {
+                 // ^[1-9][0-9]*$
+                  let regex = try NSRegularExpression(pattern: ".*[^0-9].*", options: [])
+                      if regex.firstMatch(in: string, options: [], range: NSMakeRange(0, string.count)) != nil {
+                              return false
+                      }
+                  }
+                  catch {
+                      print("ERROR")
+                  }
+
+                 return true
+
 
         } else if textField == self.txtFieldEmail {
             self.viewModel.authSignupRequestModel.email = finalText.removeWhiteSpacesAndNewLines()
@@ -200,11 +212,9 @@ extension AuthSignUpVC: AuthSignUpViewModelDelegate {
     // here after sucess response of signup we jump to answer few Questions screen
     func sucessRegisterApiResponse() {
         if UserDefaults.isGoalSaved == false {
-                //here show answer question screen as rootviewController
-                Helper.showAnswerFewQuestionsScreen()
-        }else{
-                //here show home screen as rootviewController
-                Helper.showHomeScreen()
+            Helper.showAnswerFewQuestionsScreen()
+        } else {
+            Helper.showHomeScreen()
         }
 
     }

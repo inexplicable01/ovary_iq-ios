@@ -19,10 +19,9 @@ class Helper {
             window.makeKeyAndVisible()
         }
     }
-
-    //MARK: -  Show Login Screen as root controller
-    class func showLoginScreen() {
-        let vc = Storyboard.Auth.instantiateViewController(withIdentifier: AuthOptionVC.className) as! AuthOptionVC
+    //MARK: -  Show AnswerFewQuestions Screen as root controller
+    class func showAnswerFewQuestionsScreen() {
+        let vc = Storyboard.Questions.instantiateViewController(withIdentifier: AnswersFewQuestionsVC.className) as! AnswersFewQuestionsVC
         let nav = UINavigationController.init(rootViewController: vc)
         nav.isNavigationBarHidden = true
         if let window = UIApplication.shared.windows.first {
@@ -30,9 +29,10 @@ class Helper {
             window.makeKeyAndVisible()
         }
     }
+
     //MARK: -  Show AnswerFewQuestions Screen as root controller
-    class func showAnswerFewQuestionsScreen() {
-        let vc = Storyboard.Questions.instantiateViewController(withIdentifier: AnswersFewQuestionsVC.className) as! AnswersFewQuestionsVC
+    class func showAuthOptionVCScreen() {
+        let vc = Storyboard.Auth.instantiateViewController(withIdentifier: AuthOptionVC.className) as! AuthOptionVC
         let nav = UINavigationController.init(rootViewController: vc)
         nav.isNavigationBarHidden = true
         if let window = UIApplication.shared.windows.first {

@@ -427,7 +427,7 @@ extension CoreEngine {
 
             //6. Reset Root of Window
           //  kAppDelegate?.setRootViewC()
-            Helper.showLoginScreen()
+            Helper.showAuthOptionVCScreen()
         }
     }
 }

@@ -124,6 +124,7 @@
 		A7CE543E27967B7B00191A7B /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE543D27967B7B00191A7B /* UITableView+Extension.swift */; };
 		A7CE544427968F7300191A7B /* LastPeriodLongVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE544327968F7300191A7B /* LastPeriodLongVC.swift */; };
 		A7CE54832796B9C200191A7B /* Constants+TextsMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE54822796B9C200191A7B /* Constants+TextsMessages.swift */; };
+		A7DFB83C27BE17A100D66360 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DFB83B27BE17A100D66360 /* UIImageView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -270,6 +271,7 @@
 		A7CE543D27967B7B00191A7B /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		A7CE544327968F7300191A7B /* LastPeriodLongVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPeriodLongVC.swift; sourceTree = "<group>"; };
 		A7CE54822796B9C200191A7B /* Constants+TextsMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+TextsMessages.swift"; sourceTree = "<group>"; };
+		A7DFB83B27BE17A100D66360 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		FBCB68E659126C3B68DB5CDC /* Pods-OvaryIQ.stagging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OvaryIQ.stagging.xcconfig"; path = "Target Support Files/Pods-OvaryIQ/Pods-OvaryIQ.stagging.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -344,6 +346,7 @@
 				A7604582279ED91E008655B6 /* UIViewController+Extension.swift */,
 				A797A1E3279EC03200AB3896 /* Utility.swift */,
 				A78AECED27A40356003E05C2 /* Decodable+Extension.swift */,
+				A7DFB83B27BE17A100D66360 /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1456,6 +1459,7 @@
 				A77C71C52797FB66007AB67E /* Struct+Storyboard.swift in Sources */,
 				A73244DF278E8E2A008FDCF0 /* AppDelegate.swift in Sources */,
 				A76D64E427A26A0700397D1C /* AlertControllerManager.swift in Sources */,
+				A7DFB83C27BE17A100D66360 /* UIImageView+Extensions.swift in Sources */,
 				A78AECE627A2D2B0003E05C2 /* AuthSignUpViewModel.swift in Sources */,
 				A7CE54832796B9C200191A7B /* Constants+TextsMessages.swift in Sources */,
 				A7717F5E27AD49BD00422539 /* TryingGetPrefnantRequestModel.swift in Sources */,

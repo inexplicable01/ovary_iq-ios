@@ -25,8 +25,8 @@
 "msg_period_cycle" = "Please select period cycle.";
 "msg_invalid_emailId" = "Please enter valid email id.";
 "msg_inavild_Password" = "Password must be between 8 to 16 character,one uppercase,one lowercase and one special character.";
-"msg_empty_LastThirdPeriod" = "Please enter number of days in 3 periods ago.";
-"msg_empty_LastSecondPeriod" = "Please enter number of days in 2 periods ago.";
+"msg_empty_LastThirdPeriod" = "Please enter number of days in 3 period ago.";
+"msg_empty_LastSecondPeriod" = "Please enter number of days in 2 period ago.";
 "msg_empty_LastPeriod" = "Please enter number of days in 1 period ago.";
 "msg_empty_Otp" = "Please enter verification code.";
 "msg_password_doesnot_match" = "The passwords do not match.";

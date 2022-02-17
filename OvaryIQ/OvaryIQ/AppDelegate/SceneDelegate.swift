@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
      if UserDefaults.accessToken == nil || UserDefaults.accessToken == "" {
             //here show login screen as rootviewController
-            Helper.showLoginScreen()
+            Helper.showAuthOptionVCScreen()
      } else {
         if UserDefaults.isGoalSaved ==  false {
                 //here show answer question screen as rootviewController

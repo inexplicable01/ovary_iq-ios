@@ -149,6 +149,11 @@ extension FirstDayPeriodDuration: UITextFieldDelegate {
         } else if textField == self.txtFieldFirstPeriods {
             self.periodIrregularDetailModelRequestModel.daysDifLastPeriod = Int(finalText.removeWhiteSpacesAndNewLines())
         }
+
+        //user can not be able to enter more than three digit
+        if finalText.count > 3 {
+            textField.resignFirstResponder()
+        }
         return true
     }
 

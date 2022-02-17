@@ -183,9 +183,4 @@ extension String {
         return passwordValidation.evaluate(with: self)
     }
 
-    func isAlphabet() -> Bool {
-           let regularExpression = "^[a-zA-Z0-9]{8,}$"
-           let passwordValidation = NSPredicate.init(format: "SELF MATCHES %@", regularExpression)
-           return passwordValidation.evaluate(with: self)
-       }
 }

@@ -20,15 +20,16 @@ class PeriodStartDateVC: UIViewController {
     @IBOutlet weak var bannerImgview: UIImageView!
     // MARK: - Properties
     private var currentPage: Date?
+    private var selectedDates = [String]()
     private lazy var today: Date = {
         return Date()
     }()
     private lazy var dateFormatter: DateFormatter = {
            let formatter = DateFormatter()
-           formatter.dateFormat = "dd"
+        formatter.dateFormat = DateFormat.dayMonthYear.rawValue
            return formatter
     }()
-    private var selectedPeriodStartDate: Int?
+//    private var selectedPeriodStartDate: Int?
     internal var tryingPeriodDetailModelrequest = TryingGetPreganantRequestModel()
 
     // MARK: - view life cycle function
@@ -94,6 +95,7 @@ class PeriodStartDateVC: UIViewController {
         lblMonthYear.sizeToFit()
         calendar.scrollDirection = .vertical
         calendar.delegate = self
+        calendar.dataSource = self
       //  self.calendar.backgroundColor = UIColor(red: 253.0 / 255.0, green: 245.0 / 255.0, blue: 247.0 / 255.0, alpha: 1.0)
     }
     internal func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
@@ -153,10 +155,17 @@ class PeriodStartDateVC: UIViewController {
 
     @IBAction private func tapBtnSave(_ sender: UIButton) {
        fLog()
-        if selectedPeriodStartDate == nil {
+        if self.selectedDates.isEmpty {
             AlertControllerManager.showToast(message: ErrorMessages.selectPeriodStartDate.localizedString, type: .error)
         } else {
-            self.tryingPeriodDetailModelrequest.startDateLastPeriod = self.selectedPeriodStartDate
+
+            if let selectedDate = self.selectedDates.first {
+                let date = dateFormatter.date(from: selectedDate) ?? Date()
+                let dayFormatter = DateFormatter()
+                dayFormatter.dateFormat = DateFormat.day.rawValue
+                let day = dayFormatter.string(from: date)
+                self.tryingPeriodDetailModelrequest.startDateLastPeriod = Int(day)
+            }
             redirectToNextScreen()
         }
     }
@@ -174,19 +183,26 @@ class PeriodStartDateVC: UIViewController {
 
 }
 
-// MARK: -  FSCalendarDelegate,FSCalendarDataSource
-extension PeriodStartDateVC: FSCalendarDelegate, FSCalendarDataSource{
+//MARK: -  FSCalendarDelegate,FSCalendarDataSource
+extension PeriodStartDateVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
        calendar.scrollDirection = .vertical
-
     }
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("did select date \(self.dateFormatter.string(from: date))")
+        self.selectedDates.removeAll()
+        let date = self.dateFormatter.string(from: date)
+        self.selectedDates.append(date)
+        calendar.reloadData()
+    }
 
-        self.selectedPeriodStartDate = Int(self.dateFormatter.string(from: date))
-//
-//                let selectedDates = calendar.selectedDates.map({self.dateFormatter.string(from: $0)})
-//        print("selected dates is \(selectedDates)")
+    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
+        let dateString = self.dateFormatter.string(from: date)
+        if self.selectedDates.contains(dateString) {
+           return UIImage(named: "blood_drop")?.alpha(1)
+        } else {
+           return UIImage(named: "blood_drop")?.alpha(0)
+       }
 
     }
 }

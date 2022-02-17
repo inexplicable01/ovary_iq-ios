@@ -125,8 +125,9 @@ class AuthLoginVC: UIViewController {
 
     @IBAction private func tapSignUpBtn(_ sender: Any) {
         fLog()
-        let authSignUpVC = Storyboard.Auth.instantiateViewController(identifier: AuthSignUpVC.className)
-        self.navigationController?.pushViewController(authSignUpVC, animated: true)
+      let authSignUpVC = Storyboard.Auth.instantiateViewController(identifier: AuthSignUpVC.className)
+      self.navigationController?.pushViewController(authSignUpVC, animated: true)
+
     }
 
     @IBAction private func tapBackBtn(_ sender: Any) {
