@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import FSCalendar
-
 class RegularOrIrregularCycleVC: UIViewController {
     // MARK: - IBOutlets
 

@@ -9,7 +9,7 @@ use_frameworks!
 pod 'IQKeyboardManagerSwift'
 
 #Usage:- for Calendar
- pod 'FSCalendar'
+# pod 'FSCalendar'
 
  #Usage:- for set your coding style rules
  pod 'SwiftLint'

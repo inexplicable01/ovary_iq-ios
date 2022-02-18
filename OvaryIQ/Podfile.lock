@@ -5,7 +5,6 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.4.0)
   - AppAuth/Core (1.4.0)
   - AppAuth/ExternalUserAgent (1.4.0)
-  - FSCalendar (2.8.2)
   - GoogleSignIn (6.1.0):
     - AppAuth (~> 1.4)
     - GTMAppAuth (~> 1.0)
@@ -28,7 +27,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (= 5.4.4)
-  - FSCalendar
   - GoogleSignIn
   - IQKeyboardManagerSwift
   - Kingfisher
@@ -42,7 +40,6 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AppAuth
-    - FSCalendar
     - GoogleSignIn
     - GTMAppAuth
     - GTMSessionFetcher
@@ -58,7 +55,6 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
-  FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
   GoogleSignIn: c90b5bec45e780f54c6a8e1e3c182a86e3dda69d
   GTMAppAuth: ad5c2b70b9a8689e1a04033c9369c4915bfcbe89
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
@@ -71,6 +67,6 @@ SPEC CHECKSUMS:
   SwiftLint: 06ac37e4d38c7068e0935bb30cda95f093bec761
   SwiftMessages: f0c7ef4705a570ad6c5e208b611f4333e660ed92
 
-PODFILE CHECKSUM: e08fe6ae4930f3dcb25a0c5d600354fdd024abe0
+PODFILE CHECKSUM: 1703440b479dc515e65b66252536f1155b5e257e
 
 COCOAPODS: 1.11.2

@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import FSCalendar
-
 class PeriodStartDateVC: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var lblYear: UILabel!
