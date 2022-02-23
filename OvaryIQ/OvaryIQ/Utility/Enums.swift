@@ -19,8 +19,12 @@ enum PeriodCycleType: String {
    case notKnow = "not_know"
 }
 
-//MARK: - dateformat
+// MARK: - dateformat
 enum DateFormat: String {
     case dayMonthYear = "dd/MM/yyyy"
     case day = "dd"
+}
+enum GoalType: String {
+   case getPregnant = "Get Pregnant"
+   case periodTracking = "Period Tracking"
 }

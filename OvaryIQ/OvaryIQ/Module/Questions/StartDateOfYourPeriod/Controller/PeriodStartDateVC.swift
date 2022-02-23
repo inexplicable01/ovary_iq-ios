@@ -14,8 +14,8 @@ class PeriodStartDateVC: UIViewController {
     @IBOutlet private weak var btnSave: UIButton!
     @IBOutlet private weak var viewyearAndMonth: UIView!
     @IBOutlet private weak var viewSide: UIView!
-
-    @IBOutlet weak var bannerImgview: UIImageView!
+    @IBOutlet private weak var bannerPeriodTarckingStackView: UIStackView!
+    @IBOutlet private weak var bannerGetPreganentStackView: UIStackView!
     // MARK: - Properties
     private var currentPage: Date?
     private var selectedDates = [String]()
@@ -29,7 +29,7 @@ class PeriodStartDateVC: UIViewController {
     }()
 //    private var selectedPeriodStartDate: Int?
     internal var tryingPeriodDetailModelrequest = TryingGetPreganantRequestModel()
-
+    internal var selectedGoalType: String?
     // MARK: - view life cycle function
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,10 +75,15 @@ class PeriodStartDateVC: UIViewController {
      self.calendar.appearance.titleFont = UIFont(name: "SourceSansPro-Bold", size: 16)
         self.calendarSetUp()
       //  self.selectedPeriodStartDate = Int(self.dateFormatter.string(from: Date()))
-        if self.tryingPeriodDetailModelrequest.goalId == "2" {
-            self.bannerImgview.image = UIImage(named: "PeriodBanner_2")
+        if self.selectedGoalType == GoalType.periodTracking.rawValue {
+            self.bannerPeriodTarckingStackView.isHidden = true
+            self.bannerGetPreganentStackView.isHidden = false
+           // self.bannerImgview.image = UIImage(named: "PeriodBanner_2")
         } else {
-            self.bannerImgview.image = UIImage(named: "banner_3")
+
+            self.bannerPeriodTarckingStackView.isHidden = false
+            self.bannerGetPreganentStackView.isHidden = true
+           // self.bannerImgview.image = UIImage(named: "banner_3")
         }
     }
 
@@ -128,11 +133,13 @@ class PeriodStartDateVC: UIViewController {
         if self.tryingPeriodDetailModelrequest.periodCycle == PeriodCycleType.regular.rawValue {
             if let lastPeriodLongVC = Storyboard.Questions.instantiateViewController(identifier: LastPeriodLongVC.className) as? LastPeriodLongVC {
                 lastPeriodLongVC.periodDetailModelRequest = self.tryingPeriodDetailModelrequest
+                lastPeriodLongVC.selectedGoalType = self.selectedGoalType
                  self.navigationController?.pushViewController(lastPeriodLongVC, animated: true)
             }
         } else {
             if let firstDayPeriodDuration = Storyboard.Questions.instantiateViewController(identifier: FirstDayPeriodDuration.className) as? FirstDayPeriodDuration {
                 firstDayPeriodDuration.periodIrregularDetailModelRequestModel = self.tryingPeriodDetailModelrequest
+                firstDayPeriodDuration.selectedGoalType = self.selectedGoalType
                  self.navigationController?.pushViewController(firstDayPeriodDuration, animated: true)
             }
         }

@@ -22,6 +22,7 @@ enum RestEvents: Int {
     case verifyCode
     case resetPassword
     case networkError
+    
 }
 
 class RestEngineEvents: EngineEvents {

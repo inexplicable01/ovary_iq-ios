@@ -12,12 +12,13 @@ class FirstDayPeriodDuration: UIViewController {
     @IBOutlet private weak var btnSubmit: UIButton!
     @IBOutlet private weak var txtFieldThirdPeriods: UITextField!
     @IBOutlet private weak var txtFieldSecondPeriods: UITextField!
-    @IBOutlet weak var txtFieldFirstPeriods: UITextField!
-
-    @IBOutlet weak var bannerImgView: UIImageView!
-
+    @IBOutlet private weak var txtFieldFirstPeriods: UITextField!
+    @IBOutlet private weak var bannerImgView: UIImageView!
+    @IBOutlet private weak var bannerPerioTrackingStackView: UIStackView!
+    @IBOutlet private weak var bannerGetPregantStackView: UIStackView!
     // MARK: - Properties
     internal var periodIrregularDetailModelRequestModel = TryingGetPreganantRequestModel()
+    internal var selectedGoalType: String?
     private var viewModel = LastPeriodViewModel()
     // MARK: - view life cycle Functions
     override func viewDidLoad() {
@@ -58,7 +59,6 @@ class FirstDayPeriodDuration: UIViewController {
        classReleased()
     }
 
-    
     // MARK: - Private Functions
     private func initialSetup() {
        // self.view.showLoader()
@@ -66,10 +66,14 @@ class FirstDayPeriodDuration: UIViewController {
         self.viewModel.delegate = self
 
 
-        if self.periodIrregularDetailModelRequestModel.goalId == "2" {
-            self.bannerImgView.image = UIImage(named: "periodBanner_3")
+        if self.selectedGoalType == GoalType.periodTracking.rawValue {
+           // self.bannerImgView.image = UIImage(named: "periodBanner_3")
+            self.bannerPerioTrackingStackView.isHidden = false
+            self.bannerGetPregantStackView.isHidden = true
         } else {
-            self.bannerImgView.image = UIImage(named: "banner_4")
+            //self.bannerImgView.image = UIImage(named: "banner_4")
+            self.bannerPerioTrackingStackView.isHidden = true
+            self.bannerGetPregantStackView.isHidden = false
         }
     }
 
@@ -98,8 +102,6 @@ class FirstDayPeriodDuration: UIViewController {
             self.viewModel.callApiTosaveFetchGoalDetails()
        }
     }
-
-
 
     @IBAction private func tapBtnNotRemember(_ sender: UIButton) {
         fLog()

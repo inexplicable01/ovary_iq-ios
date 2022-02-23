@@ -18,7 +18,7 @@ class AuthOptionVC: UIViewController {
         self.viewModel.registerCoreEngineEventsCallBack()
         // Do any additional setup after loading the view.
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.viewModel.registerCoreEngineEventsCallBack()
@@ -67,18 +67,7 @@ class AuthOptionVC: UIViewController {
 
     @IBAction private func tapBtnGoogle(_ sender: Any) {
         fLog()
-
         self.viewModel.validateSocialId(loginType: .google)
-//        GoogleManager.shared.login(viewController: self) { (socialUserInfo, message, success) in
-//                    if !success {
-//                       // Utility.showToast(message: message ?? "Google Login Error")
-//                    } else {
-//                          if let userInfo = socialUserInfo {
-//                          }
-//                    }
-//        }
-//        let answersFewQuestionsVC = Storyboard.Questions.instantiateViewController(identifier: AnswersFewQuestionsVC.className)
-//        self.navigationController?.pushViewController(answersFewQuestionsVC, animated: true)
     }
 
     @IBAction private func tapBtnEmail(_ sender: Any) {

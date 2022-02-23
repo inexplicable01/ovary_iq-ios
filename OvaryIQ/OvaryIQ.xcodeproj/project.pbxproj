@@ -58,6 +58,9 @@
 		A760457C279EC7DC008655B6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A760457B279EC7DC008655B6 /* String.swift */; };
 		A7604580279ED32F008655B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A760457F279ED32F008655B6 /* Localizable.strings */; };
 		A7604583279ED91E008655B6 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7604582279ED91E008655B6 /* UIViewController+Extension.swift */; };
+		A76C61CC27C652D8006CBE02 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76C61CB27C652D8006CBE02 /* Settings.storyboard */; };
+		A76C61CF27C65B61006CBE02 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C61CE27C65B61006CBE02 /* ProfileVC.swift */; };
+		A76C61D327C65BF1006CBE02 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C61D227C65BF1006CBE02 /* ProfileViewModel.swift */; };
 		A76D649C279FD51500397D1C /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D649B279FD51500397D1C /* APIHelper.swift */; };
 		A76D649F279FD73800397D1C /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D649E279FD73800397D1C /* AppConfig.swift */; };
 		A76D64A1279FD84600397D1C /* Constants+Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64A0279FD84600397D1C /* Constants+Macros.swift */; };
@@ -221,6 +224,9 @@
 		A760457B279EC7DC008655B6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A760457F279ED32F008655B6 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		A7604582279ED91E008655B6 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		A76C61CB27C652D8006CBE02 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		A76C61CE27C65B61006CBE02 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		A76C61D227C65BF1006CBE02 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		A76D649B279FD51500397D1C /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		A76D649E279FD73800397D1C /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		A76D64A0279FD84600397D1C /* Constants+Macros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Macros.swift"; sourceTree = "<group>"; };
@@ -533,6 +539,7 @@
 		A732450F278E8E5B008FDCF0 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				A76C61CA27C652BD006CBE02 /* Settings */,
 				A76D64AD27A02DBC00397D1C /* UserResponseModel */,
 				A797A1D9279E94AE00AB3896 /* Home */,
 				A74C3225279164CB00763899 /* Questions */,
@@ -824,6 +831,32 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A76C61CA27C652BD006CBE02 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A76C61CB27C652D8006CBE02 /* Settings.storyboard */,
+				A76C61CD27C65AFB006CBE02 /* Controller */,
+				A76C61D127C65BCB006CBE02 /* ViewModel */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A76C61CD27C65AFB006CBE02 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A76C61CE27C65B61006CBE02 /* ProfileVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A76C61D127C65BCB006CBE02 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A76C61D227C65BF1006CBE02 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		A76D6499279FD4BE00397D1C /* Core */ = {
@@ -1450,6 +1483,7 @@
 				A73244EB278E8E2C008FDCF0 /* LaunchScreen.storyboard in Resources */,
 				A7324528278E8F82008FDCF0 /* SourceSansPro-Black.ttf in Resources */,
 				A73244E8278E8E2C008FDCF0 /* Assets.xcassets in Resources */,
+				A76C61CC27C652D8006CBE02 /* Settings.storyboard in Resources */,
 				A732452D278E8F82008FDCF0 /* SourceSansPro-SemiBoldItalic.ttf in Resources */,
 				A73244E6278E8E2A008FDCF0 /* Auth.storyboard in Resources */,
 				A797A1E2279EB41B00AB3896 /* Loader.json in Resources */,
@@ -1555,6 +1589,7 @@
 				A753833527B12A5D00F9FE83 /* AuthVerificationCodeRequestModel.swift in Sources */,
 				A77C71C52797FB66007AB67E /* Struct+Storyboard.swift in Sources */,
 				A73244DF278E8E2A008FDCF0 /* AppDelegate.swift in Sources */,
+				A76C61CF27C65B61006CBE02 /* ProfileVC.swift in Sources */,
 				A76D64E427A26A0700397D1C /* AlertControllerManager.swift in Sources */,
 				A7DFB83C27BE17A100D66360 /* UIImageView+Extensions.swift in Sources */,
 				A78AECE627A2D2B0003E05C2 /* AuthSignUpViewModel.swift in Sources */,
@@ -1591,6 +1626,7 @@
 				A702267927902E51000E1C9F /* UIButton+Extensions.swift in Sources */,
 				A7DCAB3227BF5BEA0018FC76 /* FSCalendarCollectionView.m in Sources */,
 				A7604583279ED91E008655B6 /* UIViewController+Extension.swift in Sources */,
+				A76C61D327C65BF1006CBE02 /* ProfileViewModel.swift in Sources */,
 				A77AD2AA27A8F3BE007C389F /* ValidateSocialIdRequest.swift in Sources */,
 				A77AD2B127AA8D37007C389F /* BaseCollectionViewCell.swift in Sources */,
 				A7DCAB3F27BF5BEA0018FC76 /* FSCalendarTransitionCoordinator.m in Sources */,
@@ -1832,9 +1868,9 @@
 				AUTH_PASSWORD = admin;
 				AUTH_USERNAME = admin;
 				CODE_SIGN_ENTITLEMENTS = OvaryIQ/OvaryIQDebug.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Distribution: Mobcoder Technologies Private Limited (DCPCNSLGGR)";
+				CODE_SIGN_IDENTITY = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = DCPCNSLGGR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OvaryIQ/Info.plist;
@@ -1873,9 +1909,9 @@
 				AUTH_PASSWORD = admin;
 				AUTH_USERNAME = admin;
 				CODE_SIGN_ENTITLEMENTS = OvaryIQ/OvaryIQRelease.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Distribution: Mobcoder Technologies Private Limited (DCPCNSLGGR)";
+				CODE_SIGN_IDENTITY = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = DCPCNSLGGR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OvaryIQ/Info.plist;
@@ -2047,9 +2083,9 @@
 				AUTH_PASSWORD = admin;
 				AUTH_USERNAME = admin;
 				CODE_SIGN_ENTITLEMENTS = OvaryIQ/OvaryIQStagging.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Distribution: Mobcoder Technologies Private Limited (DCPCNSLGGR)";
+				CODE_SIGN_IDENTITY = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = DCPCNSLGGR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OvaryIQ/Info.plist;

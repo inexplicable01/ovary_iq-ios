@@ -13,7 +13,9 @@ class LastPeriodLongVC: UIViewController {
     @IBOutlet private weak var pickerView: UIPickerView!
     @IBOutlet private weak var lblTitle: UILabel!
 
-    @IBOutlet private weak var bannerImgView: UIImageView!
+    @IBOutlet weak var bannerGetPregnentStackView: UIStackView!
+    @IBOutlet private weak var bannerPeriodTrackingStackView: UIStackView!
+
     // MARK: - Properties
    // private var pickerData: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
     private var pickerData: [String] {
@@ -26,6 +28,7 @@ class LastPeriodLongVC: UIViewController {
     private var pickerLabel = UILabel()
     private var selectedIndex: Int = 5
     internal var periodDetailModelRequest = TryingGetPreganantRequestModel()
+    internal var selectedGoalType: String?
     private var viewModel = LastPeriodViewModel()
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
@@ -73,18 +76,26 @@ class LastPeriodLongVC: UIViewController {
         self.lblTitle.text = "How long did your last period \n last for?"
         pickerView.selectRow(selectedIndex, inComponent: 0, animated: true)
         pickerView.inputView?.backgroundColor = .clear
-        if #available(iOS 14.0, *) {
-            pickerView.subviews.first?.backgroundColor = .clear
-        } else {
-            pickerView.subviews.forEach({
-                $0.isHidden = $0.frame.height < 1.0
-            })
-        }
+//        if #available(iOS 14.0, *) {
+//            pickerView.subviews.first?.backgroundColor = .clear
+//        } else {
+//            pickerView.subviews.forEach({
+//                $0.isHidden = $0.frame.height < 1.0
+//            })
+//        }
         self.viewModel.delegate = self
-        if self.periodDetailModelRequest.goalId == "2"{
-            self.bannerImgView.image = UIImage(named: "periodBanner_3")
+        if self.selectedGoalType == GoalType.periodTracking.rawValue{
+            self.bannerGetPregnentStackView.isHidden = true
+            self.bannerPeriodTrackingStackView.isHidden = false
+
+           // self.bannerImgView.image = UIImage(named: "periodBanner_3")
+
         } else {
-            self.bannerImgView.image = UIImage(named: "banner_4")
+            self.bannerGetPregnentStackView.isHidden = false
+            self.bannerPeriodTrackingStackView.isHidden = true
+
+           // self.bannerImgView.image = UIImage(named: "banner_4")
+
         }
     }
 
@@ -137,11 +148,11 @@ extension LastPeriodLongVC: UIPickerViewDelegate, UIPickerViewDataSource {
         pickerLabel.center = CGPoint(x: pickerView.frame.size.width / 2,
                                      y: pickerView.frame.size.height / 2)
         pickerLabel.text = pickerData[row]
-        if selectedIndex == row {
-            pickerLabel.backgroundColor = UIColor(red: 236.0 / 255.0, green: 220.0 / 255.0, blue: 224.0 / 255.0, alpha: 1.0)
-        } else {
-            pickerLabel.backgroundColor = UIColor.clear
-        }
+//        if selectedIndex == row {
+//            pickerLabel.backgroundColor = UIColor(red: 236.0 / 255.0, green: 220.0 / 255.0, blue: 224.0 / 255.0, alpha: 1.0)
+//        } else {
+//            pickerLabel.backgroundColor = UIColor.clear
+//        }
         return pickerLabel
     }
 

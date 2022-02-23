@@ -13,9 +13,24 @@ class LogYearOfBirthVC: UIViewController {
     @IBOutlet private weak var pickerView: UIPickerView!
     @IBOutlet private weak var lblTitle: UILabel!
     @IBOutlet private weak var btnNext: UIButton!
-
-    @IBOutlet private weak var bannerImgView: UIImageView!
+    @IBOutlet private weak var bannerImgView1: UIImageView!
+    @IBOutlet private weak var lblBanner1: UILabel!
+    @IBOutlet private weak var bannerView1: UIView!
+    @IBOutlet private weak var imgWhiteTick: UIImageView!
+    @IBOutlet private weak var bannerView2: UIView!
+    @IBOutlet private weak var bannerEggImgView2: UIImageView!
+    @IBOutlet private weak var lblBanner2: UILabel!
+    @IBOutlet private weak var bannerView3: UIView!
+    @IBOutlet private weak var bannerEggImgView3: UIImageView!
+    @IBOutlet private weak var lblBanner3: UILabel!
+    @IBOutlet private weak var bannerView4: UIView!
+    @IBOutlet private weak var bannerEggImgView4: UIImageView!
+    @IBOutlet private weak var lblBanner4: UILabel!
+    @IBOutlet private weak var imgLine1: UIView!
+    @IBOutlet private weak var imgLine3: UIView!
+    @IBOutlet private weak var imgLine2: UIView!
     internal var selectedGoalId: Int?
+    internal var selectedGoalType: String?
     internal var tryingPregantYearModelRequest = TryingGetPreganantRequestModel()
     // MARK: - Properties
    // private var pickerData: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
@@ -25,7 +40,7 @@ class LogYearOfBirthVC: UIViewController {
     private var pickerData: [String] {
         let currentYear = Calendar.current.component(.year, from: Date())
         var years = [String]()
-        for indx in (1922...currentYear) {
+        for indx in (1970...currentYear) {
             years.append("\(indx)")
         }
         return years
@@ -68,19 +83,33 @@ class LogYearOfBirthVC: UIViewController {
     private func initialSetup() {
 
         self.btnNext.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
-        pickerView.selectRow(selectedIndex, inComponent: 0, animated: true)
-        pickerView.inputView?.backgroundColor = .clear
-        if #available(iOS 14.0, *) {
-            pickerView.subviews.first?.backgroundColor = .clear
+       pickerView.selectRow(5, inComponent: 0, animated: true)
+        //pickerView.inputView?.backgroundColor = .clear
+//        if #available(iOS 14.0, *) {
+//            pickerView.subviews.first?.backgroundColor = .clear
+//        } else {
+//            pickerView.subviews.forEach({
+//                $0.isHidden = $0.frame.height < 1.0
+//            })
+//        }
+
+        if selectedGoalType == GoalType.periodTracking.rawValue {
+           // self.bannerImgView.image = UIImage(named: "periodBanner")
+            self.bannerView4.isHidden = true
+            self.imgWhiteTick.isHidden = true
+            self.lblBanner1.isHidden = false
+            self.bannerEggImgView2.image = UIImage(named: "whiteEgg")
+            self.lblBanner2.textColor = UIColor(red: 165.0 / 255.0, green: 159.0 / 255.0, blue: 173.0 / 255.0, alpha: 1.0)
+            self.imgLine3.isHidden = true
         } else {
-            pickerView.subviews.forEach({
-                $0.isHidden = $0.frame.height < 1.0
-            })
-        }
-        if selectedGoalId == 2 {
-            self.bannerImgView.image = UIImage(named: "periodBanner")
-        } else {
-            self.bannerImgView.image = UIImage(named: "banner_2")
+            self.bannerView4.isHidden = false
+            self.lblBanner1.isHidden = true
+            self.imgWhiteTick.isHidden = false
+            self.imgLine3.isHidden = false
+            self.bannerEggImgView2.image = UIImage(named: "PinkEgg")
+            self.lblBanner2.textColor = UIColor.white
+           // self.bannerImgView.image = UIImage(named: "banner_2")
+
         }
     }
 
@@ -88,6 +117,7 @@ class LogYearOfBirthVC: UIViewController {
     @IBAction private func tapNextBtn(_ sender: UIButton) {
         fLog()
         self.tryingPregantYearModelRequest.birthYear = self.pickerData[self.selectedIndex]
+
         if isYearSelected == false {
             AlertControllerManager.showToast(message: ErrorMessages.logYourBirth.localizedString, type: .error)
         } else {
@@ -96,6 +126,7 @@ class LogYearOfBirthVC: UIViewController {
             }
            // self.tryingPregantYearModelRequest.birthYear = self.pickerData[self.selectedIndex]
             if let regularOrIrregularCycleVC = Storyboard.Questions.instantiateViewController(identifier: RegularOrIrregularCycleVC.className) as? RegularOrIrregularCycleVC {
+                regularOrIrregularCycleVC.selectedGoalType = self.selectedGoalType
                 regularOrIrregularCycleVC.tryingRegularIregulatTypeRequestModel = self.tryingPregantYearModelRequest
                  self.navigationController?.pushViewController(regularOrIrregularCycleVC, animated: true)
             }
@@ -142,34 +173,27 @@ extension LogYearOfBirthVC: UIPickerViewDelegate, UIPickerViewDataSource {
         if isYearSelected == false {
             if row == 5 {
                 pickerLabel.text = "SELECT"
+                pickerLabel.font = UIFont(name: "SourceSansPro-Bold", size: 22.0)
             } else {
                 pickerLabel.text = pickerData[row]
+                pickerLabel.font = UIFont(name: "SourceSansPro-Semibold", size: 26.0)
             }
 
         } else {
             pickerLabel.text = pickerData[row]
+            pickerLabel.font = UIFont(name: "SourceSansPro-Semibold", size: 26.0)
         }
 
-        if selectedIndex == row {
-            pickerLabel.backgroundColor = UIColor(red: 236.0 / 255.0, green: 220.0 / 255.0, blue: 224.0 / 255.0, alpha: 1.0)
-        } else {
-            pickerLabel.backgroundColor = UIColor.clear
-        }
+//        if selectedIndex == row {
+//            pickerLabel.backgroundColor = UIColor(red: 236.0 / 255.0, green: 220.0 / 255.0, blue: 224.0 / 255.0, alpha: 1.0)
+//        } else {
+//            pickerLabel.backgroundColor = UIColor.clear
+//        }
         return pickerLabel
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         isYearSelected = true
-//        if isYearSelected == false {
-//            isYearSelected = true
-//        } else {
-//            if  self.tryingPregantYearModelRequest.birthYear == nil ||  (self.tryingPregantYearModelRequest.birthYear ?? "") == "" {
-//                isYearSelected = false
-//            } else {
-//                isYearSelected = true
-//            }
-//
-//        }
         selectedIndex = row
         self.pickerView.reloadAllComponents()
 

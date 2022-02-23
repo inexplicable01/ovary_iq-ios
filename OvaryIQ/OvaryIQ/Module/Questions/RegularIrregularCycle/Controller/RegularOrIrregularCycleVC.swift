@@ -10,12 +10,14 @@ class RegularOrIrregularCycleVC: UIViewController {
     // MARK: - IBOutlets
 
     @IBOutlet private weak var btnNext: UIButton!
-    @IBOutlet private weak var bannerImgView: UIImageView!
+    @IBOutlet weak var bannerPeriodTrakingStackView: UIStackView!
+    @IBOutlet weak var getPreganatStackView: UIStackView!
     @IBOutlet private weak var btnRegular: UIButton!
     @IBOutlet private weak var btnIrregular: UIButton!
     @IBOutlet private weak var btnDontKnow: UIButton!
     // MARK: - Properties
     internal var tryingRegularIregulatTypeRequestModel = TryingGetPreganantRequestModel()
+    internal var selectedGoalType: String?
     // MARK: - View Life Cycle Functions
 
     override func viewDidLoad() {
@@ -55,10 +57,15 @@ class RegularOrIrregularCycleVC: UIViewController {
 
     // MARK: - Private Functions
     private func intialSetup() {
-        if self.tryingRegularIregulatTypeRequestModel.goalId == "2" {
-            self.bannerImgView.image = UIImage(named: "PeriodBanner_2")
+        if selectedGoalType == GoalType.periodTracking.rawValue{
+            self.bannerPeriodTrakingStackView.isHidden = false
+            self.getPreganatStackView.isHidden = true
+           // self.bannerImgView.image = UIImage(named: "PeriodBanner_2")
         } else {
-            self.bannerImgView.image = UIImage(named: "banner_3")
+
+            self.bannerPeriodTrakingStackView.isHidden = true
+            self.getPreganatStackView.isHidden = false
+           // self.bannerImgView.image = UIImage(named: "banner_3")
         }
         self.changeNextBtnColor()
     }
@@ -131,6 +138,7 @@ class RegularOrIrregularCycleVC: UIViewController {
             AlertControllerManager.showToast(message: ErrorMessages.selectPeriodCycle.localizedString, type: .error)
         } else {
             if let periodStartDateVC = Storyboard.Questions.instantiateViewController(identifier: PeriodStartDateVC.className) as? PeriodStartDateVC {
+                periodStartDateVC.selectedGoalType = self.selectedGoalType
                 periodStartDateVC.tryingPeriodDetailModelrequest = self.tryingRegularIregulatTypeRequestModel
                  self.navigationController?.pushViewController(periodStartDateVC, animated: true)
             }

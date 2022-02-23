@@ -66,13 +66,13 @@ class TryingGetPregnantVC: UIViewController {
         self.btnNext.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
         pickerView.selectRow(selectedIndex, inComponent: 0, animated: true)
         pickerView.inputView?.backgroundColor = .clear
-        if #available(iOS 14.0, *) {
-            pickerView.subviews.first?.backgroundColor = .clear
-        } else {
-            pickerView.subviews.forEach({
-                $0.isHidden = $0.frame.height < 1.0
-            })
-        }
+//        if #available(iOS 14.0, *) {
+//            pickerView.subviews.first?.backgroundColor = .clear
+//        } else {
+//            pickerView.subviews.forEach({
+//                $0.isHidden = $0.frame.height < 1.0
+//            })
+//        }
     }
 
     // MARK: - Button Actions
@@ -134,11 +134,11 @@ extension TryingGetPregnantVC: UIPickerViewDelegate, UIPickerViewDataSource {
         } else {
             pickerLabel.text = pickerData[row]
         }
-        if selectedIndex == row {
-            pickerLabel.backgroundColor = UIColor(red: 236.0 / 255.0, green: 220.0 / 255.0, blue: 224.0 / 255.0, alpha: 1.0)
-        } else {
-            pickerLabel.backgroundColor = UIColor.clear
-        }
+//        if selectedIndex == row {
+//            pickerLabel.backgroundColor = UIColor(red: 236.0 / 255.0, green: 220.0 / 255.0, blue: 224.0 / 255.0, alpha: 1.0)
+//        } else {
+//            pickerLabel.backgroundColor = UIColor.clear
+//        }
         return pickerLabel
     }
 

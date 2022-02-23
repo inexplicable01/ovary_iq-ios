@@ -70,6 +70,9 @@ class YourGoalVC: UIViewController {
                 if let goalId = self.goalArr.filter({$0.isSelected == true}).first.map({$0.id}) {
                     tryingGetPregnantVC.selectedGoalId = goalId
                 }
+//                if let goalName = self.goalArr.filter({$0.isSelected == true}).first.map({$0.goalType}) {
+//                    tryingGetPregnantVC.goalType = GoalType.getPregnant.rawValue
+//                }
                 self.navigationController?.pushViewController(tryingGetPregnantVC, animated: true)
             }
 
@@ -78,7 +81,9 @@ class YourGoalVC: UIViewController {
                if let goalId = self.goalArr.filter({$0.isSelected == true}).first.map({$0.id}) {
                    logYearOfBirthVC.selectedGoalId = goalId
                }
-               
+               if let goalName = self.goalArr.filter({$0.isSelected == true}).first.map({$0.goalType}) {
+                   logYearOfBirthVC.selectedGoalType = GoalType.periodTracking.rawValue
+               }
                self.navigationController?.pushViewController(logYearOfBirthVC, animated: true)
             }
 

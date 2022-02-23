@@ -70,8 +70,3 @@ class HomeVC: UIViewController {
        self.present(alert, animated: true, completion: nil)
     }
 }
-//extension HomeVC: HomeViewModelDelegate {
-//    func sucessLogoutApiResponse() {
-//        Helper.showLoginScreen()
-//    }
-//}
