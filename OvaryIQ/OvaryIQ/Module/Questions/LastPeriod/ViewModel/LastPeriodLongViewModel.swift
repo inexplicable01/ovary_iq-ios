@@ -56,6 +56,7 @@ extension LastPeriodViewModel {
                     do {
                         let encodedDictionary = try JSONDecoder().decode(SaveDetailDataModel.self, from: JSONSerialization.data(withJSONObject: response))
                         dLog(message: "saveUserGoalResponse:- \(encodedDictionary)")
+                        kUserDefaults.isGoalSaved = true
                         self.delegate?.sucesssSaveGoalsApiResponse?()
 
                     } catch {

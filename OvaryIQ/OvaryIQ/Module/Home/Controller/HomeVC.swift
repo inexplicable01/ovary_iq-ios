@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SwiftMessages
 
-class HomeVC: UIViewController {
+class HomeVC: BaseViewC {
     // MARK: - IBOutlets
     // MARK: - Properties
     private var viewModel = HomeViewModel()

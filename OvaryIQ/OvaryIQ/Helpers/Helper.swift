@@ -11,7 +11,8 @@ import Lottie
 class Helper {
     //MARK: -  Show Home Screen as root controller
     class func showHomeScreen() {
-        let vc = Storyboard.Home.instantiateViewController(withIdentifier: HomeVC.className) as! HomeVC
+       // let vc = Storyboard.Home.instantiateViewController(withIdentifier: HomeVC.className) as! HomeVC
+        let vc = Storyboard.Home.instantiateViewController(withIdentifier: TabBarController.className) as! TabBarController
         let nav = UINavigationController.init(rootViewController: vc)
         nav.isNavigationBarHidden = true
         if let window = UIApplication.shared.windows.first {

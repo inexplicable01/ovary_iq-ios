@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class RegularOrIrregularCycleVC: UIViewController {
+class RegularOrIrregularCycleVC: BaseViewC {
     // MARK: - IBOutlets
 
     @IBOutlet private weak var btnNext: UIButton!

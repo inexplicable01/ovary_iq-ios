@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TryingGetPregnantVC: UIViewController {
+class TryingGetPregnantVC: BaseViewC {
     // MARK: - IBOutlets
     @IBOutlet private weak var pickerView: UIPickerView!
     @IBOutlet private weak var btnNext: UIButton!

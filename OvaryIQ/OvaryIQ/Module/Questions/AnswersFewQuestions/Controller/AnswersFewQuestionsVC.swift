@@ -16,8 +16,6 @@ class AnswersFewQuestionsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialSetUp()
-        
-
         // Do any additional setup after loading the view.
     }
 

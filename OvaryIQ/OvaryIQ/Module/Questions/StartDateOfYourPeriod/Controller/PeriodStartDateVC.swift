@@ -73,7 +73,7 @@ class PeriodStartDateVC: UIViewController {
         self.viewSide.layer.maskedCorners = [.layerMaxXMaxYCorner,
                                              .layerMaxXMinYCorner]
      self.calendar.appearance.titleFont = UIFont(name: "SourceSansPro-Bold", size: 16)
-        self.calendarSetUp()
+     self.calendarSetUp()
       //  self.selectedPeriodStartDate = Int(self.dateFormatter.string(from: Date()))
         if self.selectedGoalType == GoalType.periodTracking.rawValue {
             self.bannerPeriodTarckingStackView.isHidden = true

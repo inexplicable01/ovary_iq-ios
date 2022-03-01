@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LastPeriodLongVC: UIViewController {
+class LastPeriodLongVC: BaseViewC {
     // MARK: - IBOutlets
     @IBOutlet private weak var btnSubmit: UIButton!
     @IBOutlet private weak var pickerView: UIPickerView!

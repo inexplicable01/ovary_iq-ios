@@ -20,4 +20,3 @@ struct AuthLoginRequestModel: Codable {
         case mediaLoginId = "media_login_id"
     }
 }
-

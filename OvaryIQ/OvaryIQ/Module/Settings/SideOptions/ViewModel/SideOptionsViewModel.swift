@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-class ProfileViewModel {
+class SideOptionsViewModel {
     // MARK: - Properties
     private var restEventCallBackID: String?
     private let coreEngine = CoreEngine.shared
@@ -32,7 +32,7 @@ class ProfileViewModel {
         }
     }
 }
-extension ProfileViewModel {
+extension SideOptionsViewModel {
 
     internal func registerRestEventCallBack() {
         fLog()
