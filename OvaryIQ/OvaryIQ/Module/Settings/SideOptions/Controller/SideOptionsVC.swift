@@ -10,12 +10,13 @@ struct Profile {
     var title: String?
     var img: UIImage?
     var isHideGreyLine: Bool?
-    init(title: String, img: UIImage, isHideGreyLine: Bool) {
+    var controller: String?
+    init(title: String, img: UIImage, isHideGreyLine: Bool,controller: String) {
         self.title = title
         self.img = img
         self.isHideGreyLine = isHideGreyLine
+        self.controller = controller
     }
-
 }
 class SideOptionsVC: UIViewController {
     // MARK: - IBOutlets
@@ -23,7 +24,7 @@ class SideOptionsVC: UIViewController {
     @IBOutlet private weak var btnLogout: UIButton!
     // MARK: - Properties
     private var viewModel = SideOptionsViewModel()
-    private var profileArr = [Profile(title: "My Profile", img: UIImage(named: "myProfile")!, isHideGreyLine: false), Profile(title: "Settings", img: UIImage(named: "settings")!, isHideGreyLine: true)]
+    private var profileArr = [Profile(title: "My Profile", img: UIImage(named: "myProfile")!, isHideGreyLine: false, controller: MyProfileVC.className), Profile(title: "Settings", img: UIImage(named: "settings")!, isHideGreyLine: true, controller: SettingVC.className)]
 
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
@@ -74,6 +75,17 @@ class SideOptionsVC: UIViewController {
 
     @IBAction private func tapBtnLogout(_ sender: Any) {
         fLog()
+        // create the alert
+         let alert = UIAlertController(title: Text.appName.localizedString, message: Text.logOut.localizedString, preferredStyle: UIAlertController.Style.alert)
+
+    // add an action (button)
+         alert.addAction(UIAlertAction.init(title: Text.oks.localizedString,style: UIAlertAction.Style.default,handler: { (action) in
+             self.viewModel.callApiTologout()
+    }))
+         alert.addAction(UIAlertAction.init(title: Text.cancel.localizedString, style: UIAlertAction.Style.default, handler: { (action) in
+
+    }))
+    self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -89,5 +101,20 @@ extension SideOptionsVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         return UITableViewCell()
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         let viewController = Storyboard.Settings.instantiateViewController(identifier: profileArr[indexPath.row].controller ?? "")
+            self.navigationController?.pushViewController(viewController, animated: true)
+//        if indexPath.row == 0 {
+//            if let myProfileVC = Storyboard.Settings.instantiateViewController(withIdentifier: MyProfileVC.className) as? MyProfileVC {
+//                self.navigationController?.pushViewController(myProfileVC, animated: true)
+//            }
+//        } else {
+//            if let settingVC = Storyboard.Settings.instantiateViewController(withIdentifier: SettingVC.className) as? SettingVC {
+//                self.navigationController?.pushViewController(settingVC, animated: true)
+//            }
+//        }
+
     }
 }

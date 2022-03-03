@@ -34,3 +34,5 @@
 "msg_expire_otpCode" = "The code has expired.";
 "msg_select_birthLog" = "Please select your birth year.";
 "msg_select_periodSelectDate" = "Please select a date.";
+"msg_empty_currentPassword" = "Please enter current password.";
+"msg_empty_newPassword" = "Please enter new password.";

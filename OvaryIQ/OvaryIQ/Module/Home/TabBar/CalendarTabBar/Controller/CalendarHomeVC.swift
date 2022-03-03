@@ -110,7 +110,9 @@ class CalendarHomeVC: BaseViewC {
 extension CalendarHomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     // MARK: - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        let logPeriodsOptionsBottomSheetController = Storyboard.Home.instantiateViewController(identifier: LogPeriodsOptionsBottomSheetController.className)
+        logPeriodsOptionsBottomSheetController.modalPresentationStyle = .overFullScreen
+        self.navigationController?.present(logPeriodsOptionsBottomSheetController, animated: true, completion: nil)
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

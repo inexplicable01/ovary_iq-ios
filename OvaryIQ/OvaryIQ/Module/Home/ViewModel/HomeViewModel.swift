@@ -27,7 +27,6 @@ class HomeViewModel {
     }
 
     // MARK: - Private Functions - API Calls
-   
 
      func callApiTologout() {
          fLog()

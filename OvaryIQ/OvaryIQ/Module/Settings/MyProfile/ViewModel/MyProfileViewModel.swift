@@ -1,17 +1,15 @@
 //
-//  ProfileVM.swift
+//  MyProfileViewModel.swift
 //  OvaryIQ
 //
-//  Created by Mobcoder on 23/02/22.
+//  Created by Mobcoder on 02/03/22.
 //
 
 import Foundation
-import UIKit
-class SideOptionsViewModel {
+class MyProfileViewModel {
     // MARK: - Properties
     private var restEventCallBackID: String?
     private let coreEngine = CoreEngine.shared
-    //internal var validateSocialIdRequestModel = ValidateSocialIdRequest()
     internal var delegate: AuthOptionViewModelDelegate?
     internal var viewContreoller = UIViewController()
     // MARK: - Init & AuthOptionViewModelProtocol
@@ -31,11 +29,11 @@ class SideOptionsViewModel {
         }
     }
     // MARK: - Private Functions - API Calls
-     func callApiTologout() {
+     func callApiTogetUserProfile() {
          fLog()
 //         let params = self.authSignupRequestModel.dictionary
-         dLog(message: "Rest Event Name :: \(RestEvents.logout)")
-         let restEvent = RestEngineEvents(id: RestEvents.logout, obj: [:])
+         dLog(message: "Rest Event Name :: \(RestEvents.userProfile)")
+         let restEvent = RestEngineEvents(id: RestEvents.userProfile, obj: [:])
          restEvent.showActivityIndicator = true
         self.coreEngine.addEngineEventsWithOutWait(evObj: restEvent)
         // self.coreEngine.addEvent(evObj: restEvent)

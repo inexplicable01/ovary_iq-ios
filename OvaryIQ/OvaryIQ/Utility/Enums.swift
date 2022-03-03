@@ -28,3 +28,17 @@ enum GoalType: String {
    case getPregnant = "Get Pregnant"
    case periodTracking = "Period Tracking"
 }
+// MARK: - Log Period SubTypesImages
+enum LogPeriodSubTypeImages: String {
+    // LOGPERIOD
+    case regularFlow = "South_America-Argentina"
+    case heavyBledding = "South_America-Brazil"
+
+    var image: String? {
+        return  self.rawValue
+    }
+}
+//func geticon(img: String)-> UIImage{
+//    LogPeriodSubTypeImages.img.rawvalue
+//
+//}

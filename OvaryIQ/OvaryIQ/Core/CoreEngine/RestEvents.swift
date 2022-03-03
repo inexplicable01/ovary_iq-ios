@@ -22,6 +22,11 @@ enum RestEvents: Int {
     case verifyCode
     case resetPassword
     case networkError
+    case getDataForLogPeriod
+    case saveLogPeriod
+    case getUserLogPeriodData
+    case change_password
+    case userProfile
     
 }
 

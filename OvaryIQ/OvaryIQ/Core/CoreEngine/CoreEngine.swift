@@ -198,9 +198,9 @@ class CoreEngine: EventLoop {
             case .logout:
                 if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
                     notifyToGUI = true
-                    DispatchQueue.main.async {
-                            self.logoutMethod()
-                    }
+                    AppConfig.defautMainQ.async {
+                        self.logoutMethod()
+                }
             }
             case .fetchGoal:
                 if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
@@ -222,6 +222,27 @@ class CoreEngine: EventLoop {
                 if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
                     notifyToGUI = true
             }
+            case .getDataForLogPeriod:
+                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
+                    notifyToGUI = true
+                }
+            case .saveLogPeriod:
+                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
+                    notifyToGUI = true
+                }
+            case .getUserLogPeriodData:
+                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
+                    notifyToGUI = true
+                }
+            case .change_password:
+                if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
+                    notifyToGUI = true
+               }
+            case .userProfile:
+              if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
+                        notifyToGUI = true
+              }
+
             default :
                 if let responseDict = evobj.object as? [String: Any],
                     !self.validateResponseError(response: responseDict) {

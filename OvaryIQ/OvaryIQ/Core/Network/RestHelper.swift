@@ -53,9 +53,7 @@ class RestHelper: NSObject {
     }
 
     public func processRestRequest(evObj: RestEngineEvents) {
-
         fLog()
-
         let restEventId = RestEvents(rawValue: evObj.eventID)!
 
         switch restEventId {
@@ -113,6 +111,36 @@ class RestHelper: NSObject {
               } else {
                  dLog(message: "Parameter Missing :: \(APIName.ResetPassword)")
              }
+            case .getDataForLogPeriod:
+                if let parameters = evObj.object as? [String: Any] {
+                   evObj.apiRequest = APIRouter.getDataForLogPeriod(params: parameters)
+                } else {
+                   dLog(message: "Parameter Missing :: \(APIName.getDataForLogPeriod)")
+               }
+            case .saveLogPeriod:
+                if let parameters = evObj.object as? [String: Any] {
+                   evObj.apiRequest = APIRouter.saveLogPeriod(params: parameters)
+                } else {
+                   dLog(message: "Parameter Missing :: \(APIName.saveLogPeriod)")
+               }
+            case .getUserLogPeriodData:
+                if let parameters = evObj.object as? [String: Any] {
+                   evObj.apiRequest = APIRouter.getUserLogPeriodData(params: parameters)
+                } else {
+                   dLog(message: "Parameter Missing :: \(APIName.getUserLogPeriodData)")
+               }
+            case .change_password:
+                if let parameters = evObj.object as? [String: Any] {
+                   evObj.apiRequest = APIRouter.ResetPassword(params: parameters)
+                } else {
+                   dLog(message: "Parameter Missing :: \(APIName.ResetPassword)")
+               }
+            case .userProfile:
+                if let parameters = evObj.object as? [String: Any] {
+                   evObj.apiRequest = APIRouter.userProfile(params: parameters)
+                } else {
+                   dLog(message: "Parameter Missing :: \(APIName.ResetPassword)")
+               }
         }
 
         self.addRequestInScheduler(requestObj: evObj)

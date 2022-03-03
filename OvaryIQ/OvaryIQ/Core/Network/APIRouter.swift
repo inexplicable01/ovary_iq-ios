@@ -18,16 +18,21 @@ enum APIRouter: URLRequestConvertible {
     case forgotPassword(params: Parameters)
     case verifyCode(params: Parameters)
     case ResetPassword(params: Parameters)
+    case getDataForLogPeriod(params: Parameters)
+    case getUserLogPeriodData(params: Parameters)
+    case saveLogPeriod(params: Parameters)
+    case changePassword(params: Parameters)
+    case userProfile(params: Parameters)
 
 
     var method: HTTPMethod {
 
         switch self {
         case .signUp,
-                .login, .logOut, .savezGoalsDetails, .forgotPassword, .ResetPassword:
+                    .login, .logOut, .savezGoalsDetails, .forgotPassword, .ResetPassword, .saveLogPeriod, .changePassword:
             return .post
 
-        case .fetchGoals,.verifyCode:
+            case .fetchGoals,.verifyCode, .getDataForLogPeriod, .getUserLogPeriodData, .userProfile:
             return .get
 
         }
@@ -43,6 +48,12 @@ enum APIRouter: URLRequestConvertible {
         case .forgotPassword: return APIName.ForgotPassword
         case .verifyCode: return APIName.VerifyCode
         case .ResetPassword: return APIName.ResetPassword
+        case .getDataForLogPeriod: return APIName.getDataForLogPeriod
+        case .getUserLogPeriodData: return APIName.getUserLogPeriodData
+        case .saveLogPeriod: return APIName.saveLogPeriod
+        case .changePassword: return APIName.changePassword
+        case .userProfile: return APIName.userProfile
+
       }
     }
 
@@ -70,13 +81,20 @@ enum APIRouter: URLRequestConvertible {
              .logOut(let params),
              .savezGoalsDetails(let params),
              .forgotPassword(let params),
-             .ResetPassword(let params):
+             .ResetPassword(let params),
+             .getUserLogPeriodData(let params),
+             .getDataForLogPeriod(let params),
+             .saveLogPeriod(let params),
+             .changePassword(let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
 
         case .fetchGoals(let params):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
 
-        case   .verifyCode(let params):
+        case .userProfile(let params):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
+
+         case   .verifyCode(let params):
             if let url = urlRequest.url,
                let code = params["code"] as? Int {
                 var urlStr = url.absoluteString

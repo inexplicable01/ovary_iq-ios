@@ -114,6 +114,12 @@
 		A77C7BC827C778DB006D01A1 /* CalendarHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C7BC727C778DB006D01A1 /* CalendarHomeViewModel.swift */; };
 		A77C7BCD27C7886D006D01A1 /* PredictedPeriodOtionsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C7BCC27C7886D006D01A1 /* PredictedPeriodOtionsCVC.swift */; };
 		A77C7BD027C89040006D01A1 /* MyProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C7BCF27C89040006D01A1 /* MyProfileTVC.swift */; };
+		A77D7CAC27CDDE8400695974 /* LogPeriodsOptionsBottomSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D7CAB27CDDE8400695974 /* LogPeriodsOptionsBottomSheetController.swift */; };
+		A77D7CAF27CE263100695974 /* LogPeriodSubCategotyCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D7CAE27CE263100695974 /* LogPeriodSubCategotyCVC.swift */; };
+		A7820BB927CF28F70051ED3A /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7820BB827CF28F70051ED3A /* SettingVC.swift */; };
+		A7820BBC27CF42B60051ED3A /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7820BBB27CF42B60051ED3A /* ChangePasswordViewModel.swift */; };
+		A7820BBF27CF6D1D0051ED3A /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7820BBE27CF6D1D0051ED3A /* MyProfileViewModel.swift */; };
+		A7820BC227CF6D6B0051ED3A /* MyProfileDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7820BC127CF6D6B0051ED3A /* MyProfileDataModel.swift */; };
 		A78AECE227A2960E003E05C2 /* SharedPref.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AECE127A2960E003E05C2 /* SharedPref.swift */; };
 		A78AECE427A2D1DC003E05C2 /* BaseViewC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AECE327A2D1DC003E05C2 /* BaseViewC.swift */; };
 		A78AECE627A2D2B0003E05C2 /* AuthSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AECE527A2D2B0003E05C2 /* AuthSignUpViewModel.swift */; };
@@ -290,6 +296,12 @@
 		A77C7BC727C778DB006D01A1 /* CalendarHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHomeViewModel.swift; sourceTree = "<group>"; };
 		A77C7BCC27C7886D006D01A1 /* PredictedPeriodOtionsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictedPeriodOtionsCVC.swift; sourceTree = "<group>"; };
 		A77C7BCF27C89040006D01A1 /* MyProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileTVC.swift; sourceTree = "<group>"; };
+		A77D7CAB27CDDE8400695974 /* LogPeriodsOptionsBottomSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogPeriodsOptionsBottomSheetController.swift; sourceTree = "<group>"; };
+		A77D7CAE27CE263100695974 /* LogPeriodSubCategotyCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogPeriodSubCategotyCVC.swift; sourceTree = "<group>"; };
+		A7820BB827CF28F70051ED3A /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		A7820BBB27CF42B60051ED3A /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		A7820BBE27CF6D1D0051ED3A /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
+		A7820BC127CF6D6B0051ED3A /* MyProfileDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileDataModel.swift; sourceTree = "<group>"; };
 		A78AECE127A2960E003E05C2 /* SharedPref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPref.swift; sourceTree = "<group>"; };
 		A78AECE327A2D1DC003E05C2 /* BaseViewC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewC.swift; sourceTree = "<group>"; };
 		A78AECE527A2D2B0003E05C2 /* AuthSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignUpViewModel.swift; sourceTree = "<group>"; };
@@ -855,6 +867,7 @@
 			isa = PBXGroup;
 			children = (
 				A76C61CB27C652D8006CBE02 /* Settings.storyboard */,
+				A7820BB627CF28A90051ED3A /* AppSettings */,
 				A7E1975D27C8CFAC0012377B /* MyProfile */,
 				A7E1976127C8D4EF0012377B /* ChangePassword */,
 				A7E1975C27C8CCD00012377B /* SideOptions */,
@@ -1282,12 +1295,77 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A77D7CA927CDDE0F00695974 /* BottomSheetsOptions */ = {
+			isa = PBXGroup;
+			children = (
+				A77D7CAD27CE260D00695974 /* ViewModel */,
+				A77D7CAA27CDDE4900695974 /* Controller */,
+			);
+			path = BottomSheetsOptions;
+			sourceTree = "<group>";
+		};
+		A77D7CAA27CDDE4900695974 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A77D7CAB27CDDE8400695974 /* LogPeriodsOptionsBottomSheetController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A77D7CAD27CE260D00695974 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A77D7CAE27CE263100695974 /* LogPeriodSubCategotyCVC.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A77F96BD27953A160083B5F7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				A73244E2278E8E2A008FDCF0 /* AuthOptionVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A7820BB627CF28A90051ED3A /* AppSettings */ = {
+			isa = PBXGroup;
+			children = (
+				A7820BB727CF28C10051ED3A /* Controller */,
+			);
+			path = AppSettings;
+			sourceTree = "<group>";
+		};
+		A7820BB727CF28C10051ED3A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A7820BB827CF28F70051ED3A /* SettingVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A7820BBA27CF42A00051ED3A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A7820BBB27CF42B60051ED3A /* ChangePasswordViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A7820BBD27CF6CFC0051ED3A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A7820BBE27CF6D1D0051ED3A /* MyProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A7820BC027CF6D2D0051ED3A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A7820BC127CF6D6B0051ED3A /* MyProfileDataModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A78AECE027A295F9003E05C2 /* PropertyWrappers */ = {
@@ -1438,6 +1516,7 @@
 			children = (
 				A7DF7E0927C73A5B00C7160B /* TabBarController.swift */,
 				A77C7BC427C77795006D01A1 /* ProjectionTabBar */,
+				A77D7CA927CDDE0F00695974 /* BottomSheetsOptions */,
 				A77C7BC327C7777F006D01A1 /* CalendarTabBar */,
 			);
 			path = TabBar;
@@ -1456,6 +1535,8 @@
 		A7E1975D27C8CFAC0012377B /* MyProfile */ = {
 			isa = PBXGroup;
 			children = (
+				A7820BC027CF6D2D0051ED3A /* Model */,
+				A7820BBD27CF6CFC0051ED3A /* ViewModel */,
 				A7E1975E27C8CFD70012377B /* Controller */,
 			);
 			path = MyProfile;
@@ -1472,6 +1553,7 @@
 		A7E1976127C8D4EF0012377B /* ChangePassword */ = {
 			isa = PBXGroup;
 			children = (
+				A7820BBA27CF42A00051ED3A /* ViewModel */,
 				A7E1976527C8D5C60012377B /* Model */,
 				A7E1976227C8D4FD0012377B /* Controller */,
 			);
@@ -1723,6 +1805,7 @@
 				A76C61CF27C65B61006CBE02 /* SideOptionsVC.swift in Sources */,
 				A76D64E427A26A0700397D1C /* AlertControllerManager.swift in Sources */,
 				A7DFB83C27BE17A100D66360 /* UIImageView+Extensions.swift in Sources */,
+				A7820BC227CF6D6B0051ED3A /* MyProfileDataModel.swift in Sources */,
 				A78AECE627A2D2B0003E05C2 /* AuthSignUpViewModel.swift in Sources */,
 				A7CE54832796B9C200191A7B /* Constants+TextsMessages.swift in Sources */,
 				A7717F5E27AD49BD00422539 /* TryingGetPrefnantRequestModel.swift in Sources */,
@@ -1738,6 +1821,7 @@
 				A7BA6DB427CC8CA300AEAEE5 /* MedicationsOptionsCVC.swift in Sources */,
 				A74C323227919F1200763899 /* BaseTableViewCell.swift in Sources */,
 				A76D64E027A267C200397D1C /* Venue.swift in Sources */,
+				A7820BBC27CF42B60051ED3A /* ChangePasswordViewModel.swift in Sources */,
 				A77AD2BE27AC0A71007C389F /* HomeViewModel.swift in Sources */,
 				A7DCAB3627BF5BEA0018FC76 /* FSCalendarStickyHeader.m in Sources */,
 				A7CE543E27967B7B00191A7B /* UITableView+Extension.swift in Sources */,
@@ -1760,6 +1844,7 @@
 				A7E1976027C8D0010012377B /* MyProfileVC.swift in Sources */,
 				A702267927902E51000E1C9F /* UIButton+Extensions.swift in Sources */,
 				A7DCAB3227BF5BEA0018FC76 /* FSCalendarCollectionView.m in Sources */,
+				A7820BB927CF28F70051ED3A /* SettingVC.swift in Sources */,
 				A7604583279ED91E008655B6 /* UIViewController+Extension.swift in Sources */,
 				A76C61D327C65BF1006CBE02 /* SideOptionsViewModel.swift in Sources */,
 				A77C7BD027C89040006D01A1 /* MyProfileTVC.swift in Sources */,
@@ -1776,6 +1861,7 @@
 				A76D64B827A0670D00397D1C /* RequestScheduler.swift in Sources */,
 				A7E1976727C8FB1B0012377B /* ChangePasswordRequestModel.swift in Sources */,
 				A77AD2C427AC0D4A007C389F /* GoalViewModel.swift in Sources */,
+				A77D7CAC27CDDE8400695974 /* LogPeriodsOptionsBottomSheetController.swift in Sources */,
 				A7069E5A278EC3C90028AA68 /* UIView+Extensions.swift in Sources */,
 				A7717F6E27AE9B3000422539 /* ImportantInformationVC.swift in Sources */,
 				A77C7BC827C778DB006D01A1 /* CalendarHomeViewModel.swift in Sources */,
@@ -1796,7 +1882,9 @@
 				A797A1E4279EC03200AB3896 /* Utility.swift in Sources */,
 				A77AD2A127A8EBD4007C389F /* SocialUserInfo.swift in Sources */,
 				A76D64DC27A2677900397D1C /* UserPhoto.swift in Sources */,
+				A77D7CAF27CE263100695974 /* LogPeriodSubCategotyCVC.swift in Sources */,
 				A753833B27B138E600F9FE83 /* ResetPasswordViewModel.swift in Sources */,
+				A7820BBF27CF6D1D0051ED3A /* MyProfileViewModel.swift in Sources */,
 				A7717F6527AE50AF00422539 /* SaveFetchGoalDataModel.swift in Sources */,
 				A753833D27B1392700F9FE83 /* ResetPasswordRequestModel.swift in Sources */,
 				A720FF43278ED70A00893720 /* AuthLoginVC.swift in Sources */,
