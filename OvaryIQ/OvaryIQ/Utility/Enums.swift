@@ -22,6 +22,7 @@ enum PeriodCycleType: String {
 // MARK: - dateformat
 enum DateFormat: String {
     case dayMonthYear = "dd/MM/yyyy"
+    case yearMonthDate = "yyyy-MM-dd"
     case day = "dd"
 }
 enum GoalType: String {
@@ -31,7 +32,7 @@ enum GoalType: String {
 
 // MARK: - Log Period SubTypesImages
 enum LogPeriodCategoryType: String {
-    // LOGPERIOD
+    // LOGPERIOD CATEGORY
     case logPeriod = "Log Period"
     case medication = "Medication"
     case procedure = "Procedure"
@@ -172,4 +173,14 @@ enum LogPeriodCategoryTypeImage: String {
         return self.rawValue
     }
 
+}
+
+// MARK: -  For  return Images
+enum UIImageType: String {
+    case bloodDrop = "blood_drop"
+    case myProfile = "myProfile"
+    case settings = "settings"
+    var image: UIImage? {
+        return UIImage(named: rawValue)
+    }
 }

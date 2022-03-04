@@ -10,7 +10,6 @@ import Foundation
 struct GetDataForLogPeriodDataModel: Codable {
     var message: String?
     var medicalOptionsList: [MedicalOptionsListDataModel]
-    
     enum CodingKeys: String, CodingKey {
         case message
         case medicalOptionsList = "medicalOptionsList"
@@ -26,7 +25,7 @@ struct MedicalOptionsListDataModel: Codable {
 // MARK: - SubCategoryList
 struct SubCategoryListDataModel: Codable {
     var id: Int?
-    var isSelected: Bool?
+    var isSelected: Bool = false
     var periodFlowName: String?
     var periodFlowIcon: String?
     var medicationName: String?

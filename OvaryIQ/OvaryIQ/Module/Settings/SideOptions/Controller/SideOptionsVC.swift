@@ -26,7 +26,7 @@ class SideOptionsVC: UIViewController {
     @IBOutlet private weak var btnLogout: UIButton!
     // MARK: - Properties
     private var viewModel = SideOptionsViewModel()
-    private var profileArr = [Profile(title: "My Profile", img: UIImage(named: "myProfile")!, isHideGreyLine: false, controller: MyProfileVC.className), Profile(title: "Settings", img: UIImage(named: "settings")!, isHideGreyLine: true, controller: SettingVC.className)]
+    private var profileArr = [Profile(title: Text.myProfile.localizedString, img: UIImageType.myProfile.image!, isHideGreyLine: false, controller: MyProfileVC.className), Profile(title: Text.settings.localizedString, img: UIImageType.settings.image!, isHideGreyLine: true, controller: SettingVC.className)]
 
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
@@ -110,15 +110,5 @@ extension SideOptionsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          let viewController = Storyboard.Settings.instantiateViewController(identifier: profileArr[indexPath.row].controller ?? "")
             self.navigationController?.pushViewController(viewController, animated: true)
-//        if indexPath.row == 0 {
-//            if let myProfileVC = Storyboard.Settings.instantiateViewController(withIdentifier: MyProfileVC.className) as? MyProfileVC {
-//                self.navigationController?.pushViewController(myProfileVC, animated: true)
-//            }
-//        } else {
-//            if let settingVC = Storyboard.Settings.instantiateViewController(withIdentifier: SettingVC.className) as? SettingVC {
-//                self.navigationController?.pushViewController(settingVC, animated: true)
-//            }
-//        }
-
     }
 }

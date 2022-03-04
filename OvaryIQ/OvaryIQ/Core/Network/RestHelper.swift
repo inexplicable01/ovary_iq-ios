@@ -141,6 +141,36 @@ class RestHelper: NSObject {
                 } else {
                    dLog(message: "Parameter Missing :: \(APIName.userProfile)")
                }
+            case .saveUserMedications:
+                if let parameters = evObj.object as? [String: Any] {
+                   evObj.apiRequest = APIRouter.saveUserMedications(params: parameters)
+                } else {
+                   dLog(message: "Parameter Missing :: \(APIName.saveUserMedications)")
+               }
+            case .saveUserProcedures:
+                if let parameters = evObj.object as? [String: Any] {
+                   evObj.apiRequest = APIRouter.saveUserProcedures(params: parameters)
+                } else {
+                   dLog(message: "Parameter Missing :: \(APIName.saveUserProcedures)")
+               }
+            case .saveUserActivities:
+                if let parameters = evObj.object as? [String: Any] {
+                   evObj.apiRequest = APIRouter.saveUserActivities(params: parameters)
+                } else {
+                   dLog(message: "Parameter Missing :: \(APIName.saveUserActivities)")
+               }
+            case .saveUserSymptoms:
+                if let parameters = evObj.object as? [String: Any] {
+                   evObj.apiRequest = APIRouter.saveUserSymptoms(params: parameters)
+                } else {
+                   dLog(message: "Parameter Missing :: \(APIName.saveUserSymptoms)")
+               }
+            case .saveUserPregnancyTests:
+                if let parameters = evObj.object as? [String: Any] {
+                   evObj.apiRequest = APIRouter.saveUserPregnancyTests(params: parameters)
+                } else {
+                   dLog(message: "Parameter Missing :: \(APIName.saveUserPregnancyTests)")
+               }
         }
 
         self.addRequestInScheduler(requestObj: evObj)

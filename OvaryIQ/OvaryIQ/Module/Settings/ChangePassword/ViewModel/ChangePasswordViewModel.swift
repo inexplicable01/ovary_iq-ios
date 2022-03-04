@@ -67,7 +67,6 @@ extension ChangePasswordViewModel {
                 } else {
                     AlertControllerManager.showToast(message: ErrorMessages.somethingWentWrong.localizedString, type: .error)
                 }
-
                 default:
                     break
                 }

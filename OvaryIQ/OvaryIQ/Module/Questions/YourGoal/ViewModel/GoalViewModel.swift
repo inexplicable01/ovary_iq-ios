@@ -33,7 +33,7 @@ class GoalViewModel {
     // MARK: - Private Functions - API Calls
      func callApiToFetchGoalResponse() {
          fLog()
-         let params = [String : Any]()
+         let params = [String: Any]()
          dLog(message: "Rest Event Name :: \(RestEvents.fetchGoal) and Params :: \(String(describing: params))")
          let restEvent = RestEngineEvents(id: RestEvents.fetchGoal, obj: params)
          restEvent.showActivityIndicator = true

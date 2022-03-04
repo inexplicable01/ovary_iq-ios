@@ -27,7 +27,11 @@ enum RestEvents: Int {
     case getUserLogPeriodData
     case change_password
     case userProfile
-    
+    case saveUserMedications
+    case saveUserProcedures
+    case saveUserActivities
+    case saveUserSymptoms
+    case saveUserPregnancyTests
 }
 
 class RestEngineEvents: EngineEvents {

@@ -103,7 +103,7 @@ class LastPeriodLongVC: BaseViewC {
     @IBAction private func tapBtnSubmit(_ sender: Any) {
         fLog()
         self.periodDetailModelRequest.totalDaysOfLastPeriod = Int(self.pickerData[self.selectedIndex])
-        self.viewModel.fetchGoalRequestModel =  self.periodDetailModelRequest
+        self.viewModel.fetchGoalRequestModel = self.periodDetailModelRequest
         self.viewModel.callApiTosaveFetchGoalDetails()
     }
 

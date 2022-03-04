@@ -20,19 +20,24 @@ enum APIRouter: URLRequestConvertible {
     case ResetPassword(params: Parameters)
     case getDataForLogPeriod(params: Parameters)
     case getUserLogPeriodData(params: Parameters)
-    case saveLogPeriod(params: Parameters)
     case changePassword(params: Parameters)
     case userProfile(params: Parameters)
+    case saveUserMedications(params: Parameters)
+    case saveUserProcedures(params: Parameters)
+    case saveUserActivities(params: Parameters)
+    case saveUserSymptoms(params: Parameters)
+    case saveUserPregnancyTests(params: Parameters)
+    case saveLogPeriod(params: Parameters)
 
 
     var method: HTTPMethod {
 
         switch self {
         case .signUp,
-                    .login, .logOut, .savezGoalsDetails, .forgotPassword, .ResetPassword, .saveLogPeriod, .changePassword:
+                    .login, .logOut, .savezGoalsDetails, .forgotPassword, .ResetPassword, .saveLogPeriod, .changePassword, .saveUserMedications, .saveUserProcedures, .saveUserActivities, .saveUserSymptoms, .saveUserPregnancyTests:
             return .post
 
-            case .fetchGoals,.verifyCode, .getDataForLogPeriod, .getUserLogPeriodData, .userProfile:
+        case .fetchGoals,.verifyCode, .getDataForLogPeriod, .getUserLogPeriodData, .userProfile:
             return .get
 
         }
@@ -53,8 +58,12 @@ enum APIRouter: URLRequestConvertible {
         case .saveLogPeriod: return APIName.saveLogPeriod
         case .changePassword: return APIName.changePassword
         case .userProfile: return APIName.userProfile
-
-      }
+        case .saveUserMedications: return APIName.saveUserMedications
+        case .saveUserProcedures: return APIName.saveUserProcedures
+        case .saveUserActivities: return APIName.saveUserActivities
+        case .saveUserSymptoms: return APIName.saveUserSymptoms
+        case .saveUserPregnancyTests: return APIName.saveUserPregnancyTests
+        }
     }
 
     //MARK: - URLRequestConvertible
@@ -84,8 +93,13 @@ enum APIRouter: URLRequestConvertible {
              .ResetPassword(let params),
              .getUserLogPeriodData(let params),
              .saveLogPeriod(let params),
-             .changePassword(let params):
-            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
+             .changePassword(let params),
+             .saveUserMedications(let params),
+             .saveUserProcedures(let params),
+             .saveUserActivities(let params),
+             .saveUserSymptoms(let params),
+             .saveUserPregnancyTests(let params):
+              urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
 
             case .fetchGoals(let params), .getDataForLogPeriod(let params):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
@@ -101,7 +115,6 @@ enum APIRouter: URLRequestConvertible {
                 urlRequest.url = URL(string: urlStr)
             }
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
-
         }
 
         dLog(message: "API URL Request :: \(urlRequest)")

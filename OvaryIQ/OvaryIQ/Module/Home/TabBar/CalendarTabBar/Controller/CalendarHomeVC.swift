@@ -11,17 +11,18 @@ class CalendarHomeVC: BaseViewC {
     // MARK: - IBOutlets
     @IBOutlet private  weak var calendar: FSCalendar!
     @IBOutlet private weak var lblMonthYear: UILabel!
+    @IBOutlet private weak var lblYear: UILabel!
     @IBOutlet private weak var collectionViewPredictedPeriod: UICollectionView!
     @IBOutlet private weak var collectionViewMedication: UICollectionView!
 
     // MARK: - Properties
-    private var selectedDates = [String]()
+    private var selectedDates: String?
     private lazy var today: Date = {
         return Date()
     }()
     private lazy var dateFormatter: DateFormatter = {
            let formatter = DateFormatter()
-        formatter.dateFormat = DateFormat.dayMonthYear.rawValue
+        formatter.dateFormat = DateFormat.yearMonthDate.rawValue
            return formatter
     }()
     private var viewModel = CalendarHomeViewModel()
@@ -66,7 +67,7 @@ class CalendarHomeVC: BaseViewC {
 
     // MARK: - Notifications Functions
 
-    // MARK: - Private Functions
+    // MARK: - Private and internal Functions
     private func initialSetup() {
         self.calendar.appearance.titleFont = UIFont(name: "SourceSansPro-Bold", size: 16)
         self.calendarSetUp()
@@ -78,7 +79,7 @@ class CalendarHomeVC: BaseViewC {
         let year = Calendar.current.component(.year, from: date)
         let month = Calendar.current.component(.month, from: date)
         let monthName = DateFormatter().monthSymbols[month - 1]
-       // lblYear.text = "\(year)"
+        lblYear.text = "\(year)"
         lblMonthYear.text = "\(monthName) \(year)"
         lblMonthYear.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         lblMonthYear.sizeToFit()
@@ -86,6 +87,17 @@ class CalendarHomeVC: BaseViewC {
         calendar.delegate = self
         calendar.dataSource = self
     }
+    internal func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+        print("change calendar ")
+        let currentPageDate = calendar.currentPage
+        let month = Calendar.current.component(.month, from: currentPageDate)
+        let year = Calendar.current.component(.year, from: currentPageDate)
+        let monthName = DateFormatter().monthSymbols[month - 1]
+       // print("monthName:- ",monthName)
+        lblMonthYear.text = "\(monthName) \(String(describing: year))"
+        lblYear.text = "\(year)"
+    }
+
     // MARK: - Button Actions
     @IBAction private func tapBtnProfile(_ sender: UIButton) {
         fLog()
@@ -93,7 +105,7 @@ class CalendarHomeVC: BaseViewC {
              self.navigationController?.pushViewController(profileVC, animated: true)
         }
     }
-}
+ }
 
 //MARK: -  FSCalendarDelegate,FSCalendarDataSource
   extension CalendarHomeVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
@@ -103,9 +115,10 @@ class CalendarHomeVC: BaseViewC {
 
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("did select date \(self.dateFormatter.string(from: date))")
-        self.selectedDates.removeAll()
+       // self.selectedDates.removeAll()
         let date = self.dateFormatter.string(from: date)
-        self.selectedDates.append(date)
+       // self.selectedDates.append(date)
+        self.selectedDates = date
         calendar.reloadData()
     }
 }
@@ -115,6 +128,8 @@ extension CalendarHomeVC: UICollectionViewDelegate, UICollectionViewDataSource, 
     // MARK: - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let logPeriodsOptionsBottomSheetController = Storyboard.Home.instantiateViewController(identifier: LogPeriodsOptionsBottomSheetController.className) as? LogPeriodsOptionsBottomSheetController {
+            logPeriodsOptionsBottomSheetController.delegate = self
+            logPeriodsOptionsBottomSheetController.selectedDate = self.selectedDates ?? ""
             logPeriodsOptionsBottomSheetController.medicalOptionsDataModel = self.getDataLogPeriodDataModel?.medicalOptionsList[indexPath.row]
             logPeriodsOptionsBottomSheetController.modalPresentationStyle = .overFullScreen
             self.navigationController?.present(logPeriodsOptionsBottomSheetController, animated: true, completion: nil)
@@ -172,4 +187,14 @@ extension CalendarHomeVC: CalendarHomeViewModelDelegate {
         self.getDataLogPeriodDataModel = dataModel
         self.collectionViewMedication.reloadData()
     }
+}
+extension CalendarHomeVC: LogPeriodsOptionsBottomSheetControllerDelegate {
+    func goBackToCalendarController(saveMedicationsSelectedDataModel: SaveMedicationRequestModel) {
+        if let logPeriodDoneBottomSheetVC = Storyboard.Home.instantiateViewController(identifier: LogPeriodDoneBottomSheetVC.className) as? LogPeriodDoneBottomSheetVC {
+            logPeriodDoneBottomSheetVC.modalPresentationStyle = .overFullScreen
+            logPeriodDoneBottomSheetVC.saveMedicationRequestModel = saveMedicationsSelectedDataModel
+            self.navigationController?.present(logPeriodDoneBottomSheetVC, animated: true, completion: nil)
+        }
+    }
+
 }

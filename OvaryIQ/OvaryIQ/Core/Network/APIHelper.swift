@@ -21,9 +21,15 @@ struct APIName {
     static let ResetPassword = baseURL + "auth/password/reset_password"
     static let getDataForLogPeriod = baseURL + "auth/getDataForLogPeriod"
     static let getUserLogPeriodData = baseURL + "auth/getUserLogPeriodData"
-    static let saveLogPeriod = baseURL + "auth/saveLogPeriod"
     static let changePassword =  baseURL + "auth/change_password"
     static let userProfile =  baseURL + "auth/userProfile"
+    static let saveUserMedications =  baseURL + "auth/saveUserMedications"
+    static let saveUserProcedures =  baseURL + "auth/saveUserProcedures"
+    static let saveUserActivities =  baseURL + "auth/saveUserActivities"
+    static let saveUserSymptoms =  baseURL + "auth/saveUserSymptoms"
+    static let saveUserPregnancyTests =  baseURL + "auth/saveUserPregnancyTests"
+    static let saveLogPeriod = baseURL + "auth/saveLogPeriod"
+
 }
 
 // MARK: - Parameter keys

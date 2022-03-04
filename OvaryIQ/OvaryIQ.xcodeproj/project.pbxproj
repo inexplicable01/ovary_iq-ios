@@ -65,7 +65,6 @@
 		A76D64A1279FD84600397D1C /* Constants+Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64A0279FD84600397D1C /* Constants+Macros.swift */; };
 		A76D64A327A021A200397D1C /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64A227A021A200397D1C /* APIRouter.swift */; };
 		A76D64AC27A02ABC00397D1C /* AuthSignUpDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64AB27A02ABC00397D1C /* AuthSignUpDataModel.swift */; };
-		A76D64B627A060AB00397D1C /* UserResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64B527A060AB00397D1C /* UserResponseModel.swift */; };
 		A76D64B827A0670D00397D1C /* RequestScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64B727A0670D00397D1C /* RequestScheduler.swift */; };
 		A76D64BA27A0673C00397D1C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64B927A0673C00397D1C /* NetworkManager.swift */; };
 		A76D64BC27A0676E00397D1C /* RestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64BB27A0676E00397D1C /* RestHelper.swift */; };
@@ -140,6 +139,9 @@
 		A7CE54832796B9C200191A7B /* Constants+TextsMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE54822796B9C200191A7B /* Constants+TextsMessages.swift */; };
 		A7D006F727D09257002BF8B1 /* ProjectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D006F627D09257002BF8B1 /* ProjectionViewController.swift */; };
 		A7D006FA27D09311002BF8B1 /* ProjectionsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D006F927D09311002BF8B1 /* ProjectionsTVC.swift */; };
+		A7D006FE27D1E2FE002BF8B1 /* LogPeriodDoneBottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D006FD27D1E2FE002BF8B1 /* LogPeriodDoneBottomSheetVC.swift */; };
+		A7D0070127D1E745002BF8B1 /* SaveMedicationRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D0070027D1E745002BF8B1 /* SaveMedicationRequestModel.swift */; };
+		A7D0070427D21133002BF8B1 /* LogPeriodSaveDateBottomSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D0070327D21133002BF8B1 /* LogPeriodSaveDateBottomSheetViewModel.swift */; };
 		A7DCAB3227BF5BEA0018FC76 /* FSCalendarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DCAB1327BF5BEA0018FC76 /* FSCalendarCollectionView.m */; };
 		A7DCAB3327BF5BEA0018FC76 /* FSCalendarDelegationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DCAB1627BF5BEA0018FC76 /* FSCalendarDelegationProxy.m */; };
 		A7DCAB3427BF5BEA0018FC76 /* FSCalendarDelegationFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DCAB1827BF5BEA0018FC76 /* FSCalendarDelegationFactory.m */; };
@@ -248,7 +250,6 @@
 		A76D64A0279FD84600397D1C /* Constants+Macros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Macros.swift"; sourceTree = "<group>"; };
 		A76D64A227A021A200397D1C /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		A76D64AB27A02ABC00397D1C /* AuthSignUpDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignUpDataModel.swift; sourceTree = "<group>"; };
-		A76D64B527A060AB00397D1C /* UserResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseModel.swift; sourceTree = "<group>"; };
 		A76D64B727A0670D00397D1C /* RequestScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestScheduler.swift; sourceTree = "<group>"; };
 		A76D64B927A0673C00397D1C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A76D64BB27A0676E00397D1C /* RestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestHelper.swift; sourceTree = "<group>"; };
@@ -322,6 +323,9 @@
 		A7CE54822796B9C200191A7B /* Constants+TextsMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+TextsMessages.swift"; sourceTree = "<group>"; };
 		A7D006F627D09257002BF8B1 /* ProjectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionViewController.swift; sourceTree = "<group>"; };
 		A7D006F927D09311002BF8B1 /* ProjectionsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionsTVC.swift; sourceTree = "<group>"; };
+		A7D006FD27D1E2FE002BF8B1 /* LogPeriodDoneBottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogPeriodDoneBottomSheetVC.swift; sourceTree = "<group>"; };
+		A7D0070027D1E745002BF8B1 /* SaveMedicationRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveMedicationRequestModel.swift; sourceTree = "<group>"; };
+		A7D0070327D21133002BF8B1 /* LogPeriodSaveDateBottomSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogPeriodSaveDateBottomSheetViewModel.swift; sourceTree = "<group>"; };
 		A7DCAB1027BF5B4F0018FC76 /* App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "App-Bridging-Header.h"; sourceTree = "<group>"; };
 		A7DCAB1327BF5BEA0018FC76 /* FSCalendarCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCalendarCollectionView.m; sourceTree = "<group>"; };
 		A7DCAB1427BF5BEA0018FC76 /* FSCalendarWeekdayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCalendarWeekdayView.h; sourceTree = "<group>"; };
@@ -573,7 +577,6 @@
 			isa = PBXGroup;
 			children = (
 				A76C61CA27C652BD006CBE02 /* Settings */,
-				A76D64AD27A02DBC00397D1C /* UserResponseModel */,
 				A797A1D9279E94AE00AB3896 /* Home */,
 				A74C3225279164CB00763899 /* Questions */,
 				A7324511278E8E96008FDCF0 /* Auth */,
@@ -958,14 +961,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		A76D64AD27A02DBC00397D1C /* UserResponseModel */ = {
-			isa = PBXGroup;
-			children = (
-				A76D64B527A060AB00397D1C /* UserResponseModel.swift */,
-			);
-			path = UserResponseModel;
-			sourceTree = "<group>";
-		};
 		A76D64BD27A0684000397D1C /* CoreEngine */ = {
 			isa = PBXGroup;
 			children = (
@@ -1304,6 +1299,7 @@
 		A77D7CA927CDDE0F00695974 /* BottomSheetsOptions */ = {
 			isa = PBXGroup;
 			children = (
+				A7D006FF27D1E72B002BF8B1 /* Model */,
 				A77D7CAD27CE260D00695974 /* ViewModel */,
 				A77D7CAA27CDDE4900695974 /* Controller */,
 			);
@@ -1479,6 +1475,39 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A7D006FB27D1E2AA002BF8B1 /* LogPeriodDoneBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				A7D0070227D2110B002BF8B1 /* ViewModel */,
+				A7D006FC27D1E2C7002BF8B1 /* Controller */,
+			);
+			path = LogPeriodDoneBottomSheet;
+			sourceTree = "<group>";
+		};
+		A7D006FC27D1E2C7002BF8B1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A7D006FD27D1E2FE002BF8B1 /* LogPeriodDoneBottomSheetVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A7D006FF27D1E72B002BF8B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A7D0070027D1E745002BF8B1 /* SaveMedicationRequestModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A7D0070227D2110B002BF8B1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A7D0070327D21133002BF8B1 /* LogPeriodSaveDateBottomSheetViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A7D201A827AC113C000F5BF2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1545,6 +1574,7 @@
 			isa = PBXGroup;
 			children = (
 				A7DF7E0927C73A5B00C7160B /* TabBarController.swift */,
+				A7D006FB27D1E2AA002BF8B1 /* LogPeriodDoneBottomSheet */,
 				A77C7BC427C77795006D01A1 /* ProjectionTabBar */,
 				A77D7CA927CDDE0F00695974 /* BottomSheetsOptions */,
 				A77C7BC327C7777F006D01A1 /* CalendarTabBar */,
@@ -1824,8 +1854,10 @@
 				A7DCAB3727BF5BEA0018FC76 /* FSCalendar.m in Sources */,
 				A76D64D327A2647E00397D1C /* CoreDataManager.swift in Sources */,
 				A76D64BF27A0687100397D1C /* EventLoop.swift in Sources */,
+				A7D0070427D21133002BF8B1 /* LogPeriodSaveDateBottomSheetViewModel.swift in Sources */,
 				A73CA3E327982866005085CB /* PeriodStartDateVC.swift in Sources */,
 				A753833F27B13A3100F9FE83 /* ResetPasswordDataModel.swift in Sources */,
+				A7D006FE27D1E2FE002BF8B1 /* LogPeriodDoneBottomSheetVC.swift in Sources */,
 				A73244E3278E8E2A008FDCF0 /* AuthOptionVC.swift in Sources */,
 				A73CA3EC27982AF8005085CB /* CalendarCollectionViewCell.swift in Sources */,
 				A76D64C327A0689900397D1C /* RestEvents.swift in Sources */,
@@ -1884,6 +1916,7 @@
 				A76D64D127A2646300397D1C /* DatabaseHandler.swift in Sources */,
 				A77AD29D27A8EA8C007C389F /* AppleSignInManager.swift in Sources */,
 				A7DCAB3A27BF5BEA0018FC76 /* FSCalendarSeparatorDecorationView.m in Sources */,
+				A7D0070127D1E745002BF8B1 /* SaveMedicationRequestModel.swift in Sources */,
 				A78AECEE27A40356003E05C2 /* Decodable+Extension.swift in Sources */,
 				A78AECE227A2960E003E05C2 /* SharedPref.swift in Sources */,
 				A73CA3A427981D69005085CB /* LogYearOfBirthVC.swift in Sources */,
@@ -1905,7 +1938,6 @@
 				A720FF49278EFDB500893720 /* AuthForgotPasswordVC.swift in Sources */,
 				A7717F5C27AD41A500422539 /* TryingGetPregnantViewModel.swift in Sources */,
 				A73244E1278E8E2A008FDCF0 /* SceneDelegate.swift in Sources */,
-				A76D64B627A060AB00397D1C /* UserResponseModel.swift in Sources */,
 				A7717F6327AE4E6500422539 /* LastPeriodLongViewModel.swift in Sources */,
 				A76D64A327A021A200397D1C /* APIRouter.swift in Sources */,
 				A76D64C127A0688600397D1C /* LocalEvents.swift in Sources */,
@@ -2152,6 +2184,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = OvaryIQ_Dis_11Feb;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = on;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mobcoder/Desktop/Mobcoder_Projects/OvaryIQ/Git/ovary_iq-ios/OvaryIQ/App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2193,6 +2226,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = OvaryIQ_Dis_11Feb;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = on;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mobcoder/Desktop/Mobcoder_Projects/OvaryIQ/Git/ovary_iq-ios/OvaryIQ/App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2367,6 +2401,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = OvaryIQ_Dis_11Feb;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = on;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/mobcoder/Desktop/Mobcoder_Projects/OvaryIQ/Git/ovary_iq-ios/OvaryIQ/App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

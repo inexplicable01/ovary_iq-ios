@@ -240,8 +240,12 @@ class CoreEngine: EventLoop {
                }
             case .userProfile:
               if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
-                        notifyToGUI = true
+                    notifyToGUI = true
               }
+            case .saveUserMedications:
+              if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
+                    notifyToGUI = true
+            }
 
             default :
                 if let responseDict = evobj.object as? [String: Any],

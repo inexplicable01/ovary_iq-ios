@@ -6,6 +6,9 @@
 //
 
 import UIKit
+protocol LogPeriodsOptionsBottomSheetControllerDelegate {
+    func goBackToCalendarController(saveMedicationsSelectedDataModel: SaveMedicationRequestModel)
+}
 
 class LogPeriodsOptionsBottomSheetController: UIViewController {
     // MARK: - IBOutlets
@@ -14,6 +17,11 @@ class LogPeriodsOptionsBottomSheetController: UIViewController {
     // MARK: - Properties
     internal var medicalOptionsDataModel: MedicalOptionsListDataModel?
     internal var logPeriodType: String?
+    internal var selectedDate: String = ""
+    internal var selectedIds = [Int]()
+    internal var saveMedicationRequestModel = SaveMedicationRequestModel()
+    internal var medicationModel = [MedicationModel]()
+    internal var delegate: LogPeriodsOptionsBottomSheetControllerDelegate?
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,15 +43,40 @@ class LogPeriodsOptionsBottomSheetController: UIViewController {
 
     @IBAction private func tapBtnTick(_ sender: UIButton) {
         fLog()
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) {
+            if self.selectedDate.isEmpty {
+                AlertControllerManager.showToast(message: ErrorMessages.selectPeriodStartDate.localizedString, type: .error)
+            } else {
+                if let categoryModel = self.medicalOptionsDataModel?.subCategoryList {
+                    self.selectedIds.removeAll()
+                    for ( _ ,mod) in categoryModel.enumerated() {
+                        if mod.isSelected {
+                            if let medicationId = mod.id {
+                                self.selectedIds.append(medicationId)
+                            }
+                        }
+                    }
+                    self.medicationModel.append(MedicationModel(id: self.selectedIds, date: self.selectedDate ?? ""))
+                   self.saveMedicationRequestModel.medicationId = self.medicationModel
+
+               }
+            self.delegate?.goBackToCalendarController(saveMedicationsSelectedDataModel: self.saveMedicationRequestModel)
+          }
+        }
     }
 }
-// MARK: -  UICollectionViewDelegate, UICollectionViewDataSource
+ // MARK: -  UICollectionViewDelegate, UICollectionViewDataSource
 extension LogPeriodsOptionsBottomSheetController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     // MARK: - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-     //   self.medicalOptionsDataModel?.subCategoryList[indexPath.row].isSelected = !(self.medicalOptionsDataModel?.subCategoryList[indexPath.row].isSelected ?? false)
-        self.collectionViewSubcategory.reloadData()
+        if let medicationSubCatModel = self.medicalOptionsDataModel?.subCategoryList {
+            if medicationSubCatModel[indexPath.row].isSelected {
+                self.medicalOptionsDataModel?.subCategoryList[indexPath.row].isSelected = false
+            } else {
+                self.medicalOptionsDataModel?.subCategoryList[indexPath.row].isSelected = true
+            }
+            self.collectionViewSubcategory.reloadData()
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

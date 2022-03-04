@@ -34,7 +34,6 @@ class PeriodStartDateVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialSetup()
-
         // Do any additional setup after loading the view.
     }
 
@@ -204,9 +203,9 @@ extension PeriodStartDateVC: FSCalendarDelegate, FSCalendarDataSource, FSCalenda
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
         let dateString = self.dateFormatter.string(from: date)
         if self.selectedDates.contains(dateString) {
-           return UIImage(named: "blood_drop")?.alpha(1)
+           return UIImageType.bloodDrop.image?.alpha(1)
         } else {
-           return UIImage(named: "blood_drop")?.alpha(0)
+           return UIImageType.bloodDrop.image?.alpha(0)
        }
 
     }

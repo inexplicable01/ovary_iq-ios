@@ -48,6 +48,7 @@ enum Text: String {
     case logOut = "Do_you_want_to_logout?"
     case notNow = "txt_not_now"
     case settings = "txt_settings"
+    case myProfile = "txt_myProfile"
 
     var localizedString: String {
         return NSLocalizedString(self.rawValue, comment: "")
