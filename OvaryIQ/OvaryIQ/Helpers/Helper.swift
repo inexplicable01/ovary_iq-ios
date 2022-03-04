@@ -76,4 +76,95 @@ class Helper {
         return UIViewController()
     }
 
+
+    // MARK: - GetIcon
+        class func getIcon(name: String) -> String {
+            switch name {
+
+               // Log Period Categpry Images
+            case  LogPeriodCategoryType.logPeriod.rawValue:
+                return LogPeriodCategoryType.logPeriod.image
+
+            case  LogPeriodCategoryType.medication.rawValue:
+                return LogPeriodCategoryType.medication.image
+
+            case  LogPeriodCategoryType.procedure.rawValue:
+                return LogPeriodCategoryType.procedure.image
+
+            case  LogPeriodCategoryType.activity.rawValue:
+                return LogPeriodCategoryType.activity.image
+
+            case  LogPeriodCategoryType.symptoms.rawValue:
+                return LogPeriodCategoryType.symptoms.image
+
+            case  LogPeriodCategoryType.pregnancyTest.rawValue:
+                  return LogPeriodCategoryType.pregnancyTest.image
+
+                    // FOR LOGPERIOD
+            case LogPeriodCategoryType.regularFlow.rawValue:
+                  return LogPeriodCategoryType.regularFlow.image
+            case LogPeriodCategoryType.heavyBledding.rawValue:
+                  return LogPeriodCategoryType.heavyBledding.image
+
+                    // FOR MEDICATIONS
+            case LogPeriodCategoryType.stimulationInjection.rawValue:
+                 return LogPeriodCategoryType.stimulationInjection.image
+            case LogPeriodCategoryType.tigger.rawValue:
+                 return LogPeriodCategoryType.tigger.image
+            case LogPeriodCategoryType.birthControl.rawValue:
+                 return LogPeriodCategoryType.birthControl.image
+            case LogPeriodCategoryType.clomid.rawValue:
+                return LogPeriodCategoryType.clomid.image
+            case LogPeriodCategoryType.letrozole.rawValue:
+                return LogPeriodCategoryType.letrozole.image
+            case LogPeriodCategoryType.tamoxifane.rawValue:
+                return LogPeriodCategoryType.tamoxifane.image
+
+                   // FOR PROCEDURE
+            case LogPeriodCategoryType.iUI.rawValue:
+                return LogPeriodCategoryType.iUI.image
+            case LogPeriodCategoryType.d3EmbryoTransfer.rawValue:
+                return LogPeriodCategoryType.d3EmbryoTransfer.image
+            case LogPeriodCategoryType.d5EmbryoTransfer.rawValue:
+                return LogPeriodCategoryType.d5EmbryoTransfer.image
+
+                    // FOR ACTIVITY
+            case LogPeriodCategoryType.sex.rawValue:
+                return LogPeriodCategoryType.sex.image
+
+                   // FOR SYMPTOMS
+            case LogPeriodCategoryType.bloating.rawValue:
+                return LogPeriodCategoryType.bloating.image
+            case LogPeriodCategoryType.pain.rawValue:
+                return LogPeriodCategoryType.pain.image
+            case LogPeriodCategoryType.haedaches.rawValue:
+                return LogPeriodCategoryType.haedaches.image
+            case LogPeriodCategoryType.diarrhea.rawValue:
+                return LogPeriodCategoryType.diarrhea.image
+            case LogPeriodCategoryType.weightGain.rawValue:
+                return LogPeriodCategoryType.weightGain.image
+            case LogPeriodCategoryType.fatigue.rawValue:
+                return LogPeriodCategoryType.fatigue.image
+            case LogPeriodCategoryType.emotional.rawValue:
+                return LogPeriodCategoryType.emotional.image
+            case LogPeriodCategoryType.increasedhunger.rawValue:
+                return LogPeriodCategoryType.increasedhunger.image
+
+                    // FOR PREGNANCY TEST
+            case LogPeriodCategoryType.reminderToTakeThePregnancyTest.rawValue:
+                return LogPeriodCategoryType.reminderToTakeThePregnancyTest.image
+            case LogPeriodCategoryType.positiveTestResult.rawValue:
+                return LogPeriodCategoryType.positiveTestResult.image
+            case LogPeriodCategoryType.negativeTestResult.rawValue:
+                return LogPeriodCategoryType.negativeTestResult.image
+
+
+                    
+
+            default:
+                    return LogPeriodCategoryType.logPeriod.image
+            }
+
+        }
+
 }

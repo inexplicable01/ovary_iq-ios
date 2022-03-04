@@ -27,7 +27,8 @@ struct MyProfileDataModel: Codable {
 struct UserProfileDataModel: Codable {
     let id: Int?
     let name, email, mobile: String?
-    let countryCode, profile: String?
+    let profile: String?
+    let countryCode: Int?
     let userGoaldetails: [UserGoalDetailDataModel]?
 
     enum CodingKeys: String, CodingKey {
@@ -43,7 +44,7 @@ struct UserProfileDataModel: Codable {
         name = try? values.decodeIfPresent(String.self, forKey: .name) ?? ""
         email = try? values.decodeIfPresent(String.self, forKey: .email) ?? ""
         mobile = try? values.decodeIfPresent(String.self, forKey: .mobile) ?? ""
-        countryCode = try? values.decodeIfPresent(String.self, forKey: .countryCode) ?? ""
+        countryCode = try? values.decodeIfPresent(Int.self, forKey: .countryCode) ?? 0
         profile = try? values.decodeIfPresent(String.self, forKey: .profile) ?? ""
         userGoaldetails = try? values.decodeIfPresent([UserGoalDetailDataModel].self, forKey: .userGoaldetails) ?? nil
     }

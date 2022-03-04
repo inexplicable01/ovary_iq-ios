@@ -46,4 +46,3 @@ extension SharedPref where Value: ExpressibleByNilLiteral {
         self.init(key: key, defaultValue: nil)
     }
 }
-

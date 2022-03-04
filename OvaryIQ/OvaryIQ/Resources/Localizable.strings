@@ -17,6 +17,7 @@
 "txt_not_now" = "Not Now";
 "txt_settings" = "Settings";
 "msg_something_went_wrong" = "Oops Something went wrong. Please try again";
+"Back_to_Log_In" = "Back to Log In";
 // validation messages
 "msg_empty_name" = "Please enter first name.";
 "msg_empty_phoneNumber" = "Please enter phone number.";

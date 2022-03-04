@@ -14,7 +14,7 @@ class ChangePasswordVC: BaseViewC {
     @IBOutlet private weak var txtfieldConfirmPassword: UITextField!
     // MARK: - Properties
     private var viewModel = ChangePasswordViewModel()
-    internal var goBackToAppSettingCOntroller: ((Bool) -> Void)?
+    internal var goBackToAppSettingController: ((Bool) -> Void)?
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -154,7 +154,7 @@ extension ChangePasswordVC: UITextFieldDelegate {
 extension ChangePasswordVC: ChangePasswordViewModelDelegate {
     func sucessChangePasswordApiResponse() {
         self.dismiss(animated: true) {
-            self.goBackToAppSettingCOntroller!(true)
+            self.goBackToAppSettingController!(true)
         }
     }
 }

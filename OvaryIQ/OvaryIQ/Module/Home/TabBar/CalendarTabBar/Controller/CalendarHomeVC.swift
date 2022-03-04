@@ -25,16 +25,17 @@ class CalendarHomeVC: BaseViewC {
            return formatter
     }()
     private var viewModel = CalendarHomeViewModel()
+    private var getDataLogPeriodDataModel: GetDataForLogPeriodDataModel?
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel.registerCoreEngineEventsCallBack()
-        self.initialSetup()
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.viewModel.registerCoreEngineEventsCallBack()
+        self.initialSetup()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -69,6 +70,8 @@ class CalendarHomeVC: BaseViewC {
     private func initialSetup() {
         self.calendar.appearance.titleFont = UIFont(name: "SourceSansPro-Bold", size: 16)
         self.calendarSetUp()
+        self.viewModel.delegate = self
+        self.viewModel.callApiToGetDataForLogPeriod()
     }
     private func calendarSetUp() {
         let date = Date()
@@ -91,6 +94,7 @@ class CalendarHomeVC: BaseViewC {
         }
     }
 }
+
 //MARK: -  FSCalendarDelegate,FSCalendarDataSource
   extension CalendarHomeVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
@@ -106,13 +110,15 @@ class CalendarHomeVC: BaseViewC {
     }
 }
 
-//MARK: -  UICollectionViewDelegate, UICollectionViewDataSource
+// MARK: -  UICollectionViewDelegate, UICollectionViewDataSource
 extension CalendarHomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     // MARK: - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let logPeriodsOptionsBottomSheetController = Storyboard.Home.instantiateViewController(identifier: LogPeriodsOptionsBottomSheetController.className)
-        logPeriodsOptionsBottomSheetController.modalPresentationStyle = .overFullScreen
-        self.navigationController?.present(logPeriodsOptionsBottomSheetController, animated: true, completion: nil)
+        if let logPeriodsOptionsBottomSheetController = Storyboard.Home.instantiateViewController(identifier: LogPeriodsOptionsBottomSheetController.className) as? LogPeriodsOptionsBottomSheetController {
+            logPeriodsOptionsBottomSheetController.medicalOptionsDataModel = self.getDataLogPeriodDataModel?.medicalOptionsList[indexPath.row]
+            logPeriodsOptionsBottomSheetController.modalPresentationStyle = .overFullScreen
+            self.navigationController?.present(logPeriodsOptionsBottomSheetController, animated: true, completion: nil)
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -127,7 +133,7 @@ extension CalendarHomeVC: UICollectionViewDelegate, UICollectionViewDataSource, 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == collectionViewMedication {
-            return 6
+            return self.getDataLogPeriodDataModel?.medicalOptionsList.count ?? 0
         } else {
             return 8
         }
@@ -137,6 +143,7 @@ extension CalendarHomeVC: UICollectionViewDelegate, UICollectionViewDataSource, 
 
        if collectionView == collectionViewMedication {
            if let cell: MedicationsOptionsCVC = collectionView.dequeueReusableCell(withReuseIdentifier: MedicationsOptionsCVC.className, for: indexPath) as? MedicationsOptionsCVC {
+               cell.configCell(model: self.getDataLogPeriodDataModel?.medicalOptionsList[indexPath.row])
                return cell
            }
         } else {
@@ -156,5 +163,13 @@ extension CalendarHomeVC: UICollectionViewDelegate, UICollectionViewDataSource, 
          } else {
              return CGSize(width: collectionView.frame.size.width / 3, height: 30)
          }
+    }
+}
+// MARK: - Protocol and delegate method
+
+extension CalendarHomeVC: CalendarHomeViewModelDelegate {
+    func getDataForlogPeriodResponse(dataModel: GetDataForLogPeriodDataModel) {
+        self.getDataLogPeriodDataModel = dataModel
+        self.collectionViewMedication.reloadData()
     }
 }

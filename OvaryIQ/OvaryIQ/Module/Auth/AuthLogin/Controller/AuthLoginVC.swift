@@ -90,9 +90,11 @@ class AuthLoginVC: UIViewController {
                                 resetPasswordVC.code = fourDigitCode
                                 resetPasswordVC.goBack = { [weak self] isBool in
                                     if isBool {
-                                        let loginSuccessPopUpVC = Storyboard.Questions.instantiateViewController(identifier: LoginSuccessPopUpVC.className)
-                                        loginSuccessPopUpVC.modalPresentationStyle = .overFullScreen
-                                        self?.present(loginSuccessPopUpVC, animated: true, completion: nil)
+                                        if let loginSuccessPopUpVC = Storyboard.Questions.instantiateViewController(identifier: LoginSuccessPopUpVC.className) as? LoginSuccessPopUpVC {
+                                            loginSuccessPopUpVC.isFromChangePasswordSuccessPopUp = false
+                                            loginSuccessPopUpVC.modalPresentationStyle = .overFullScreen
+                                            self?.present(loginSuccessPopUpVC, animated: true, completion: nil)
+                                        }
                                     }}
                                self?.present(resetPasswordVC, animated: true, completion: nil)
 

@@ -83,15 +83,14 @@ enum APIRouter: URLRequestConvertible {
              .forgotPassword(let params),
              .ResetPassword(let params),
              .getUserLogPeriodData(let params),
-             .getDataForLogPeriod(let params),
              .saveLogPeriod(let params),
              .changePassword(let params):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
 
-        case .fetchGoals(let params):
+            case .fetchGoals(let params), .getDataForLogPeriod(let params):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
 
-        case .userProfile(let params):
+         case .userProfile(let params):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
 
          case   .verifyCode(let params):

@@ -12,6 +12,7 @@ class LoginSuccessPopUpVC: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var btnBackToLogIn: UIButton!
     // MARK: - Properties
+    internal var isFromChangePasswordSuccessPopUp: Bool = false
     // MARK: - View Life Cycle Functions
 
     override func viewDidLoad() {
@@ -51,6 +52,7 @@ class LoginSuccessPopUpVC: UIViewController {
     // MARK: - Private Functions
     private func initialSetup() {
         self.btnBackToLogIn.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
+        isFromChangePasswordSuccessPopUp ? btnBackToLogIn.setTitle(Text.oks.localizedString, for: .normal) :  btnBackToLogIn.setTitle(Text.backToLogIn.localizedString, for: .normal)
 }
      // MARK: - Button Actions
 

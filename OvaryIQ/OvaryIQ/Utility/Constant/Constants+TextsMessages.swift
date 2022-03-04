@@ -37,16 +37,21 @@ enum ErrorMessages: String {
         return NSLocalizedString(self.rawValue, comment: "")
     }
 }
-
+// MARK: - text
 enum Text: String {
     case appName = "OvaryIQ"
+    // btn text
     case cancel = "txt_cancel"
     case oks = "txt_ok"
+    case backToLogIn = "Back_to_Log_In"
     // title message
     case logOut = "Do_you_want_to_logout?"
     case notNow = "txt_not_now"
     case settings = "txt_settings"
+
     var localizedString: String {
         return NSLocalizedString(self.rawValue, comment: "")
     }
 }
+
+

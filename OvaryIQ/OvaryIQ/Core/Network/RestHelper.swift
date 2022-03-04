@@ -131,15 +131,15 @@ class RestHelper: NSObject {
                }
             case .change_password:
                 if let parameters = evObj.object as? [String: Any] {
-                   evObj.apiRequest = APIRouter.ResetPassword(params: parameters)
+                   evObj.apiRequest = APIRouter.changePassword(params: parameters)
                 } else {
-                   dLog(message: "Parameter Missing :: \(APIName.ResetPassword)")
+                   dLog(message: "Parameter Missing :: \(APIName.changePassword)")
                }
             case .userProfile:
                 if let parameters = evObj.object as? [String: Any] {
                    evObj.apiRequest = APIRouter.userProfile(params: parameters)
                 } else {
-                   dLog(message: "Parameter Missing :: \(APIName.ResetPassword)")
+                   dLog(message: "Parameter Missing :: \(APIName.userProfile)")
                }
         }
 

@@ -18,7 +18,6 @@ extension UserDefaults {
         static let TokenType                 = "UD_Key_TokenType"
         static let RefreshToken              = "UD_Key_Refresh_Token"
         static let isGoalSaved                = "UD_Key_Save_Goal"
-
         static let IsUserLogin               = "UD_Key_Is_User_Login"
         static let IsProfileCompleted        = "UD_Key_Is_Profile_Completed"
         static let UserType                  = "UD_Key_User_Type"
@@ -28,6 +27,8 @@ extension UserDefaults {
         static let UserLatitude              = "UD_Key_User_Latitude"
         static let UserLongitude             = "UD_Key_User_Longitude"
         static let UserLocation              = "UD_Key_User_Location"
+        static let MyGoalStatus              = "UD_Key_Goal_Status"
+        static let UserName                  = "UD_Key_User_Name"
 
     }
 
@@ -76,11 +77,19 @@ extension UserDefaults {
     @SharedPref(key: UDKey.UserLocation, defaultValue: "")
     static var userLocation: String
 
+    @SharedPref(key: UDKey.MyGoalStatus, defaultValue: "")
+    static var MyGoalStatus: String
+
+    @SharedPref(key: UDKey.UserName, defaultValue: "")
+    static var UserName: String
+
     func clear() {
         self.set("", forKey: UDKey.AccessToken)
         self.set("", forKey: UDKey.TokenType)
         self.set("", forKey: UDKey.RefreshToken)
         self.set("", forKey: UDKey.isGoalSaved)
+        self.set("", forKey: UDKey.MyGoalStatus)
+        self.set("", forKey: UDKey.UserName)
 
         self.set(nil, forKey: UDKey.UserId)
         self.set(false, forKey: UDKey.IsUserLogin)

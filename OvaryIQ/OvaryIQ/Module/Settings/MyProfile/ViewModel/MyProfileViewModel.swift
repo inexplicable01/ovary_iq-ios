@@ -6,11 +6,14 @@
 //
 
 import Foundation
+protocol MyProfileViewModelDelegate {
+     func sucessUserProfileApiResponse(profileDataModel: MyProfileDataModel)
+}
 class MyProfileViewModel {
     // MARK: - Properties
     private var restEventCallBackID: String?
     private let coreEngine = CoreEngine.shared
-    internal var delegate: AuthOptionViewModelDelegate?
+    internal var delegate: MyProfileViewModelDelegate?
     internal var viewContreoller = UIViewController()
     // MARK: - Init & AuthOptionViewModelProtocol
 //    required init(coreEngine: CoreEngine) {
@@ -19,7 +22,7 @@ class MyProfileViewModel {
 
     internal func registerCoreEngineEventsCallBack() {
         if self.restEventCallBackID == nil {
-          //  self.registerRestEventCallBack()
+            self.registerRestEventCallBack()
         }
     }
     internal func unregisterCoreEngineEventsCallBack() {
@@ -37,5 +40,36 @@ class MyProfileViewModel {
          restEvent.showActivityIndicator = true
         self.coreEngine.addEngineEventsWithOutWait(evObj: restEvent)
         // self.coreEngine.addEvent(evObj: restEvent)
+    }
+}
+// MARK: - Register Rest Event Call Back
+
+extension MyProfileViewModel {
+    internal func registerRestEventCallBack() {
+        fLog()
+        self.restEventCallBackID = self.coreEngine.registerEventCallBack(cbType: .restCallBack, cbBlock: { eventId, result, response, message, isSuccess in
+          //  guard let sself = self else { return }
+            if let eventId = RestEvents(rawValue: eventId) {
+                switch eventId {
+                case .userProfile:
+                    fLog()
+                if isSuccess {
+                    do {
+                        let encodedDictionary = try JSONDecoder().decode(MyProfileDataModel.self, from: JSONSerialization.data(withJSONObject: response))
+                        dLog(message: "ResetPasswordResponse:- \(encodedDictionary)")
+                        self.delegate?.sucessUserProfileApiResponse(profileDataModel: encodedDictionary)
+
+                    } catch {
+                        print("Error: ", error)
+                    }
+                } else {
+                    AlertControllerManager.showToast(message: ErrorMessages.somethingWentWrong.localizedString, type: .error)
+                }
+
+                default:
+                    break
+                }
+            }
+        })
     }
 }

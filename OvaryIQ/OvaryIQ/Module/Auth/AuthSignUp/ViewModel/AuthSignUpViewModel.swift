@@ -67,6 +67,11 @@ extension AuthSignUpViewModel {
                         if let isGoalSaved = encodedDictionary.isGoalSaved {
                             kUserDefaults.isGoalSaved = isGoalSaved
                         }
+
+                        if let userName = encodedDictionary.user?.name {
+                            kUserDefaults.UserName = userName
+                        }
+                        
                        self.delegate?.sucessRegisterApiResponse?()
 
                     } catch {

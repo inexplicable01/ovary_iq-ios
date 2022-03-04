@@ -28,11 +28,12 @@ class SettingVC: BaseViewC {
         fLog()
         if let changePasswordVC = Storyboard.Settings.instantiateViewController(identifier: ChangePasswordVC.className) as? ChangePasswordVC {
             changePasswordVC.modalPresentationStyle = .overFullScreen
-            changePasswordVC.goBackToAppSettingCOntroller = { [weak self] isSucces in
-                let loginSuccessPopUpVC = Storyboard.Questions.instantiateViewController(identifier: LoginSuccessPopUpVC.className)
-                loginSuccessPopUpVC.modalPresentationStyle = .overFullScreen
-                self?.present(loginSuccessPopUpVC, animated: true, completion: nil)
-
+            changePasswordVC.goBackToAppSettingController = { [weak self] isSucces in
+                if let loginSuccessPopUpVC = Storyboard.Questions.instantiateViewController(identifier: LoginSuccessPopUpVC.className) as? LoginSuccessPopUpVC {
+                    loginSuccessPopUpVC.isFromChangePasswordSuccessPopUp = true
+                    loginSuccessPopUpVC.modalPresentationStyle = .overFullScreen
+                    self?.present(loginSuccessPopUpVC, animated: true, completion: nil)
+                }
             }
             self.navigationController?.present(changePasswordVC, animated: false, completion: nil)
         }

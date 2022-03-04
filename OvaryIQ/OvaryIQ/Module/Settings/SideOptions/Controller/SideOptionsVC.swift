@@ -21,6 +21,8 @@ struct Profile {
 class SideOptionsVC: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var profileTableView: UITableView!
+    @IBOutlet private weak var lblName: UILabel!
+    @IBOutlet private weak var lblMyGoalStatus: UILabel!
     @IBOutlet private weak var btnLogout: UIButton!
     // MARK: - Properties
     private var viewModel = SideOptionsViewModel()
@@ -66,6 +68,8 @@ class SideOptionsVC: UIViewController {
     // MARK: - Private Functions
     private func initialSetup() {
         self.btnLogout.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
+        self.lblName.text = UserDefaults.UserName
+        self.lblMyGoalStatus.text = UserDefaults.MyGoalStatus
    }
     // MARK: - Button Actions
     @IBAction private func tapBtnCross(_ sender: UIButton) {
