@@ -171,6 +171,12 @@ class RestHelper: NSObject {
                 } else {
                    dLog(message: "Parameter Missing :: \(APIName.saveUserPregnancyTests)")
                }
+            case .projectionData:
+                if let parameters = evObj.object as? [String: Any] {
+                   evObj.apiRequest = APIRouter.projectionData(params: parameters)
+                } else {
+                   dLog(message: "Parameter Missing :: \(APIName.projectionData)")
+              }
         }
 
         self.addRequestInScheduler(requestObj: evObj)

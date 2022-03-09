@@ -8,7 +8,14 @@
 import UIKit
 
 class ProjectionsTVC: BaseTableViewCell {
-
+    // MARK: - IBOutlets
+    @IBOutlet private weak var lblProjectionName: UILabel!
+    @IBOutlet private weak var lblProjectionDate: UILabel!
+    @IBOutlet private weak var lblPregancyTest: UILabel!
+    @IBOutlet private weak var lblGestationDate: UILabel!
+    @IBOutlet private weak var viewGestation: UIView!
+    @IBOutlet private  weak var lblExpectedDeliveryDate: UILabel!
+    // MARK: - View Life Cycle Functions
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +25,16 @@ class ProjectionsTVC: BaseTableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+    // MARK: - Internal Functions
+    internal func configCell(model: ProjectionDataModel?) {
+        self.lblProjectionName.text = model?.data?.procedureName ?? ""
+        self.lblProjectionDate.text = model?.data?.procedureDate ?? ""
+        self.lblPregancyTest.text = model?.data?.pregnancyTestDate ?? ""
+        self.lblGestationDate.text = model?.data?.gestationDays ?? ""
+        self.viewGestation.isHidden = model?.data?.gestationDays == "0" ? true : false
+        self.lblExpectedDeliveryDate.text = model?.data?.expectedDeliveryDate ?? ""
     }
 
 }

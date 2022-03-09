@@ -28,6 +28,7 @@ enum APIRouter: URLRequestConvertible {
     case saveUserSymptoms(params: Parameters)
     case saveUserPregnancyTests(params: Parameters)
     case saveLogPeriod(params: Parameters)
+    case projectionData(params: Parameters)
 
 
     var method: HTTPMethod {
@@ -37,7 +38,7 @@ enum APIRouter: URLRequestConvertible {
                     .login, .logOut, .savezGoalsDetails, .forgotPassword, .ResetPassword, .saveLogPeriod, .changePassword, .saveUserMedications, .saveUserProcedures, .saveUserActivities, .saveUserSymptoms, .saveUserPregnancyTests:
             return .post
 
-        case .fetchGoals,.verifyCode, .getDataForLogPeriod, .getUserLogPeriodData, .userProfile:
+            case .fetchGoals,.verifyCode, .getDataForLogPeriod, .getUserLogPeriodData, .userProfile, .projectionData:
             return .get
 
         }
@@ -63,6 +64,8 @@ enum APIRouter: URLRequestConvertible {
         case .saveUserActivities: return APIName.saveUserActivities
         case .saveUserSymptoms: return APIName.saveUserSymptoms
         case .saveUserPregnancyTests: return APIName.saveUserPregnancyTests
+        case .projectionData: return APIName.projectionData
+
         }
     }
 
@@ -91,7 +94,6 @@ enum APIRouter: URLRequestConvertible {
              .savezGoalsDetails(let params),
              .forgotPassword(let params),
              .ResetPassword(let params),
-             .getUserLogPeriodData(let params),
              .saveLogPeriod(let params),
              .changePassword(let params),
              .saveUserMedications(let params),
@@ -101,13 +103,17 @@ enum APIRouter: URLRequestConvertible {
              .saveUserPregnancyTests(let params):
               urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
 
-            case .fetchGoals(let params), .getDataForLogPeriod(let params):
+        case .fetchGoals(let params), .getDataForLogPeriod(let params), .getUserLogPeriodData(let params):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
+
+        case .projectionData(let params):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
+
 
          case .userProfile(let params):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
 
-         case   .verifyCode(let params):
+         case .verifyCode(let params):
             if let url = urlRequest.url,
                let code = params["code"] as? Int {
                 var urlStr = url.absoluteString

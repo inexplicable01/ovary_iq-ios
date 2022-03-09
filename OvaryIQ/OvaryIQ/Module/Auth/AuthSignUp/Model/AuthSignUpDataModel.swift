@@ -7,7 +7,7 @@
 
 import Foundation
 struct AuthSignUpDataModel: Codable {
-    var message, accessToken: String?
+    var message, accessToken, goalStatus: String?
     var isGoalSaved: Bool?
     var expiresIn: Int?
     var user: UserDataModel?
@@ -15,19 +15,21 @@ struct AuthSignUpDataModel: Codable {
        enum CodingKeys: String, CodingKey {
            case message
            case accessToken = "access_token"
+           case goalStatus = "goalStatus"
            case expiresIn = "expires_in"
            case isGoalSaved
            case user
        }
 
      init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        message = try? values.decodeIfPresent(String.self, forKey: .message) ?? ""
-        accessToken = try? values.decodeIfPresent(String.self, forKey: .accessToken) ?? ""
+         let values = try decoder.container(keyedBy: CodingKeys.self)
+         message = try? values.decodeIfPresent(String.self, forKey: .message) ?? ""
+         goalStatus = try? values.decodeIfPresent(String.self, forKey: .goalStatus) ?? ""
+         accessToken = try? values.decodeIfPresent(String.self, forKey: .accessToken) ?? ""
          isGoalSaved = try? values.decodeIfPresent(Bool.self, forKey: .isGoalSaved)
-        expiresIn = try? values.decodeIfPresent(Int.self, forKey: .expiresIn) ?? 0
-        expiresIn = try? values.decodeIfPresent(Int.self, forKey: .expiresIn) ?? 0
-        user = try? values.decodeIfPresent(UserDataModel.self, forKey: .user) ?? nil
+         expiresIn = try? values.decodeIfPresent(Int.self, forKey: .expiresIn) ?? 0
+         expiresIn = try? values.decodeIfPresent(Int.self, forKey: .expiresIn) ?? 0
+         user = try? values.decodeIfPresent(UserDataModel.self, forKey: .user) ?? nil
     }
 }
 // MARK: - User

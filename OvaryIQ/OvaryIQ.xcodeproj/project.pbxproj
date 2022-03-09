@@ -60,6 +60,8 @@
 		A76C61CC27C652D8006CBE02 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76C61CB27C652D8006CBE02 /* Settings.storyboard */; };
 		A76C61CF27C65B61006CBE02 /* SideOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C61CE27C65B61006CBE02 /* SideOptionsVC.swift */; };
 		A76C61D327C65BF1006CBE02 /* SideOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C61D227C65BF1006CBE02 /* SideOptionsViewModel.swift */; };
+		A76D3CA727D7531100A21967 /* SaveUserLogPeriodDataRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D3CA627D7531100A21967 /* SaveUserLogPeriodDataRequestModel.swift */; };
+		A76D3CA927D755EE00A21967 /* GetUserLogPeriodDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D3CA827D755EE00A21967 /* GetUserLogPeriodDataModel.swift */; };
 		A76D649C279FD51500397D1C /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D649B279FD51500397D1C /* APIHelper.swift */; };
 		A76D649F279FD73800397D1C /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D649E279FD73800397D1C /* AppConfig.swift */; };
 		A76D64A1279FD84600397D1C /* Constants+Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76D64A0279FD84600397D1C /* Constants+Macros.swift */; };
@@ -125,6 +127,10 @@
 		A78AECEA27A3DBBC003E05C2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AECE927A3DBBC003E05C2 /* String+Extension.swift */; };
 		A78AECEC27A3DEDC003E05C2 /* AuthSignUpRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AECEB27A3DEDC003E05C2 /* AuthSignUpRequestModel.swift */; };
 		A78AECEE27A40356003E05C2 /* Decodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78AECED27A40356003E05C2 /* Decodable+Extension.swift */; };
+		A78D25BE27D5FCF8005FF5D6 /* CameraAndGalleryOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D25BD27D5FCF8005FF5D6 /* CameraAndGalleryOptionVC.swift */; };
+		A78D25C227D6058A005FF5D6 /* ProjectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D25C127D6058A005FF5D6 /* ProjectionViewModel.swift */; };
+		A78D25C427D60993005FF5D6 /* ProjectionDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D25C327D60993005FF5D6 /* ProjectionDataModel.swift */; };
+		A78D25C627D612F7005FF5D6 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D25C527D612F7005FF5D6 /* Array+Extensions.swift */; };
 		A78D6F8327BB6668008F6399 /* CreteRound-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7069E5C278ED2070028AA68 /* CreteRound-Italic.ttf */; };
 		A78D6F8427BB6668008F6399 /* CreteRound-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7069E5D278ED2070028AA68 /* CreteRound-Regular.ttf */; };
 		A797A1DB279E94C900AB3896 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A797A1DA279E94C900AB3896 /* Home.storyboard */; };
@@ -245,6 +251,8 @@
 		A76C61CB27C652D8006CBE02 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		A76C61CE27C65B61006CBE02 /* SideOptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideOptionsVC.swift; sourceTree = "<group>"; };
 		A76C61D227C65BF1006CBE02 /* SideOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideOptionsViewModel.swift; sourceTree = "<group>"; };
+		A76D3CA627D7531100A21967 /* SaveUserLogPeriodDataRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserLogPeriodDataRequestModel.swift; sourceTree = "<group>"; };
+		A76D3CA827D755EE00A21967 /* GetUserLogPeriodDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserLogPeriodDataModel.swift; sourceTree = "<group>"; };
 		A76D649B279FD51500397D1C /* APIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		A76D649E279FD73800397D1C /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		A76D64A0279FD84600397D1C /* Constants+Macros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Macros.swift"; sourceTree = "<group>"; };
@@ -311,6 +319,10 @@
 		A78AECE927A3DBBC003E05C2 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		A78AECEB27A3DEDC003E05C2 /* AuthSignUpRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignUpRequestModel.swift; sourceTree = "<group>"; };
 		A78AECED27A40356003E05C2 /* Decodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Extension.swift"; sourceTree = "<group>"; };
+		A78D25BD27D5FCF8005FF5D6 /* CameraAndGalleryOptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAndGalleryOptionVC.swift; sourceTree = "<group>"; };
+		A78D25C127D6058A005FF5D6 /* ProjectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionViewModel.swift; sourceTree = "<group>"; };
+		A78D25C327D60993005FF5D6 /* ProjectionDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectionDataModel.swift; sourceTree = "<group>"; };
+		A78D25C527D612F7005FF5D6 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		A797A1DA279E94C900AB3896 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		A797A1DD279E950B00AB3896 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		A797A1E1279EB41B00AB3896 /* Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loader.json; sourceTree = "<group>"; };
@@ -437,6 +449,7 @@
 				A797A1E3279EC03200AB3896 /* Utility.swift */,
 				A78AECED27A40356003E05C2 /* Decodable+Extension.swift */,
 				A7DFB83B27BE17A100D66360 /* UIImageView+Extensions.swift */,
+				A78D25C527D612F7005FF5D6 /* Array+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -873,6 +886,7 @@
 			isa = PBXGroup;
 			children = (
 				A76C61CB27C652D8006CBE02 /* Settings.storyboard */,
+				A78D25BB27D5FC9E005FF5D6 /* CameraAndGalleryOption */,
 				A7820BB627CF28A90051ED3A /* AppSettings */,
 				A7E1975D27C8CFAC0012377B /* MyProfile */,
 				A7E1976127C8D4EF0012377B /* ChangePassword */,
@@ -1257,6 +1271,8 @@
 		A77C7BC427C77795006D01A1 /* ProjectionTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				A78D25C027D60565005FF5D6 /* ViewModel */,
+				A78D25BF27D6055C005FF5D6 /* Model */,
 				A7D006F827D092FD002BF8B1 /* View */,
 				A7D006F527D0923F002BF8B1 /* Controller */,
 			);
@@ -1374,6 +1390,7 @@
 			isa = PBXGroup;
 			children = (
 				A7820BC427D07EE80051ED3A /* GetDataForLogPeriodDataModel.swift */,
+				A76D3CA827D755EE00A21967 /* GetUserLogPeriodDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1384,6 +1401,38 @@
 				A78AECE127A2960E003E05C2 /* SharedPref.swift */,
 			);
 			path = PropertyWrappers;
+			sourceTree = "<group>";
+		};
+		A78D25BB27D5FC9E005FF5D6 /* CameraAndGalleryOption */ = {
+			isa = PBXGroup;
+			children = (
+				A78D25BC27D5FCB7005FF5D6 /* Controller */,
+			);
+			path = CameraAndGalleryOption;
+			sourceTree = "<group>";
+		};
+		A78D25BC27D5FCB7005FF5D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A78D25BD27D5FCF8005FF5D6 /* CameraAndGalleryOptionVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A78D25BF27D6055C005FF5D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A78D25C327D60993005FF5D6 /* ProjectionDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A78D25C027D60565005FF5D6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A78D25C127D6058A005FF5D6 /* ProjectionViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		A797A1D9279E94AE00AB3896 /* Home */ = {
@@ -1496,6 +1545,7 @@
 			isa = PBXGroup;
 			children = (
 				A7D0070027D1E745002BF8B1 /* SaveMedicationRequestModel.swift */,
+				A76D3CA627D7531100A21967 /* SaveUserLogPeriodDataRequestModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1851,12 +1901,14 @@
 			files = (
 				A7DCAB3527BF5BEA0018FC76 /* FSCalendarCell.m in Sources */,
 				A753832927B1185E00F9FE83 /* ForgotPasswordDataModel.swift in Sources */,
+				A78D25C227D6058A005FF5D6 /* ProjectionViewModel.swift in Sources */,
 				A7DCAB3727BF5BEA0018FC76 /* FSCalendar.m in Sources */,
 				A76D64D327A2647E00397D1C /* CoreDataManager.swift in Sources */,
 				A76D64BF27A0687100397D1C /* EventLoop.swift in Sources */,
 				A7D0070427D21133002BF8B1 /* LogPeriodSaveDateBottomSheetViewModel.swift in Sources */,
 				A73CA3E327982866005085CB /* PeriodStartDateVC.swift in Sources */,
 				A753833F27B13A3100F9FE83 /* ResetPasswordDataModel.swift in Sources */,
+				A78D25C627D612F7005FF5D6 /* Array+Extensions.swift in Sources */,
 				A7D006FE27D1E2FE002BF8B1 /* LogPeriodDoneBottomSheetVC.swift in Sources */,
 				A73244E3278E8E2A008FDCF0 /* AuthOptionVC.swift in Sources */,
 				A73CA3EC27982AF8005085CB /* CalendarCollectionViewCell.swift in Sources */,
@@ -1911,6 +1963,7 @@
 				A76C61D327C65BF1006CBE02 /* SideOptionsViewModel.swift in Sources */,
 				A77C7BD027C89040006D01A1 /* MyProfileTVC.swift in Sources */,
 				A77AD2AA27A8F3BE007C389F /* ValidateSocialIdRequest.swift in Sources */,
+				A76D3CA727D7531100A21967 /* SaveUserLogPeriodDataRequestModel.swift in Sources */,
 				A77AD2B127AA8D37007C389F /* BaseCollectionViewCell.swift in Sources */,
 				A7DCAB3F27BF5BEA0018FC76 /* FSCalendarTransitionCoordinator.m in Sources */,
 				A76D64D127A2646300397D1C /* DatabaseHandler.swift in Sources */,
@@ -1928,6 +1981,7 @@
 				A7069E5A278EC3C90028AA68 /* UIView+Extensions.swift in Sources */,
 				A7717F6E27AE9B3000422539 /* ImportantInformationVC.swift in Sources */,
 				A77C7BC827C778DB006D01A1 /* CalendarHomeViewModel.swift in Sources */,
+				A78D25BE27D5FCF8005FF5D6 /* CameraAndGalleryOptionVC.swift in Sources */,
 				A7DCAB3827BF5BEA0018FC76 /* FSCalendarCollectionViewLayout.m in Sources */,
 				A760457C279EC7DC008655B6 /* String.swift in Sources */,
 				A76D64C527A068B200397D1C /* CoreEngine.swift in Sources */,
@@ -1940,6 +1994,7 @@
 				A73244E1278E8E2A008FDCF0 /* SceneDelegate.swift in Sources */,
 				A7717F6327AE4E6500422539 /* LastPeriodLongViewModel.swift in Sources */,
 				A76D64A327A021A200397D1C /* APIRouter.swift in Sources */,
+				A76D3CA927D755EE00A21967 /* GetUserLogPeriodDataModel.swift in Sources */,
 				A76D64C127A0688600397D1C /* LocalEvents.swift in Sources */,
 				A797A1E4279EC03200AB3896 /* Utility.swift in Sources */,
 				A77AD2A127A8EBD4007C389F /* SocialUserInfo.swift in Sources */,
@@ -1955,6 +2010,7 @@
 				A7DCAB4027BF5BEA0018FC76 /* FSCalendarAppearance.m in Sources */,
 				A74C322427915D1700763899 /* AuthVerificationCodeVC.swift in Sources */,
 				A76DC31027ACDCD90055ACCE /* GoalDataModel.swift in Sources */,
+				A78D25C427D60993005FF5D6 /* ProjectionDataModel.swift in Sources */,
 				A797A1DE279E950B00AB3896 /* HomeVC.swift in Sources */,
 				A77AD2B727ABDEA3007C389F /* AuthLoginViewModel.swift in Sources */,
 				A77AD2A827A8F2E4007C389F /* Enums.swift in Sources */,
@@ -2091,6 +2147,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				chch = "";
 			};
 			name = Debug;
 		};
@@ -2146,6 +2203,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+				chch = "";
 			};
 			name = Release;
 		};
@@ -2153,13 +2211,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E66D6041D13595645E3088A /* Pods-OvaryIQ.debug.xcconfig */;
 			buildSettings = {
-				API_BASE_URL = "https://devapi.ovaryiq.com/api/";
+				API_BASE_URL = "http://6ba6-2401-4900-415d-70e6-e0c7-320d-a32-226a.ngrok.io/api/";
 				APP_NAME = "OvaryIQ D";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				AUTH_PASSWORD = admin;
 				AUTH_USERNAME = admin;
 				CODE_SIGN_ENTITLEMENTS = OvaryIQ/OvaryIQDebug.entitlements;
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = OvaryIQ/OvaryIQDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.1;
@@ -2363,6 +2422,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				chch = "";
 			};
 			name = Stagging;
 		};

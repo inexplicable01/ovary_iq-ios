@@ -8,6 +8,7 @@
 import Foundation
 protocol CalendarHomeViewModelDelegate {
     func getDataForlogPeriodResponse(dataModel: GetDataForLogPeriodDataModel)
+    func getUserlogPeriodResponse(dataModel: GetUserLogPeriodDataModel)
 }
 
 class CalendarHomeViewModel {
@@ -28,14 +29,23 @@ class CalendarHomeViewModel {
         }
     }
 
-    // MARK: - Private Functions - API Calls
-    func callApiToGetDataForLogPeriod() {
+    // MARK: - Private And Internal Functions - API Calls
+    internal func callApiToGetDataForLogPeriod() {
         fLog()
         dLog(message: "Rest Event Name :: \(RestEvents.getDataForLogPeriod) and Params :: \(String(describing: [:]))")
         let restEvent = RestEngineEvents(id: RestEvents.getDataForLogPeriod, obj: [:])
         restEvent.showActivityIndicator = true
         self.coreEngine.addEngineEventsWithOutWait(evObj: restEvent)
     }
+    private func callApiToGetUserLogPeriodData() {
+        fLog()
+        dLog(message: "Rest Event Name :: \(RestEvents.getUserLogPeriodData) and Params :: \(String(describing: [:]))")
+        let restEvent = RestEngineEvents(id: RestEvents.getUserLogPeriodData, obj: [:])
+        restEvent.showActivityIndicator = false
+        self.coreEngine.addEngineEventsWithOutWait(evObj: restEvent)
+    }
+
+
 }
 // MARK: - Register Rest Event Call Back
 extension CalendarHomeViewModel {
@@ -48,6 +58,7 @@ extension CalendarHomeViewModel {
                         fLog()
                         if isSuccess {
                             do {
+                                self.callApiToGetUserLogPeriodData()
                                 var encodedDictionary = try JSONDecoder().decode(GetDataForLogPeriodDataModel.self, from: JSONSerialization.data(withJSONObject: response))
                                 dLog(message: "signupResponse:- \(encodedDictionary)")
                                 var newModel = encodedDictionary
@@ -78,6 +89,19 @@ extension CalendarHomeViewModel {
 
 
                                 self.delegate?.getDataForlogPeriodResponse(dataModel: newModel)
+                            } catch {
+                                print("Error: ", error)
+                            }
+                        } else {
+                            AlertControllerManager.showToast(message: ErrorMessages.somethingWentWrong.localizedString, type: .error)
+                        }
+                    case .getUserLogPeriodData:
+                        if isSuccess {
+                            do {
+                                let encodedDictionary = try JSONDecoder().decode(GetUserLogPeriodDataModel.self, from: JSONSerialization.data(withJSONObject: response))
+                                dLog(message: "signupResponse:- \(encodedDictionary)")
+                                self.delegate?.getUserlogPeriodResponse(dataModel: encodedDictionary)
+
                             } catch {
                                 print("Error: ", error)
                             }

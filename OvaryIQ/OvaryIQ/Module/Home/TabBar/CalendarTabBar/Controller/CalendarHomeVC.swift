@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class CalendarHomeVC: BaseViewC {
     // MARK: - IBOutlets
     @IBOutlet private  weak var calendar: FSCalendar!
@@ -17,6 +16,7 @@ class CalendarHomeVC: BaseViewC {
 
     // MARK: - Properties
     private var selectedDates: String?
+    private var currentPage: Date?
     private lazy var today: Date = {
         return Date()
     }()
@@ -26,6 +26,7 @@ class CalendarHomeVC: BaseViewC {
            return formatter
     }()
     private var viewModel = CalendarHomeViewModel()
+    private var saveUserLogPeriodDataRequestModel = SaveUserLogPeriodDataRequestModel()
     private var getDataLogPeriodDataModel: GetDataForLogPeriodDataModel?
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
@@ -66,7 +67,6 @@ class CalendarHomeVC: BaseViewC {
     }
 
     // MARK: - Notifications Functions
-
     // MARK: - Private and internal Functions
     private func initialSetup() {
         self.calendar.appearance.titleFont = UIFont(name: "SourceSansPro-Bold", size: 16)
@@ -87,6 +87,23 @@ class CalendarHomeVC: BaseViewC {
         calendar.delegate = self
         calendar.dataSource = self
     }
+    private func moveCurrentPage(moveUp: Bool) {
+        let calendar = Calendar.current
+        var dateComponents = DateComponents()
+       // dateComponents.year = moveUp ? 1 : -1
+        self.currentPage = calendar.date(byAdding: dateComponents, to: self.currentPage ?? self.today)
+        self.calendar.setCurrentPage(self.currentPage!, animated: true)
+        let values = Calendar.current.dateComponents([Calendar.Component.month, Calendar.Component.year], from: self.calendar.currentPage)
+        if let month = values.month {
+            let monthName = DateFormatter().monthSymbols[month - 1]
+            lblMonthYear.text = "\(monthName) \(String(describing: values.year ?? 0))"
+        }
+
+        if let year = values.year {
+            lblYear.text = "\(String(describing: year) )"
+        }
+    }
+
     internal func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         print("change calendar ")
         let currentPageDate = calendar.currentPage
@@ -105,7 +122,14 @@ class CalendarHomeVC: BaseViewC {
              self.navigationController?.pushViewController(profileVC, animated: true)
         }
     }
- }
+    @IBAction private func tapBtnOpenYearPicker(_ sender: Any) {
+        fLog()
+    }
+    @IBAction private func tapBtnClalendarBtn(_ sender: Any) {
+        fLog()
+        self.moveCurrentPage(moveUp: true)
+    }
+}
 
 //MARK: -  FSCalendarDelegate,FSCalendarDataSource
   extension CalendarHomeVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
@@ -122,7 +146,6 @@ class CalendarHomeVC: BaseViewC {
         calendar.reloadData()
     }
 }
-
 // MARK: -  UICollectionViewDelegate, UICollectionViewDataSource
 extension CalendarHomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     // MARK: - UICollectionViewDelegate
@@ -183,6 +206,10 @@ extension CalendarHomeVC: UICollectionViewDelegate, UICollectionViewDataSource, 
 // MARK: - Protocol and delegate method
 
 extension CalendarHomeVC: CalendarHomeViewModelDelegate {
+    func getUserlogPeriodResponse(dataModel: GetUserLogPeriodDataModel) {
+        self.saveUserLogPeriodDataRequestModel.id = dataModel.logData?.id
+    }
+
     func getDataForlogPeriodResponse(dataModel: GetDataForLogPeriodDataModel) {
         self.getDataLogPeriodDataModel = dataModel
         self.collectionViewMedication.reloadData()
@@ -192,6 +219,7 @@ extension CalendarHomeVC: LogPeriodsOptionsBottomSheetControllerDelegate {
     func goBackToCalendarController(saveMedicationsSelectedDataModel: SaveMedicationRequestModel) {
         if let logPeriodDoneBottomSheetVC = Storyboard.Home.instantiateViewController(identifier: LogPeriodDoneBottomSheetVC.className) as? LogPeriodDoneBottomSheetVC {
             logPeriodDoneBottomSheetVC.modalPresentationStyle = .overFullScreen
+            logPeriodDoneBottomSheetVC.saveUserLogPeriodRequestModel = self.saveUserLogPeriodDataRequestModel
             logPeriodDoneBottomSheetVC.saveMedicationRequestModel = saveMedicationsSelectedDataModel
             self.navigationController?.present(logPeriodDoneBottomSheetVC, animated: true, completion: nil)
         }

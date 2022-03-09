@@ -57,11 +57,12 @@ class LogPeriodsOptionsBottomSheetController: UIViewController {
                         }
                     }
                     self.medicationModel.append(MedicationModel(id: self.selectedIds, date: self.selectedDate ?? ""))
-                   self.saveMedicationRequestModel.medicationId = self.medicationModel
+                    self.saveMedicationRequestModel.medicationId = self.medicationModel
+                    self.saveMedicationRequestModel.periodType = self.medicalOptionsDataModel?.name
 
-               }
-            self.delegate?.goBackToCalendarController(saveMedicationsSelectedDataModel: self.saveMedicationRequestModel)
-          }
+                }
+                self.delegate?.goBackToCalendarController(saveMedicationsSelectedDataModel: self.saveMedicationRequestModel)
+            }
         }
     }
 }
@@ -70,11 +71,24 @@ extension LogPeriodsOptionsBottomSheetController: UICollectionViewDelegate, UICo
     // MARK: - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let medicationSubCatModel = self.medicalOptionsDataModel?.subCategoryList {
-            if medicationSubCatModel[indexPath.row].isSelected {
-                self.medicalOptionsDataModel?.subCategoryList[indexPath.row].isSelected = false
+            if self.medicalOptionsDataModel?.name == LogPeriodCategoryType.medication.rawValue {
+                if medicationSubCatModel[indexPath.row].isSelected {
+                    self.medicalOptionsDataModel?.subCategoryList[indexPath.row].isSelected = false
+                } else {
+                    self.medicalOptionsDataModel?.subCategoryList[indexPath.row].isSelected = true
+                }
             } else {
-                self.medicalOptionsDataModel?.subCategoryList[indexPath.row].isSelected = true
+                for (subCatIndex , _) in medicationSubCatModel.enumerated() {
+                    if subCatIndex == indexPath.row {
+                        self.medicalOptionsDataModel?.subCategoryList[subCatIndex].isSelected = true
+                    } else {
+                        self.medicalOptionsDataModel?.subCategoryList[subCatIndex].isSelected = false
+                    }
+                }
+
             }
+
+
             self.collectionViewSubcategory.reloadData()
         }
     }

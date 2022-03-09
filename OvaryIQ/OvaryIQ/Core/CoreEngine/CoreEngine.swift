@@ -245,6 +245,10 @@ class CoreEngine: EventLoop {
             case .saveUserMedications:
               if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
                     notifyToGUI = true
+             }
+            case .projectionData:
+              if let responseDict = evobj.object as? [String: Any],  !self.validateResponseError(response: responseDict) {
+                        notifyToGUI = true
             }
 
             default :

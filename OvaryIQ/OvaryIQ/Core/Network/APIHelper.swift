@@ -29,6 +29,7 @@ struct APIName {
     static let saveUserSymptoms =  baseURL + "auth/saveUserSymptoms"
     static let saveUserPregnancyTests =  baseURL + "auth/saveUserPregnancyTests"
     static let saveLogPeriod = baseURL + "auth/saveLogPeriod"
+    static let projectionData = baseURL + "auth/projectionData"
 
 }
 
@@ -41,6 +42,18 @@ struct APIParam  {
     static let Errors = "errors"
     static let ErrorCode = "errorCode"
     static let ResponseMessage = "message"
+
+
+    // SAVE USER MEDICATION DATA
+    static let id = "id"
+    static let date = "date"
+    static let MedicationId = "medication_id"
+    static let ProcedureId = "procedure_id"
+    static let ActivityId = "activity_id"
+    static let SymptomId = "symptom_id"
+    static let PregnancyTestId = "pregnancy_test_id"
+
+
 
 
     static let StatusCode = "statusCode"

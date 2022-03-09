@@ -11,7 +11,7 @@ struct Profile {
     var img: UIImage?
     var isHideGreyLine: Bool?
     var controller: String?
-    init(title: String, img: UIImage, isHideGreyLine: Bool,controller: String) {
+    init(title: String, img: UIImage, isHideGreyLine: Bool, controller: String) {
         self.title = title
         self.img = img
         self.isHideGreyLine = isHideGreyLine

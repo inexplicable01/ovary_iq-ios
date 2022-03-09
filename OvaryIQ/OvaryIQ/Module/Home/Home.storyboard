@@ -164,7 +164,7 @@
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lbb-yh-1Qq">
                                                                                     <rect key="frame" x="140" y="0.0" width="234" height="45"/>
                                                                                     <subviews>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IUI" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAd-EI-qWf">
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAd-EI-qWf">
                                                                                             <rect key="frame" x="11" y="0.0" width="218" height="45"/>
                                                                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                                                                             <color key="textColor" red="0.1176470518" green="0.05882352591" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -235,7 +235,7 @@
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLw-hU-5gm">
                                                                                     <rect key="frame" x="140" y="0.0" width="234" height="45"/>
                                                                                     <subviews>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday, Oct 06 2021" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcL-Jq-Gf8">
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcL-Jq-Gf8">
                                                                                             <rect key="frame" x="11" y="0.0" width="218" height="45"/>
                                                                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                                                                             <color key="textColor" red="0.1176470518" green="0.05882352591" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -306,7 +306,7 @@
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6on-i1-Ivd">
                                                                                     <rect key="frame" x="140" y="0.0" width="234" height="45"/>
                                                                                     <subviews>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday, Jan 01 2022" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFH-BI-lkB">
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFH-BI-lkB">
                                                                                             <rect key="frame" x="11" y="0.0" width="218" height="45"/>
                                                                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                                                                             <color key="textColor" red="0.1176470518" green="0.05882352591" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -377,7 +377,7 @@
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQd-wX-fHb">
                                                                                     <rect key="frame" x="140" y="0.0" width="234" height="45"/>
                                                                                     <subviews>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 weeks and 2 days" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zb4-e1-6cI">
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zb4-e1-6cI">
                                                                                             <rect key="frame" x="11" y="0.0" width="218" height="45"/>
                                                                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                                                                             <color key="textColor" red="0.1176470518" green="0.05882352591" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -448,7 +448,7 @@
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ky1-hK-LWt">
                                                                                     <rect key="frame" x="140" y="0.0" width="234" height="60"/>
                                                                                     <subviews>
-                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday, May 21 2022" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd4-U8-v39">
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd4-U8-v39">
                                                                                             <rect key="frame" x="11" y="0.0" width="218" height="60"/>
                                                                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
                                                                                             <color key="textColor" red="0.1176470518" green="0.05882352591" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -518,6 +518,14 @@
                                                 <constraint firstItem="UDv-tl-V96" firstAttribute="leading" secondItem="cPe-9z-aI3" secondAttribute="leading" constant="20" id="h75-qh-850"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblExpectedDeliveryDate" destination="Zd4-U8-v39" id="CQE-sb-3Ol"/>
+                                            <outlet property="lblGestationDate" destination="Zb4-e1-6cI" id="PwU-QM-Ncu"/>
+                                            <outlet property="lblPregancyTest" destination="OFH-BI-lkB" id="869-36-RW1"/>
+                                            <outlet property="lblProjectionDate" destination="FcL-Jq-Gf8" id="1mO-PE-9ws"/>
+                                            <outlet property="lblProjectionName" destination="TAd-EI-qWf" id="HP3-sA-2JN"/>
+                                            <outlet property="viewGestation" destination="q5V-8o-QeL" id="RgD-Id-whF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -550,7 +558,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Projections" image="Chart" selectedImage="Chart" id="CXO-4r-leu"/>
                     <connections>
-                        <outlet property="tablViewProjections" destination="0Ff-8W-aes" id="bgw-3g-era"/>
+                        <outlet property="tablViewProjections" destination="0Ff-8W-aes" id="Azb-PU-hyt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEc-LS-63g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -636,15 +644,33 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQb-S4-xVr">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YearDropDown" translatesAutoresizingMaskIntoConstraints="NO" id="hjl-cA-qSc">
+                                <rect key="frame" x="208.5" y="68" width="9" height="9"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="9" id="K56-l4-iCK"/>
+                                    <constraint firstAttribute="width" constant="9" id="Pyf-xG-zzR"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kh-Kb-zFK">
                                 <rect key="frame" x="143.5" y="56.5" width="80" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="tapBtnOpenYearPicker:" destination="Ezh-ch-dMz" eventType="touchUpInside" id="7jf-Ob-4Dr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rmo-ie-EX6">
+                                <rect key="frame" x="311" y="55" width="46" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Mgk-cp-V2N"/>
+                                    <constraint firstAttribute="height" constant="35" id="be5-GL-feL"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="backArrow">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <buttonConfiguration key="configuration" style="plain" image="YearDropDown"/>
+                                <buttonConfiguration key="configuration" style="plain" image="WhiteCalendar"/>
                                 <connections>
-                                    <action selector="tapBtnProfile:" destination="Ezh-ch-dMz" eventType="touchUpInside" id="Ue3-yL-CYR"/>
+                                    <action selector="tapBtnClalendarBtn:" destination="Ezh-ch-dMz" eventType="touchUpInside" id="TJw-g2-rvw"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBl-MX-wqW">
@@ -998,23 +1024,27 @@
                         <viewLayoutGuide key="safeArea" id="eji-PH-b1H"/>
                         <color key="backgroundColor" red="0.99215686274509807" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="UQb-S4-xVr" firstAttribute="top" secondItem="pM4-oU-oiX" secondAttribute="top" id="4eQ-rW-nzx"/>
+                            <constraint firstItem="2kh-Kb-zFK" firstAttribute="bottom" secondItem="pM4-oU-oiX" secondAttribute="bottom" id="38B-bC-4Nq"/>
                             <constraint firstItem="xfa-J8-uct" firstAttribute="top" secondItem="Wsm-jQ-IwT" secondAttribute="top" id="5hy-2u-cVn"/>
                             <constraint firstItem="pM4-oU-oiX" firstAttribute="centerY" secondItem="8Y8-TG-MfU" secondAttribute="centerY" id="Flv-MY-rT4"/>
+                            <constraint firstItem="hjl-cA-qSc" firstAttribute="trailing" secondItem="pM4-oU-oiX" secondAttribute="trailing" constant="-6" id="GnO-XD-uJ3"/>
                             <constraint firstItem="wBl-MX-wqW" firstAttribute="width" secondItem="Wsm-jQ-IwT" secondAttribute="width" id="IXO-5P-9ZR"/>
                             <constraint firstAttribute="bottom" secondItem="wBl-MX-wqW" secondAttribute="bottom" id="Ie6-z5-DgG"/>
-                            <constraint firstItem="UQb-S4-xVr" firstAttribute="bottom" secondItem="pM4-oU-oiX" secondAttribute="bottom" id="J13-bp-Omo"/>
                             <constraint firstItem="woU-YQ-i8K" firstAttribute="width" secondItem="Wsm-jQ-IwT" secondAttribute="width" id="JOF-OW-8uY"/>
+                            <constraint firstItem="2kh-Kb-zFK" firstAttribute="trailing" secondItem="pM4-oU-oiX" secondAttribute="trailing" id="KeL-V3-P2o"/>
                             <constraint firstItem="xfa-J8-uct" firstAttribute="leading" secondItem="eji-PH-b1H" secondAttribute="leading" id="Pnq-ct-e93"/>
+                            <constraint firstItem="hjl-cA-qSc" firstAttribute="centerY" secondItem="pM4-oU-oiX" secondAttribute="centerY" constant="1" id="Qqw-b4-L0u"/>
                             <constraint firstItem="wBl-MX-wqW" firstAttribute="trailing" secondItem="eji-PH-b1H" secondAttribute="trailing" id="UxC-BV-5dp"/>
+                            <constraint firstItem="eji-PH-b1H" firstAttribute="trailing" secondItem="Rmo-ie-EX6" secondAttribute="trailing" constant="10" id="VJL-JQ-QxL"/>
                             <constraint firstItem="eji-PH-b1H" firstAttribute="trailing" secondItem="xfa-J8-uct" secondAttribute="trailing" id="WwM-8n-Ux1"/>
                             <constraint firstItem="aUM-6u-oZP" firstAttribute="leading" secondItem="Wsm-jQ-IwT" secondAttribute="leading" id="ZMX-ex-BET"/>
                             <constraint firstItem="8Y8-TG-MfU" firstAttribute="top" secondItem="eji-PH-b1H" secondAttribute="top" constant="10" id="e9j-Sl-Hou"/>
+                            <constraint firstItem="Rmo-ie-EX6" firstAttribute="centerY" secondItem="hjl-cA-qSc" secondAttribute="centerY" id="eGn-av-YmM"/>
                             <constraint firstAttribute="bottom" secondItem="aUM-6u-oZP" secondAttribute="bottom" id="gNg-Pq-hhB"/>
+                            <constraint firstItem="2kh-Kb-zFK" firstAttribute="leading" secondItem="pM4-oU-oiX" secondAttribute="leading" id="hd9-WS-ULS"/>
+                            <constraint firstItem="2kh-Kb-zFK" firstAttribute="top" secondItem="pM4-oU-oiX" secondAttribute="top" id="jnK-Fs-YPT"/>
                             <constraint firstItem="8Y8-TG-MfU" firstAttribute="leading" secondItem="eji-PH-b1H" secondAttribute="leading" constant="20" id="l7K-KZ-ugo"/>
                             <constraint firstItem="aUM-6u-oZP" firstAttribute="top" secondItem="Wsm-jQ-IwT" secondAttribute="top" id="lXs-IL-bAZ"/>
-                            <constraint firstItem="UQb-S4-xVr" firstAttribute="leading" secondItem="pM4-oU-oiX" secondAttribute="leading" id="qBK-cG-InJ"/>
-                            <constraint firstItem="UQb-S4-xVr" firstAttribute="trailing" secondItem="pM4-oU-oiX" secondAttribute="trailing" id="rWT-Ty-prU"/>
                             <constraint firstAttribute="trailing" secondItem="aUM-6u-oZP" secondAttribute="trailing" id="t33-Te-fzU"/>
                             <constraint firstItem="wBl-MX-wqW" firstAttribute="leading" secondItem="eji-PH-b1H" secondAttribute="leading" id="tGy-AC-nbJ"/>
                             <constraint firstItem="pM4-oU-oiX" firstAttribute="centerX" secondItem="xfa-J8-uct" secondAttribute="centerX" id="uxp-5H-cUQ"/>
@@ -1283,7 +1313,8 @@
         <image name="LogPeriod" width="25" height="37.5"/>
         <image name="ProfileBg" width="375" height="369"/>
         <image name="Projections" width="15.5" height="17"/>
-        <image name="YearDropDown" width="3.3333332538604736" height="2"/>
+        <image name="WhiteCalendar" width="22" height="17.5"/>
+        <image name="YearDropDown" width="10" height="6"/>
         <image name="backArrow" width="35" height="35"/>
         <image name="brownDrop" width="8.3333330154418945" height="11"/>
         <image name="close" width="35" height="47"/>

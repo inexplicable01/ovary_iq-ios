@@ -10,12 +10,15 @@ import UIKit
 protocol LogPeriodSaveDateBottomSheetViewModelDelegate {
       func sucessSaveLogPeriosApiResponse()
 }
-
 class LogPeriodSaveDateBottomSheetViewModel {
     // MARK: - Properties
     private var restEventCallBackID: String?
     private let coreEngine = CoreEngine.shared
+    private var params = [String: Any]()
+    private var dict = [String: Any]()
+    private var restEngineEvent = EngineEvents()
     internal var saveMedicationRequestModel: SaveMedicationRequestModel?
+    internal var saveUserSelectedLogPeriodRequestModel: SaveUserLogPeriodDataRequestModel?
     internal func registerCoreEngineEventsCallBack() {
         if self.restEventCallBackID == nil {
             self.registerRestEventCallBack()
@@ -31,22 +34,51 @@ class LogPeriodSaveDateBottomSheetViewModel {
     }
 
     // MARK: - Private Functions - API Calls
-    func callApiToSavePeriodAndMedications() {
+    func callApiToSavePeriodAndMedications(type: String) {
          fLog()
-        //let params = self.saveMedicationRequestModel.dictionary
-        
+        dict[APIParam.id] = self.saveMedicationRequestModel?.medicationId?.first?.id
+        dict[APIParam.date] = self.saveMedicationRequestModel?.medicationId?.first?.date
+        switch self.saveMedicationRequestModel?.periodType {
+                // for Log Period
+         case LogPeriodCategoryType.logPeriod.rawValue:
+          if let periodFlowId = self.saveMedicationRequestModel?.medicationId?.first?.id?.first {
+                self.saveUserSelectedLogPeriodRequestModel?.periodFlowId = "\(periodFlowId)"
+          }
+         self.saveUserSelectedLogPeriodRequestModel?.lockDate = self.saveMedicationRequestModel?.medicationId?.first?.date
+         params = self.saveUserSelectedLogPeriodRequestModel.dictionary
+         dLog(message: "Rest Event Name :: \(RestEvents.saveLogPeriod) and Params :: \(String(describing: params))")
+         restEngineEvent = RestEngineEvents(id: RestEvents.saveLogPeriod, obj: params)
+                // for Medications
+        case LogPeriodCategoryType.medication.rawValue:
+        params = [APIParam.MedicationId: [dict].toJSONStringFormatted()]
+        dLog(message: "Rest Event Name :: \(RestEvents.saveUserMedications) and Params :: \(String(describing: params))")
+        restEngineEvent = RestEngineEvents(id: RestEvents.saveUserMedications, obj: params)
+          // for Procedure
+        case LogPeriodCategoryType.procedure.rawValue:
+        params = [APIParam.ProcedureId: [dict].toJSONStringFormatted()]
+        dLog(message: "Rest Event Name :: \(RestEvents.saveUserProcedures) and Params :: \(String(describing: params))")
+        restEngineEvent = RestEngineEvents(id: RestEvents.saveUserProcedures, obj: params)
+                // for Activity
+        case LogPeriodCategoryType.activity.rawValue:
+        params = [APIParam.ActivityId: [dict].toJSONStringFormatted()]
+        dLog(message: "Rest Event Name :: \(RestEvents.saveUserActivities) and Params :: \(String(describing: params))")
+        restEngineEvent = RestEngineEvents(id: RestEvents.saveUserActivities, obj: params)
+                // for Symptoms
+        case LogPeriodCategoryType.symptoms.rawValue:
+        params = [APIParam.SymptomId: [dict].toJSONStringFormatted()]
+        dLog(message: "Rest Event Name :: \(RestEvents.saveUserSymptoms) and Params :: \(String(describing: params))")
+        restEngineEvent = RestEngineEvents(id: RestEvents.saveUserSymptoms, obj: params)
+               // for Pregnancy Test
+        case LogPeriodCategoryType.pregnancyTest.rawValue:
+        params = [APIParam.PregnancyTestId: [dict].toJSONStringFormatted()]
+        dLog(message: "Rest Event Name :: \(RestEvents.saveUserPregnancyTests) and Params :: \(String(describing: params))")
+        restEngineEvent = RestEngineEvents(id: RestEvents.saveUserPregnancyTests, obj: params)
+        default:
+        break
+        }
+       Helper.showLoader()
+      self.coreEngine.addEngineEventsWithOutWait(evObj: restEngineEvent)
 
-        var dict = [String:Any]()
-       dict["id"] = self.saveMedicationRequestModel?.medicationId?.first?.id?.description
-        dict["date"] = self.saveMedicationRequestModel?.medicationId?.first?.date
-//        dict["id"] = [1,2]
-//        dict["date"] = "2022-01-06"
-        let params = ["medication_id": [dict]]
-
-         dLog(message: "Rest Event Name :: \(RestEvents.saveUserMedications) and Params :: \(String(describing: params))")
-         let restEvent = RestEngineEvents(id: RestEvents.saveUserMedications, obj: params)
-         Helper.showLoader()
-       self.coreEngine.addEngineEventsWithOutWait(evObj: restEvent)
     }
 
 }
@@ -78,15 +110,4 @@ extension LogPeriodSaveDateBottomSheetViewModel {
             }
         })
     }
-}
-
-extension Array {
-    func toJSONStringFormatted() -> String? {
-            do {
-                let jsonData = try JSONSerialization.data(withJSONObject: self, options: JSONSerialization.WritingOptions.prettyPrinted)
-                return String(data: jsonData, encoding: String.Encoding.utf8)!
-            } catch {
-                return nil
-            }
-        }
 }

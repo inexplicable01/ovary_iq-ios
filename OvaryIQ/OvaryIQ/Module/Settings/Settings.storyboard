@@ -1236,6 +1236,77 @@
             </objects>
             <point key="canvasLocation" x="2118.840579710145" y="44.866071428571423"/>
         </scene>
+        <!--Camera And Gallery OptionVC-->
+        <scene sceneID="g1y-SM-E6L">
+            <objects>
+                <viewController storyboardIdentifier="CameraAndGalleryOptionVC" id="Gte-1P-rm5" customClass="CameraAndGalleryOptionVC" customModule="OvaryIQ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OeC-bJ-dhq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fof-I6-yEA">
+                                <rect key="frame" x="40" y="706" width="334" height="165"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPC-wR-Z24">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="105"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HOd-I5-5Wk">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="105"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="HOd-I5-5Wk" secondAttribute="bottom" id="0d0-NV-T1Q"/>
+                                            <constraint firstAttribute="trailing" secondItem="HOd-I5-5Wk" secondAttribute="trailing" id="8zV-Np-3Eo"/>
+                                            <constraint firstItem="HOd-I5-5Wk" firstAttribute="leading" secondItem="bPC-wR-Z24" secondAttribute="leading" id="GHz-LG-m5w"/>
+                                            <constraint firstItem="HOd-I5-5Wk" firstAttribute="top" secondItem="bPC-wR-Z24" secondAttribute="top" id="Zns-3A-JrG"/>
+                                            <constraint firstAttribute="height" constant="105" id="lMW-eC-6bW"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyx-wI-kcQ">
+                                        <rect key="frame" x="0.0" y="115" width="334" height="50"/>
+                                        <color key="backgroundColor" name="ThemeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="8Ri-Nk-YW4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius1">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="tapBtnLogout:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="t8O-6s-1Oq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VY0-R0-dpY"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fof-I6-yEA" secondAttribute="bottom" constant="25" id="Gzp-jl-HUB"/>
+                            <constraint firstItem="fof-I6-yEA" firstAttribute="leading" secondItem="VY0-R0-dpY" secondAttribute="leading" constant="40" id="K02-Y1-MdZ"/>
+                            <constraint firstItem="fof-I6-yEA" firstAttribute="trailing" secondItem="VY0-R0-dpY" secondAttribute="trailing" constant="-40" id="gVF-ip-gnw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gMb-Dq-aI1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2808.6956521739135" y="44.866071428571423"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BG Img" width="375" height="812"/>

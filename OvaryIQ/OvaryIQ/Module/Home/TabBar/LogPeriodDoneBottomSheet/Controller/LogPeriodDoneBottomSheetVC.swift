@@ -11,11 +11,11 @@ class LogPeriodDoneBottomSheetVC: BaseViewC {
     // MARK: - IBOutlets
     // MARK: - Properties
     internal var saveMedicationRequestModel : SaveMedicationRequestModel?
+    internal var saveUserLogPeriodRequestModel : SaveUserLogPeriodDataRequestModel?
     private var viewModel = LogPeriodSaveDateBottomSheetViewModel()
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -54,9 +54,9 @@ class LogPeriodDoneBottomSheetVC: BaseViewC {
     // MARK: - Private and internal Functions
     private func initialSetup() {
         self.viewModel.saveMedicationRequestModel = saveMedicationRequestModel
+        self.viewModel.saveUserSelectedLogPeriodRequestModel = self.saveUserLogPeriodRequestModel
     }
     // MARK: - Button Actions
-
     @IBAction private func tapBtnCross(_ sender: Any) {
         fLog()
         self.dismiss(animated: true, completion: nil)
@@ -64,7 +64,7 @@ class LogPeriodDoneBottomSheetVC: BaseViewC {
     @IBAction private func tapBtnTick(_ sender: Any) {
         fLog()
         self.dismiss(animated: true) {
-            self.viewModel.callApiToSavePeriodAndMedications()
+            self.viewModel.callApiToSavePeriodAndMedications(type: self.saveMedicationRequestModel?.periodType ?? "")
         }
     }
 

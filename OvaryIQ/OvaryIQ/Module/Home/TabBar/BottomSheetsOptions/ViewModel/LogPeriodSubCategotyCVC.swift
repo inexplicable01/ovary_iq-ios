@@ -21,7 +21,6 @@ class LogPeriodSubCategotyCVC: BaseCollectionViewCell {
     }
     // MARK: - Internal Functions
     internal func configCell(model: SubCategoryListDataModel?, logPeriodType: String?) {
-
         selectedView.borderWidth = model?.isSelected == true ? 1 : 0
         imgTick.isHidden = !(model?.isSelected ?? false)
         switch logPeriodType {

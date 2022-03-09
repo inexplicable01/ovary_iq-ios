@@ -7,9 +7,13 @@
 
 import Foundation
 struct SaveMedicationRequestModel: Codable {
+    var periodType: String?
     var medicationId: [MedicationModel]?
+//    var procedureId: [MedicationModel]?
+//    var
     enum CodingKeys: String, CodingKey {
         case medicationId = "medication_id"
+        case periodType = "periodType"
     }
 }
 struct MedicationModel: Codable {
