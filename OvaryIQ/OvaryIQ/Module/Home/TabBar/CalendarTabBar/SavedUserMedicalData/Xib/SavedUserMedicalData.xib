@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Bold.ttf">
+            <string>SourceSansPro-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SavedUserMedicalData" customModule="OvaryIQ" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionViewMedicationIcon" destination="3d1-xf-A49" id="Wpf-6G-EEL"/>
+                <outlet property="contentView" destination="2gn-gv-4Al" id="kkT-HP-77T"/>
+                <outlet property="lblDate" destination="9du-Rx-PHK" id="4np-QN-Hbp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SavedUserMedicalData" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="90"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gn-gv-4Al">
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="90"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OCT 6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9du-Rx-PHK">
+                            <rect key="frame" x="5" y="8" width="110" height="21"/>
+                            <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3d1-xf-A49">
+                            <rect key="frame" x="8" y="31" width="104" height="51"/>
+                            <color key="backgroundColor" name="ThemeColor"/>
+                            <color key="tintColor" name="ThemeColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="51" id="lo1-nk-ZDQ"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="n2R-PD-Odd">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="ThemeColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                    <color key="value" name="ThemeColor"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <outlet property="dataSource" destination="2gn-gv-4Al" id="0ef-Dz-ZHx"/>
+                                <outlet property="delegate" destination="2gn-gv-4Al" id="9wP-hl-Bpz"/>
+                            </connections>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" name="ThemeColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="9du-Rx-PHK" secondAttribute="trailing" constant="5" id="GQw-OF-YCS"/>
+                        <constraint firstItem="9du-Rx-PHK" firstAttribute="leading" secondItem="2gn-gv-4Al" secondAttribute="leading" constant="5" id="Rr9-T1-8Bk"/>
+                        <constraint firstItem="3d1-xf-A49" firstAttribute="leading" secondItem="2gn-gv-4Al" secondAttribute="leading" constant="8" id="V0c-fW-3j1"/>
+                        <constraint firstAttribute="trailing" secondItem="3d1-xf-A49" secondAttribute="trailing" constant="8" id="cjB-5b-v8u"/>
+                        <constraint firstItem="9du-Rx-PHK" firstAttribute="top" secondItem="2gn-gv-4Al" secondAttribute="top" constant="8" id="gqS-vb-MdH"/>
+                        <constraint firstItem="3d1-xf-A49" firstAttribute="top" secondItem="9du-Rx-PHK" secondAttribute="bottom" constant="2" id="ok4-l8-gHn"/>
+                        <constraint firstAttribute="bottom" secondItem="3d1-xf-A49" secondAttribute="bottom" constant="8" id="uZO-RC-m94"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBlueColor"/>
+            <constraints>
+                <constraint firstItem="2gn-gv-4Al" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3em-7r-n0w"/>
+                <constraint firstAttribute="bottom" secondItem="2gn-gv-4Al" secondAttribute="bottom" id="Cih-WF-U25"/>
+                <constraint firstAttribute="trailing" secondItem="2gn-gv-4Al" secondAttribute="trailing" id="UuK-iy-AiO"/>
+                <constraint firstItem="2gn-gv-4Al" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tfT-rH-Nhh"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="53.236607142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="ThemeColor">
+            <color red="1" green="0.42745098039215684" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

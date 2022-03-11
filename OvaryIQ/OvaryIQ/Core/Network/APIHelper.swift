@@ -30,6 +30,7 @@ struct APIName {
     static let saveUserPregnancyTests =  baseURL + "auth/saveUserPregnancyTests"
     static let saveLogPeriod = baseURL + "auth/saveLogPeriod"
     static let projectionData = baseURL + "auth/projectionData"
+    static let getUsersMedicalOptionsData = baseURL + "auth/getUsersMedicalOptionsData"
 
 }
 

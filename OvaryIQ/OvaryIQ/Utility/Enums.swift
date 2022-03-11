@@ -39,6 +39,12 @@ enum LogPeriodCategoryType: String {
     case activity = "Activity"
     case symptoms = "Symptoms"
     case pregnancyTest = "Pregnancy Test"
+    // FOR PREDICTED PERIOD
+    case predictedPeriod = "Predicted Period"
+    case fertileWindow = "Fertile Window"
+    case ovulation = "Ovulation"
+    case predictedPregnancyTest = "PregnancyTest"
+
     // subCategory
 
     // FOR LOGPERIOD
@@ -76,6 +82,9 @@ enum LogPeriodCategoryType: String {
     case positiveTestResult = "Positive Test result"
     case negativeTestResult = "Negative Test result"
 
+    var localizedString: String {
+        return NSLocalizedString(self.rawValue, comment: "")
+    }
     var image: String {
         switch self {
         case .logPeriod: return LogPeriodCategoryTypeImage.logPeriod.imageName
@@ -84,6 +93,13 @@ enum LogPeriodCategoryType: String {
         case .activity: return LogPeriodCategoryTypeImage.activity.imageName
         case .symptoms: return LogPeriodCategoryTypeImage.symptoms.imageName
         case .pregnancyTest: return LogPeriodCategoryTypeImage.pregnancyTest.imageName
+
+                // FOR PREDICTED PERIOD
+        case .predictedPeriod: return LogPeriodCategoryTypeImage.predictedPeriod.imageName
+        case .fertileWindow: return LogPeriodCategoryTypeImage.fertileWindow.imageName
+        case .ovulation:return LogPeriodCategoryTypeImage.ovulation.imageName
+        case .predictedPregnancyTest: return LogPeriodCategoryTypeImage.predictedPregnancyTest.imageName
+
                 // FOR LOGPERIOD
         case .regularFlow: return LogPeriodCategoryTypeImage.regularFlow.imageName
         case .heavyBledding: return LogPeriodCategoryTypeImage.heavyBledding.imageName
@@ -132,6 +148,13 @@ enum LogPeriodCategoryTypeImage: String {
     case activity = "Activity"
     case symptoms = "SymptomsBlue"
     case pregnancyTest = "PregancyTest"
+
+    // FOR PREDICTED PERIOD
+    case predictedPeriod = "PredictedPeriod"
+    case fertileWindow = "FertileWindow"
+    case ovulation = "Ovulation"
+    case predictedPregnancyTest = "PregnancyTest"
+
     // SubCategoryType::
 
         //FOR LOGPERIOD

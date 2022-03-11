@@ -81,8 +81,7 @@ class LogYearOfBirthVC: UIViewController {
 
     // MARK: - Private Functions
     private func initialSetup() {
-
-        self.btnNext.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
+       self.btnNext.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
        pickerView.selectRow(5, inComponent: 0, animated: true)
         //pickerView.inputView?.backgroundColor = .clear
 //        if #available(iOS 14.0, *) {
@@ -183,12 +182,6 @@ extension LogYearOfBirthVC: UIPickerViewDelegate, UIPickerViewDataSource {
             pickerLabel.text = pickerData[row]
             pickerLabel.font = UIFont(name: "SourceSansPro-Semibold", size: 26.0)
         }
-
-//        if selectedIndex == row {
-//            pickerLabel.backgroundColor = UIColor(red: 236.0 / 255.0, green: 220.0 / 255.0, blue: 224.0 / 255.0, alpha: 1.0)
-//        } else {
-//            pickerLabel.backgroundColor = UIColor.clear
-//        }
         return pickerLabel
     }
 

@@ -11,6 +11,7 @@
 		A7022677278FF7FA000E1C9F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7022676278FF7FA000E1C9F /* Logger.swift */; };
 		A702267927902E51000E1C9F /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A702267827902E51000E1C9F /* UIButton+Extensions.swift */; };
 		A7069E5A278EC3C90028AA68 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7069E59278EC3C90028AA68 /* UIView+Extensions.swift */; };
+		A71F67FF27DB4EA7003E1E99 /* YearPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F67FE27DB4EA7003E1E99 /* YearPickerVC.swift */; };
 		A720FF43278ED70A00893720 /* AuthLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A720FF42278ED70A00893720 /* AuthLoginVC.swift */; };
 		A720FF46278EEC0A00893720 /* AuthSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A720FF45278EEC0A00893720 /* AuthSignUpVC.swift */; };
 		A720FF49278EFDB500893720 /* AuthForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A720FF48278EFDB500893720 /* AuthForgotPasswordVC.swift */; };
@@ -57,6 +58,12 @@
 		A753833F27B13A3100F9FE83 /* ResetPasswordDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A753833E27B13A3100F9FE83 /* ResetPasswordDataModel.swift */; };
 		A760457C279EC7DC008655B6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A760457B279EC7DC008655B6 /* String.swift */; };
 		A7604580279ED32F008655B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A760457F279ED32F008655B6 /* Localizable.strings */; };
+		A76C139527D85F4400F7BA88 /* SavedUserMedicalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C139427D85F4400F7BA88 /* SavedUserMedicalData.swift */; };
+		A76C139D27D8A56500F7BA88 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C139C27D8A56500F7BA88 /* Cell.swift */; };
+		A76C139F27D9DA3D00F7BA88 /* SavedMedicationsDataIconCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A76C139E27D9DA3C00F7BA88 /* SavedMedicationsDataIconCVC.xib */; };
+		A76C13A227D9DC3C00F7BA88 /* SavedMedicationsDataIconCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C13A127D9DC3C00F7BA88 /* SavedMedicationsDataIconCVC.swift */; };
+		A76C13A427D9F57D00F7BA88 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C13A327D9F57D00F7BA88 /* UICollectionView+Extension.swift */; };
+		A76C13A927DA039200F7BA88 /* SavedUserMedicalData.xib in Resources */ = {isa = PBXBuildFile; fileRef = A76C13A827DA039200F7BA88 /* SavedUserMedicalData.xib */; };
 		A76C61CC27C652D8006CBE02 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76C61CB27C652D8006CBE02 /* Settings.storyboard */; };
 		A76C61CF27C65B61006CBE02 /* SideOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C61CE27C65B61006CBE02 /* SideOptionsVC.swift */; };
 		A76C61D327C65BF1006CBE02 /* SideOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C61D227C65BF1006CBE02 /* SideOptionsViewModel.swift */; };
@@ -196,6 +203,7 @@
 		A7069E59278EC3C90028AA68 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A7069E5C278ED2070028AA68 /* CreteRound-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CreteRound-Italic.ttf"; sourceTree = "<group>"; };
 		A7069E5D278ED2070028AA68 /* CreteRound-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CreteRound-Regular.ttf"; sourceTree = "<group>"; };
+		A71F67FE27DB4EA7003E1E99 /* YearPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearPickerVC.swift; sourceTree = "<group>"; };
 		A720FF42278ED70A00893720 /* AuthLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLoginVC.swift; sourceTree = "<group>"; };
 		A720FF45278EEC0A00893720 /* AuthSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignUpVC.swift; sourceTree = "<group>"; };
 		A720FF48278EFDB500893720 /* AuthForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthForgotPasswordVC.swift; sourceTree = "<group>"; };
@@ -248,6 +256,12 @@
 		A753834127B162E700F9FE83 /* OvaryIQRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OvaryIQRelease.entitlements; sourceTree = "<group>"; };
 		A760457B279EC7DC008655B6 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A760457F279ED32F008655B6 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		A76C139427D85F4400F7BA88 /* SavedUserMedicalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedUserMedicalData.swift; sourceTree = "<group>"; };
+		A76C139C27D8A56500F7BA88 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		A76C139E27D9DA3C00F7BA88 /* SavedMedicationsDataIconCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedMedicationsDataIconCVC.xib; sourceTree = "<group>"; };
+		A76C13A127D9DC3C00F7BA88 /* SavedMedicationsDataIconCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMedicationsDataIconCVC.swift; sourceTree = "<group>"; };
+		A76C13A327D9F57D00F7BA88 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		A76C13A827DA039200F7BA88 /* SavedUserMedicalData.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SavedUserMedicalData.xib; sourceTree = "<group>"; };
 		A76C61CB27C652D8006CBE02 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		A76C61CE27C65B61006CBE02 /* SideOptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideOptionsVC.swift; sourceTree = "<group>"; };
 		A76C61D227C65BF1006CBE02 /* SideOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideOptionsViewModel.swift; sourceTree = "<group>"; };
@@ -443,6 +457,7 @@
 				A702267827902E51000E1C9F /* UIButton+Extensions.swift */,
 				A76D64E127A2686800397D1C /* UserDefaults+Extensions.swift */,
 				A7CE543B27967A9300191A7B /* NSObject+Extension.swift */,
+				A76C13A327D9F57D00F7BA88 /* UICollectionView+Extension.swift */,
 				A77C71C42797FB66007AB67E /* Struct+Storyboard.swift */,
 				A7CE543D27967B7B00191A7B /* UITableView+Extension.swift */,
 				A78AECE927A3DBBC003E05C2 /* String+Extension.swift */,
@@ -882,6 +897,45 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A76C139127D859B800F7BA88 /* SavedUserMedicalData */ = {
+			isa = PBXGroup;
+			children = (
+				A76C13A027D9DBC400F7BA88 /* Xib */,
+				A76C139B27D8A53400F7BA88 /* View */,
+			);
+			path = SavedUserMedicalData;
+			sourceTree = "<group>";
+		};
+		A76C139A27D8A50600F7BA88 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				A7820BC327D07EA80051ED3A /* Model */,
+				A77C7BCB27C78847006D01A1 /* View */,
+				A77C7BCA27C7837E006D01A1 /* ViewModel */,
+				A77C7BC927C7836F006D01A1 /* Controller */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		A76C139B27D8A53400F7BA88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A76C139427D85F4400F7BA88 /* SavedUserMedicalData.swift */,
+				A76C139C27D8A56500F7BA88 /* Cell.swift */,
+				A76C13A127D9DC3C00F7BA88 /* SavedMedicationsDataIconCVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A76C13A027D9DBC400F7BA88 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				A76C139E27D9DA3C00F7BA88 /* SavedMedicationsDataIconCVC.xib */,
+				A76C13A827DA039200F7BA88 /* SavedUserMedicalData.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
 		A76C61CA27C652BD006CBE02 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -1260,10 +1314,10 @@
 		A77C7BC327C7777F006D01A1 /* CalendarTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				A7820BC327D07EA80051ED3A /* Model */,
-				A77C7BCB27C78847006D01A1 /* View */,
-				A77C7BCA27C7837E006D01A1 /* ViewModel */,
-				A77C7BC927C7836F006D01A1 /* Controller */,
+				A76C139127D859B800F7BA88 /* SavedUserMedicalData */,
+				A7D006FB27D1E2AA002BF8B1 /* LogPeriodDoneBottomSheet */,
+				A77D7CA927CDDE0F00695974 /* BottomSheetsOptions */,
+				A76C139A27D8A50600F7BA88 /* Calendar */,
 			);
 			path = CalendarTabBar;
 			sourceTree = "<group>";
@@ -1283,6 +1337,7 @@
 			isa = PBXGroup;
 			children = (
 				A77C7BC527C777C1006D01A1 /* CalendarHomeVC.swift */,
+				A71F67FE27DB4EA7003E1E99 /* YearPickerVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1624,9 +1679,7 @@
 			isa = PBXGroup;
 			children = (
 				A7DF7E0927C73A5B00C7160B /* TabBarController.swift */,
-				A7D006FB27D1E2AA002BF8B1 /* LogPeriodDoneBottomSheet */,
 				A77C7BC427C77795006D01A1 /* ProjectionTabBar */,
-				A77D7CA927CDDE0F00695974 /* BottomSheetsOptions */,
 				A77C7BC327C7777F006D01A1 /* CalendarTabBar */,
 			);
 			path = TabBar;
@@ -1803,6 +1856,7 @@
 				A732452C278E8F82008FDCF0 /* SourceSansPro-Italic.ttf in Resources */,
 				A7324525278E8F82008FDCF0 /* SourceSansPro-SemiBold.ttf in Resources */,
 				A74C322A2791652F00763899 /* Questions.storyboard in Resources */,
+				A76C13A927DA039200F7BA88 /* SavedUserMedicalData.xib in Resources */,
 				A73244EB278E8E2C008FDCF0 /* LaunchScreen.storyboard in Resources */,
 				A7324528278E8F82008FDCF0 /* SourceSansPro-Black.ttf in Resources */,
 				A73244E8278E8E2C008FDCF0 /* Assets.xcassets in Resources */,
@@ -1813,6 +1867,7 @@
 				A7324521278E8F82008FDCF0 /* SourceSansPro-Light.ttf in Resources */,
 				A7324523278E8F82008FDCF0 /* SourceSansPro-Bold.ttf in Resources */,
 				A7604580279ED32F008655B6 /* Localizable.strings in Resources */,
+				A76C139F27D9DA3D00F7BA88 /* SavedMedicationsDataIconCVC.xib in Resources */,
 				A7324526278E8F82008FDCF0 /* SourceSansPro-ExtraLightItalic.ttf in Resources */,
 				A732452A278E8F82008FDCF0 /* SourceSansPro-LightItalic.ttf in Resources */,
 			);
@@ -1920,6 +1975,7 @@
 				A76D64E427A26A0700397D1C /* AlertControllerManager.swift in Sources */,
 				A7DFB83C27BE17A100D66360 /* UIImageView+Extensions.swift in Sources */,
 				A7820BC227CF6D6B0051ED3A /* MyProfileDataModel.swift in Sources */,
+				A71F67FF27DB4EA7003E1E99 /* YearPickerVC.swift in Sources */,
 				A78AECE627A2D2B0003E05C2 /* AuthSignUpViewModel.swift in Sources */,
 				A7CE54832796B9C200191A7B /* Constants+TextsMessages.swift in Sources */,
 				A7717F5E27AD49BD00422539 /* TryingGetPrefnantRequestModel.swift in Sources */,
@@ -1987,6 +2043,7 @@
 				A76D64C527A068B200397D1C /* CoreEngine.swift in Sources */,
 				A76D64DE27A267A700397D1C /* BusinessHour.swift in Sources */,
 				A7DF7E0A27C73A5B00C7160B /* TabBarController.swift in Sources */,
+				A76C139D27D8A56500F7BA88 /* Cell.swift in Sources */,
 				A7022677278FF7FA000E1C9F /* Logger.swift in Sources */,
 				A76D64CA27A0694400397D1C /* SocketHandler.swift in Sources */,
 				A720FF49278EFDB500893720 /* AuthForgotPasswordVC.swift in Sources */,
@@ -2000,6 +2057,7 @@
 				A77AD2A127A8EBD4007C389F /* SocialUserInfo.swift in Sources */,
 				A76D64DC27A2677900397D1C /* UserPhoto.swift in Sources */,
 				A77D7CAF27CE263100695974 /* LogPeriodSubCategotyCVC.swift in Sources */,
+				A76C13A227D9DC3C00F7BA88 /* SavedMedicationsDataIconCVC.swift in Sources */,
 				A7820BC527D07EE80051ED3A /* GetDataForLogPeriodDataModel.swift in Sources */,
 				A753833B27B138E600F9FE83 /* ResetPasswordViewModel.swift in Sources */,
 				A7820BBF27CF6D1D0051ED3A /* MyProfileViewModel.swift in Sources */,
@@ -2019,11 +2077,13 @@
 				A77B27802799454100C1FE2C /* CalendarTVC.swift in Sources */,
 				A77AD2AC27A90305007C389F /* GoogleManager.swift in Sources */,
 				A77C71C72797FEEC007AB67E /* Helper.swift in Sources */,
+				A76C139527D85F4400F7BA88 /* SavedUserMedicalData.swift in Sources */,
 				A753832B27B11EE500F9FE83 /* ForgotPasswordRequestModel.swift in Sources */,
 				A76D64E227A2686800397D1C /* UserDefaults+Extensions.swift in Sources */,
 				A78AECEA27A3DBBC003E05C2 /* String+Extension.swift in Sources */,
 				A78AECEC27A3DEDC003E05C2 /* AuthSignUpRequestModel.swift in Sources */,
 				A76D649F279FD73800397D1C /* AppConfig.swift in Sources */,
+				A76C13A427D9F57D00F7BA88 /* UICollectionView+Extension.swift in Sources */,
 				A720FF4C278F063A00893720 /* ResetPasswordVC.swift in Sources */,
 				A7DCAB3C27BF5BEA0018FC76 /* FSCalendarConstants.m in Sources */,
 				A753833327B1298800F9FE83 /* AuthVerificationCodeDataModel.swift in Sources */,
@@ -2239,6 +2299,7 @@
 				MARKETING_VERSION = 1.0;
 				NEW_SETTING = "";
 				NEW_SETTING1 = "";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.ovary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = OvaryIQ_Dis_11Feb;
@@ -2281,6 +2342,7 @@
 				MARKETING_VERSION = 1.0;
 				NEW_SETTING = "";
 				NEW_SETTING1 = "";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.ovary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = OvaryIQ_Dis_11Feb;
@@ -2457,6 +2519,7 @@
 				MARKETING_VERSION = 1.0;
 				NEW_SETTING = "";
 				NEW_SETTING1 = "";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.ovary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = OvaryIQ_Dis_11Feb;

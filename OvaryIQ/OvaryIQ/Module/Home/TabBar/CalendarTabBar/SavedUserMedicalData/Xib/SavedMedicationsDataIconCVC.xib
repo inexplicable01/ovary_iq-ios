@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SavedMedicationsDataIconCVC" customModule="OvaryIQ" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="SavedMedicationsDataIconCVC" reuseIdentifier="SavedMedicationsDataIconCVC" id="AFl-nC-U6s" customClass="SavedMedicationsDataIconCVC" customModule="OvaryIQ" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="s40-hx-JFa">
+                <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MedicationWhite" translatesAutoresizingMaskIntoConstraints="NO" id="r7Z-Zd-sMG">
+                        <rect key="frame" x="2" y="2" width="13" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="13" id="BCR-JI-Gf3"/>
+                            <constraint firstAttribute="height" constant="13" id="odI-A7-j2T"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" name="ThemeColor"/>
+                <constraints>
+                    <constraint firstItem="r7Z-Zd-sMG" firstAttribute="top" secondItem="s40-hx-JFa" secondAttribute="top" constant="2" id="Zh7-9o-fFk"/>
+                    <constraint firstAttribute="bottom" secondItem="r7Z-Zd-sMG" secondAttribute="bottom" constant="2" id="btg-RP-jn3"/>
+                    <constraint firstItem="r7Z-Zd-sMG" firstAttribute="centerY" secondItem="s40-hx-JFa" secondAttribute="centerY" id="luS-KL-LmB"/>
+                    <constraint firstAttribute="trailing" secondItem="r7Z-Zd-sMG" secondAttribute="trailing" constant="2" id="m09-Pg-QUs"/>
+                    <constraint firstItem="r7Z-Zd-sMG" firstAttribute="leading" secondItem="s40-hx-JFa" secondAttribute="leading" constant="2" id="oAa-ic-us7"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <color key="backgroundColor" name="ThemeColor"/>
+            <size key="customSize" width="97" height="64"/>
+            <point key="canvasLocation" x="-133.33333333333334" y="-170.75892857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="MedicationWhite" width="15" height="15"/>
+        <namedColor name="ThemeColor">
+            <color red="1" green="0.42745098039215684" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

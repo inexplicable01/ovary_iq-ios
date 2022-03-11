@@ -10,7 +10,8 @@ import Foundation
 // MARK: - DataClass
 struct GetUserLogPeriodDataModel: Codable {
     let message: String?
-    let logData: LogDataModel?
+    let logData: [LogDataModel]?
+    let predictions: PredictionsDataModel?
 }
 
 // MARK: - LogData
@@ -18,7 +19,7 @@ struct LogDataModel: Codable {
     let id, goalID: Int?
     let goalName: String?
     let periodFlowID: Int?
-    let lockDate, periodFlowName: String
+    let lockDate, periodFlowName: String?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -27,4 +28,9 @@ struct LogDataModel: Codable {
         case periodFlowID = "periodFlowId"
         case lockDate, periodFlowName
     }
+}
+// MARK: - Predictions
+struct PredictionsDataModel: Codable {
+    let predictedPeriod, ovulation, fertileWindow: String?
+    let isExist: Bool?
 }

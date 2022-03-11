@@ -29,6 +29,7 @@ enum APIRouter: URLRequestConvertible {
     case saveUserPregnancyTests(params: Parameters)
     case saveLogPeriod(params: Parameters)
     case projectionData(params: Parameters)
+    case getUsersMedicalOptionsData(params: Parameters)
 
 
     var method: HTTPMethod {
@@ -38,7 +39,7 @@ enum APIRouter: URLRequestConvertible {
                     .login, .logOut, .savezGoalsDetails, .forgotPassword, .ResetPassword, .saveLogPeriod, .changePassword, .saveUserMedications, .saveUserProcedures, .saveUserActivities, .saveUserSymptoms, .saveUserPregnancyTests:
             return .post
 
-            case .fetchGoals,.verifyCode, .getDataForLogPeriod, .getUserLogPeriodData, .userProfile, .projectionData:
+            case .fetchGoals,.verifyCode, .getDataForLogPeriod, .getUserLogPeriodData, .userProfile, .projectionData,.getUsersMedicalOptionsData:
             return .get
 
         }
@@ -65,6 +66,7 @@ enum APIRouter: URLRequestConvertible {
         case .saveUserSymptoms: return APIName.saveUserSymptoms
         case .saveUserPregnancyTests: return APIName.saveUserPregnancyTests
         case .projectionData: return APIName.projectionData
+        case .getUsersMedicalOptionsData: return APIName.getUsersMedicalOptionsData
 
         }
     }
@@ -110,8 +112,12 @@ enum APIRouter: URLRequestConvertible {
             urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
 
 
-         case .userProfile(let params):
+        case .userProfile(let params):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
+
+        case .getUsersMedicalOptionsData(let params):
+               urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
+
 
          case .verifyCode(let params):
             if let url = urlRequest.url,

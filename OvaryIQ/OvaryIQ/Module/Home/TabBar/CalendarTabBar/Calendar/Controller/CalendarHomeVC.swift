@@ -6,6 +6,15 @@
 //
 
 import UIKit
+struct PredictedPeriod {
+    var periodName: String?
+    var periodImageName: String?
+    init(periodName: String, periodImageName: String) {
+        self.periodName = periodName
+        self.periodImageName = periodImageName
+    }
+}
+
 class CalendarHomeVC: BaseViewC {
     // MARK: - IBOutlets
     @IBOutlet private  weak var calendar: FSCalendar!
@@ -16,10 +25,14 @@ class CalendarHomeVC: BaseViewC {
 
     // MARK: - Properties
     private var selectedDates: String?
+    private var testSelectedDates = ["2022-03-15","2022-03-08","2022-04-18"]
+    private var datesWithEvent = ["2022-03-03", "2022-03-09", "2022-03-12"]
+
     private var currentPage: Date?
+    private var predictedArray = [PredictedPeriod(periodName: LogPeriodCategoryType.predictedPeriod.localizedString, periodImageName: LogPeriodCategoryType.predictedPeriod.image), PredictedPeriod(periodName: LogPeriodCategoryType.fertileWindow.localizedString, periodImageName: LogPeriodCategoryType.fertileWindow.image),PredictedPeriod(periodName: LogPeriodCategoryType.ovulation.localizedString, periodImageName: LogPeriodCategoryType.ovulation.image),PredictedPeriod(periodName: LogPeriodCategoryType.predictedPregnancyTest.localizedString, periodImageName: LogPeriodCategoryType.ovulation.image)]
     private lazy var today: Date = {
         return Date()
-    }()
+    }() 
     private lazy var dateFormatter: DateFormatter = {
            let formatter = DateFormatter()
         formatter.dateFormat = DateFormat.yearMonthDate.rawValue
@@ -69,6 +82,7 @@ class CalendarHomeVC: BaseViewC {
     // MARK: - Notifications Functions
     // MARK: - Private and internal Functions
     private func initialSetup() {
+        calendar.register(Cell.self, forCellReuseIdentifier: "Cell")
         self.calendar.appearance.titleFont = UIFont(name: "SourceSansPro-Bold", size: 16)
         self.calendarSetUp()
         self.viewModel.delegate = self
@@ -90,7 +104,6 @@ class CalendarHomeVC: BaseViewC {
     private func moveCurrentPage(moveUp: Bool) {
         let calendar = Calendar.current
         var dateComponents = DateComponents()
-       // dateComponents.year = moveUp ? 1 : -1
         self.currentPage = calendar.date(byAdding: dateComponents, to: self.currentPage ?? self.today)
         self.calendar.setCurrentPage(self.currentPage!, animated: true)
         let values = Calendar.current.dateComponents([Calendar.Component.month, Calendar.Component.year], from: self.calendar.currentPage)
@@ -102,6 +115,14 @@ class CalendarHomeVC: BaseViewC {
         if let year = values.year {
             lblYear.text = "\(String(describing: year) )"
         }
+    }
+    private func setSelectedYearInCalendar(selectedYear: String) {
+        let year = Int(selectedYear)
+        var dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self.calendar.currentPage)
+       // dateComponents.setValue(month, for: .month)
+        dateComponents.setValue(year, for: .year)
+        let date = Calendar.current.date(from: dateComponents)
+        self.calendar.setCurrentPage(date!, animated: true)
     }
 
     internal func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
@@ -124,27 +145,57 @@ class CalendarHomeVC: BaseViewC {
     }
     @IBAction private func tapBtnOpenYearPicker(_ sender: Any) {
         fLog()
+        if let yearPickerVC = Storyboard.Home.instantiateViewController(identifier: YearPickerVC.className) as? YearPickerVC {
+            yearPickerVC.modalPresentationStyle = .overFullScreen
+            yearPickerVC.goBackToCalendarHomeController = { [weak self]  selectedYear in
+                self?.lblYear.text = "\(String(describing: selectedYear) )"
+                dLog(message: "Slected year From YearPicker..", filename: selectedYear)
+                self?.setSelectedYearInCalendar(selectedYear: selectedYear)
+            }
+            self.navigationController?.present(yearPickerVC, animated: true, completion: nil)
+        }
     }
+
     @IBAction private func tapBtnClalendarBtn(_ sender: Any) {
         fLog()
         self.moveCurrentPage(moveUp: true)
     }
 }
-
 //MARK: -  FSCalendarDelegate,FSCalendarDataSource
   extension CalendarHomeVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
        calendar.scrollDirection = .vertical
     }
-
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("did select date \(self.dateFormatter.string(from: date))")
-       // self.selectedDates.removeAll()
-        let date = self.dateFormatter.string(from: date)
-       // self.selectedDates.append(date)
-        self.selectedDates = date
+        let dateSelected = self.dateFormatter.string(from: date)
+        self.selectedDates = dateSelected
         calendar.reloadData()
     }
+      func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
+          if let cell = calendar.dequeueReusableCell(withIdentifier: "Cell", for: date, at: position) as? Cell {
+              let newDate = self.dateFormatter.string(from: date)
+              // here added xib on selectedSavedData
+              AppConfig.defautMainQ.async {
+                  if self.testSelectedDates.contains(newDate) {
+                      let myView = SavedUserMedicalData()
+                      myView.frame = cell.contentView.frame
+                      cell.addSubview(myView)
+                  } else {
+                      let myitem = cell.subviews.compactMap{$0 as? SavedUserMedicalData}
+                      for item in myitem {
+                          item.removeFromSuperview()
+                      }
+                  }
+              }
+              return cell
+          }
+          return FSCalendarCell()
+      }
+      func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
+          let dateString = self.dateFormatter.string(from: date)
+          return self.datesWithEvent.contains(dateString) ? UIImage(named: "FertileWindow") : nil
+      }
 }
 // MARK: -  UICollectionViewDelegate, UICollectionViewDataSource
 extension CalendarHomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -160,7 +211,6 @@ extension CalendarHomeVC: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-
     }
 
     // MARK: - UICollectionViewDataSource
@@ -173,12 +223,11 @@ extension CalendarHomeVC: UICollectionViewDelegate, UICollectionViewDataSource, 
         if collectionView == collectionViewMedication {
             return self.getDataLogPeriodDataModel?.medicalOptionsList.count ?? 0
         } else {
-            return 8
+            return self.predictedArray.count
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
        if collectionView == collectionViewMedication {
            if let cell: MedicationsOptionsCVC = collectionView.dequeueReusableCell(withReuseIdentifier: MedicationsOptionsCVC.className, for: indexPath) as? MedicationsOptionsCVC {
                cell.configCell(model: self.getDataLogPeriodDataModel?.medicalOptionsList[indexPath.row])
@@ -186,10 +235,10 @@ extension CalendarHomeVC: UICollectionViewDelegate, UICollectionViewDataSource, 
            }
         } else {
             if let cell: PredictedPeriodOtionsCVC = collectionView.dequeueReusableCell(withReuseIdentifier: PredictedPeriodOtionsCVC.className, for: indexPath) as? PredictedPeriodOtionsCVC {
+                cell.configCell(model: self.predictedArray[indexPath.row])
                 return cell
             }
         }
-
         return UICollectionViewCell()
     }
 
@@ -199,7 +248,7 @@ extension CalendarHomeVC: UICollectionViewDelegate, UICollectionViewDataSource, 
         if collectionView == collectionViewMedication {
             return CGSize(width: collectionView.frame.size.width / 3.5, height: 90)
          } else {
-             return CGSize(width: collectionView.frame.size.width / 3, height: 30)
+             return CGSize(width: collectionView.frame.size.width / 3.5, height: 30)
          }
     }
 }
@@ -207,7 +256,7 @@ extension CalendarHomeVC: UICollectionViewDelegate, UICollectionViewDataSource, 
 
 extension CalendarHomeVC: CalendarHomeViewModelDelegate {
     func getUserlogPeriodResponse(dataModel: GetUserLogPeriodDataModel) {
-        self.saveUserLogPeriodDataRequestModel.id = dataModel.logData?.id
+        self.saveUserLogPeriodDataRequestModel.id = dataModel.logData?.first?.id
     }
 
     func getDataForlogPeriodResponse(dataModel: GetDataForLogPeriodDataModel) {
