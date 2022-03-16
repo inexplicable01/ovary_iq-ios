@@ -566,6 +566,92 @@
             </objects>
             <point key="canvasLocation" x="1818.840579710145" y="530.35714285714289"/>
         </scene>
+        <!--Pop Over View Controlller-->
+        <scene sceneID="I5M-Z4-JM6">
+            <objects>
+                <viewController storyboardIdentifier="PopOverViewControlller" id="Jf4-Q6-LMr" customClass="PopOverViewControlller" customModule="OvaryIQ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Lu-tI-ObK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fhv-D9-8eP">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PopOverTVC" rowHeight="39" id="TBD-Bd-2fA" customClass="PopOverTVC" customModule="OvaryIQ" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="39"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TBD-Bd-2fA" id="7HK-Jo-W7w">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="39"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myProfile" translatesAutoresizingMaskIntoConstraints="NO" id="Nrg-At-jmG">
+                                                    <rect key="frame" x="22" y="8" width="12" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="12" id="RGU-Kc-LVd"/>
+                                                        <constraint firstAttribute="height" constant="12" id="tol-R8-8g7"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birth Control" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jx-iw-xFF">
+                                                    <rect key="frame" x="44" y="10.5" width="360" height="15.5"/>
+                                                    <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DGF-kR-fdG">
+                                                    <rect key="frame" x="20" y="36.5" width="374" height="0.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="0.29999999999999999" id="uIH-60-vya"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Nrg-At-jmG" firstAttribute="leading" secondItem="7HK-Jo-W7w" secondAttribute="leading" constant="22" id="131-rP-NvW"/>
+                                                <constraint firstItem="Nrg-At-jmG" firstAttribute="top" secondItem="7HK-Jo-W7w" secondAttribute="top" constant="8" id="7Mp-37-TEh"/>
+                                                <constraint firstAttribute="bottom" secondItem="DGF-kR-fdG" secondAttribute="bottom" constant="2" id="JJb-RR-4UL"/>
+                                                <constraint firstItem="DGF-kR-fdG" firstAttribute="leading" secondItem="7HK-Jo-W7w" secondAttribute="leading" constant="20" id="MzB-4T-V7G"/>
+                                                <constraint firstItem="DGF-kR-fdG" firstAttribute="top" secondItem="Nrg-At-jmG" secondAttribute="bottom" constant="8" id="SOI-th-JNT"/>
+                                                <constraint firstAttribute="trailing" secondItem="DGF-kR-fdG" secondAttribute="trailing" constant="20" id="SdE-B6-bNb"/>
+                                                <constraint firstItem="7jx-iw-xFF" firstAttribute="centerY" secondItem="Nrg-At-jmG" secondAttribute="centerY" id="e5p-bZ-2dv"/>
+                                                <constraint firstItem="7jx-iw-xFF" firstAttribute="leading" secondItem="Nrg-At-jmG" secondAttribute="trailing" constant="10" id="qAs-uB-STM"/>
+                                                <constraint firstAttribute="trailing" secondItem="7jx-iw-xFF" secondAttribute="trailing" constant="10" id="wLv-Er-rqN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageViewMedicationalSubCategory" destination="Nrg-At-jmG" id="8hg-Wb-72V"/>
+                                            <outlet property="lblMedicationalSubcategory" destination="7jx-iw-xFF" id="Ezs-kh-UCO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="6Lu-tI-ObK" id="L5X-lP-gnt"/>
+                                    <outlet property="delegate" destination="6Lu-tI-ObK" id="j1B-0r-k28"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qV5-2O-EA8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fhv-D9-8eP" secondAttribute="bottom" id="PDb-Mc-CgS"/>
+                            <constraint firstItem="fhv-D9-8eP" firstAttribute="top" secondItem="6Lu-tI-ObK" secondAttribute="top" id="URN-sG-MfE"/>
+                            <constraint firstItem="fhv-D9-8eP" firstAttribute="leading" secondItem="qV5-2O-EA8" secondAttribute="leading" id="Wu6-Ba-t8g"/>
+                            <constraint firstItem="fhv-D9-8eP" firstAttribute="trailing" secondItem="qV5-2O-EA8" secondAttribute="trailing" id="uDZ-lT-Fq8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="fhv-D9-8eP" id="qKG-wM-igl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ff9-sM-0M2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3237.68115942029" y="487.5"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="x8d-1V-sml">
             <objects>
@@ -976,9 +1062,6 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="weekdayHeight">
                                                         <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
-                                                        <color key="value" red="0.96078431369999995" green="0.44705882349999998" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="titleTodayColor">
                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
@@ -987,6 +1070,9 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
                                                         <color key="value" name="ThemeColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -1432,6 +1518,7 @@
         <image name="crossBlue" width="25" height="25"/>
         <image name="done" width="35" height="47"/>
         <image name="lightPinkTick" width="25" height="25"/>
+        <image name="myProfile" width="40" height="40"/>
         <image name="profile" width="35" height="35"/>
         <image name="tick" width="16" height="16"/>
         <namedColor name="RedColor">

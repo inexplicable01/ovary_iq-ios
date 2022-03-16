@@ -8,9 +8,10 @@
 import Foundation
 //CustomFscalendarCell
 class Cell: FSCalendarCell {
-   // var isSelectedDate: Bool = false {
+//    var isSelectedDate: Bool = false {
 //        didSet {
 //            contentView.backgroundColor = isSelectedDate ? .red : .clear
+//            contentView.clipsToBounds = false
 ////            if isSelectedDate {
 ////                let myView = SavedUserMedicalData()
 ////               // let frame = self.convert(self.bounds, to: self.superview)
@@ -22,10 +23,11 @@ class Cell: FSCalendarCell {
 ////            }
 //
 //        }
-   // }
+//    }
 
     override init!(frame: CGRect) {
         super.init(frame: frame)
+       // contentView.clipsToBounds = false
         // add your views here
     }
 

@@ -24,6 +24,7 @@ class SideOptionsVC: UIViewController {
     @IBOutlet private weak var lblName: UILabel!
     @IBOutlet private weak var lblMyGoalStatus: UILabel!
     @IBOutlet private weak var btnLogout: UIButton!
+    @IBOutlet private weak var profileImage: UIImageView!
     // MARK: - Properties
     private var viewModel = SideOptionsViewModel()
     private var profileArr = [Profile(title: Text.myProfile.localizedString, img: UIImageType.myProfile.image!, isHideGreyLine: false, controller: MyProfileVC.className), Profile(title: Text.settings.localizedString, img: UIImageType.settings.image!, isHideGreyLine: true, controller: SettingVC.className)]
@@ -91,6 +92,24 @@ class SideOptionsVC: UIViewController {
     }))
     self.present(alert, animated: true, completion: nil)
     }
+
+    @IBAction private func tapBtnEditProfile(_ sender: Any) {
+        fLog()
+        if let cameraAndGalleryOptionVC = Storyboard.Settings.instantiateViewController(identifier: CameraAndGalleryOptionVC.className) as? CameraAndGalleryOptionVC {
+            cameraAndGalleryOptionVC.modalPresentationStyle = .overFullScreen
+            cameraAndGalleryOptionVC.delegate = self
+            self.present(cameraAndGalleryOptionVC, animated: true, completion: nil)
+        }
+
+    }
+}
+// MARK: - Protocol and delegate method
+extension SideOptionsVC: CameraAndGalleryOptionVCDelegate {
+    func selectedImageFromCameraAndAlbum(selectedImg: UIImage) {
+        self.profileImage.image = selectedImg
+        self.viewModel.callApiToEditPhotos(image: selectedImg)
+
+    }
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -112,3 +131,4 @@ extension SideOptionsVC: UITableViewDelegate, UITableViewDataSource {
             self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
+

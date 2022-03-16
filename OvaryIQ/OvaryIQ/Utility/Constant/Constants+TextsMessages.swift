@@ -33,6 +33,7 @@ enum ErrorMessages: String {
     case selectPeriodStartDate = "msg_select_periodSelectDate"
     case emptyCurrentPassword = "msg_empty_currentPassword"
     case emptyNewPassword = "msg_empty_newPassword"
+    case canNotPredictPeriod = "Sorry! we can't predict your period cycle because your periods are very irregular. Please consult a doctor."
     var localizedString: String {
         return NSLocalizedString(self.rawValue, comment: "")
     }

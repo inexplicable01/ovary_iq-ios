@@ -6,8 +6,10 @@
 //
 
 import UIKit
-class SavedMedicationsDataIconCVC: BaseCollectionViewCell {
+class SavedMedicationsDataIconCVC: UICollectionViewCell {
     // MARK: - IBOutlets
+
+    @IBOutlet weak var medicalOptionsImage: UIImageView!
     // MARK: - Properties
     // MARK: - View Life Cycle Functions
     override func awakeFromNib() {
@@ -15,19 +17,8 @@ class SavedMedicationsDataIconCVC: BaseCollectionViewCell {
         // Initialization code
     }
     // MARK: - Internal Functions
-//    internal func configCell(model: GoalTypeModel, index: Int) {
-//        lblTitle.text = model.goalType ?? ""
-//        self.view.borderColor = model.isSelected ? UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0) : UIColor(red: 255.0 / 255.0, green: 236.0 / 255.0, blue: 241.0 / 255.0, alpha: 1.0)
-//
-//        switch index {
-//        case 0 :
-//
-//            self.imageView.image = model.isSelected ? UIImage(named: "SelectedPreganent") : UIImage(named: "get_Preganent")
-//
-//        default:
-//            self.imageView.image = model.isSelected ? UIImage(named: "selectedPeriodTracker") : UIImage(named: "unselectedPeriodTracker")
-//
-//        }
-//    }
+    internal func configCell(model: String?) {
+        self.medicalOptionsImage.image = UIImage(named: model ?? "")
+    }
 
 }

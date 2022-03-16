@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 protocol LogPeriodSaveDateBottomSheetViewModelDelegate {
-      func sucessSaveLogPeriosApiResponse()
+    func sucessSaveLogPeriosApiResponse(eventType: RestEvents)
 }
 class LogPeriodSaveDateBottomSheetViewModel {
     // MARK: - Properties
@@ -68,9 +68,9 @@ class LogPeriodSaveDateBottomSheetViewModel {
         params = [APIParam.SymptomId: [dict].toJSONStringFormatted()]
         dLog(message: "Rest Event Name :: \(RestEvents.saveUserSymptoms) and Params :: \(String(describing: params))")
         restEngineEvent = RestEngineEvents(id: RestEvents.saveUserSymptoms, obj: params)
-               // for Pregnancy Test
+               //for Pregnancy Test
         case LogPeriodCategoryType.pregnancyTest.rawValue:
-        params = [APIParam.PregnancyTestId: [dict].toJSONStringFormatted()]
+                params = [APIParam.PregnancyTestId: [dict].toJSONStringFormatted() ?? [:]]
         dLog(message: "Rest Event Name :: \(RestEvents.saveUserPregnancyTests) and Params :: \(String(describing: params))")
         restEngineEvent = RestEngineEvents(id: RestEvents.saveUserPregnancyTests, obj: params)
         default:
@@ -91,11 +91,11 @@ extension LogPeriodSaveDateBottomSheetViewModel {
           //  guard let sself = self else { return }
             if let eventId = RestEvents(rawValue: eventId) {
                 switch eventId {
-                case .saveUserMedications:
+                    case .saveUserMedications, .saveLogPeriod, .saveUserSymptoms,.saveUserProcedures, .saveUserActivities, .saveUserPregnancyTests:
                     fLog()
-                if isSuccess {
+                 if isSuccess {
                     do {
-                        self.delegate?.sucessSaveLogPeriosApiResponse()
+                        self.delegate?.sucessSaveLogPeriosApiResponse(eventType: eventId)
 
                     } catch {
                         print("Error: ", error)
@@ -103,6 +103,8 @@ extension LogPeriodSaveDateBottomSheetViewModel {
                 } else {
                     AlertControllerManager.showToast(message: ErrorMessages.somethingWentWrong.localizedString, type: .error)
                 }
+
+                
 
                 default:
                     break

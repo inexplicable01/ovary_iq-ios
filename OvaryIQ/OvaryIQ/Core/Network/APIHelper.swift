@@ -31,7 +31,7 @@ struct APIName {
     static let saveLogPeriod = baseURL + "auth/saveLogPeriod"
     static let projectionData = baseURL + "auth/projectionData"
     static let getUsersMedicalOptionsData = baseURL + "auth/getUsersMedicalOptionsData"
-
+    static let updateProfilePhoto = baseURL + "auth/updateProfilePhoto"
 }
 
 // MARK: - Parameter keys
@@ -43,6 +43,7 @@ struct APIParam  {
     static let Errors = "errors"
     static let ErrorCode = "errorCode"
     static let ResponseMessage = "message"
+    static let profile = "profile"
 
 
     // SAVE USER MEDICATION DATA

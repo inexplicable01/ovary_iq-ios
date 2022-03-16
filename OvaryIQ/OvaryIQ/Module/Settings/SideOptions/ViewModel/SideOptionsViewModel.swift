@@ -31,7 +31,7 @@ class SideOptionsViewModel {
         }
     }
     // MARK: - Private Functions - API Calls
-     func callApiTologout() {
+     internal func callApiTologout() {
          fLog()
 //         let params = self.authSignupRequestModel.dictionary
          dLog(message: "Rest Event Name :: \(RestEvents.logout)")
@@ -39,5 +39,31 @@ class SideOptionsViewModel {
          restEvent.showActivityIndicator = true
         self.coreEngine.addEngineEventsWithOutWait(evObj: restEvent)
         // self.coreEngine.addEvent(evObj: restEvent)
+    }
+    // MARK: - Private Functions - API Calls
+
+    internal func callApiToEditPhotos(image: UIImage) {
+        fLog()
+        var params = [String: Any]()
+//
+//        var images = [UIImage]()
+//        for photo in self.photos {
+//            if let photo = photo.photo {
+//                images.append(photo)
+//            }
+//        }
+        params[APIParam.profile] = image
+        params[APIParam.keyName] = APIParam.profile
+
+    dLog(message: "Rest Event Name :: \(RestEvents.updateProfilePhoto) and Params :: \(String(describing: params))")
+
+        let restEvent = RestEngineEvents(id: RestEvents.updateProfilePhoto, obj: params)
+        restEvent.fastQueue = false
+        restEvent.downloadingFile = false
+        restEvent.uploadMultipart = true
+        Helper.showLoader()
+        restEvent.showActivityIndicator = false
+        self.coreEngine.addEvent(evObj: restEvent)
+       // self.coreEngine.addEngineEventsWithOutWait(evObj: restEvent)
     }
 }

@@ -75,7 +75,31 @@ class Helper {
         }
         return UIViewController()
     }
+    // MARK: - GetIcon
+        class func getMedicationIcon(name: String) -> String {
+            switch name {
+            case  UserMedicalOptionsType.logPeriod.rawValue:
+                return UserMedicalOptionsType.logPeriod.image
 
+            case  UserMedicalOptionsType.medication.rawValue:
+                return UserMedicalOptionsType.medication.image
+
+            case  UserMedicalOptionsType.procedure.rawValue:
+                return UserMedicalOptionsType.procedure.image
+
+            case  UserMedicalOptionsType.activity.rawValue:
+                return UserMedicalOptionsType.activity.image
+
+            case  UserMedicalOptionsType.symptoms.rawValue:
+                return UserMedicalOptionsType.symptoms.image
+
+            case  UserMedicalOptionsType.pregnancyTest.rawValue:
+                  return UserMedicalOptionsType.pregnancyTest.image
+            default:
+                    return UserMedicalOptionsType.logPeriod.image
+            }
+
+        }
 
     // MARK: - GetIcon
         class func getIcon(name: String) -> String {
@@ -158,13 +182,26 @@ class Helper {
             case LogPeriodCategoryType.negativeTestResult.rawValue:
                 return LogPeriodCategoryType.negativeTestResult.image
 
-
-                    
-
             default:
                     return LogPeriodCategoryType.logPeriod.image
             }
 
         }
+    // MARK: - convert date format
+    class func convertDateFormat(InputDateFormat: String, OutputDateFormate: String, date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = InputDateFormat
+        let date = dateFormatter.date(from: date ?? "")
+        dateFormatter.dateFormat = OutputDateFormate
+        let resultString = dateFormatter.string(from: date ?? Date())
+        return resultString
+    }
+//    class func getDayFromDate(selecteddate: String) -> String {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = DateFormat.yearMonthDate.rawValue
+//        let date = dateFormatter.date(from: selecteddate ?? "")
+//        return "\(date?.get(.day))"
+//    }
+
 
 }

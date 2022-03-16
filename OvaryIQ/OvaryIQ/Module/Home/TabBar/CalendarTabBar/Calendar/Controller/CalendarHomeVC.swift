@@ -25,14 +25,12 @@ class CalendarHomeVC: BaseViewC {
 
     // MARK: - Properties
     private var selectedDates: String?
-    private var testSelectedDates = ["2022-03-15","2022-03-08","2022-04-18"]
-    private var datesWithEvent = ["2022-03-03", "2022-03-09", "2022-03-12"]
-
     private var currentPage: Date?
+    private var showArr = [[SubCategoryList]]()
     private var predictedArray = [PredictedPeriod(periodName: LogPeriodCategoryType.predictedPeriod.localizedString, periodImageName: LogPeriodCategoryType.predictedPeriod.image), PredictedPeriod(periodName: LogPeriodCategoryType.fertileWindow.localizedString, periodImageName: LogPeriodCategoryType.fertileWindow.image),PredictedPeriod(periodName: LogPeriodCategoryType.ovulation.localizedString, periodImageName: LogPeriodCategoryType.ovulation.image),PredictedPeriod(periodName: LogPeriodCategoryType.predictedPregnancyTest.localizedString, periodImageName: LogPeriodCategoryType.ovulation.image)]
     private lazy var today: Date = {
         return Date()
-    }() 
+    }()
     private lazy var dateFormatter: DateFormatter = {
            let formatter = DateFormatter()
         formatter.dateFormat = DateFormat.yearMonthDate.rawValue
@@ -41,6 +39,8 @@ class CalendarHomeVC: BaseViewC {
     private var viewModel = CalendarHomeViewModel()
     private var saveUserLogPeriodDataRequestModel = SaveUserLogPeriodDataRequestModel()
     private var getDataLogPeriodDataModel: GetDataForLogPeriodDataModel?
+    private var getUserMedicalOptionsDataModel: GetUsersMedicalOptionsDataModel?
+    private var getUserLogPeriodDataModel: GetUserLogPeriodDataModel?
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +86,7 @@ class CalendarHomeVC: BaseViewC {
         self.calendar.appearance.titleFont = UIFont(name: "SourceSansPro-Bold", size: 16)
         self.calendarSetUp()
         self.viewModel.delegate = self
+        self.viewModel.callApiToGetUsersMedicalOptionsData()
         self.viewModel.callApiToGetDataForLogPeriod()
     }
     private func calendarSetUp() {
@@ -103,7 +104,7 @@ class CalendarHomeVC: BaseViewC {
     }
     private func moveCurrentPage(moveUp: Bool) {
         let calendar = Calendar.current
-        var dateComponents = DateComponents()
+        let dateComponents = DateComponents()
         self.currentPage = calendar.date(byAdding: dateComponents, to: self.currentPage ?? self.today)
         self.calendar.setCurrentPage(self.currentPage!, animated: true)
         let values = Calendar.current.dateComponents([Calendar.Component.month, Calendar.Component.year], from: self.calendar.currentPage)
@@ -167,34 +168,105 @@ class CalendarHomeVC: BaseViewC {
        calendar.scrollDirection = .vertical
     }
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print("did select date \(self.dateFormatter.string(from: date))")
+        dLog(message: "did select date \(self.dateFormatter.string(from: date))")
         let dateSelected = self.dateFormatter.string(from: date)
         self.selectedDates = dateSelected
-        calendar.reloadData()
+        let myViews = calendar.cell(for: date, at: FSCalendarMonthPosition.current)?.subviews.compactMap{$0 as? SavedUserMedicalData}
+        let newDateStrView = myViews?.filter({($0.dateStr ?? "") == dateSelected})
+            dLog(message: "myViews..\(myViews)")
+            dLog(message: "newDateStrView...\(newDateStrView)")
+        if !(newDateStrView?.isEmpty ?? false) {
+            if let cii = calendar.cell(for: date, at: FSCalendarMonthPosition.current) as?  Cell {
+                cii.superview?.bringSubviewToFront(cii)
+            }
+                UIView.animate(withDuration: 0.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
+                    newDateStrView?.first?.isZoom = !(newDateStrView?.first?.isZoom ?? false)
+
+                    if newDateStrView?.first?.isZoom ?? false {
+                        newDateStrView?.first?.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2) // Scale your image
+                    } else {
+                        newDateStrView?.first?.transform = CGAffineTransform.identity.scaledBy(x: 1, y: 1) // Scale your image
+                    }
+
+                 })
+        }
+        if  let abc = calendar.cell(for: date, at: FSCalendarMonthPosition.current)?.superview?.subviews {
+           for subView in abc {
+                let myViews = subView.subviews.compactMap{$0 as? SavedUserMedicalData}
+                let newDateStrView = myViews.filter({($0.dateStr ?? "") != dateSelected})
+
+             for item in newDateStrView {
+                    item.transform = CGAffineTransform.identity.scaledBy(x: 1.0, y: 1.0) // Scale your image
+                }
+            }
+        }
+
+
     }
       func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
-          if let cell = calendar.dequeueReusableCell(withIdentifier: "Cell", for: date, at: position) as? Cell {
+          if let cell = calendar.dequeueReusableCell(withIdentifier: Cell.className, for: date, at: position) as? Cell {
               let newDate = self.dateFormatter.string(from: date)
               // here added xib on selectedSavedData
               AppConfig.defautMainQ.async {
-                  if self.testSelectedDates.contains(newDate) {
-                      let myView = SavedUserMedicalData()
-                      myView.frame = cell.contentView.frame
-                      cell.addSubview(myView)
-                  } else {
-                      let myitem = cell.subviews.compactMap{$0 as? SavedUserMedicalData}
-                      for item in myitem {
-                          item.removeFromSuperview()
+                 // getUserMedicalOptionsDataModel
+                  if let medicalOptions = self.getUserMedicalOptionsDataModel?.medicalOptionsList {
+                      self.showArr.removeAll()
+                    for (offset, value) in medicalOptions.enumerated() {
+                          let filterdata = medicalOptions[offset].subCategoryList.filter({$0.date == newDate})
+                        if !(filterdata.isEmpty) {
+                            self.showArr.append(filterdata)
+                        }
+                        dLog(message:"Filter Data...", filename: "\(filterdata)")
+
+                      }
+                      let newShowArr = self.showArr.flatMap({$0})
+
+                      if !(newShowArr.isEmpty) {
+                          let myView = SavedUserMedicalData()
+                          myView.frame = cell.contentView.frame
+                          myView.clipsToBounds = false
+                          cell.addSubview(myView)
+                         // cell.bringSubviewToFront(myView)
+                          myView.delegate = self
+                          if let optionsArr = self.getUserMedicalOptionsDataModel?.medicalOptionsList {
+                              myView.medicalOptionsListDataModel = optionsArr
+                          }
+                          myView.medicalOptionSubCategoryListArr = newShowArr
+
+                          myView.dateStr = newDate
+                        } else {
+                              let myitem = cell.subviews.compactMap{$0 as? SavedUserMedicalData}
+                              for item in myitem {
+                                  item.removeFromSuperview()
+                              }
+                        }
                       }
                   }
-              }
               return cell
           }
           return FSCalendarCell()
       }
       func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
           let dateString = self.dateFormatter.string(from: date)
-          return self.datesWithEvent.contains(dateString) ? UIImage(named: "FertileWindow") : nil
+         // let splitArr = split(self.getUserLogPeriodDataModel?.predictions?.fertileWindow?){$0 == ","}
+//          if self.getUserLogPeriodDataModel?.predictions?.fertileWindow?.contains(dateString){
+//              return  UIImageType.fertileWindow.image
+//          }
+          switch dateString {
+          case self.getUserLogPeriodDataModel?.predictions?.predictedPeriod:
+                return  UIImageType.predictedPeriod.image
+          case self.getUserLogPeriodDataModel?.predictions?.ovulation:
+                return  UIImageType.ovulation.image
+//          case self.getUserLogPeriodDataModel?.predictions?.fertileWindow?.contains(dateString):
+                    //return  UIImageType.fertileWindow.image
+          default:
+                return nil
+
+          }
+        //  return self.datesWithEvent.contains(dateString) ? UIImage(named: "FertileWindow") : nil
+
+
+
       }
 }
 // MARK: -  UICollectionViewDelegate, UICollectionViewDataSource
@@ -255,23 +327,89 @@ extension CalendarHomeVC: UICollectionViewDelegate, UICollectionViewDataSource, 
 // MARK: - Protocol and delegate method
 
 extension CalendarHomeVC: CalendarHomeViewModelDelegate {
+    func getUsersMedicalOptionsDataModel(medicalOptionsDataModel: GetUsersMedicalOptionsDataModel) {
+        var medicalOptionModel = medicalOptionsDataModel
+        for (indx, value) in medicalOptionModel.medicalOptionsList.enumerated() {
+            medicalOptionModel.medicalOptionsList[indx].categoryImage = Helper.getMedicationIcon(name: value.name ?? "")
+            for (inx, subValue) in value.subCategoryList.enumerated() {
+                medicalOptionModel.medicalOptionsList[indx].subCategoryList[inx].subCategoryImage = Helper.getIcon(name: subValue.name ?? "")
+                medicalOptionModel.medicalOptionsList[indx].subCategoryList[inx].categoryImage = Helper.getMedicationIcon(name: value.name ?? "")
+            }
+        }
+        dLog(message: "Saved User Medical Options:- \(medicalOptionModel)")
+        self.getUserMedicalOptionsDataModel = medicalOptionModel
+        self.calendar.reloadData()
+        //self.collectionViewMedication.reloadData()
+    }
+
     func getUserlogPeriodResponse(dataModel: GetUserLogPeriodDataModel) {
-        self.saveUserLogPeriodDataRequestModel.id = dataModel.logData?.first?.id
+     dLog(message: "GetUserLogPeriodDataResponse...\(dataModel)")
+        if dataModel.predictions?.isExist == false {
+            AlertControllerManager.showOkAlert(title: "", message: ErrorMessages.canNotPredictPeriod.localizedString)
+//            AlertControllerManager.showToast(message: ErrorMessages.canNotPredictPeriod.localizedString, type: .error)
+        } else {
+            self.getUserLogPeriodDataModel = dataModel
+            self.calendar.reloadData()
+
+        }
+
+        //self.saveUserLogPeriodDataRequestModel.id = dataModel.logData?.first?.id
     }
 
     func getDataForlogPeriodResponse(dataModel: GetDataForLogPeriodDataModel) {
+        dLog(message: "Get data for log period:- \(dataModel)")
         self.getDataLogPeriodDataModel = dataModel
         self.collectionViewMedication.reloadData()
     }
 }
-extension CalendarHomeVC: LogPeriodsOptionsBottomSheetControllerDelegate {
+extension CalendarHomeVC: LogPeriodsOptionsBottomSheetControllerDelegate,LogPeriodDoneBottomSheetVCDelegate{
+
+    func saveLoggedPeriodSuccessResponse(eventID: RestEvents) {
+        if eventID == .saveLogPeriod {
+            self.viewModel.callApiToGetUserLogPeriodData()
+        } else {
+            self.viewModel.callApiToGetUsersMedicalOptionsData()
+        }
+
+    }
     func goBackToCalendarController(saveMedicationsSelectedDataModel: SaveMedicationRequestModel) {
         if let logPeriodDoneBottomSheetVC = Storyboard.Home.instantiateViewController(identifier: LogPeriodDoneBottomSheetVC.className) as? LogPeriodDoneBottomSheetVC {
             logPeriodDoneBottomSheetVC.modalPresentationStyle = .overFullScreen
+            logPeriodDoneBottomSheetVC.delegate = self
             logPeriodDoneBottomSheetVC.saveUserLogPeriodRequestModel = self.saveUserLogPeriodDataRequestModel
             logPeriodDoneBottomSheetVC.saveMedicationRequestModel = saveMedicationsSelectedDataModel
             self.navigationController?.present(logPeriodDoneBottomSheetVC, animated: true, completion: nil)
         }
     }
 
+}
+extension CalendarHomeVC: SavedUserMedicalDataDelegate {
+    func didSelectMethodCalled(sender: UIView, subCategoaryModel: [SubCategoryList]) {
+        dLog(message: "Filter Sub Category Model....\(subCategoaryModel)")
+        if let popVC = Storyboard.Home.instantiateViewController(identifier: PopOverViewControlller.className) as? PopOverViewControlller {
+            popVC.headerArray = subCategoaryModel
+            let height: CGFloat = CGFloat(35 * popVC.headerArray.count)
+            let width: CGFloat = sender.frame.width + 100
+            popVC.modalPresentationStyle = .popover
+            popVC.preferredContentSize = CGSize(width: width, height: height)
+            // vc.delegate = self
+            let popOver = popVC.popoverPresentationController
+             popOver?.delegate = self
+            popOver?.permittedArrowDirections = [.up]
+            popOver?.sourceView = sender
+            popoverPresentationController?.sourceRect = sender.bounds
+            self.present(popVC, animated: true, completion: nil)
+
+        }
+    }
+}
+
+extension CalendarHomeVC: UIPopoverPresentationControllerDelegate {
+    func popoverPresentationControllerShouldDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) -> Bool {
+        return true
+    }
+
+    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        return .none
+    }
 }

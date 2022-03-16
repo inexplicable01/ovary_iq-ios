@@ -7,12 +7,39 @@
 
 import Foundation
 import UIKit
+protocol SavedUserMedicalDataDelegate {
+    func didSelectMethodCalled(sender: UIView, subCategoaryModel: [SubCategoryList])
+}
 class SavedUserMedicalData: UIView {
     // MARK: - IBOutlets
     @IBOutlet private weak var lblDate: UILabel!
-    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet internal weak var xibBgView: UIView!
     @IBOutlet private weak var collectionViewMedicationIcon: UICollectionView!
     // MARK: - Properties
+    private var categories = [String]()
+    internal var isZoom: Bool = false
+    internal var delegate: SavedUserMedicalDataDelegate?
+    internal var medicalOptionsListDataModel = [MedicalOptionsList]()
+    internal var medicalOptionSubCategoryListArr = [SubCategoryList]() {
+        didSet {
+            categories.removeAll()
+            categories = medicalOptionSubCategoryListArr.map({$0.categoryImage ?? ""}).unique
+            collectionViewMedicationIcon.reloadData()
+        }
+    }
+    internal var dateStr: String? {
+        didSet {
+            lblDate.text = Helper.convertDateFormat(InputDateFormat: DateFormat.yearMonthDate.rawValue, OutputDateFormate: DateFormat.monthDate.rawValue, date: dateStr ?? "")
+//            if isZoom {
+//                lblDate.text = Helper.convertDateFormat(InputDateFormat: DateFormat.yearMonthDate.rawValue, OutputDateFormate: DateFormat.monthDate.rawValue, date: dateStr ?? "")
+//            } else {
+//                lblDate.text = Helper.convertDateFormat(InputDateFormat: DateFormat.yearMonthDate.rawValue, OutputDateFormate: DateFormat.day.rawValue, date: dateStr ?? "")
+//            }
+
+
+        }
+    }
+
     // MARK: - View Life Cycle Functions
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,9 +55,10 @@ class SavedUserMedicalData: UIView {
        private func commonInit() {
             let bundle = Bundle(for: type(of: self))
            bundle.loadNibNamed(SavedUserMedicalData.className, owner: self, options: nil)
-            addSubview(contentView)
-            contentView.frame = bounds
-            contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            addSubview(xibBgView)
+           xibBgView.frame = frame
+           xibBgView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+           //collectionViewMedicationIcon.frame = self.frame
             initCollectionView()
         }
 
@@ -50,6 +78,13 @@ extension SavedUserMedicalData: UICollectionViewDelegate, UICollectionViewDataSo
     // MARK: - UICollectionViewDelegate
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+
+        let iconName = categories[indexPath.row]
+        let filterSubCategoryDataModel = self.medicalOptionSubCategoryListArr.filter({$0.categoryImage ?? "" == iconName})
+        
+        self.delegate?.didSelectMethodCalled(sender: self, subCategoaryModel: filterSubCategoryDataModel)
+
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -62,13 +97,12 @@ extension SavedUserMedicalData: UICollectionViewDelegate, UICollectionViewDataSo
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return categories.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
             if let cell: SavedMedicationsDataIconCVC = collectionViewMedicationIcon.dequeueReusableCell(withReuseIdentifier: SavedMedicationsDataIconCVC.className, for: indexPath) as? SavedMedicationsDataIconCVC {
-              //  cell.configCell(model: goalArr[indexPath.row], index: indexPath.row)
+                cell.configCell(model: self.categories[indexPath.row])
                 return cell
             } else {
                 return UICollectionViewCell()
@@ -86,13 +120,10 @@ extension SavedUserMedicalData: UICollectionViewDelegate, UICollectionViewDataSo
         return 0.0
     }
 
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
-//    }
-
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionViewMedicationIcon.frame.size.width / 2
-        return CGSize(width: width - 1, height: width - 1)
+        let width = ((collectionViewMedicationIcon.frame.size.width / 2) - 3)
+        print("Collection View Width...", collectionViewMedicationIcon.width)
+        return CGSize(width: width, height: width)
     }
 
 }

@@ -10,6 +10,7 @@ import Foundation
 // MARK: - DataClass
 struct GetUserLogPeriodDataModel: Codable {
     let message: String?
+    let isExistAllLogData: Bool?
     let logData: [LogDataModel]?
     let predictions: PredictionsDataModel?
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SideOptionsTVC: UITableViewCell {
+class SideOptionsTVC: BaseTableViewCell {
     // MARK: - IBOutlets
     @IBOutlet private weak var lblTitle: UILabel!
     @IBOutlet private weak var imgView: UIImageView!

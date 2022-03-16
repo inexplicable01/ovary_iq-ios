@@ -8,9 +8,9 @@
 import Foundation
 protocol CalendarHomeViewModelDelegate {
     func getDataForlogPeriodResponse(dataModel: GetDataForLogPeriodDataModel)
+    func getUsersMedicalOptionsDataModel(medicalOptionsDataModel: GetUsersMedicalOptionsDataModel)
     func getUserlogPeriodResponse(dataModel: GetUserLogPeriodDataModel)
 }
-
 class CalendarHomeViewModel {
     // MARK: - Properties
     private var restEventCallBackID: String?
@@ -37,10 +37,17 @@ class CalendarHomeViewModel {
         restEvent.showActivityIndicator = true
         self.coreEngine.addEngineEventsWithOutWait(evObj: restEvent)
     }
-    private func callApiToGetUserLogPeriodData() {
+    internal func callApiToGetUserLogPeriodData() {
         fLog()
         dLog(message: "Rest Event Name :: \(RestEvents.getUserLogPeriodData) and Params :: \(String(describing: [:]))")
         let restEvent = RestEngineEvents(id: RestEvents.getUserLogPeriodData, obj: [:])
+        restEvent.showActivityIndicator = false
+        self.coreEngine.addEngineEventsWithOutWait(evObj: restEvent)
+    }
+    internal func callApiToGetUsersMedicalOptionsData() {
+        fLog()
+        dLog(message: "Rest Event Name :: \(RestEvents.getUsersMedicalOptionsData) and Params :: \(String(describing: [:]))")
+        let restEvent = RestEngineEvents(id: RestEvents.getUsersMedicalOptionsData, obj: [:])
         restEvent.showActivityIndicator = false
         self.coreEngine.addEngineEventsWithOutWait(evObj: restEvent)
     }
@@ -60,7 +67,7 @@ extension CalendarHomeViewModel {
                             do {
                                 self.callApiToGetUserLogPeriodData()
                                 var encodedDictionary = try JSONDecoder().decode(GetDataForLogPeriodDataModel.self, from: JSONSerialization.data(withJSONObject: response))
-                                dLog(message: "signupResponse:- \(encodedDictionary)")
+                                dLog(message: "GetUSerSavedLogPeriodResponse:- \(encodedDictionary)")
                                 var newModel = encodedDictionary
                                 for (indx,value) in newModel.medicalOptionsList.enumerated() {
                                     newModel.medicalOptionsList[indx].categoryImage = Helper.getIcon(name: value.name ?? "")
@@ -95,11 +102,32 @@ extension CalendarHomeViewModel {
                         } else {
                             AlertControllerManager.showToast(message: ErrorMessages.somethingWentWrong.localizedString, type: .error)
                         }
+
+                    case .getUsersMedicalOptionsData:
+                        if isSuccess {
+                            do {
+                                let encodedDictionary = try JSONDecoder().decode(GetUsersMedicalOptionsDataModel.self, from: JSONSerialization.data(withJSONObject: response))
+                                dLog(message: "getUsersMedicalOptionsDataResponse:- \(encodedDictionary)")
+//                                var medicalOptionModel = encodedDictionary
+//                                for (indx,value) in medicalOptionModel.medicalOptionsList.enumerated() {
+//                                    medicalOptionModel.medicalOptionsList[indx].categoryImage = Helper.getIcon(name: value.name ?? "")
+//                                    for (inx, subValue) in value.subCategoryList.enumerated() {
+//                                        medicalOptionModel.medicalOptionsList[indx].subCategoryList[inx].subCategoryImage = Helper.getIcon(name: subValue.name ?? "")
+//                                    }
+//                                }
+                                self.delegate?.getUsersMedicalOptionsDataModel(medicalOptionsDataModel: encodedDictionary)
+
+                            } catch {
+                                print("Error: ", error)
+                            }
+                        } else {
+                            AlertControllerManager.showToast(message: ErrorMessages.somethingWentWrong.localizedString, type: .error)
+                        }
                     case .getUserLogPeriodData:
                         if isSuccess {
                             do {
                                 let encodedDictionary = try JSONDecoder().decode(GetUserLogPeriodDataModel.self, from: JSONSerialization.data(withJSONObject: response))
-                                dLog(message: "signupResponse:- \(encodedDictionary)")
+                                dLog(message: "getUserLogPeriodDataRespons:- \(encodedDictionary)")
                                 self.delegate?.getUserlogPeriodResponse(dataModel: encodedDictionary)
 
                             } catch {

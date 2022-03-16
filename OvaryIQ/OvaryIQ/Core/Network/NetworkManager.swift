@@ -62,16 +62,16 @@ class NetworkManager: EventLoop {
                 if restObject.uploadMultipart {
 
                     if let params = restObject.object as? [String: Any],
-                        let keyName = params[APIParam.keyName] as? String,
-                        let imageArr = params[keyName] as? [Any],
+                       let keyName = params[APIParam.keyName] as? String,
+                       let imageArr = params[keyName] as? [Any],
                         let header = restObject.apiRequest?.urlRequest?.allHTTPHeaderFields,
                         let urlStr = restObject.apiRequest?.urlRequest?.url?.absoluteString,
                         let method = restObject.apiRequest?.urlRequest?.method {
                         var newParams = params
-                        newParams[APIParam.keyName] = nil
-                        newParams[keyName] = nil
+                        newParams[APIParam.profile] = nil
+                      //  newParams[keyName] = nil
 
-                        self.multipartImageService(url: urlStr, data: imageArr, withName: Array(repeating: keyName, count: imageArr.count), fileName: Array(repeating: keyName + "/.png", count: imageArr.count), mimeType: Array(repeating: "image/jpeg", count: imageArr.count), header: header, method: method, parameters: newParams)
+                        self.multipartImageService(url: urlStr, data: [imageArr], withName: Array(repeating: keyName, count: [imageArr].count), fileName: Array(repeating: keyName + "/.png", count: [imageArr].count), mimeType: Array(repeating: "image/jpeg", count: [imageArr].count), header: header, method: .post, parameters: newParams)
 
                     } else if let params = restObject.object as? [String: Any],
                         let keyName = params[APIParam.keyName] as? String,
@@ -181,7 +181,7 @@ class NetworkManager: EventLoop {
                     }
                 }
         },
-            to: URL(string: url)!, method: method, headers: headerToSend)
+            to: URL(string: url)!, method: .post, headers: headerToSend)
             .uploadProgress(closure: { (progress) in
                 dLog(message: "Progress :: \(progress.fractionCompleted)")
                 self.handleProgress(progress: progress.fractionCompleted, forFile: URL(string: url)!)
@@ -194,6 +194,7 @@ class NetworkManager: EventLoop {
                         dLog(message: "Pic Uploaded")
                         self.isFileInProcess = false
                         self.handleRestResponse(response: upload)
+                        dLog(message: "response is \(upload)")
                     }
 
                 case .failure(let error):

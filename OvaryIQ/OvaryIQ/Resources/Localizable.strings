@@ -39,3 +39,4 @@
 "msg_select_periodSelectDate" = "Please select a date.";
 "msg_empty_currentPassword" = "Please enter current password.";
 "msg_empty_newPassword" = "Please enter new password.";
+"Sorry! we can't predict your period cycle because your periods are very irregular. Please consult a doctor." = "Sorry! we can't predict your period cycle because your periods are very irregular. Please consult a doctor.";

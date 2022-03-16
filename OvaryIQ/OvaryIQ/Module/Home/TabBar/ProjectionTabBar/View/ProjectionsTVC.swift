@@ -30,11 +30,11 @@ class ProjectionsTVC: BaseTableViewCell {
     // MARK: - Internal Functions
     internal func configCell(model: ProjectionDataModel?) {
         self.lblProjectionName.text = model?.data?.procedureName ?? ""
-        self.lblProjectionDate.text = model?.data?.procedureDate ?? ""
-        self.lblPregancyTest.text = model?.data?.pregnancyTestDate ?? ""
+        self.lblProjectionDate.text = "\(Helper.convertDateFormat(InputDateFormat: DateFormat.yearMonthDate.rawValue, OutputDateFormate: DateFormat.monthDateYear.rawValue, date: model?.data?.procedureDate ?? ""))"
+        self.lblPregancyTest.text =  Helper.convertDateFormat(InputDateFormat: DateFormat.yearMonthDate.rawValue, OutputDateFormate: DateFormat.monthDateYear.rawValue, date: model?.data?.pregnancyTestDate ?? "")
         self.lblGestationDate.text = model?.data?.gestationDays ?? ""
         self.viewGestation.isHidden = model?.data?.gestationDays == "0" ? true : false
-        self.lblExpectedDeliveryDate.text = model?.data?.expectedDeliveryDate ?? ""
+        self.lblExpectedDeliveryDate.text = Helper.convertDateFormat(InputDateFormat: DateFormat.yearMonthDate.rawValue, OutputDateFormate: DateFormat.monthDateYear.rawValue, date: model?.data?.expectedDeliveryDate ?? "")
     }
 
 }

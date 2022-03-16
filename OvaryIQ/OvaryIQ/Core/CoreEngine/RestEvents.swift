@@ -34,6 +34,7 @@ enum RestEvents: Int {
     case saveUserPregnancyTests
     case projectionData
     case getUsersMedicalOptionsData
+    case updateProfilePhoto
 }
 
 class RestEngineEvents: EngineEvents {

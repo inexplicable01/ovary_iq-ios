@@ -24,6 +24,9 @@ enum DateFormat: String {
     case dayMonthYear = "dd/MM/yyyy"
     case yearMonthDate = "yyyy-MM-dd"
     case day = "dd"
+    case monthDate = "MMM dd"
+    case month = "MM"
+    case monthDateYear = "EEEE, MMM dd yyyy"
 }
 enum GoalType: String {
    case getPregnant = "Get Pregnant"
@@ -198,11 +201,51 @@ enum LogPeriodCategoryTypeImage: String {
 
 }
 
+// MARK: - For user medications image string
+enum USerMedicationsTypeImage: String {
+    // Category
+    case logPeriod = "blood_drop"
+    case medication = "MedicationWhite"
+    case procedure = "procedureWhite"
+    case activity = "ActivityWhite"
+    case symptoms = "SymtompsWhite"
+    case pregnancyTest = "PregnancyTestWhite"
+
+    var imageName: String {
+        return self.rawValue
+    }
+}
+
+enum UserMedicalOptionsType: String {
+    // LOGPERIOD CATEGORY
+    case logPeriod = "Log Period"
+    case medication = "Medication"
+    case procedure = "Procedure"
+    case activity = "Activity"
+    case symptoms = "Symptoms"
+    case pregnancyTest = "Pregnancy Test"
+
+    var image: String {
+        switch self {
+        case .logPeriod: return USerMedicationsTypeImage.logPeriod.imageName
+        case .medication: return USerMedicationsTypeImage.medication.imageName
+        case .procedure: return USerMedicationsTypeImage.procedure.imageName
+        case .activity: return USerMedicationsTypeImage.activity.imageName
+        case .symptoms: return USerMedicationsTypeImage.symptoms.imageName
+        case .pregnancyTest: return USerMedicationsTypeImage.pregnancyTest.imageName
+      }
+    }
+}
+
 // MARK: -  For  return Images
 enum UIImageType: String {
     case bloodDrop = "blood_drop"
     case myProfile = "myProfile"
     case settings = "settings"
+    // for predicted dates on home
+    case fertileWindow = "FertileWindow"
+    case ovulation = "Ovulation"
+    case predictedPeriod = "PredictedPeriod"
     var image: UIImage? {
         return UIImage(named: rawValue)
     }

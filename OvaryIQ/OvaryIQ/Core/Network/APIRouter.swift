@@ -30,13 +30,14 @@ enum APIRouter: URLRequestConvertible {
     case saveLogPeriod(params: Parameters)
     case projectionData(params: Parameters)
     case getUsersMedicalOptionsData(params: Parameters)
+    case updateProfilePhoto(params: Parameters)
 
 
     var method: HTTPMethod {
 
         switch self {
         case .signUp,
-                    .login, .logOut, .savezGoalsDetails, .forgotPassword, .ResetPassword, .saveLogPeriod, .changePassword, .saveUserMedications, .saveUserProcedures, .saveUserActivities, .saveUserSymptoms, .saveUserPregnancyTests:
+                    .login, .logOut, .savezGoalsDetails, .forgotPassword, .ResetPassword, .saveLogPeriod, .changePassword, .saveUserMedications, .saveUserProcedures, .saveUserActivities, .saveUserSymptoms, .saveUserPregnancyTests, .updateProfilePhoto:
             return .post
 
             case .fetchGoals,.verifyCode, .getDataForLogPeriod, .getUserLogPeriodData, .userProfile, .projectionData,.getUsersMedicalOptionsData:
@@ -67,6 +68,7 @@ enum APIRouter: URLRequestConvertible {
         case .saveUserPregnancyTests: return APIName.saveUserPregnancyTests
         case .projectionData: return APIName.projectionData
         case .getUsersMedicalOptionsData: return APIName.getUsersMedicalOptionsData
+        case .updateProfilePhoto:  return APIName.updateProfilePhoto
 
         }
     }
@@ -102,7 +104,8 @@ enum APIRouter: URLRequestConvertible {
              .saveUserProcedures(let params),
              .saveUserActivities(let params),
              .saveUserSymptoms(let params),
-             .saveUserPregnancyTests(let params):
+             .saveUserPregnancyTests(let params),
+             .updateProfilePhoto(let params):
               urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
 
         case .fetchGoals(let params), .getDataForLogPeriod(let params), .getUserLogPeriodData(let params):

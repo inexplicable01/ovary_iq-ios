@@ -242,7 +242,7 @@ class CoreEngine: EventLoop {
               if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
                     notifyToGUI = true
               }
-            case .saveUserMedications:
+            case .saveUserMedications, .saveUserSymptoms, .saveLogPeriod, .saveUserActivities, .saveUserPregnancyTests, .saveUserProcedures:
               if let responseDict = evobj.object as? [String: Any], !self.validateResponseError(response: responseDict) {
                     notifyToGUI = true
              }
@@ -251,9 +251,14 @@ class CoreEngine: EventLoop {
                     notifyToGUI = true
             }
             case .getUsersMedicalOptionsData:
-                  if let responseDict = evobj.object as? [String: Any],  !self.validateResponseError(response: responseDict) {
+             if let responseDict = evobj.object as? [String: Any],  !self.validateResponseError(response: responseDict) {
                     notifyToGUI = true
             }
+
+            case .updateProfilePhoto:
+                if let responseDict = evobj.object as? [String: Any],  !self.validateResponseError(response: responseDict) {
+                      notifyToGUI = true
+              }
 
             default :
                 if let responseDict = evobj.object as? [String: Any],
