@@ -7,12 +7,16 @@
 
 import Foundation
 import UIKit
+protocol SideOptionsViewModelDeleagte {
+    func sendSuccessResponseOfUpdateProfile(profileDataModel: MyProfileDataModel)
+}
+
 class SideOptionsViewModel {
     // MARK: - Properties
     private var restEventCallBackID: String?
     private let coreEngine = CoreEngine.shared
+    internal var delegate: SideOptionsViewModelDeleagte?
     //internal var validateSocialIdRequestModel = ValidateSocialIdRequest()
-    internal var delegate: AuthOptionViewModelDelegate?
     internal var viewContreoller = UIViewController()
     // MARK: - Init & AuthOptionViewModelProtocol
 //    required init(coreEngine: CoreEngine) {
@@ -21,7 +25,7 @@ class SideOptionsViewModel {
 
     internal func registerCoreEngineEventsCallBack() {
         if self.restEventCallBackID == nil {
-          //  self.registerRestEventCallBack()
+            self.registerRestEventCallBack()
         }
     }
     internal func unregisterCoreEngineEventsCallBack() {
@@ -65,5 +69,40 @@ class SideOptionsViewModel {
         restEvent.showActivityIndicator = false
         self.coreEngine.addEvent(evObj: restEvent)
        // self.coreEngine.addEngineEventsWithOutWait(evObj: restEvent)
+    }
+}
+// MARK: - Register Rest Event Call Back
+
+extension SideOptionsViewModel {
+    internal func registerRestEventCallBack() {
+        fLog()
+        self.restEventCallBackID = self.coreEngine.registerEventCallBack(cbType: .restCallBack, cbBlock: { eventId, result, response, message, isSuccess in
+          //  guard let sself = self else { return }
+            if let eventId = RestEvents(rawValue: eventId) {
+                switch eventId {
+                case .updateProfilePhoto:
+                    fLog()
+                if isSuccess {
+                    do {
+                        let encodedDictionary = try JSONDecoder().decode(MyProfileDataModel.self, from: JSONSerialization.data(withJSONObject: response))
+                        dLog(message: "updateProfilePhoto:- \(encodedDictionary)")
+                        // 1. Save profile photo
+                        if let profilePhoto = encodedDictionary.userData?.profile {
+                            kUserDefaults.ProfilePhoto = profilePhoto
+                        }
+                        self.delegate?.sendSuccessResponseOfUpdateProfile(profileDataModel: encodedDictionary)
+
+                    } catch {
+                        print("Error: ", error)
+                    }
+                } else {
+                    AlertControllerManager.showToast(message: ErrorMessages.somethingWentWrong.localizedString, type: .error)
+                }
+
+                default:
+                    break
+                }
+            }
+        })
     }
 }

@@ -60,11 +60,20 @@
                                             <constraint firstAttribute="height" constant="126" id="wta-sn-hi0"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="SQ6-rv-4aW">
-                                        <rect key="frame" x="166.5" y="134" width="81" height="96"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SmallProfilePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="SQ6-rv-4aW">
+                                        <rect key="frame" x="166.5" y="145" width="81" height="81"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="81" id="66F-bf-ea4"/>
+                                            <constraint firstAttribute="width" constant="81" id="RJp-5a-vkf"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wh-JQ-P0r">
-                                        <rect key="frame" x="220.5" y="198" width="20" height="20"/>
+                                        <rect key="frame" x="220.5" y="196" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="1P1-W6-vFU"/>
                                             <constraint firstAttribute="height" constant="20" id="c9C-Gc-Iwy"/>
@@ -104,10 +113,10 @@
                                     <constraint firstAttribute="bottom" secondItem="BZc-aW-BfE" secondAttribute="bottom" id="57P-xA-S1M"/>
                                     <constraint firstItem="V1t-S2-3cl" firstAttribute="top" secondItem="Qs8-G9-tT5" secondAttribute="bottom" constant="4" id="8wJ-0y-SSn"/>
                                     <constraint firstItem="WZf-tS-gcz" firstAttribute="leading" secondItem="Z8Q-mO-Qpe" secondAttribute="leading" constant="20" id="9MC-ZR-x5w"/>
-                                    <constraint firstItem="SQ6-rv-4aW" firstAttribute="bottom" secondItem="TI5-fS-Whe" secondAttribute="bottom" id="A55-0n-30B"/>
+                                    <constraint firstItem="SQ6-rv-4aW" firstAttribute="bottom" secondItem="TI5-fS-Whe" secondAttribute="bottom" constant="-4" id="A55-0n-30B"/>
                                     <constraint firstItem="SQ6-rv-4aW" firstAttribute="trailing" secondItem="TI5-fS-Whe" secondAttribute="trailing" constant="-7" id="ATq-10-e2P"/>
                                     <constraint firstItem="Qs8-G9-tT5" firstAttribute="centerX" secondItem="TI5-fS-Whe" secondAttribute="centerX" id="C7K-7N-bPg"/>
-                                    <constraint firstItem="7Wh-JQ-P0r" firstAttribute="bottom" secondItem="SQ6-rv-4aW" secondAttribute="bottom" constant="-12" id="DsN-8n-t3D"/>
+                                    <constraint firstItem="7Wh-JQ-P0r" firstAttribute="bottom" secondItem="SQ6-rv-4aW" secondAttribute="bottom" constant="-10" id="DsN-8n-t3D"/>
                                     <constraint firstItem="TI5-fS-Whe" firstAttribute="centerX" secondItem="Z8Q-mO-Qpe" secondAttribute="centerX" id="IgO-ut-qfN"/>
                                     <constraint firstItem="BZc-aW-BfE" firstAttribute="leading" secondItem="Z8Q-mO-Qpe" secondAttribute="leading" id="KHA-06-Wo3"/>
                                     <constraint firstAttribute="trailing" secondItem="BZc-aW-BfE" secondAttribute="trailing" id="PUU-GA-dEJ"/>
@@ -118,7 +127,6 @@
                                     <constraint firstItem="V1t-S2-3cl" firstAttribute="centerX" secondItem="Qs8-G9-tT5" secondAttribute="centerX" id="XjI-W8-fOf"/>
                                     <constraint firstItem="Aq2-LZ-ndO" firstAttribute="centerY" secondItem="WZf-tS-gcz" secondAttribute="centerY" id="aj6-rw-7U0"/>
                                     <constraint firstItem="Aq2-LZ-ndO" firstAttribute="centerX" secondItem="Z8Q-mO-Qpe" secondAttribute="centerX" id="dSL-1g-9Hb"/>
-                                    <constraint firstItem="SQ6-rv-4aW" firstAttribute="top" secondItem="TI5-fS-Whe" secondAttribute="top" constant="30" id="fuO-bH-Xy8"/>
                                     <constraint firstItem="TI5-fS-Whe" firstAttribute="top" secondItem="Aq2-LZ-ndO" secondAttribute="bottom" constant="15" id="kqv-UX-Btb"/>
                                     <constraint firstItem="Qs8-G9-tT5" firstAttribute="leading" secondItem="Z8Q-mO-Qpe" secondAttribute="leading" constant="20" id="mU2-LY-Tpa"/>
                                     <constraint firstItem="7Wh-JQ-P0r" firstAttribute="trailing" secondItem="SQ6-rv-4aW" secondAttribute="trailing" constant="-7" id="ntg-hX-sz2"/>
@@ -1416,6 +1424,7 @@
         <image name="Cross" width="95" height="107"/>
         <image name="ProfileBg" width="375" height="369"/>
         <image name="ShowEye" width="16.5" height="13"/>
+        <image name="SmallProfilePlaceHolder" width="35" height="35"/>
         <image name="backArrow" width="35" height="35"/>
         <image name="crossBtn" width="35" height="35"/>
         <image name="editBtn" width="20" height="20"/>
@@ -1424,7 +1433,6 @@
         <image name="leftArrow" width="8.5" height="15"/>
         <image name="lock" width="14.5" height="17.5"/>
         <image name="myProfile" width="40" height="40"/>
-        <image name="profile" width="35" height="35"/>
         <image name="profileWhiteEgg" width="95" height="126.5"/>
         <image name="rightArrow" width="8.5" height="15"/>
         <image name="white_line" width="35" height="2"/>

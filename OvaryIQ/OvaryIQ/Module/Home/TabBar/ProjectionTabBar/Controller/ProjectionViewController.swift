@@ -10,6 +10,7 @@ import UIKit
 class ProjectionViewController: BaseViewC {
     // MARK: - IBOutlets
     @IBOutlet private weak var tablViewProjections: UITableView!
+    @IBOutlet private weak var imgViewProfileimg: UIImageView!
     // MARK: - Properties
     private var viewModel = ProjectionViewModel()
     private var projectionDataModel: ProjectionDataModel?
@@ -53,6 +54,9 @@ class ProjectionViewController: BaseViewC {
    // MARK: - Notifications Functions
    // MARK: - Private Functions
     private func initalSetup() {
+        if let url = URL(string: UserDefaults.ProfilePhoto) {
+            self.imgViewProfileimg.kf.setImage(with: url, placeholder: UIImage(named: UIImageType.profilePlaceholder.rawValue))
+        }
         self.viewModel.delegate = self
         self.viewModel.callApiToGetProjectionData()
     }
@@ -68,7 +72,18 @@ class ProjectionViewController: BaseViewC {
 }
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension ProjectionViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+
+        if self.projectionDataModel == nil {
+            tablViewProjections.setNoDataMessage("No data found", txtColor: .gray)
+           return 0
+        } else{
+            tablViewProjections.backgroundView = nil
+           return 1
+        }
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
         return 1
     }
 

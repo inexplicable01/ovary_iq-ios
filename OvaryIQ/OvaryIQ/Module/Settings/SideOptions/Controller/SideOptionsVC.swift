@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 struct Profile {
     var title: String?
     var img: UIImage?
@@ -32,12 +33,12 @@ class SideOptionsVC: UIViewController {
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initialSetup()
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.viewModel.registerCoreEngineEventsCallBack()
+        self.initialSetup()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -71,6 +72,9 @@ class SideOptionsVC: UIViewController {
         self.btnLogout.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
         self.lblName.text = UserDefaults.UserName
         self.lblMyGoalStatus.text = UserDefaults.MyGoalStatus
+            if let url = URL(string: UserDefaults.ProfilePhoto) {
+                self.profileImage.kf.setImage(with: url, placeholder: UIImage(named: UIImageType.profilePlaceholder.rawValue))
+            }
    }
     // MARK: - Button Actions
     @IBAction private func tapBtnCross(_ sender: UIButton) {
@@ -103,15 +107,6 @@ class SideOptionsVC: UIViewController {
 
     }
 }
-// MARK: - Protocol and delegate method
-extension SideOptionsVC: CameraAndGalleryOptionVCDelegate {
-    func selectedImageFromCameraAndAlbum(selectedImg: UIImage) {
-        self.profileImage.image = selectedImg
-        self.viewModel.callApiToEditPhotos(image: selectedImg)
-
-    }
-}
-
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension SideOptionsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -129,6 +124,22 @@ extension SideOptionsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          let viewController = Storyboard.Settings.instantiateViewController(identifier: profileArr[indexPath.row].controller ?? "")
             self.navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+// MARK: - Protocol and delegate method
+extension SideOptionsVC: CameraAndGalleryOptionVCDelegate {
+//    func sendSuccessResponseOfUpdateProfile(profileDataModel: MyProfileDataModel) {
+//        if let imgUrl = profileDataModel.userData?.profile {
+//            if let url = URL(string: imgUrl) {
+//                self.profileImage.kf.setImage(with: url)
+//            }
+//        }
+//    }
+
+    func selectedImageFromCameraAndAlbum(selectedImg: UIImage) {
+        self.profileImage.image = selectedImg
+        self.viewModel.callApiToEditPhotos(image: selectedImg)
+
     }
 }
 

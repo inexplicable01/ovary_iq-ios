@@ -242,6 +242,8 @@ enum UIImageType: String {
     case bloodDrop = "blood_drop"
     case myProfile = "myProfile"
     case settings = "settings"
+    case regularBledding = "regularBledding"
+    case profilePlaceholder = "SmallProfilePlaceHolder"
     // for predicted dates on home
     case fertileWindow = "FertileWindow"
     case ovulation = "Ovulation"

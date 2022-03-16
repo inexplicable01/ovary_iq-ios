@@ -18,6 +18,7 @@ class SavedMedicationsDataIconCVC: UICollectionViewCell {
     }
     // MARK: - Internal Functions
     internal func configCell(model: String?) {
+//        medicalOptionsImage.isHidden = model == UIImageType.regularBledding.rawValue ? true : false
         self.medicalOptionsImage.image = UIImage(named: model ?? "")
     }
 

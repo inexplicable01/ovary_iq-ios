@@ -249,6 +249,7 @@ class CoreEngine: EventLoop {
             case .projectionData:
               if let responseDict = evobj.object as? [String: Any],  !self.validateResponseError(response: responseDict) {
                     notifyToGUI = true
+
             }
             case .getUsersMedicalOptionsData:
              if let responseDict = evobj.object as? [String: Any],  !self.validateResponseError(response: responseDict) {
@@ -256,9 +257,14 @@ class CoreEngine: EventLoop {
             }
 
             case .updateProfilePhoto:
-                if let responseDict = evobj.object as? [String: Any],  !self.validateResponseError(response: responseDict) {
-                      notifyToGUI = true
-              }
+                    //convert data into json
+                if let data = evobj.object as? Data,
+                        let responseDict = String(decoding: data, as: UTF8.self).convertToDictionary(),
+                        !self.validateResponseError(response: responseDict) {
+                       // self.updateAnnouncementData()
+                     evobj.object = responseDict as AnyObject
+                       notifyToGUI = true
+                    }
 
             default :
                 if let responseDict = evobj.object as? [String: Any],
@@ -434,8 +440,8 @@ extension CoreEngine {
                 } else {
                     AppConfig.defautMainQ.async {
                      //   AlertControllerManager.showToast(message: errorStr, type: AlertType.error)
-
                         AlertControllerManager.showToast(message: errorStr, type: AlertType.error)
+                        
                     }
                 }
             }

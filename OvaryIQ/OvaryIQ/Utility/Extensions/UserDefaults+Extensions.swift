@@ -29,6 +29,7 @@ extension UserDefaults {
         static let UserLocation              = "UD_Key_User_Location"
         static let MyGoalStatus              = "UD_Key_Goal_Status"
         static let UserName                  = "UD_Key_User_Name"
+        static let ProfilePhoto                = "UD_Key_Profile_Photo"
 
     }
 
@@ -83,6 +84,9 @@ extension UserDefaults {
     @SharedPref(key: UDKey.UserName, defaultValue: "")
     static var UserName: String
 
+    @SharedPref(key: UDKey.ProfilePhoto, defaultValue: "")
+    static var ProfilePhoto: String
+
     func clear() {
         self.set("", forKey: UDKey.AccessToken)
         self.set("", forKey: UDKey.TokenType)
@@ -90,6 +94,7 @@ extension UserDefaults {
         self.set("", forKey: UDKey.isGoalSaved)
         self.set("", forKey: UDKey.MyGoalStatus)
         self.set("", forKey: UDKey.UserName)
+        self.set("", forKey: UDKey.ProfilePhoto)
 
         self.set(nil, forKey: UDKey.UserId)
         self.set(false, forKey: UDKey.IsUserLogin)

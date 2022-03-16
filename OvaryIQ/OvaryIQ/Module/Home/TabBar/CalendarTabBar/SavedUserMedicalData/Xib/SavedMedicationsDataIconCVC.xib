@@ -18,12 +18,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MedicationWhite" translatesAutoresizingMaskIntoConstraints="NO" id="r7Z-Zd-sMG">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="regularBledding" translatesAutoresizingMaskIntoConstraints="NO" id="r7Z-Zd-sMG">
                         <rect key="frame" x="0.0" y="0.0" width="17" height="17"/>
                         <color key="backgroundColor" name="ThemeColor"/>
                     </imageView>
                 </subviews>
-                <color key="backgroundColor" name="GreenColor"/>
+                <color key="backgroundColor" name="ThemeColor"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="r7Z-Zd-sMG" secondAttribute="trailing" id="UtD-0R-0Ta"/>
                     <constraint firstItem="r7Z-Zd-sMG" firstAttribute="top" secondItem="s40-hx-JFa" secondAttribute="top" id="Zh7-9o-fFk"/>
@@ -41,10 +41,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="MedicationWhite" width="15" height="15"/>
-        <namedColor name="GreenColor">
-            <color red="0.23529411764705882" green="0.82745098039215681" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="regularBledding" width="15.5" height="20"/>
         <namedColor name="ThemeColor">
             <color red="1" green="0.42745098039215684" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

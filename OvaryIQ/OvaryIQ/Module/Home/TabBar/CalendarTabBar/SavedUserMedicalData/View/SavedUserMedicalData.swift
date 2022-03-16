@@ -13,13 +13,25 @@ protocol SavedUserMedicalDataDelegate {
 class SavedUserMedicalData: UIView {
     // MARK: - IBOutlets
     @IBOutlet private weak var lblDate: UILabel!
+    @IBOutlet private weak var imgViewBlood: UIImageView!
     @IBOutlet internal weak var xibBgView: UIView!
     @IBOutlet private weak var collectionViewMedicationIcon: UICollectionView!
     // MARK: - Properties
     private var categories = [String]()
-    internal var isZoom: Bool = false
+    internal var isZoom : Bool = false {
+        didSet {
+            if isZoom {
+                lblDate.text = Helper.convertDateFormat(InputDateFormat: DateFormat.yearMonthDate.rawValue, OutputDateFormate: DateFormat.monthDate.rawValue, date: dateStr ?? "")
+               // imgViewBlood.isHidden = true
+            } else {
+               // imgViewBlood.isHidden = false
+                lblDate.text = "\(Helper.convertDateFormat(InputDateFormat: DateFormat.yearMonthDate.rawValue, OutputDateFormate: DateFormat.day.rawValue, date: dateStr ?? ""))         "
+            }
+            self.collectionViewMedicationIcon.reloadData()
+        }
+    }
     internal var delegate: SavedUserMedicalDataDelegate?
-    internal var medicalOptionsListDataModel = [MedicalOptionsList]()
+  //  internal var medicalOptionsListDataModel = [MedicalOptionsList]()
     internal var medicalOptionSubCategoryListArr = [SubCategoryList]() {
         didSet {
             categories.removeAll()
@@ -29,14 +41,8 @@ class SavedUserMedicalData: UIView {
     }
     internal var dateStr: String? {
         didSet {
-            lblDate.text = Helper.convertDateFormat(InputDateFormat: DateFormat.yearMonthDate.rawValue, OutputDateFormate: DateFormat.monthDate.rawValue, date: dateStr ?? "")
-//            if isZoom {
-//                lblDate.text = Helper.convertDateFormat(InputDateFormat: DateFormat.yearMonthDate.rawValue, OutputDateFormate: DateFormat.monthDate.rawValue, date: dateStr ?? "")
-//            } else {
-//                lblDate.text = Helper.convertDateFormat(InputDateFormat: DateFormat.yearMonthDate.rawValue, OutputDateFormate: DateFormat.day.rawValue, date: dateStr ?? "")
-//            }
 
-
+            lblDate.text = "\(Helper.convertDateFormat(InputDateFormat: DateFormat.yearMonthDate.rawValue, OutputDateFormate: DateFormat.day.rawValue, date: dateStr ?? ""))         "
         }
     }
 
@@ -65,7 +71,6 @@ class SavedUserMedicalData: UIView {
         private func initCollectionView() {
             let nib = UINib(nibName: SavedMedicationsDataIconCVC.className, bundle: nil)
             collectionViewMedicationIcon.register(nib, forCellWithReuseIdentifier: SavedMedicationsDataIconCVC.className)
-//            collectionViewMedicationIcon.backgroundColor = .red
             collectionViewMedicationIcon.dataSource = self
             collectionViewMedicationIcon.delegate = self
         }
@@ -78,13 +83,13 @@ extension SavedUserMedicalData: UICollectionViewDelegate, UICollectionViewDataSo
     // MARK: - UICollectionViewDelegate
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-
         let iconName = categories[indexPath.row]
-        let filterSubCategoryDataModel = self.medicalOptionSubCategoryListArr.filter({$0.categoryImage ?? "" == iconName})
-        
-        self.delegate?.didSelectMethodCalled(sender: self, subCategoaryModel: filterSubCategoryDataModel)
-
+        if self.categories[indexPath.row] == UIImageType.regularBledding.rawValue {
+            //self.imgViewBlood.isHidden = false
+        } else {
+            let filterSubCategoryDataModel = self.medicalOptionSubCategoryListArr.filter({$0.categoryImage ?? "" == iconName})
+            self.delegate?.didSelectMethodCalled(sender: self, subCategoaryModel: filterSubCategoryDataModel)
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -102,6 +107,17 @@ extension SavedUserMedicalData: UICollectionViewDelegate, UICollectionViewDataSo
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             if let cell: SavedMedicationsDataIconCVC = collectionViewMedicationIcon.dequeueReusableCell(withReuseIdentifier: SavedMedicationsDataIconCVC.className, for: indexPath) as? SavedMedicationsDataIconCVC {
+                if self.categories[indexPath.row] == UIImageType.regularBledding.rawValue  && !(self.isZoom) {
+                    self.imgViewBlood.isHidden = false
+                } else {
+                    self.imgViewBlood.isHidden = true
+                }
+
+                if self.isZoom {
+                    cell.medicalOptionsImage.isHidden = false
+                } else{
+                    cell.medicalOptionsImage.isHidden = self.categories[indexPath.row] == UIImageType.regularBledding.rawValue ? true : false
+                }
                 cell.configCell(model: self.categories[indexPath.row])
                 return cell
             } else {

@@ -71,7 +71,7 @@ class NetworkManager: EventLoop {
                         newParams[APIParam.profile] = nil
                       //  newParams[keyName] = nil
 
-                        self.multipartImageService(url: urlStr, data: [imageArr], withName: Array(repeating: keyName, count: [imageArr].count), fileName: Array(repeating: keyName + "/.png", count: [imageArr].count), mimeType: Array(repeating: "image/jpeg", count: [imageArr].count), header: header, method: .post, parameters: newParams)
+                        self.multipartImageService(url: urlStr, data: [imageArr], withName: Array(repeating: keyName, count: [imageArr].count), fileName: Array(repeating: keyName + "/.png", count: [imageArr].count), mimeType: Array(repeating: "image/jpeg", count: [imageArr].count), header: header, method: method, parameters: newParams)
 
                     } else if let params = restObject.object as? [String: Any],
                         let keyName = params[APIParam.keyName] as? String,

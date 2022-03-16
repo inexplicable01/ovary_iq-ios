@@ -104,14 +104,13 @@ enum APIRouter: URLRequestConvertible {
              .saveUserProcedures(let params),
              .saveUserActivities(let params),
              .saveUserSymptoms(let params),
-             .saveUserPregnancyTests(let params),
-             .updateProfilePhoto(let params):
+             .saveUserPregnancyTests(let params):
               urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
 
         case .fetchGoals(let params), .getDataForLogPeriod(let params), .getUserLogPeriodData(let params):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
 
-        case .projectionData(let params):
+            case .projectionData(let params),.updateProfilePhoto(let params):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
 
 

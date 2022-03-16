@@ -26,7 +26,9 @@ pod 'IQKeyboardManagerSwift'
  #Usage:- for picking country or dialing code
  pod 'SKCountryPicker'
 
-
+ #Usage:- for setting an image to an image view
+ pod 'Kingfisher'
+ 
  #Usage:- for facebook login
 #pod 'FBSDKLoginKit'
 # pod 'FBSDKCoreKit'

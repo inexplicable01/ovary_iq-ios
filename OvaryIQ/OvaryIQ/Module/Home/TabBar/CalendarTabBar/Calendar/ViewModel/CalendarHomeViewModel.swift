@@ -65,14 +65,13 @@ extension CalendarHomeViewModel {
                         fLog()
                         if isSuccess {
                             do {
-                                self.callApiToGetUserLogPeriodData()
                                 var encodedDictionary = try JSONDecoder().decode(GetDataForLogPeriodDataModel.self, from: JSONSerialization.data(withJSONObject: response))
                                 dLog(message: "GetUSerSavedLogPeriodResponse:- \(encodedDictionary)")
                                 var newModel = encodedDictionary
                                 for (indx,value) in newModel.medicalOptionsList.enumerated() {
                                     newModel.medicalOptionsList[indx].categoryImage = Helper.getIcon(name: value.name ?? "")
                                     for (inx, subValue) in value.subCategoryList.enumerated() {
-                                        newModel.medicalOptionsList[indx].subCategoryList[inx].isSelected = false
+                                       // newModel.medicalOptionsList[indx].subCategoryList[inx].isSelected = false
                                         switch value.name {
                                             case LogPeriodCategoryType.logPeriod.rawValue:
                                                 newModel.medicalOptionsList[indx].subCategoryList[inx].periodFlowIcon = Helper.getIcon(name: subValue.periodFlowName ?? "")
@@ -108,14 +107,8 @@ extension CalendarHomeViewModel {
                             do {
                                 let encodedDictionary = try JSONDecoder().decode(GetUsersMedicalOptionsDataModel.self, from: JSONSerialization.data(withJSONObject: response))
                                 dLog(message: "getUsersMedicalOptionsDataResponse:- \(encodedDictionary)")
-//                                var medicalOptionModel = encodedDictionary
-//                                for (indx,value) in medicalOptionModel.medicalOptionsList.enumerated() {
-//                                    medicalOptionModel.medicalOptionsList[indx].categoryImage = Helper.getIcon(name: value.name ?? "")
-//                                    for (inx, subValue) in value.subCategoryList.enumerated() {
-//                                        medicalOptionModel.medicalOptionsList[indx].subCategoryList[inx].subCategoryImage = Helper.getIcon(name: subValue.name ?? "")
-//                                    }
-//                                }
                                 self.delegate?.getUsersMedicalOptionsDataModel(medicalOptionsDataModel: encodedDictionary)
+                                self.callApiToGetUserLogPeriodData()
 
                             } catch {
                                 print("Error: ", error)

@@ -11,6 +11,7 @@
 		A7022677278FF7FA000E1C9F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7022676278FF7FA000E1C9F /* Logger.swift */; };
 		A702267927902E51000E1C9F /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A702267827902E51000E1C9F /* UIButton+Extensions.swift */; };
 		A7069E5A278EC3C90028AA68 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7069E59278EC3C90028AA68 /* UIView+Extensions.swift */; };
+		A71A837E27E22E07000B3563 /* LogPeriodHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A837D27E22E07000B3563 /* LogPeriodHeader.swift */; };
 		A71F67FF27DB4EA7003E1E99 /* YearPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F67FE27DB4EA7003E1E99 /* YearPickerVC.swift */; };
 		A720FF43278ED70A00893720 /* AuthLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A720FF42278ED70A00893720 /* AuthLoginVC.swift */; };
 		A720FF46278EEC0A00893720 /* AuthSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A720FF45278EEC0A00893720 /* AuthSignUpVC.swift */; };
@@ -207,6 +208,7 @@
 		A7069E59278EC3C90028AA68 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A7069E5C278ED2070028AA68 /* CreteRound-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CreteRound-Italic.ttf"; sourceTree = "<group>"; };
 		A7069E5D278ED2070028AA68 /* CreteRound-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CreteRound-Regular.ttf"; sourceTree = "<group>"; };
+		A71A837D27E22E07000B3563 /* LogPeriodHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogPeriodHeader.swift; sourceTree = "<group>"; };
 		A71F67FE27DB4EA7003E1E99 /* YearPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearPickerVC.swift; sourceTree = "<group>"; };
 		A720FF42278ED70A00893720 /* AuthLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLoginVC.swift; sourceTree = "<group>"; };
 		A720FF45278EEC0A00893720 /* AuthSignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignUpVC.swift; sourceTree = "<group>"; };
@@ -1424,6 +1426,7 @@
 			isa = PBXGroup;
 			children = (
 				A77D7CAE27CE263100695974 /* LogPeriodSubCategotyCVC.swift */,
+				A71A837D27E22E07000B3563 /* LogPeriodHeader.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -2033,6 +2036,7 @@
 				A7820BBC27CF42B60051ED3A /* ChangePasswordViewModel.swift in Sources */,
 				A77AD2BE27AC0A71007C389F /* HomeViewModel.swift in Sources */,
 				A7DCAB3627BF5BEA0018FC76 /* FSCalendarStickyHeader.m in Sources */,
+				A71A837E27E22E07000B3563 /* LogPeriodHeader.swift in Sources */,
 				A7CE543E27967B7B00191A7B /* UITableView+Extension.swift in Sources */,
 				A753832727B117EA00F9FE83 /* ForgotPasswordViewModel.swift in Sources */,
 				A7DCAB3927BF5BEA0018FC76 /* FSCalendarWeekdayView.m in Sources */,

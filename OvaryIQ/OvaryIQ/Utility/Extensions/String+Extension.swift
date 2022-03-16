@@ -182,5 +182,13 @@ extension String {
         let passwordValidation = NSPredicate.init(format: "SELF MATCHES %@", regularExpression)
         return passwordValidation.evaluate(with: self)
     }
-
+    func convertToDictionary() -> [String: Any]? {
+          if let data = self.data(using: .utf8) {
+              do {
+                  return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+              } catch {
+              }
+          }
+          return nil
+      }
 }

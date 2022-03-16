@@ -74,6 +74,9 @@ extension AuthSignUpViewModel {
                         if let goalStatus = encodedDictionary.goalStatus {
                             kUserDefaults.MyGoalStatus = goalStatus
                         }
+                        if let profilePhoto = encodedDictionary.user?.profile {
+                            kUserDefaults.ProfilePhoto = profilePhoto
+                        }
                        self.delegate?.sucessRegisterApiResponse?()
 
                     } catch {

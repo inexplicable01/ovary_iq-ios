@@ -185,7 +185,7 @@ class RestHelper: NSObject {
               }
             case .updateProfilePhoto:
                 if let parameters = evObj.object as? [String: Any] {
-                   evObj.apiRequest = APIRouter.getUsersMedicalOptionsData(params: parameters)
+                   evObj.apiRequest = APIRouter.updateProfilePhoto(params: parameters)
                 } else {
                    dLog(message: "Parameter Missing :: \(APIName.getUsersMedicalOptionsData)")
               }

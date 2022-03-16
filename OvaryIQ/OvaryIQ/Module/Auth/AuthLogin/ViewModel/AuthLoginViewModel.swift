@@ -74,6 +74,10 @@ extension AuthLoginViewModel {
                         if let goalStatus = encodedDictionary.goalStatus {
                             kUserDefaults.MyGoalStatus = goalStatus
                         }
+                       // Save profile photo
+                        if let profilePhoto = encodedDictionary.user?.profile {
+                            kUserDefaults.ProfilePhoto = profilePhoto
+                        }
                         self.delegate?.sucessLoginApiResponse?()
 
                     } catch {

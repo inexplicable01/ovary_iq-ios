@@ -25,7 +25,7 @@ struct MedicalOptionsListDataModel: Codable {
 // MARK: - SubCategoryList
 struct SubCategoryListDataModel: Codable {
     var id: Int?
-    var isSelected: Bool = false
+    var isSelected: Bool?
     var periodFlowName: String?
     var periodFlowIcon: String?
     var medicationName: String?
@@ -53,6 +53,7 @@ struct SubCategoryListDataModel: Codable {
         case symptomIcon = "symptom_icon"
         case pregnancyTestName = "pregnancy_test_name"
         case pregnancyTestIcon = "pregnancy_test_icon"
+        case isSelected
     }
 
 }

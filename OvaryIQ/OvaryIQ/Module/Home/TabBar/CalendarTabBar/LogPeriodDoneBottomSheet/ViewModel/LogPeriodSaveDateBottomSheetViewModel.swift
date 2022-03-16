@@ -15,7 +15,7 @@ class LogPeriodSaveDateBottomSheetViewModel {
     private var restEventCallBackID: String?
     private let coreEngine = CoreEngine.shared
     private var params = [String: Any]()
-    private var dict = [String: Any]()
+    private var dict = [[String: Any]]()
     private var restEngineEvent = EngineEvents()
     internal var saveMedicationRequestModel: SaveMedicationRequestModel?
     internal var saveUserSelectedLogPeriodRequestModel: SaveUserLogPeriodDataRequestModel?
@@ -36,8 +36,19 @@ class LogPeriodSaveDateBottomSheetViewModel {
     // MARK: - Private Functions - API Calls
     func callApiToSavePeriodAndMedications(type: String) {
          fLog()
-        dict[APIParam.id] = self.saveMedicationRequestModel?.medicationId?.first?.id
-        dict[APIParam.date] = self.saveMedicationRequestModel?.medicationId?.first?.date
+
+//        dict[APIParam.id] = self.saveMedicationRequestModel?.medicationId?.first?.id
+//        dict[APIParam.date] = self.saveMedicationRequestModel?.medicationId?.first?.date
+
+
+        if let medicationsIdsArr = self.saveMedicationRequestModel?.medicationId {
+            for (inx,mod) in medicationsIdsArr.enumerated() {
+                var newdict = [String : Any]()
+                newdict[APIParam.id] = self.saveMedicationRequestModel?.medicationId?[inx].id
+                newdict[APIParam.date] = self.saveMedicationRequestModel?.medicationId?[inx].date
+                dict.append(newdict)
+            }
+        }
         switch self.saveMedicationRequestModel?.periodType {
                 // for Log Period
          case LogPeriodCategoryType.logPeriod.rawValue:
@@ -50,27 +61,27 @@ class LogPeriodSaveDateBottomSheetViewModel {
          restEngineEvent = RestEngineEvents(id: RestEvents.saveLogPeriod, obj: params)
                 // for Medications
         case LogPeriodCategoryType.medication.rawValue:
-        params = [APIParam.MedicationId: [dict].toJSONStringFormatted()]
+        params = [APIParam.MedicationId: dict.toJSONStringFormatted()]
         dLog(message: "Rest Event Name :: \(RestEvents.saveUserMedications) and Params :: \(String(describing: params))")
         restEngineEvent = RestEngineEvents(id: RestEvents.saveUserMedications, obj: params)
           // for Procedure
         case LogPeriodCategoryType.procedure.rawValue:
-        params = [APIParam.ProcedureId: [dict].toJSONStringFormatted()]
+        params = [APIParam.ProcedureId: dict.toJSONStringFormatted()]
         dLog(message: "Rest Event Name :: \(RestEvents.saveUserProcedures) and Params :: \(String(describing: params))")
         restEngineEvent = RestEngineEvents(id: RestEvents.saveUserProcedures, obj: params)
                 // for Activity
         case LogPeriodCategoryType.activity.rawValue:
-        params = [APIParam.ActivityId: [dict].toJSONStringFormatted()]
+        params = [APIParam.ActivityId: dict.toJSONStringFormatted()]
         dLog(message: "Rest Event Name :: \(RestEvents.saveUserActivities) and Params :: \(String(describing: params))")
         restEngineEvent = RestEngineEvents(id: RestEvents.saveUserActivities, obj: params)
                 // for Symptoms
         case LogPeriodCategoryType.symptoms.rawValue:
-        params = [APIParam.SymptomId: [dict].toJSONStringFormatted()]
+        params = [APIParam.SymptomId: dict.toJSONStringFormatted()]
         dLog(message: "Rest Event Name :: \(RestEvents.saveUserSymptoms) and Params :: \(String(describing: params))")
         restEngineEvent = RestEngineEvents(id: RestEvents.saveUserSymptoms, obj: params)
                //for Pregnancy Test
         case LogPeriodCategoryType.pregnancyTest.rawValue:
-                params = [APIParam.PregnancyTestId: [dict].toJSONStringFormatted() ?? [:]]
+                params = [APIParam.PregnancyTestId: dict.toJSONStringFormatted() ?? [:]]
         dLog(message: "Rest Event Name :: \(RestEvents.saveUserPregnancyTests) and Params :: \(String(describing: params))")
         restEngineEvent = RestEngineEvents(id: RestEvents.saveUserPregnancyTests, obj: params)
         default:
