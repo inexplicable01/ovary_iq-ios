@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Do you allow this app to capture image?</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Need libarary to set image</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
@@ -15,7 +17,7 @@
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
-		<false/>
+		<true/>
 	</dict>
 	<key>API_BASE_URL</key>
 	<string>$(API_BASE_URL)</string>

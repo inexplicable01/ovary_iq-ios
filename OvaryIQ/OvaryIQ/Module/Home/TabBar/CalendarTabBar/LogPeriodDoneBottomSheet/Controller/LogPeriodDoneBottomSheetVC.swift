@@ -73,7 +73,6 @@ class LogPeriodDoneBottomSheetVC: BaseViewC {
             self.viewModel.callApiToSavePeriodAndMedications(type: self.saveMedicationRequestModel?.periodType ?? "")
         }
     }
-
 }
 // MARK: - Protocol and delegate Functions
 extension LogPeriodDoneBottomSheetVC: LogPeriodSaveDateBottomSheetViewModelDelegate {

@@ -67,6 +67,9 @@ class LogPeriodsOptionsBottomSheetController: UIViewController {
                     self.selectedIds.removeAll()
                    // if self.selectedDate
 
+                    if self.medicalOptionsDataModel?.name == LogPeriodCategoryType.procedure.rawValue {
+                         // for procedure we don't need previous ids and date
+                    } else {
                     let newMedicationModel = self.userMedicalOptionsListDataModel?.subCategoryList.filter({$0.date != self.selectedDate})
                     let userSelectedAllDates = newMedicationModel?.map({$0.date}).unique
                     if let previousDate = userSelectedAllDates {
@@ -74,14 +77,13 @@ class LogPeriodsOptionsBottomSheetController: UIViewController {
                             let model = newMedicationModel?.filter({$0.date == previousDate[inx]})
                             switch self.medicalOptionsDataModel?.name {
                             case LogPeriodCategoryType.medication.rawValue:
-
                                     if let ids = model?.map({$0.medicationID}) {
                                         self.previousSelectedIds = ids.compactMap { Int($0 ?? "0") }
                                     }
-                            case LogPeriodCategoryType.procedure.rawValue:
-                                    if let ids = model?.map({$0.procedureID}) {
-                                        self.previousSelectedIds = ids.compactMap { Int($0 ?? "0") }
-                                    }
+//                            case LogPeriodCategoryType.procedure.rawValue:
+//                                    if let ids = model?.map({$0.procedureID}) {
+//                                        self.previousSelectedIds = ids.compactMap { Int($0 ?? "0") }
+//                                    }
                             case LogPeriodCategoryType.activity.rawValue:
                                     if let ids = model?.map({$0.activityID}) {
                                         self.previousSelectedIds = ids.compactMap { Int($0 ?? "0") }
@@ -100,6 +102,8 @@ class LogPeriodsOptionsBottomSheetController: UIViewController {
                             self.medicationModel.append(MedicationModel(id: self.previousSelectedIds, date: previousDate[inx] ?? ""))
                         }
                     }
+
+                }
                     for ( _ ,mod) in categoryModel.enumerated() {
                         if mod.isSelected ?? false {
                             if let medicationId = mod.id {
@@ -223,6 +227,3 @@ extension LogPeriodsOptionsBottomSheetController: LogPeriodHeaderDelegate {
     }
   }
 }
-
-
-

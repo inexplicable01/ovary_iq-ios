@@ -39,7 +39,8 @@ pod 'IQKeyboardManagerSwift'
  pod 'Alamofire', '5.4.4'
 
  pod 'Kingfisher'
- pod 'SwiftMessages'
+ pod 'SwiftMessages', '9.0.6'
+ #pod 'SwiftMessages'
 
 end
 post_install do |installer|

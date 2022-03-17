@@ -34,7 +34,7 @@ DEPENDENCIES:
   - SKCountryPicker
   - SwiftEntryKit (= 1.2.3)
   - SwiftLint
-  - SwiftMessages
+  - SwiftMessages (= 9.0.6)
 
 SPEC REPOS:
   trunk:
@@ -67,6 +67,6 @@ SPEC CHECKSUMS:
   SwiftLint: 06ac37e4d38c7068e0935bb30cda95f093bec761
   SwiftMessages: f0c7ef4705a570ad6c5e208b611f4333e660ed92
 
-PODFILE CHECKSUM: bec10e81714ec0cc1e388581650f347c5a1b519a
+PODFILE CHECKSUM: 3e2115defa806df2039da2ebc68150380b9b69d5
 
 COCOAPODS: 1.11.2

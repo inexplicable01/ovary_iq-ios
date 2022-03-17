@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 struct Profile {
     var title: String?
-    var img: UIImage?
+    var img = UIImage()
     var isHideGreyLine: Bool?
     var controller: String?
     init(title: String, img: UIImage, isHideGreyLine: Bool, controller: String) {
@@ -28,7 +28,7 @@ class SideOptionsVC: UIViewController {
     @IBOutlet private weak var profileImage: UIImageView!
     // MARK: - Properties
     private var viewModel = SideOptionsViewModel()
-    private var profileArr = [Profile(title: Text.myProfile.localizedString, img: UIImageType.myProfile.image!, isHideGreyLine: false, controller: MyProfileVC.className), Profile(title: Text.settings.localizedString, img: UIImageType.settings.image!, isHideGreyLine: true, controller: SettingVC.className)]
+    private var profileArr = [Profile(title: Text.myProfile.localizedString, img: (UIImageType.myProfile.image) ?? UIImage(), isHideGreyLine: false, controller: MyProfileVC.className), Profile(title: Text.settings.localizedString, img: (UIImageType.settings.image) ?? UIImage(), isHideGreyLine: true, controller: SettingVC.className)]
 
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {

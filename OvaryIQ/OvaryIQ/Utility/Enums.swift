@@ -124,7 +124,7 @@ enum LogPeriodCategoryType: String {
         case .sex: return LogPeriodCategoryTypeImage.sex.imageName
 
                 // FOR SYMPTOMS
-        case .bloating: return LogPeriodCategoryTypeImage.sex.imageName
+        case .bloating: return LogPeriodCategoryTypeImage.bloating.imageName
         case .pain: return LogPeriodCategoryTypeImage.pain.imageName
         case .haedaches: return LogPeriodCategoryTypeImage.haedaches.imageName
         case .diarrhea: return LogPeriodCategoryTypeImage.diarrhea.imageName
@@ -244,6 +244,8 @@ enum UIImageType: String {
     case settings = "settings"
     case regularBledding = "regularBledding"
     case profilePlaceholder = "SmallProfilePlaceHolder"
+    case projections = "Projections"
+    case whiteCalendar = "WhiteCalendar"
     // for predicted dates on home
     case fertileWindow = "FertileWindow"
     case ovulation = "Ovulation"

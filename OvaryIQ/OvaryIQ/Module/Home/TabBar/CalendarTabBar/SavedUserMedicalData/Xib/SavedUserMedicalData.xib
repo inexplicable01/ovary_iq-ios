@@ -38,19 +38,19 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 6 " textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="9du-Rx-PHK">
-                            <rect key="frame" x="5" y="6" width="110" height="20"/>
+                            <rect key="frame" x="5" y="6" width="110" height="19"/>
                             <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="15"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3d1-xf-A49">
-                            <rect key="frame" x="8" y="35" width="104" height="49"/>
-                            <color key="backgroundColor" name="ThemeColor"/>
-                            <color key="tintColor" name="ThemeColor"/>
+                            <rect key="frame" x="8" y="34" width="104" height="49"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="49" id="lWW-uk-7JO"/>
                             </constraints>
-                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" sectionInsetReference="safeArea" id="n2R-PD-Odd">
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" sectionInsetReference="safeArea" id="n2R-PD-Odd">
                                 <size key="itemSize" width="12" height="12"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -70,23 +70,29 @@
                             </connections>
                         </collectionView>
                     </subviews>
-                    <color key="backgroundColor" name="ThemeColor"/>
-                    <color key="tintColor" name="ThemeColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="3d1-xf-A49" firstAttribute="leading" secondItem="2gn-gv-4Al" secondAttribute="leading" constant="8" id="3ov-EV-rV9"/>
                         <constraint firstItem="ASa-nt-1Gv" firstAttribute="centerX" secondItem="9du-Rx-PHK" secondAttribute="centerX" constant="1" id="3z7-RN-x8P"/>
-                        <constraint firstAttribute="bottom" secondItem="3d1-xf-A49" secondAttribute="bottom" constant="6" id="JhB-QU-Ie5"/>
                         <constraint firstItem="ASa-nt-1Gv" firstAttribute="top" secondItem="9du-Rx-PHK" secondAttribute="top" id="Rmc-5f-nfo"/>
                         <constraint firstItem="9du-Rx-PHK" firstAttribute="leading" secondItem="2gn-gv-4Al" secondAttribute="leading" constant="5" id="SUo-OK-yNX"/>
                         <constraint firstAttribute="trailing" secondItem="9du-Rx-PHK" secondAttribute="trailing" constant="5" id="UMb-Mc-06u"/>
-                        <constraint firstItem="3d1-xf-A49" firstAttribute="top" secondItem="ASa-nt-1Gv" secondAttribute="bottom" constant="4" id="WUb-ed-ZYQ"/>
+                        <constraint firstItem="3d1-xf-A49" firstAttribute="top" secondItem="ASa-nt-1Gv" secondAttribute="bottom" constant="3" id="WUb-ed-ZYQ"/>
                         <constraint firstAttribute="trailing" secondItem="3d1-xf-A49" secondAttribute="trailing" constant="8" id="cjB-5b-v8u"/>
                         <constraint firstItem="9du-Rx-PHK" firstAttribute="top" secondItem="2gn-gv-4Al" secondAttribute="top" constant="6" id="gqS-vb-MdH"/>
                         <constraint firstItem="3d1-xf-A49" firstAttribute="top" secondItem="9du-Rx-PHK" secondAttribute="bottom" constant="9" id="o8z-Cu-9o2"/>
+                        <constraint firstAttribute="bottom" secondItem="3d1-xf-A49" secondAttribute="bottom" constant="7" id="pQz-Rq-Qfo"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                             <real key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" name="ThemeColor"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>

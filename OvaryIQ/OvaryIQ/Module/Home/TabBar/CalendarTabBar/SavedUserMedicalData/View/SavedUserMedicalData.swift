@@ -12,17 +12,24 @@ protocol SavedUserMedicalDataDelegate {
 }
 class SavedUserMedicalData: UIView {
     // MARK: - IBOutlets
-    @IBOutlet private weak var lblDate: UILabel!
+    @IBOutlet internal weak var lblDate: UILabel!
     @IBOutlet private weak var imgViewBlood: UIImageView!
     @IBOutlet internal weak var xibBgView: UIView!
-    @IBOutlet private weak var collectionViewMedicationIcon: UICollectionView!
+    @IBOutlet internal weak var collectionViewMedicationIcon: UICollectionView!
     // MARK: - Properties
     private var categories = [String]()
+    internal var isChangedCollectionIconColor: Bool = false {
+        didSet {
+            collectionViewMedicationIcon.reloadData()
+        }
+    }
     internal var isZoom : Bool = false {
         didSet {
             if isZoom {
                 lblDate.text = Helper.convertDateFormat(InputDateFormat: DateFormat.yearMonthDate.rawValue, OutputDateFormate: DateFormat.monthDate.rawValue, date: dateStr ?? "")
                // imgViewBlood.isHidden = true
+
+
             } else {
                // imgViewBlood.isHidden = false
                 lblDate.text = "\(Helper.convertDateFormat(InputDateFormat: DateFormat.yearMonthDate.rawValue, OutputDateFormate: DateFormat.day.rawValue, date: dateStr ?? ""))         "
@@ -112,13 +119,17 @@ extension SavedUserMedicalData: UICollectionViewDelegate, UICollectionViewDataSo
                 } else {
                     self.imgViewBlood.isHidden = true
                 }
-
+                if isChangedCollectionIconColor {
+                    cell.medicalOptionsImage.tintColor = .white
+                } else {
+                    cell.medicalOptionsImage.tintColor = .clear
+                }
                 if self.isZoom {
                     cell.medicalOptionsImage.isHidden = false
-                } else{
+                } else {
                     cell.medicalOptionsImage.isHidden = self.categories[indexPath.row] == UIImageType.regularBledding.rawValue ? true : false
                 }
-                cell.configCell(model: self.categories[indexPath.row])
+                cell.configCell(model: self.categories[indexPath.row], isRenderImage: self.isChangedCollectionIconColor)
                 return cell
             } else {
                 return UICollectionViewCell()

@@ -4,16 +4,6 @@
 //
 //  Created by Mobcoder on 02/03/22.
 //
-
-import Foundation
-//ChangePasswordViewModel
-//
-//  ResetPasswordViewModel.swift
-//  OvaryIQ
-//
-//  Created by Mobcoder on 07/02/22.
-//
-
 import Foundation
 import UIKit
 @objc protocol ChangePasswordViewModelDelegate {
@@ -49,7 +39,6 @@ class ChangePasswordViewModel {
         self.coreEngine.addEngineEventsWithOutWait(evObj: restEvent)
         // self.coreEngine.addEvent(evObj: restEvent)
     }
-
 }
 // MARK: - Register Rest Event Call Back
 

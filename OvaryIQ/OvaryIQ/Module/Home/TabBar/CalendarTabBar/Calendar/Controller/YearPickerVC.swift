@@ -13,9 +13,16 @@ class YearPickerVC: UIViewController {
     // MARK: - Properties
     internal var goBackToCalendarHomeController: ((String) -> ())?
     private var pickerData: [String] {
+
+        let date = Date()
+        let calendar = Calendar.current
         let currentYear = Calendar.current.component(.year, from: Date())
+        let previousYear = currentYear - 1
+        let nextYear = currentYear + 5
+        dLog(message: " one year back from current year \(previousYear)")
+        dLog(message: " five year ago from current year \(nextYear)")
         var years = [String]()
-        for indx in (1970...currentYear) {
+        for indx in (previousYear...nextYear) {
             years.append("\(indx)")
         }
         return years

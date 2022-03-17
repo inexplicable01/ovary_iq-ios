@@ -18,6 +18,7 @@ struct PredictedPeriod {
 class CalendarHomeVC: BaseViewC {
     // MARK: - IBOutlets
     @IBOutlet private  weak var calendar: FSCalendar!
+    @IBOutlet private weak var btnCalendar: UIButton!
     @IBOutlet private weak var imgViewProfileimg: UIImageView!
     @IBOutlet private weak var lblMonthYear: UILabel!
     @IBOutlet private weak var lblYear: UILabel!
@@ -43,6 +44,8 @@ class CalendarHomeVC: BaseViewC {
     private var getUserMedicalOptionsDataModel: GetUsersMedicalOptionsDataModel?
     private var getUserLogPeriodDataModel: GetUserLogPeriodDataModel?
     private var medicationsSubCategoryListModel = [SubCategoryList]()
+    private var currentMonth: String?
+    private var currentYear: String?
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +103,8 @@ class CalendarHomeVC: BaseViewC {
         let year = Calendar.current.component(.year, from: date)
         let month = Calendar.current.component(.month, from: date)
         let monthName = DateFormatter().monthSymbols[month - 1]
+        self.currentYear = "\(year)"
+        self.currentMonth = "\(month)"
         lblYear.text = "\(year)"
         lblMonthYear.text = "\(monthName) \(year)"
         lblMonthYear.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
@@ -130,6 +135,31 @@ class CalendarHomeVC: BaseViewC {
         dateComponents.setValue(year, for: .year)
         let date = Calendar.current.date(from: dateComponents)
         self.calendar.setCurrentPage(date!, animated: true)
+    }
+
+    private func mapUserLoggedPeriodDataInMedicationDataModel(dataModel: GetUserLogPeriodDataModel) {
+
+//        self.getUserMedicalOptionsDataModel?.medicalOptionsList.map({$0.name == LogPeriodCategoryType.logPeriod.rawValue})
+//
+//        self.getUserMedicalOptionsDataModel?.medicalOptionsList.firstIndex(where: <#T##(MedicalOptionsList) throws -> Bool#>)
+
+        if let index =  self.getUserMedicalOptionsDataModel?.medicalOptionsList.firstIndex{$0.name ?? "" == LogPeriodCategoryType.logPeriod.rawValue} {
+            self.getUserMedicalOptionsDataModel?.medicalOptionsList.remove(at: index)
+        }
+
+        dLog(message: "log period mapped data...\(self.getUserMedicalOptionsDataModel)")
+        self.medicationsSubCategoryListModel.removeAll()
+         if let logData = dataModel.logData {
+             for (indx, _) in logData.enumerated() {
+                 self.medicationsSubCategoryListModel.append(SubCategoryList(id: logData[indx].periodFlowID ?? 0, medicationID: "", date: logData[indx].lockDate, name: logData[indx].periodFlowName, procedureID: "", activityID: "", symptomID: "", pregnancyTestID: "", subCategoryImage: UIImageType.regularBledding.rawValue, categoryImage: UIImageType.regularBledding.rawValue))
+             }
+
+
+
+             self.getUserMedicalOptionsDataModel?.medicalOptionsList.append(MedicalOptionsList(name: UserMedicalOptionsType.logPeriod.rawValue, categoryImage: UIImageType.regularBledding.rawValue, subCategoryList: self.medicationsSubCategoryListModel))
+         }
+         dLog(message: "logs user Date...\(String(describing: self.getUserMedicalOptionsDataModel))")
+         self.calendar.reloadData()
     }
 
     internal func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
@@ -171,7 +201,19 @@ class CalendarHomeVC: BaseViewC {
 //MARK: -  FSCalendarDelegate,FSCalendarDataSource
   extension CalendarHomeVC: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
-       calendar.scrollDirection = .vertical
+
+      //  let backDate = calendar.date(byAdding: .year, value: -1, to: Date())
+        let currentPageDate = calendar.currentPage
+        let month = Calendar.current.component(.month, from: currentPageDate)
+        let year = Calendar.current.component(.year, from: currentPageDate)
+        let monthName = DateFormatter().monthSymbols[month - 1]
+        if currentMonth == "\(month)" && currentYear == "\(year)" {
+          //  btnCalendar.setBackgroundImage(<#T##image: UIImage?##UIImage?#>, for: <#T##UIControl.State#>)
+            btnCalendar.setBackgroundImage(UIImageType.projections.image, for: .normal)
+        } else {
+            btnCalendar.setBackgroundImage(UIImageType.whiteCalendar.image, for: .normal)
+        }
+        calendar.scrollDirection = .vertical
     }
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         dLog(message: "did select date \(self.dateFormatter.string(from: date))")
@@ -185,7 +227,11 @@ class CalendarHomeVC: BaseViewC {
             }
                 UIView.animate(withDuration: 0.5, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: {
                     newDateStrView?.first?.isZoom = !(newDateStrView?.first?.isZoom ?? false)
-
+                    newDateStrView?.first?.xibBgView.backgroundColor = UIColor(named: "ThemeColor")
+                    newDateStrView?.first?.lblDate.textColor = .white
+                    newDateStrView?.first?.collectionViewMedicationIcon.backgroundColor = UIColor(named: "ThemeColor")
+                    newDateStrView?.first?.isChangedCollectionIconColor = true
+                 //   newDateStrView?.first?.collectionViewMedicationIcon.backgroundColor = UIColor(named: "ThemeColor")
                     if newDateStrView?.first?.isZoom ?? false {
                         newDateStrView?.first?.transform = CGAffineTransform.identity.scaledBy(x: 1.2, y: 1.2) // Scale your image
                     } else {
@@ -193,7 +239,6 @@ class CalendarHomeVC: BaseViewC {
                     }
 
                  })
-
         }
         if  let abc = calendar.cell(for: date, at: FSCalendarMonthPosition.current)?.superview?.subviews {
            for subView in abc {
@@ -201,17 +246,17 @@ class CalendarHomeVC: BaseViewC {
                 let newDateStrView = myViews.filter({($0.dateStr ?? "") != dateSelected})
 
              for item in newDateStrView {
+                 item.xibBgView.backgroundColor = .white
+                 item.lblDate.textColor = .black
+                 item.collectionViewMedicationIcon.backgroundColor = .clear
+                 item.isChangedCollectionIconColor = false
                     item.transform = CGAffineTransform.identity.scaledBy(x: 1.0, y: 1.0) // Scale your image
                 }
             }
         }
-
-
     }
       func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
           if let cell = calendar.dequeueReusableCell(withIdentifier: Cell.className, for: date, at: position) as? Cell {
-
-
               let newDate = self.dateFormatter.string(from: date)
               let currentDate = self.dateFormatter.string(from: Date())
               cell.layer.borderColor = UIColor(named: "ThemeColor")?.cgColor
@@ -222,13 +267,12 @@ class CalendarHomeVC: BaseViewC {
                   //cell.contentView.layer.borderColor = UIColor.red.cgColor
                   cell.layer.borderWidth = 0.2
               }
-
               // here added xib on selectedSavedData
               AppConfig.defautMainQ.async {
                  // getUserMedicalOptionsDataModel
                   if let medicalOptions = self.getUserMedicalOptionsDataModel?.medicalOptionsList {
                       self.showArr.removeAll()
-                    for (offset, value) in medicalOptions.enumerated() {
+                      for (offset, _) in medicalOptions.enumerated() {
                           let filterdata = medicalOptions[offset].subCategoryList.filter({$0.date == newDate})
                         if !(filterdata.isEmpty) {
                             self.showArr.append(filterdata)
@@ -279,20 +323,9 @@ class CalendarHomeVC: BaseViewC {
                     return  UIImageType.ovulation.image
               default:
                     return nil
-
               }
           }
           return nil
-
-//          if self.dateEventsDate.contains(dateString) {
-//             return UIImageType.bloodDrop.image?.alpha(1)
-//          } else {
-//             return UIImageType.bloodDrop.image?.alpha(0)
-//         }
-        //  return self.datesWithEvent.contains(dateString) ? UIImage(named: "FertileWindow") : nil
-
-
-
       }
 }
 // MARK: -  UICollectionViewDelegate, UICollectionViewDataSource
@@ -376,17 +409,7 @@ extension CalendarHomeVC: CalendarHomeViewModelDelegate {
             AlertControllerManager.showOkAlert(title: "", message: ErrorMessages.canNotPredictPeriod.localizedString)
         } else {
             self.getUserLogPeriodDataModel = dataModel
-           self.medicationsSubCategoryListModel.removeAll()
-            if let logData = dataModel.logData {
-                for (indx, periodDataMode) in logData.enumerated() {
-                    self.medicationsSubCategoryListModel.append(SubCategoryList(id: logData[indx].periodFlowID ?? 0, medicationID: "", date: logData[indx].lockDate, name: logData[indx].periodFlowName, procedureID: "", activityID: "", symptomID: "", pregnancyTestID: "", subCategoryImage: UIImageType.regularBledding.rawValue, categoryImage: UIImageType.regularBledding.rawValue))
-                }
-                self.getUserMedicalOptionsDataModel?.medicalOptionsList.append(MedicalOptionsList(name: UserMedicalOptionsType.logPeriod.rawValue, categoryImage: UIImageType.regularBledding.rawValue, subCategoryList: self.medicationsSubCategoryListModel))
-            }
-
-//            self.logsUserDates = self.getUserLogPeriodDataModel?.logData?.map({$0.lockDate}) as? [String] ?? []
-           dLog(message: "logs user Date...\(self.getUserMedicalOptionsDataModel)")
-            self.calendar.reloadData()
+            self.mapUserLoggedPeriodDataInMedicationDataModel(dataModel: dataModel)
 
         }
 
@@ -417,7 +440,6 @@ extension CalendarHomeVC: LogPeriodsOptionsBottomSheetControllerDelegate,LogPeri
             self.navigationController?.present(logPeriodDoneBottomSheetVC, animated: true, completion: nil)
         }
     }
-
 }
 extension CalendarHomeVC: SavedUserMedicalDataDelegate {
     func didSelectMethodCalled(sender: UIView, subCategoaryModel: [SubCategoryList]) {
@@ -450,3 +472,5 @@ extension CalendarHomeVC: UIPopoverPresentationControllerDelegate {
     }
 }
 
+
+//(OvaryIQ.GetUsersMedicalOptionsDataModel(message: Optional("Medical options selected data found successfully."), medicalOptionsList: [OvaryIQ.MedicalOptionsList(name: Optional("Medication"), categoryImage: Optional("MedicationWhite"), subCategoryList: [OvaryIQ.SubCategoryList(id: 196, medicationID: Optional("1"), date: Optional("2022-03-28"), name: Optional("Stimulation Injection"), procedureID: nil, activityID: nil, symptomID: nil, pregnancyTestID: nil, subCategoryImage: Optional("StimulationInjection"), categoryImage: Optional("MedicationWhite")), OvaryIQ.SubCategoryList(id: 197, medicationID: Optional("1"), date: Optional("2022-03-09"), name: Optional("Stimulation Injection"), procedureID: nil, activityID: nil, symptomID: nil, pregnancyTestID: nil, subCategoryImage: Optional("StimulationInjection"), categoryImage: Optional("MedicationWhite")), OvaryIQ.SubCategoryList(id: 198, medicationID: Optional("2"), date: Optional("2022-03-09"), name: Optional("Tigger"), procedureID: nil, activityID: nil, symptomID: nil, pregnancyTestID: nil, subCategoryImage: Optional("StimulationInjection"), categoryImage: Optional("MedicationWhite")), OvaryIQ.SubCategoryList(id: 199, medicationID: Optional("1"), date: Optional("2022-03-25"), name: Optional("Stimulation Injection"), procedureID: nil, activityID: nil, symptomID: nil, pregnancyTestID: nil, subCategoryImage: Optional("StimulationInjection"), categoryImage: Optional("MedicationWhite")), OvaryIQ.SubCategoryList(id: 200, medicationID: Optional("3"), date: Optional("2022-03-25"), name: Optional("Birth Control"), procedureID: nil, activityID: nil, symptomID: nil, pregnancyTestID: nil, subCategoryImage: Optional("BirthControl"), categoryImage: Optional("MedicationWhite"))]), OvaryIQ.MedicalOptionsList(name: Optional("Procedure"), categoryImage: Optional("procedureWhite"), subCategoryList: [OvaryIQ.SubCategoryList(id: 89, medicationID: nil, date: Optional("2022-03-15"), name: Optional("D3 Embryo Transfer"), procedureID: Optional("17"), activityID: nil, symptomID: nil, pregnancyTestID: nil, subCategoryImage: Optional("D3EmbryoTransfer"), categoryImage: Optional("procedureWhite")), OvaryIQ.SubCategoryList(id: 90, medicationID: nil, date: Optional("2022-03-09"), name: Optional("IUI"), procedureID: Optional("13"), activityID: nil, symptomID: nil, pregnancyTestID: nil, subCategoryImage: Optional("IUI"), categoryImage: Optional("procedureWhite"))]), OvaryIQ.MedicalOptionsList(name: Optional("Activity"), categoryImage: Optional("ActivityWhite"), subCategoryList: []), OvaryIQ.MedicalOptionsList(name: Optional("Symptoms"), categoryImage: Optional("SymtompsWhite"), subCategoryList: []), OvaryIQ.MedicalOptionsList(name: Optional("Pregnancy Test"), categoryImage: Optional("PregnancyTestWhite"), subCategoryList: []), OvaryIQ.MedicalOptionsList(name: Optional("Log Period"), categoryImage: Optional("regularBledding"), subCategoryList: [OvaryIQ.SubCategoryList(id: 1, medicationID: Optional(""), date: Optional("2022-03-23"), name: Optional("Regular Flow"), procedureID: Optional(""), activityID: Optional(""), symptomID: Optional(""), pregnancyTestID: Optional(""), subCategoryImage: Optional("regularBledding"), categoryImage: Optional("regularBledding"))]), OvaryIQ.MedicalOptionsList(name: Optional("Log Period"), categoryImage: Optional("regularBledding"), subCategoryList: [OvaryIQ.SubCategoryList(id: 1, medicationID: Optional(""), date: Optional("2022-03-23"), name: Optional("Regular Flow"), procedureID: Optional(""), activityID: Optional(""), symptomID: Optional(""), pregnancyTestID: Optional(""), subCategoryImage: Optional("regularBledding"), categoryImage: Optional("regularBledding"))])]))

@@ -151,6 +151,8 @@
 		A797A1E4279EC03200AB3896 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A1E3279EC03200AB3896 /* Utility.swift */; };
 		A797A1E6279EC4FC00AB3896 /* Toast + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A1E5279EC4FC00AB3896 /* Toast + Extension.swift */; };
 		A79DD8E627E2DE8E0064E6A7 /* LogPeriodHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79DD8E527E2DE8E0064E6A7 /* LogPeriodHeader.xib */; };
+		A79DD8E927E375A70064E6A7 /* CenteredView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79DD8E727E375A70064E6A7 /* CenteredView.xib */; };
+		A79DD8EA27E375A70064E6A7 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79DD8E827E375A70064E6A7 /* CardView.xib */; };
 		A7BA6DB427CC8CA300AEAEE5 /* MedicationsOptionsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA6DB327CC8CA200AEAEE5 /* MedicationsOptionsCVC.swift */; };
 		A7CE543C27967A9300191A7B /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE543B27967A9300191A7B /* NSObject+Extension.swift */; };
 		A7CE543E27967B7B00191A7B /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE543D27967B7B00191A7B /* UITableView+Extension.swift */; };
@@ -354,6 +356,8 @@
 		A797A1E3279EC03200AB3896 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		A797A1E5279EC4FC00AB3896 /* Toast + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Toast + Extension.swift"; sourceTree = "<group>"; };
 		A79DD8E527E2DE8E0064E6A7 /* LogPeriodHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogPeriodHeader.xib; sourceTree = "<group>"; };
+		A79DD8E727E375A70064E6A7 /* CenteredView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CenteredView.xib; sourceTree = "<group>"; };
+		A79DD8E827E375A70064E6A7 /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		A7BA6DB327CC8CA200AEAEE5 /* MedicationsOptionsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationsOptionsCVC.swift; sourceTree = "<group>"; };
 		A7CE543B27967A9300191A7B /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		A7CE543D27967B7B00191A7B /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
@@ -652,6 +656,8 @@
 		A7324512278E8EC3008FDCF0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A79DD8E827E375A70064E6A7 /* CardView.xib */,
+				A79DD8E727E375A70064E6A7 /* CenteredView.xib */,
 				A7324513278E8F0F008FDCF0 /* Fonts */,
 				A73244E7278E8E2C008FDCF0 /* Assets.xcassets */,
 				A760457F279ED32F008655B6 /* Localizable.strings */,
@@ -1894,6 +1900,7 @@
 				A7324527278E8F82008FDCF0 /* SourceSansPro-ExtraLight.ttf in Resources */,
 				A7324524278E8F82008FDCF0 /* SourceSansPro-BoldItalic.ttf in Resources */,
 				A732452B278E8F82008FDCF0 /* SourceSansPro-Regular.ttf in Resources */,
+				A79DD8E927E375A70064E6A7 /* CenteredView.xib in Resources */,
 				A797A1DB279E94C900AB3896 /* Home.storyboard in Resources */,
 				A79DD8E627E2DE8E0064E6A7 /* LogPeriodHeader.xib in Resources */,
 				A732452C278E8F82008FDCF0 /* SourceSansPro-Italic.ttf in Resources */,
@@ -1904,6 +1911,7 @@
 				A7324528278E8F82008FDCF0 /* SourceSansPro-Black.ttf in Resources */,
 				A73244E8278E8E2C008FDCF0 /* Assets.xcassets in Resources */,
 				A76C61CC27C652D8006CBE02 /* Settings.storyboard in Resources */,
+				A79DD8EA27E375A70064E6A7 /* CardView.xib in Resources */,
 				A732452D278E8F82008FDCF0 /* SourceSansPro-SemiBoldItalic.ttf in Resources */,
 				A73244E6278E8E2A008FDCF0 /* Auth.storyboard in Resources */,
 				A797A1E2279EB41B00AB3896 /* Loader.json in Resources */,
@@ -2319,7 +2327,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E66D6041D13595645E3088A /* Pods-OvaryIQ.debug.xcconfig */;
 			buildSettings = {
-				API_BASE_URL = "http://6ba6-2401-4900-415d-70e6-e0c7-320d-a32-226a.ngrok.io/api/";
+				API_BASE_URL = "https://devapi.ovaryiq.com/api/";
 				APP_NAME = "OvaryIQ D";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -106,7 +106,7 @@ extension YourGoalVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         isSlectedGetPregnant = indexPath.row == 0 ? true : false
-        for (indx,mod) in goalArr.enumerated() {
+        for (indx, _) in goalArr.enumerated() {
             if indx == indexPath.row {
                 self.goalArr[indx].isSelected = true
             } else {
