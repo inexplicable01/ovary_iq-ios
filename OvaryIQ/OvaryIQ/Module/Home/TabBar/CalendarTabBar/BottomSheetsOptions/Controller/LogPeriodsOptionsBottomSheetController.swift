@@ -34,38 +34,43 @@ class LogPeriodsOptionsBottomSheetController: UIViewController {
     // MARK: - Private Functions
 
     private func initalSetup() {
-
         self.lblPeriodType.text = self.medicalOptionsDataModel?.name
-        DispatchQueue.main.async {
-            self.collectionViewSubcategory.delegate = self
-            self.collectionViewSubcategory.dataSource = self
-            self.collectionViewSubcategory?.register(LogPeriodSubCategotyCVC.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: LogPeriodSubCategotyCVC.className)
-            self.collectionViewSubcategory.reloadData()
-        }
+        initCollectionView()
     }
+
+    // MARK: - Private and Internal Functions
+    private func initCollectionView() {
+        collectionViewSubcategory.register(UINib(nibName: String(describing: LogPeriodHeader.className), bundle: .main),
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: String(describing: LogPeriodHeader.className))
+        self.collectionViewSubcategory.delegate = self
+        self.collectionViewSubcategory.dataSource = self
+    }
+
     // MARK: - Button Actions
     @IBAction private func tapBtnCross(_ sender: UIButton) {
         fLog()
         self.dismiss(animated: true, completion: nil)
 
     }
-
     @IBAction private func tapBtnTick(_ sender: UIButton) {
         fLog()
         self.dismiss(animated: true) {
+            let selectedPeriodSubType = self.medicalOptionsDataModel?.subCategoryList.filter({$0.isSelected == true})
             if self.selectedDate.isEmpty {
                 AlertControllerManager.showToast(message: ErrorMessages.selectPeriodStartDate.localizedString, type: .error)
-            } else {
+            } else if selectedPeriodSubType?.isEmpty ?? false{
+                AlertControllerManager.showToast(message: ErrorMessages.emptySelectPeriodSubType.localizedString, type: .error)
+            }
+            else {
                 if let categoryModel = self.medicalOptionsDataModel?.subCategoryList {
                     self.selectedIds.removeAll()
                    // if self.selectedDate
-
 
                     let newMedicationModel = self.userMedicalOptionsListDataModel?.subCategoryList.filter({$0.date != self.selectedDate})
                     let userSelectedAllDates = newMedicationModel?.map({$0.date}).unique
                     if let previousDate = userSelectedAllDates {
                         for inx in 0..<previousDate.count {
-
                             let model = newMedicationModel?.filter({$0.date == previousDate[inx]})
                             switch self.medicalOptionsDataModel?.name {
                             case LogPeriodCategoryType.medication.rawValue:
@@ -102,9 +107,7 @@ class LogPeriodsOptionsBottomSheetController: UIViewController {
                             }
                         }
                     }
-
                     self.medicationModel.append(MedicationModel(id: self.selectedIds, date: self.selectedDate ?? ""))
-
                     self.saveMedicationRequestModel.medicationId = self.medicationModel
                     self.saveMedicationRequestModel.periodType = self.medicalOptionsDataModel?.name
 
@@ -119,13 +122,8 @@ extension LogPeriodsOptionsBottomSheetController: UICollectionViewDelegate, UICo
     // MARK: - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let medicationSubCatModel = self.medicalOptionsDataModel?.subCategoryList {
-            if self.medicalOptionsDataModel?.name == LogPeriodCategoryType.medication.rawValue {
-                if medicationSubCatModel[indexPath.row].isSelected ?? false {
-                    self.medicalOptionsDataModel?.subCategoryList[indexPath.row].isSelected = false
-                } else {
-                    self.medicalOptionsDataModel?.subCategoryList[indexPath.row].isSelected = true
-                }
-            } else {
+            if self.medicalOptionsDataModel?.name == LogPeriodCategoryType.logPeriod.rawValue  || self.medicalOptionsDataModel?.name == LogPeriodCategoryType.procedure.rawValue {
+
                 for (subCatIndex, _) in medicationSubCatModel.enumerated() {
                     if subCatIndex == indexPath.row {
                         self.medicalOptionsDataModel?.subCategoryList[subCatIndex].isSelected = true
@@ -133,6 +131,25 @@ extension LogPeriodsOptionsBottomSheetController: UICollectionViewDelegate, UICo
                         self.medicalOptionsDataModel?.subCategoryList[subCatIndex].isSelected = false
                     }
                 }
+//                if medicationSubCatModel[indexPath.row].isSelected ?? false {
+//                    self.medicalOptionsDataModel?.subCategoryList[indexPath.row].isSelected = false
+//                } else {
+//                    self.medicalOptionsDataModel?.subCategoryList[indexPath.row].isSelected = true
+//                }  // multi selection
+            } else {
+
+                if medicationSubCatModel[indexPath.row].isSelected ?? false {
+                    self.medicalOptionsDataModel?.subCategoryList[indexPath.row].isSelected = false
+                } else {
+                    self.medicalOptionsDataModel?.subCategoryList[indexPath.row].isSelected = true
+                }
+//                for (subCatIndex, _) in medicationSubCatModel.enumerated() {
+//                    if subCatIndex == indexPath.row {
+//                        self.medicalOptionsDataModel?.subCategoryList[subCatIndex].isSelected = true
+//                    } else {
+//                        self.medicalOptionsDataModel?.subCategoryList[subCatIndex].isSelected = false
+//                    }
+//                } // signle selections
             }
 
             DispatchQueue.main.async {
@@ -143,18 +160,17 @@ extension LogPeriodsOptionsBottomSheetController: UICollectionViewDelegate, UICo
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+            switch kind {
+            case UICollectionView.elementKindSectionHeader:
 
-        if let header: LogPeriodSubCategotyCVC = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier:LogPeriodSubCategotyCVC.className, for: indexPath) as? LogPeriodSubCategotyCVC {
-            return header
-       }
-
-
-//
-//        if let cell: LogPeriodSubCategotyCVC = collectionView.dequeueReusableCell(withReuseIdentifier: LogPeriodSubCategotyCVC.className, for: indexPath) as? LogPeriodSubCategotyCVC {
-//           // cell.configCell(model: self.medicalOptionsDataModel?.subCategoryList[indexPath.row], logPeriodType: self.medicalOptionsDataModel?.name)
-//                return cell
-//        }
-        return UICollectionViewCell()
+            if let header = collectionViewSubcategory.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: String(describing: LogPeriodHeader.self),for: indexPath) as? LogPeriodHeader {
+                header.delegate = self
+                    return header
+                }
+            default:
+                return UICollectionReusableView()
+            }
+        return UICollectionReusableView()
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -196,10 +212,17 @@ extension LogPeriodsOptionsBottomSheetController: UICollectionViewDelegate, UICo
 //             return CGSize(width: collectionView.frame.size.width / 3, height: 30)
 //         }
 }
+// MARK: - Protocol and delegate functionsd
+extension LogPeriodsOptionsBottomSheetController: LogPeriodHeaderDelegate {
+    func headerBtnPressed(isSelected: Bool) {
+        if let medicationSubCatModel = self.medicalOptionsDataModel?.subCategoryList {
+          for (subCatIndex, _) in medicationSubCatModel.enumerated() {
+              self.medicalOptionsDataModel?.subCategoryList[subCatIndex].isSelected = isSelected
+              self.collectionViewSubcategory.reloadData()
+        }
+    }
+  }
+}
 
 
-
-//(OvaryIQ.MedicalOptionsList(name: Optional("Medication"), categoryImage: Optional("MedicationWhite"), subCategoryList: [OvaryIQ.SubCategoryList(id: 161, medicationID: Optional("2"), date: Optional("2022-03-18"), name: Optional("Tigger"), procedureID: nil, activityID: nil, symptomID: nil, pregnancyTestID: nil, subCategoryImage: Optional("StimulationInjection"), categoryImage: Optional("MedicationWhite")), OvaryIQ.SubCategoryList(id: 162, medicationID: Optional("3"), date: Optional("2022-03-18"), name: Optional("Birth Control"), procedureID: nil, activityID: nil, symptomID: nil, pregnancyTestID: nil, subCategoryImage: Optional("BirthControl"), categoryImage: Optional("MedicationWhite")), OvaryIQ.SubCategoryList(id: 163, medicationID: Optional("4"), date: Optional("2022-03-18"), name: Optional("Clomid"), procedureID: nil, activityID: nil, symptomID: nil, pregnancyTestID: nil, subCategoryImage: Optional("BirthControl"), categoryImage: Optional("MedicationWhite"))]))
-
-//["2022-03-18","2022-03-12"]
 

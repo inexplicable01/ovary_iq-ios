@@ -109,6 +109,7 @@ extension CalendarHomeViewModel {
                                 dLog(message: "getUsersMedicalOptionsDataResponse:- \(encodedDictionary)")
                                 self.delegate?.getUsersMedicalOptionsDataModel(medicalOptionsDataModel: encodedDictionary)
                                 self.callApiToGetUserLogPeriodData()
+                                self.callApiToGetDataForLogPeriod()
 
                             } catch {
                                 print("Error: ", error)
@@ -122,7 +123,7 @@ extension CalendarHomeViewModel {
                                 let encodedDictionary = try JSONDecoder().decode(GetUserLogPeriodDataModel.self, from: JSONSerialization.data(withJSONObject: response))
                                 dLog(message: "getUserLogPeriodDataRespons:- \(encodedDictionary)")
                                 self.delegate?.getUserlogPeriodResponse(dataModel: encodedDictionary)
-
+                                self.callApiToGetDataForLogPeriod()
                             } catch {
                                 print("Error: ", error)
                             }

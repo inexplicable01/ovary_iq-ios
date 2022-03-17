@@ -75,7 +75,7 @@ class LogPeriodDoneBottomSheetVC: BaseViewC {
     }
 
 }
-
+// MARK: - Protocol and delegate Functions
 extension LogPeriodDoneBottomSheetVC: LogPeriodSaveDateBottomSheetViewModelDelegate {
     func sucessSaveLogPeriosApiResponse(eventType: RestEvents) {
         dLog(message: "save Logged period api get called")

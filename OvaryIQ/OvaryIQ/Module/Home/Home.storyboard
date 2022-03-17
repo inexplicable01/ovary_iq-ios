@@ -1239,13 +1239,13 @@
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="rLv-HL-S0C">
                                             <size key="itemSize" width="84" height="80"/>
-                                            <size key="headerReferenceSize" width="50" height="98"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LogPeriodSubCategotyCVC" id="pIh-70-7la" customClass="LogPeriodSubCategotyCVC" customModule="OvaryIQ" customModuleProvider="target">
-                                                <rect key="frame" x="50" y="1" width="84" height="98"/>
+                                                <rect key="frame" x="0.0" y="1" width="84" height="98"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="84" height="98"/>
@@ -1323,28 +1323,6 @@
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
-                                        <collectionReusableView key="sectionHeaderView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="LogPeriodHeader" id="ZqE-cJ-XNb" customClass="LogPeriodHeader" customModule="OvaryIQ" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hhh" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ioy-8E-1XW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="100"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="Fic-SO-B3D"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" name="GreenColor"/>
-                                            <constraints>
-                                                <constraint firstItem="Ioy-8E-1XW" firstAttribute="top" secondItem="ZqE-cJ-XNb" secondAttribute="top" id="0oz-nd-bQZ"/>
-                                                <constraint firstAttribute="trailing" secondItem="Ioy-8E-1XW" secondAttribute="trailing" id="1m3-Zp-c8G"/>
-                                                <constraint firstItem="Ioy-8E-1XW" firstAttribute="leading" secondItem="ZqE-cJ-XNb" secondAttribute="leading" id="dk8-My-BLY"/>
-                                                <constraint firstAttribute="bottom" secondItem="Ioy-8E-1XW" secondAttribute="bottom" id="wgK-u1-O9h"/>
-                                            </constraints>
-                                        </collectionReusableView>
                                         <connections>
                                             <outlet property="dataSource" destination="2bZ-O9-Bx2" id="u8R-Bc-9qi"/>
                                             <outlet property="delegate" destination="2bZ-O9-Bx2" id="2Ze-2O-d8Y"/>
@@ -1579,9 +1557,6 @@
         <image name="myProfile" width="40" height="40"/>
         <image name="profile" width="35" height="35"/>
         <image name="tick" width="16" height="16"/>
-        <namedColor name="GreenColor">
-            <color red="0.23529411764705882" green="0.82745098039215681" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="RedColor">
             <color red="1" green="0.14901960784313725" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

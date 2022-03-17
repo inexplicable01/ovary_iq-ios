@@ -150,6 +150,7 @@
 		A797A1E2279EB41B00AB3896 /* Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = A797A1E1279EB41B00AB3896 /* Loader.json */; };
 		A797A1E4279EC03200AB3896 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A1E3279EC03200AB3896 /* Utility.swift */; };
 		A797A1E6279EC4FC00AB3896 /* Toast + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A797A1E5279EC4FC00AB3896 /* Toast + Extension.swift */; };
+		A79DD8E627E2DE8E0064E6A7 /* LogPeriodHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = A79DD8E527E2DE8E0064E6A7 /* LogPeriodHeader.xib */; };
 		A7BA6DB427CC8CA300AEAEE5 /* MedicationsOptionsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA6DB327CC8CA200AEAEE5 /* MedicationsOptionsCVC.swift */; };
 		A7CE543C27967A9300191A7B /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE543B27967A9300191A7B /* NSObject+Extension.swift */; };
 		A7CE543E27967B7B00191A7B /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE543D27967B7B00191A7B /* UITableView+Extension.swift */; };
@@ -352,6 +353,7 @@
 		A797A1E1279EB41B00AB3896 /* Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loader.json; sourceTree = "<group>"; };
 		A797A1E3279EC03200AB3896 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		A797A1E5279EC4FC00AB3896 /* Toast + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Toast + Extension.swift"; sourceTree = "<group>"; };
+		A79DD8E527E2DE8E0064E6A7 /* LogPeriodHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogPeriodHeader.xib; sourceTree = "<group>"; };
 		A7BA6DB327CC8CA200AEAEE5 /* MedicationsOptionsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationsOptionsCVC.swift; sourceTree = "<group>"; };
 		A7CE543B27967A9300191A7B /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		A7CE543D27967B7B00191A7B /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
@@ -1532,6 +1534,7 @@
 		A797A1D9279E94AE00AB3896 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A79DD8E527E2DE8E0064E6A7 /* LogPeriodHeader.xib */,
 				A797A1DA279E94C900AB3896 /* Home.storyboard */,
 				A7DF7E0827C7397B00C7160B /* TabBar */,
 				A797A1DC279E94D900AB3896 /* Controller */,
@@ -1892,6 +1895,7 @@
 				A7324524278E8F82008FDCF0 /* SourceSansPro-BoldItalic.ttf in Resources */,
 				A732452B278E8F82008FDCF0 /* SourceSansPro-Regular.ttf in Resources */,
 				A797A1DB279E94C900AB3896 /* Home.storyboard in Resources */,
+				A79DD8E627E2DE8E0064E6A7 /* LogPeriodHeader.xib in Resources */,
 				A732452C278E8F82008FDCF0 /* SourceSansPro-Italic.ttf in Resources */,
 				A7324525278E8F82008FDCF0 /* SourceSansPro-SemiBold.ttf in Resources */,
 				A74C322A2791652F00763899 /* Questions.storyboard in Resources */,

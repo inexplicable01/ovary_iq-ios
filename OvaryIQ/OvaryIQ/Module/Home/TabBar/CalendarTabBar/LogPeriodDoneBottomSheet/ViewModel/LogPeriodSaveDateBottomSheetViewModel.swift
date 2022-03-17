@@ -40,7 +40,6 @@ class LogPeriodSaveDateBottomSheetViewModel {
 //        dict[APIParam.id] = self.saveMedicationRequestModel?.medicationId?.first?.id
 //        dict[APIParam.date] = self.saveMedicationRequestModel?.medicationId?.first?.date
 
-
         if let medicationsIdsArr = self.saveMedicationRequestModel?.medicationId {
             for (inx,mod) in medicationsIdsArr.enumerated() {
                 var newdict = [String : Any]()
@@ -114,9 +113,6 @@ extension LogPeriodSaveDateBottomSheetViewModel {
                 } else {
                     AlertControllerManager.showToast(message: ErrorMessages.somethingWentWrong.localizedString, type: .error)
                 }
-
-                
-
                 default:
                     break
                 }

@@ -1052,6 +1052,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="daysInPeriodView" destination="EvX-KD-uOc" id="KU0-eI-z8a"/>
                         <outlet property="lblAverageLifeCycle" destination="Dgf-Di-Gpb" id="60G-sK-5Vr"/>
                         <outlet property="lblBirthYear" destination="3hL-KS-WWC" id="0mI-DS-1Gr"/>
                         <outlet property="lblDaysInPeriod" destination="hyD-zM-KUS" id="RzC-Rx-YTM"/>

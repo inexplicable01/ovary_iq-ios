@@ -15,6 +15,7 @@ class MyProfileVC: BaseViewC {
     @IBOutlet private weak var lblAverageLifeCycle: UILabel!
     @IBOutlet private weak var lblDaysInPeriod: UILabel!
     @IBOutlet private weak var lblBirthYear: UILabel!
+    @IBOutlet private weak var daysInPeriodView: UIView!
     // MARK: - Properties
     private var viewModel = MyProfileViewModel()
     // MARK: - View Life Cycle Functions
@@ -65,8 +66,14 @@ class MyProfileVC: BaseViewC {
         self.lblPhoneNumber.text = "+\(dataModel.userData?.countryCode ?? 1) \(dataModel.userData?.mobile ?? "")"
         self.lblMyStatus.text = dataModel.userData?.userGoaldetails?.first?.goalStatus ?? ""
         self.lblBirthYear.text = "\(dataModel.userData?.userGoaldetails?.first?.birthYear ?? 0)"
-        self.lblDaysInPeriod.text = dataModel.userData?.userGoaldetails?.first?.daysInPeriod ?? ""
+        
         self.lblAverageLifeCycle.text = "\(dataModel.userData?.userGoaldetails?.first?.avgCycle ?? 0)"
+        if dataModel.userData?.userGoaldetails?.first?.daysInPeriod == "0"{
+            self.daysInPeriodView.isHidden = true
+        } else {
+            self.daysInPeriodView.isHidden = false
+            self.lblDaysInPeriod.text = dataModel.userData?.userGoaldetails?.first?.daysInPeriod ?? ""
+        }
     }
     // MARK: - Button Actions
     @IBAction private func tabBtnBack(_ sender: Any) {
