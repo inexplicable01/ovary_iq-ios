@@ -1,0 +1,72 @@
+PODS:
+  - Alamofire (5.4.4)
+  - AppAuth (1.4.0):
+    - AppAuth/Core (= 1.4.0)
+    - AppAuth/ExternalUserAgent (= 1.4.0)
+  - AppAuth/Core (1.4.0)
+  - AppAuth/ExternalUserAgent (1.4.0)
+  - GoogleSignIn (6.1.0):
+    - AppAuth (~> 1.4)
+    - GTMAppAuth (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GTMAppAuth (1.2.2):
+    - AppAuth/Core (~> 1.4)
+    - GTMSessionFetcher/Core (~> 1.5)
+  - GTMSessionFetcher/Core (1.7.0)
+  - IQKeyboardManagerSwift (6.5.9)
+  - Kingfisher (4.10.1)
+  - lottie-ios (3.2.3)
+  - QuickLayout (3.0.0)
+  - SKCountryPicker (1.3.2)
+  - SwiftEntryKit (1.2.3):
+    - QuickLayout (= 3.0.0)
+  - SwiftLint (0.45.1)
+  - SwiftMessages (9.0.6):
+    - SwiftMessages/App (= 9.0.6)
+  - SwiftMessages/App (9.0.6)
+
+DEPENDENCIES:
+  - Alamofire (= 5.4.4)
+  - GoogleSignIn
+  - IQKeyboardManagerSwift
+  - Kingfisher
+  - lottie-ios
+  - SKCountryPicker
+  - SwiftEntryKit (= 1.2.3)
+  - SwiftLint
+  - SwiftMessages (= 9.0.6)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AppAuth
+    - GoogleSignIn
+    - GTMAppAuth
+    - GTMSessionFetcher
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - lottie-ios
+    - QuickLayout
+    - SKCountryPicker
+    - SwiftEntryKit
+    - SwiftLint
+    - SwiftMessages
+
+SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
+  GoogleSignIn: c90b5bec45e780f54c6a8e1e3c182a86e3dda69d
+  GTMAppAuth: ad5c2b70b9a8689e1a04033c9369c4915bfcbe89
+  GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
+  IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
+  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
+  SKCountryPicker: ceff8cfffc0ddde2088f2fcc2d01d1ad530c0b03
+  SwiftEntryKit: 340713c2e4a6662c5149629990bf1088bf5f0389
+  SwiftLint: 06ac37e4d38c7068e0935bb30cda95f093bec761
+  SwiftMessages: f0c7ef4705a570ad6c5e208b611f4333e660ed92
+
+PODFILE CHECKSUM: 3e2115defa806df2039da2ebc68150380b9b69d5
+
+COCOAPODS: 1.11.2

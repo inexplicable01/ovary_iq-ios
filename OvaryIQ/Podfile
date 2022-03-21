@@ -1,0 +1,50 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '11.0'
+
+target 'OvaryIQ' do
+
+use_frameworks!
+
+#Usage:- KeyBoard Management
+pod 'IQKeyboardManagerSwift'
+
+#Usage:- for Calendar
+# pod 'FSCalendar'
+
+ #Usage:- for set your coding style rules
+ pod 'SwiftLint'
+
+ #Usage:- for animations
+ pod 'lottie-ios'
+
+ #Usage:- for Banners or pop-ups
+ pod 'SwiftEntryKit', '1.2.3'
+
+ #Usage:- Google signin
+ pod 'GoogleSignIn'
+
+ #Usage:- for picking country or dialing code
+ pod 'SKCountryPicker'
+
+ #Usage:- for setting an image to an image view
+ pod 'Kingfisher'
+ 
+ #Usage:- for facebook login
+#pod 'FBSDKLoginKit'
+# pod 'FBSDKCoreKit'
+# pod 'FBSDKShareKit'
+
+
+ #Usage:- Networking / API handling
+ pod 'Alamofire', '5.4.4'
+
+ pod 'Kingfisher'
+ pod 'SwiftMessages', '9.0.6'
+ #pod 'SwiftMessages'
+
+end
+post_install do |installer|
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+  end
+end

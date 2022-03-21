@@ -1,0 +1,143 @@
+
+# Created by https://www.toptal.com/developers/gitignore/api/swift,objective-c,xcode,cocoapods
+# Edit at https://www.toptal.com/developers/gitignore?templates=swift,objective-c,xcode,cocoapods
+
+
+## Mac OS X
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+## Other
+
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+
+## Build generated
+
+build/
+DerivedData/
+
+
+## Various settings
+
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+xcuserdata/
+xcuserdata/*
+*/xcuserdata/*
+**/xcuserdata/*
+project.xcworkspace/
+
+## Generated files
+*.o
+*.pyc
+*.hi
+
+
+## Obj-C/Swift specific
+
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+
+## Playgrounds
+
+timeline.xctimeline
+playground.xcworkspace
+
+
+## cocoapods
+
+Pods/
+*.xcworkspace
+#Podfile.lock
+
+
+## Carthage
+
+Carthage/Build
+Carthage/Build/
+Carthage/Checkouts
+.UlyssesRoot
+.Ulysses-Settings.plist
+.Ulysses-Group.plist
+
+
+## Swift Package Manager
+
+Packages/
+Package.pins
+#Package.resolved
+.swiftpm
+.swiftpm/
+.build/
+
+
+## Code Injection
+# After new code Injection tools there's a generated folder /iOSInjectionProject
+# https://github.com/johnno1962/injectionforxcode
+
+iOSInjectionProject/
+
+
+## Accio dependency management
+Dependencies/
+.accio/
+
+
+## SwiftLint
+
+SwiftLint.pkg
+SwiftLintFramework.framework.zip
+benchmark_*
+portable_swiftlint.zip
+swiftlint_linux.zip
+osscheck/
+docs/
+rule_docs/
+
+## fastlane
+# It is recommended to not store the screenshots in the git repo.
+# Instead, use fastlane to re-generate the screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/#source-control
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+
+## Gcc Patch
+
+/*.gcno
+
+
+## Xcode Patch
+
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/xcuserdata/
+!*.xcworkspace/contents.xcworkspacedata
+**/xcshareddata/WorkspaceSettings.xcsettings
+!*.xcworkspace/xcuserdata/
+
+
+
+
+# End of https://www.toptal.com/developers/gitignore/api/swift,objective-c,xcode,cocoapods
