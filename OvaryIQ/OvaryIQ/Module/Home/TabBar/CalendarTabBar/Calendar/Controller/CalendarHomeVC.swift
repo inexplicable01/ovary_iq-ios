@@ -29,7 +29,7 @@ class CalendarHomeVC: BaseViewC {
     private var selectedDates: String?
     private var currentPage: Date?
     private var showArr = [[SubCategoryList]]()
-    private var predictedArray = [PredictedPeriod(periodName: LogPeriodCategoryType.predictedPeriod.localizedString, periodImageName: LogPeriodCategoryType.predictedPeriod.image), PredictedPeriod(periodName: LogPeriodCategoryType.fertileWindow.localizedString, periodImageName: LogPeriodCategoryType.fertileWindow.image),PredictedPeriod(periodName: LogPeriodCategoryType.ovulation.localizedString, periodImageName: LogPeriodCategoryType.ovulation.image),PredictedPeriod(periodName: LogPeriodCategoryType.predictedPregnancyTest.localizedString, periodImageName: LogPeriodCategoryType.predictedPregnancyTest.image)]
+    private var predictedArray = [PredictedPeriod(periodName: LogPeriodCategoryType.predictedPeriod.localizedString, periodImageName: LogPeriodCategoryType.predictedPeriod.image), PredictedPeriod(periodName: LogPeriodCategoryType.fertileWindow.localizedString, periodImageName: LogPeriodCategoryType.fertileWindow.image), PredictedPeriod(periodName: LogPeriodCategoryType.ovulation.localizedString, periodImageName: LogPeriodCategoryType.ovulation.image), PredictedPeriod(periodName: LogPeriodCategoryType.predictedPregnancyTest.localizedString, periodImageName: LogPeriodCategoryType.predictedPregnancyTest.image)]
     private lazy var today: Date = {
         return Date()
     }()
@@ -138,24 +138,15 @@ class CalendarHomeVC: BaseViewC {
     }
 
     private func mapUserLoggedPeriodDataInMedicationDataModel(dataModel: GetUserLogPeriodDataModel) {
-
-//        self.getUserMedicalOptionsDataModel?.medicalOptionsList.map({$0.name == LogPeriodCategoryType.logPeriod.rawValue})
-//
-//        self.getUserMedicalOptionsDataModel?.medicalOptionsList.firstIndex(where: <#T##(MedicalOptionsList) throws -> Bool#>)
-
         if let index =  self.getUserMedicalOptionsDataModel?.medicalOptionsList.firstIndex{$0.name ?? "" == LogPeriodCategoryType.logPeriod.rawValue} {
             self.getUserMedicalOptionsDataModel?.medicalOptionsList.remove(at: index)
         }
-
         dLog(message: "log period mapped data...\(self.getUserMedicalOptionsDataModel)")
         self.medicationsSubCategoryListModel.removeAll()
          if let logData = dataModel.logData {
              for (indx, _) in logData.enumerated() {
                  self.medicationsSubCategoryListModel.append(SubCategoryList(id: logData[indx].periodFlowID ?? 0, medicationID: "", date: logData[indx].lockDate, name: logData[indx].periodFlowName, procedureID: "", activityID: "", symptomID: "", pregnancyTestID: "", subCategoryImage: UIImageType.regularBledding.rawValue, categoryImage: UIImageType.regularBledding.rawValue))
              }
-
-
-
              self.getUserMedicalOptionsDataModel?.medicalOptionsList.append(MedicalOptionsList(name: UserMedicalOptionsType.logPeriod.rawValue, categoryImage: UIImageType.regularBledding.rawValue, subCategoryList: self.medicationsSubCategoryListModel))
          }
          dLog(message: "logs user Date...\(String(describing: self.getUserMedicalOptionsDataModel))")
@@ -264,7 +255,6 @@ class CalendarHomeVC: BaseViewC {
                   cell.layer.borderWidth = 2
                   cell.layer.cornerRadius = 7
               } else {
-                  //cell.contentView.layer.borderColor = UIColor.red.cgColor
                   cell.layer.borderWidth = 0.2
               }
               // here added xib on selectedSavedData
@@ -278,7 +268,6 @@ class CalendarHomeVC: BaseViewC {
                             self.showArr.append(filterdata)
                         }
                         dLog(message:"Filter Data...", filename: "\(filterdata)")
-
                       }
                       let newShowArr = self.showArr.flatMap({$0})
 
@@ -289,9 +278,6 @@ class CalendarHomeVC: BaseViewC {
                           cell.addSubview(myView)
                          // cell.bringSubviewToFront(myView)
                           myView.delegate = self
-//                          if let optionsArr = self.getUserMedicalOptionsDataModel?.medicalOptionsList {
-////                              myView.medicalOptionsListDataModel = optionsArr
-//                          }
                           myView.medicalOptionSubCategoryListArr = newShowArr
 
                           myView.dateStr = newDate
@@ -313,16 +299,14 @@ class CalendarHomeVC: BaseViewC {
           let splitArr = self.getUserLogPeriodDataModel?.predictions?.fertileWindow?.components(separatedBy: ",")
           if splitArr?.contains(dateString) ?? false {
               return  UIImageType.fertileWindow.image
-
-
           } else {
               switch dateString {
               case self.getUserLogPeriodDataModel?.predictions?.predictedPeriod:
-                    return  UIImageType.predictedPeriod.image
+                return UIImageType.predictedPeriod.image
               case self.getUserLogPeriodDataModel?.predictions?.ovulation:
-                    return  UIImageType.ovulation.image
+                return UIImageType.ovulation.image
               default:
-                    return nil
+                return nil
               }
           }
           return nil
@@ -421,7 +405,7 @@ extension CalendarHomeVC: CalendarHomeViewModelDelegate {
         self.collectionViewMedication.reloadData()
     }
 }
-extension CalendarHomeVC: LogPeriodsOptionsBottomSheetControllerDelegate,LogPeriodDoneBottomSheetVCDelegate{
+extension CalendarHomeVC: LogPeriodsOptionsBottomSheetControllerDelegate, LogPeriodDoneBottomSheetVCDelegate {
 
     func saveLoggedPeriodSuccessResponse(eventID: RestEvents) {
         if eventID == .saveLogPeriod {
@@ -471,6 +455,3 @@ extension CalendarHomeVC: UIPopoverPresentationControllerDelegate {
         return .none
     }
 }
-
-
-//(OvaryIQ.GetUsersMedicalOptionsDataModel(message: Optional("Medical options selected data found successfully."), medicalOptionsList: [OvaryIQ.MedicalOptionsList(name: Optional("Medication"), categoryImage: Optional("MedicationWhite"), subCategoryList: [OvaryIQ.SubCategoryList(id: 196, medicationID: Optional("1"), date: Optional("2022-03-28"), name: Optional("Stimulation Injection"), procedureID: nil, activityID: nil, symptomID: nil, pregnancyTestID: nil, subCategoryImage: Optional("StimulationInjection"), categoryImage: Optional("MedicationWhite")), OvaryIQ.SubCategoryList(id: 197, medicationID: Optional("1"), date: Optional("2022-03-09"), name: Optional("Stimulation Injection"), procedureID: nil, activityID: nil, symptomID: nil, pregnancyTestID: nil, subCategoryImage: Optional("StimulationInjection"), categoryImage: Optional("MedicationWhite")), OvaryIQ.SubCategoryList(id: 198, medicationID: Optional("2"), date: Optional("2022-03-09"), name: Optional("Tigger"), procedureID: nil, activityID: nil, symptomID: nil, pregnancyTestID: nil, subCategoryImage: Optional("StimulationInjection"), categoryImage: Optional("MedicationWhite")), OvaryIQ.SubCategoryList(id: 199, medicationID: Optional("1"), date: Optional("2022-03-25"), name: Optional("Stimulation Injection"), procedureID: nil, activityID: nil, symptomID: nil, pregnancyTestID: nil, subCategoryImage: Optional("StimulationInjection"), categoryImage: Optional("MedicationWhite")), OvaryIQ.SubCategoryList(id: 200, medicationID: Optional("3"), date: Optional("2022-03-25"), name: Optional("Birth Control"), procedureID: nil, activityID: nil, symptomID: nil, pregnancyTestID: nil, subCategoryImage: Optional("BirthControl"), categoryImage: Optional("MedicationWhite"))]), OvaryIQ.MedicalOptionsList(name: Optional("Procedure"), categoryImage: Optional("procedureWhite"), subCategoryList: [OvaryIQ.SubCategoryList(id: 89, medicationID: nil, date: Optional("2022-03-15"), name: Optional("D3 Embryo Transfer"), procedureID: Optional("17"), activityID: nil, symptomID: nil, pregnancyTestID: nil, subCategoryImage: Optional("D3EmbryoTransfer"), categoryImage: Optional("procedureWhite")), OvaryIQ.SubCategoryList(id: 90, medicationID: nil, date: Optional("2022-03-09"), name: Optional("IUI"), procedureID: Optional("13"), activityID: nil, symptomID: nil, pregnancyTestID: nil, subCategoryImage: Optional("IUI"), categoryImage: Optional("procedureWhite"))]), OvaryIQ.MedicalOptionsList(name: Optional("Activity"), categoryImage: Optional("ActivityWhite"), subCategoryList: []), OvaryIQ.MedicalOptionsList(name: Optional("Symptoms"), categoryImage: Optional("SymtompsWhite"), subCategoryList: []), OvaryIQ.MedicalOptionsList(name: Optional("Pregnancy Test"), categoryImage: Optional("PregnancyTestWhite"), subCategoryList: []), OvaryIQ.MedicalOptionsList(name: Optional("Log Period"), categoryImage: Optional("regularBledding"), subCategoryList: [OvaryIQ.SubCategoryList(id: 1, medicationID: Optional(""), date: Optional("2022-03-23"), name: Optional("Regular Flow"), procedureID: Optional(""), activityID: Optional(""), symptomID: Optional(""), pregnancyTestID: Optional(""), subCategoryImage: Optional("regularBledding"), categoryImage: Optional("regularBledding"))]), OvaryIQ.MedicalOptionsList(name: Optional("Log Period"), categoryImage: Optional("regularBledding"), subCategoryList: [OvaryIQ.SubCategoryList(id: 1, medicationID: Optional(""), date: Optional("2022-03-23"), name: Optional("Regular Flow"), procedureID: Optional(""), activityID: Optional(""), symptomID: Optional(""), pregnancyTestID: Optional(""), subCategoryImage: Optional("regularBledding"), categoryImage: Optional("regularBledding"))])]))

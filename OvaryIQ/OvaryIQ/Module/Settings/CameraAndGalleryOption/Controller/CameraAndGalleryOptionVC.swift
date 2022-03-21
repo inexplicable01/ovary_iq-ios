@@ -19,13 +19,10 @@ class CameraAndGalleryOptionVC: UIViewController {
     // MARK: - View Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initialSetup()
-        //self.viewModel.registerCoreEngineEventsCallBack()
-        // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       // self.viewModel.registerCoreEngineEventsCallBack()
+        self.initialSetup()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -34,7 +31,6 @@ class CameraAndGalleryOptionVC: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        //self.viewModel.unregisterCoreEngineEventsCallBack()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -60,15 +56,13 @@ class CameraAndGalleryOptionVC: UIViewController {
     private func initialSetup() {
         self.btnCancel.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
         imagePicker.delegate = self
-       // self.viewModel.delegate = self
     }
-    //MARK: - Images Picker From Gallery
+    // MARK: - Images Picker From Gallery
    private func openGallery() {
-        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
             imagePicker.sourceType = .savedPhotosAlbum
             self.present(imagePicker, animated: true, completion: nil)
-
-        }else{
+        } else {
             let alert = UIAlertController()
             alert.title = "You don't have gallary"
 
@@ -79,13 +73,13 @@ class CameraAndGalleryOptionVC: UIViewController {
         }
 
     }
-    //MARK: - Images Picker From Camera
-    private  func openCamera(){
-        if UIImagePickerController.isSourceTypeAvailable(.camera){
+    // MARK: - Images Picker From Camera
+    private  func openCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagePicker.sourceType = .camera
             imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
-        }else{
+        } else {
             let alert = UIAlertController()
             alert.title = "You don't have camera"
 
@@ -111,10 +105,9 @@ class CameraAndGalleryOptionVC: UIViewController {
         fLog()
         self.openCamera()
     }
-
 }
 
-//MARK:- UIImagePicker Delegate and dataSource Method
+// MARK: - UIImagePicker Delegate and dataSource Method
 extension CameraAndGalleryOptionVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -126,7 +119,6 @@ extension CameraAndGalleryOptionVC: UIImagePickerControllerDelegate, UINavigatio
 
             }
         }
-
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)

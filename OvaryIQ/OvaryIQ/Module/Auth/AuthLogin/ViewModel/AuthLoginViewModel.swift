@@ -36,10 +36,8 @@ class AuthLoginViewModel {
          let params = self.authLoginRequestModel.dictionary
          dLog(message: "Rest Event Name :: \(RestEvents.login) and Params :: \(String(describing: params))")
          let restEvent = RestEngineEvents(id: RestEvents.login, obj: params)
-        //restEvent.showActivityIndicator = true
          Helper.showLoader()
        self.coreEngine.addEngineEventsWithOutWait(evObj: restEvent)
-         //self.coreEngine.addEvent(evObj: restEvent)
     }
 
 }
@@ -62,7 +60,6 @@ extension AuthLoginViewModel {
                         if let acessToken = encodedDictionary.accessToken {
                             kUserDefaults.accessToken = acessToken
                         }
-                        
                         if let isGoalSaved = encodedDictionary.isGoalSaved {
                             kUserDefaults.isGoalSaved = isGoalSaved
                         }

@@ -191,17 +191,9 @@ class Helper {
     class func convertDateFormat(InputDateFormat: String, OutputDateFormate: String, date: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = InputDateFormat
-        let date = dateFormatter.date(from: date ?? "")
+        let date = dateFormatter.date(from: date)
         dateFormatter.dateFormat = OutputDateFormate
         let resultString = dateFormatter.string(from: date ?? Date())
         return resultString
     }
-//    class func getDayFromDate(selecteddate: String) -> String {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = DateFormat.yearMonthDate.rawValue
-//        let date = dateFormatter.date(from: selecteddate ?? "")
-//        return "\(date?.get(.day))"
-//    }
-
-
 }

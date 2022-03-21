@@ -240,7 +240,7 @@ enum UserMedicalOptionsType: String {
 // MARK: -  For  return Images
 enum UIImageType: String {
     case bloodDrop = "blood_drop"
-    case myProfile = "myProfile"
+    case myProfile = "myprofile"
     case settings = "settings"
     case regularBledding = "regularBledding"
     case profilePlaceholder = "SmallProfilePlaceHolder"

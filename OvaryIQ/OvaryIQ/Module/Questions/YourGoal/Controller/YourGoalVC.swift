@@ -70,9 +70,6 @@ class YourGoalVC: UIViewController {
                 if let goalId = self.goalArr.filter({$0.isSelected == true}).first.map({$0.id}) {
                     tryingGetPregnantVC.selectedGoalId = goalId
                 }
-//                if let goalName = self.goalArr.filter({$0.isSelected == true}).first.map({$0.goalType}) {
-//                    tryingGetPregnantVC.goalType = GoalType.getPregnant.rawValue
-//                }
                 self.navigationController?.pushViewController(tryingGetPregnantVC, animated: true)
             }
 
@@ -98,7 +95,6 @@ class YourGoalVC: UIViewController {
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
-
 extension YourGoalVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     // MARK: - UICollectionViewDelegate
@@ -159,8 +155,7 @@ extension YourGoalVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.size.width / 2
         return CGSize(width: width - 15, height: width - 15)
-    }
-    
+    }    
 }
 // MARK: - Protocol and delegate method
 extension YourGoalVC: GoalViewModelDelegate {

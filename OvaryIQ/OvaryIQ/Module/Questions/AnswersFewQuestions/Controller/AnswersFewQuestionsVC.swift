@@ -50,7 +50,7 @@ class AnswersFewQuestionsVC: UIViewController {
 
     // MARK: - private Functions
     private func initialSetUp() {
-        self.btnContinue.applyGradient (colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
+        self.btnContinue.applyGradient(colors: [UIColor(red: 255.0 / 255.0, green: 109.0 / 255.0, blue: 147.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 253.0 / 255.0, green: 147.0 / 255.0, blue: 167.0 / 255.0, alpha: 1.0).cgColor])
      }
     // MARK: - Button Actions
     @IBAction private func tapBtnContinue(sender: UIButton) {

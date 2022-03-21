@@ -11,11 +11,10 @@ class YearPickerVC: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet private weak var pickerView: UIPickerView!
     // MARK: - Properties
-    internal var goBackToCalendarHomeController: ((String) -> ())?
+    internal var goBackToCalendarHomeController: ((String) -> Void)?
     private var pickerData: [String] {
-
-        let date = Date()
-        let calendar = Calendar.current
+//        let date = Date()
+//        let calendar = Calendar.current
         let currentYear = Calendar.current.component(.year, from: Date())
         let previousYear = currentYear - 1
         let nextYear = currentYear + 5
@@ -86,7 +85,6 @@ class YearPickerVC: UIViewController {
             self.goBackToCalendarHomeController?(self.pickerData[self.selectedIndex])
         }
     }
-
 }
 // MARK: - UIPickerDelegate, UIPickerDataSource
 extension YearPickerVC: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -107,7 +105,6 @@ extension YearPickerVC: UIPickerViewDelegate, UIPickerViewDataSource {
         self.pickerView.reloadAllComponents()
     }
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-
         // picker view background clear
         if #available(iOS 14.0, *) {
             pickerView.subviews[1].backgroundColor = .clear } else {
@@ -124,8 +121,6 @@ extension YearPickerVC: UIPickerViewDelegate, UIPickerViewDataSource {
         pickerLabel.text = pickerData[row]
         return pickerLabel
     }
-
-
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 35
     }

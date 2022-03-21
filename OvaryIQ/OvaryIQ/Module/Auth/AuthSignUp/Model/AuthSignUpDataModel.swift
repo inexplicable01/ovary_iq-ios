@@ -3,8 +3,6 @@
 //  OvaryIQ
 //
 //  Created by Mobcoder on 25/01/22.
-
-
 import Foundation
 struct AuthSignUpDataModel: Codable {
     var message, accessToken, goalStatus: String?

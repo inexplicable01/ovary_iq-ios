@@ -117,6 +117,4 @@ class AppConfig: NSObject {
         let bundle = kMainBundle.object(forInfoDictionaryKey: AppCustomConfig.safetyCenter.rawValue)
         return bundle as? String ?? ""
     }
-
-
 }

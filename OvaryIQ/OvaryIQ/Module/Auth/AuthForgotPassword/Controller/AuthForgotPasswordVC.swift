@@ -16,7 +16,7 @@ class AuthForgotPasswordVC: UIViewController {
     @IBOutlet private weak var txtFieldEmail: UITextField!
     @IBOutlet private weak var bottomView: UIView!
     // MARK: - Properties
-    internal var goBack: ((Bool,String, ForgotPasswordRequestModel) -> Void)?
+    internal var goBack: ((Bool, String, ForgotPasswordRequestModel) -> Void)?
     private var viewModel = ForgotPasswordViewModel()
     internal var delegate: AuthForgotPasswordVCDeleagte?
     // MARK: - View Life Cycle Functions
@@ -90,7 +90,6 @@ class AuthForgotPasswordVC: UIViewController {
             self.delegate?.tapBtnSignup()
         }
     }
-    
 }
 // MARK: - UITextFieldDelegate
 

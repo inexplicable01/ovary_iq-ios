@@ -88,14 +88,14 @@ identifier_name:
   excluded:
     - id
 
-line_length: 300
+line_length: 650
 
 function_body_length:
   warning: 100
   error: 150
 
 file_length:
-  warning: 500
+  warning: 700
   error: 1500
   
 number_separator:
@@ -132,12 +132,13 @@ custom_rules:
     message: "Specify the class semantics with either final, /* abstract */ or /* recursive */ keywords. Recursive means that class is used both itself & as a superclass."
     severity: warning
 
-  closing_brace_whitespace:
-    included: ".*.swift"
-    regex: '(?:\n| {2,})\}\)? *\n *[^ \n\})\]]'
-    name: "Closing Brace Whitespace"
-    message: "Empty line required after closing curly braces if code with same indentation follows."
-    severity: warning
+
+#  closing_brace_whitespace:
+#    included: ".*.swift"
+#    regex: '(?:\n| {2,})\}\)? *\n *[^ \n\})\]]'
+#    name: "Closing Brace Whitespace"
+#    message: "Empty line required after closing curly braces if code with same indentation follows."
+#    severity: warning
 
   closure_params_parantheses:
     included: ".*.swift"
@@ -252,12 +253,12 @@ custom_rules:
     message: "Include a vertical whitespace (empty line) between cases in switch statements."
     severity: warning
 
-#  vertical_whitespaces_around_mark:
-#    included: ".*.swift"
-#    regex: '\/\/\s*MARK:[^\n]*(\n\n)|(\n\n\n)[ \t]*\/\/\s*MARK:|[^\s{]\n[^\n\/]*\/\/\s*MARK:'
-#    name: "Vertical Whitespaces Around MARK:"
-#    message: "Include a single vertical whitespace (empty line) before and none after MARK: comments."
-#    severity: warning
+  vertical_whitespaces_around_mark:
+    included: ".*.swift"
+    regex: '\/\/\s*MARK:[^\n]*(\n\n)|(\n\n\n)[ \t]*\/\/\s*MARK:|[^\s{]\n[^\n\/]*\/\/\s*MARK:'
+    name: "Vertical Whitespaces Around MARK:"
+    message: "Include a single vertical whitespace (empty line) before and none after MARK: comments."
+    severity: warning
 
 #  vertical_whitespace_opening_braces:
 #    included: ".*.swift"
@@ -265,14 +266,14 @@ custom_rules:
 #    name: "Vertical Whitespace after Opening Braces"
 #    message: "Don't include vertical whitespace (empty line) after opening braces."
 #    severity: warning
-
+#
 #  vertical_whitespace_closing_braces:
 #    included: ".*.swift"
 #    regex: '\n[ \t]*\n[ \t]*[)}\]]'
 #    name: "Vertical Whitespace before Closing Braces"
 #    message: "Don't include vertical whitespace (empty line) before closing braces."
 #    severity: warning
-    
+#    
   whitespace_comment_start:
     included: ".*.swift"
     regex: '[^:#][^:#]\/\/[^\s\/]'

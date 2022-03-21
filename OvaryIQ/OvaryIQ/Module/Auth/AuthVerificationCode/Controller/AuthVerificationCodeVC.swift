@@ -44,6 +44,7 @@ class AuthVerificationCodeVC: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        self.stopTimerTest()
         self.viewModel.unregisterCoreEngineEventsCallBack()
     }
 
@@ -86,10 +87,11 @@ class AuthVerificationCodeVC: UIViewController {
     private func startTimer () {
       guard timerTest == nil else { return }
       timerTest = Timer.scheduledTimer(
-        timeInterval: TimeInterval(1.0),target: self,selector: #selector(Self.updateCounter),userInfo: nil,repeats: true)
+        timeInterval: TimeInterval(1.0), target: self,selector: #selector(Self.updateCounter), userInfo: nil,repeats: true)
     }
 
     private func stopTimerTest() {
+        self.counter = -1
         timerTest?.invalidate()
         timerTest = nil
      }

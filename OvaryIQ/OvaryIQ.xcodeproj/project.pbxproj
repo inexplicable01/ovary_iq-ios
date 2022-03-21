@@ -532,7 +532,6 @@
 			isa = PBXGroup;
 			children = (
 				A753832527B117CC00F9FE83 /* Model */,
-				A753832427B117C500F9FE83 /* View */,
 				A753832327B117A200F9FE83 /* ViewModel */,
 				A753832227B1179900F9FE83 /* Controller */,
 			);
@@ -835,13 +834,6 @@
 				A753832A27B11EE500F9FE83 /* ForgotPasswordRequestModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		A753832427B117C500F9FE83 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		A753832527B117CC00F9FE83 /* Model */ = {
